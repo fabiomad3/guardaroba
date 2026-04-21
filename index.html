@@ -5,623 +5,89 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <title>Il Mio Guardaroba</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500&display=swap');
-
-:root {
-  --cream: #EDE5D0;
-  --beige: #CEC0A8;
-  --taupe: #7A6850;
-  --brown: #5A4030;
-  --dark: #1E1A14;
-  --mid: #302820;
-  --light: #5A5248;
-  --white: #F8F2E4;
-  --navy: #182438;
-  --sage: #5A7850;
-  --rose: #B88878;
-  --blue-powder: #3A5870;
-  --grey: #686460;
-  --camel: #907050;
-  --accent: #6A4A30;
-}
-
-* { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-
-body {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 300;
-  background: var(--cream);
-  color: var(--dark);
-  min-height: 100vh;
-  max-width: 480px;
-  margin: 0 auto;
-}
-
-/* HEADER */
-.app-header {
-  background: #2A3C58;
-  color: #F0EAD8;
-  padding: 22px 20px 16px;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-
-.app-header h1 {
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 400;
-  font-size: 1.8rem;
-  letter-spacing: 0.06em;
-  color: #F0EAD8;
-}
-
-.app-header p {
-  font-size: 0.6rem;
-  font-weight: 500;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: #C8B890;
-  margin-top: 4px;
-}
-
-/* NAV */
-.nav {
-  display: flex;
-  background: #F8F2E4;
-  border-bottom: 2px solid #8A7060;
-  position: sticky;
-  top: 80px;
-  z-index: 99;
-}
-
-.nav-btn {
-  flex: 1;
-  padding: 14px 4px;
-  background: none;
-  border: none;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.6rem;
-  font-weight: 400;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #5A5248;
-  cursor: pointer;
-  border-bottom: 3px solid transparent;
-  transition: all 0.2s;
-}
-
-.nav-btn.active {
-  color: #1E1A14;
-  border-bottom-color: #6A4A30;
-  font-weight: 600;
-}
-
-/* SECTIONS */
-.section {
-  display: none;
-  padding: 20px 16px 100px;
-}
-
-.section.active { display: block; }
-
-/* SECTION HEADER */
-.section-label {
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: #3A3028;
-  margin-bottom: 16px;
-  padding-bottom: 10px;
-  border-bottom: 2px solid #CEC0A8;
-}
-
-/* CATEGORY */
-.category {
-  margin-bottom: 28px;
-}
-
-.category-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.1rem;
-  font-weight: 400;
-  color: var(--mid);
-  margin-bottom: 12px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.category-title::after {
-  content: '';
-  flex: 1;
-  height: 1px;
-  background: var(--beige);
-}
-
-/* ITEM CARD */
-.item-card {
-  background: var(--white);
-  border-radius: 8px;
-  padding: 14px 16px;
-  margin-bottom: 10px;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.10);
-  position: relative;
-  border-left: 4px solid #CEC0A8;
-}
-
-.item-color {
-  width: 40px;
-  height: 40px;
-  border-radius: 8px;
-  flex-shrink: 0;
-  border: 2px solid rgba(0,0,0,0.15);
-}
-
-.item-info { flex: 1; min-width: 0; }
-
-.item-name {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #1E1A14;
-  line-height: 1.3;
-}
-
-.item-brand {
-  font-size: 0.62rem;
-  font-weight: 500;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: #5A5248;
-  margin-top: 3px;
-}
-
-.item-stilista {
-  font-size: 0.65rem;
-  font-weight: 500;
-  color: #6A4A30;
-  margin-top: 5px;
-  font-style: italic;
-}
-
-.item-badge {
-  font-size: 0.55rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  padding: 4px 9px;
-  border-radius: 20px;
-  background: #D8CCBA;
-  color: #302820;
-  white-space: nowrap;
-}
-
-.item-badge.replace {
-  background: #E8C0B0;
-  color: #6A2010;
-}
-
-.item-badge.pending {
-  background: #C0D8B8;
-  color: #204020;
-}
-
-/* OUTFIT CARD */
-.outfit-card {
-  background: var(--white);
-  border-radius: 10px;
-  margin-bottom: 14px;
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
-}
-
-.outfit-header {
-  background: #2A3C58;
-  padding: 12px 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.outfit-day {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.15rem;
-  color: #F0EAD8;
-  font-weight: 500;
-}
-
-.outfit-type {
-  font-size: 0.6rem;
-  font-weight: 600;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: #C0B090;
-}
-
-.outfit-body { padding: 14px 16px; }
-
-.outfit-stilista {
-  font-size: 0.65rem;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  color: #6A4A30;
-  margin-bottom: 12px;
-  font-style: italic;
-  background: #EDE5D0;
-  padding: 6px 10px;
-  border-radius: 4px;
-}
-
-.outfit-layers { margin-bottom: 10px; }
-
-.outfit-layer {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 7px 0;
-  border-bottom: 1px solid #EDE5D0;
-  font-size: 0.82rem;
-  font-weight: 500;
-  color: #302820;
-}
-
-.outfit-layer:last-child { border-bottom: none; }
-
-.layer-num {
-  font-size: 0.65rem;
-  font-weight: 700;
-  color: #7A6850;
-  width: 18px;
-  flex-shrink: 0;
-}
-
-.outfit-extras {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-top: 10px;
-  padding-top: 10px;
-  border-top: 2px solid #EDE5D0;
-}
-
-.extra-tag {
-  font-size: 0.6rem;
-  font-weight: 500;
-  letter-spacing: 0.06em;
-  padding: 4px 10px;
-  border-radius: 20px;
-  background: #EDE5D0;
-  color: #302820;
-}
-
-.extra-tag.perfume { background: #D8C0D8; color: #402848; }
-.extra-tag.shoes { background: #C0D0E0; color: #203050; }
-
-/* ACQUISTI */
-.acquisto-card {
-  background: var(--white);
-  border-radius: 8px;
-  padding: 16px;
-  margin-bottom: 12px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.10);
-  border-left: 5px solid var(--taupe);
-}
-
-.acquisto-card.priority-1 { border-left-color: #A84020; }
-.acquisto-card.priority-2 { border-left-color: #906020; }
-.acquisto-card.priority-3 { border-left-color: #507030; }
-.acquisto-card.priority-4 { border-left-color: #305878; }
-.acquisto-card.priority-5 { border-left-color: #507858; }
-
-.acquisto-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 8px;
-}
-
-.acquisto-name {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.15rem;
-  font-weight: 600;
-  color: #1E1A14;
-  flex: 1;
-  line-height: 1.3;
-}
-
-.acquisto-price {
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: #302820;
-  margin-left: 10px;
-  white-space: nowrap;
-}
-
-.acquisto-desc {
-  font-size: 0.7rem;
-  font-weight: 400;
-  color: #3A3028;
-  line-height: 1.6;
-  margin-bottom: 10px;
-}
-
-.acquisto-where {
-  font-size: 0.62rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #6A4A30;
-}
-
-.priority-label {
-  font-size: 0.55rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  padding: 3px 9px;
-  border-radius: 20px;
-  margin-top: 8px;
-  display: inline-block;
-}
-
-.priority-1 .priority-label { background: #E8B8A0; color: #6A1800; }
-.priority-2 .priority-label { background: #E8D090; color: #5A3000; }
-.priority-3 .priority-label { background: #B8D8A8; color: #204010; }
-.priority-4 .priority-label { background: #A8C8E0; color: #102848; }
-.priority-5 .priority-label { background: #B0D0B8; color: #183828; }
-
-/* PALETTE */
-.palette-section { margin-bottom: 26px; }
-
-.palette-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.15rem;
-  font-weight: 600;
-  color: #302820;
-  margin-bottom: 12px;
-}
-
-.palette-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 8px;
-}
-
-.palette-grid.five { grid-template-columns: repeat(5, 1fr); }
-.palette-grid.three { grid-template-columns: repeat(3, 1fr); }
-
-.color-item {
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.14);
-}
-
-.color-swatch { height: 60px; width: 100%; }
-
-.color-label {
-  background: var(--white);
-  padding: 6px 7px;
-  border-top: 2px solid #CEC0A8;
-}
-
-.color-name {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 0.78rem;
-  font-weight: 600;
-  color: #1E1A14;
-  line-height: 1.2;
-}
-
-.color-brand {
-  font-size: 0.5rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: #5A4A38;
-  margin-top: 2px;
-}
-
-.avoid-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 6px;
-}
-
-.avoid-item {
-  border-radius: 8px;
-  overflow: hidden;
-  opacity: 0.85;
-  position: relative;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
-}
-
-.avoid-swatch { height: 44px; }
-
-.avoid-label {
-  background: #F0D0C8;
-  padding: 5px 6px;
-  font-size: 0.5rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: #801808;
-}
-
-.avoid-x {
-  position: absolute;
-  top: 4px;
-  right: 4px;
-  width: 18px;
-  height: 18px;
-  background: rgba(140,30,10,0.9);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 11px;
-  font-weight: 700;
-  color: white;
-}
-
-/* RULE BOX */
-.rule-box {
-  background: #2A3C58;
-  color: #F0EAD8;
-  border-radius: 10px;
-  padding: 18px;
-  margin-top: 20px;
-}
-
-.rule-box h3 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin-bottom: 12px;
-  color: #D8C890;
-  letter-spacing: 0.06em;
-}
-
-.rule-item {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 10px;
-  font-size: 0.7rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #D8CCBA;
-}
-
-.rule-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #D8C890;
-  flex-shrink: 0;
-  margin-top: 5px;
-}
-
-/* WEEK SELECTOR */
-.week-selector {
-  display: flex;
-  gap: 8px;
-  margin-bottom: 18px;
-}
-
-.week-btn {
-  flex: 1;
-  padding: 12px;
-  background: var(--white);
-  border: 2px solid #8A7060;
-  border-radius: 8px;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.6rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: #302820;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-
-.week-btn.active {
-  background: #2A3C58;
-  color: #F0EAD8;
-  border-color: #2A3C58;
-}
-
-/* FILTER TABS */
-.filter-tabs {
-  display: flex;
-  gap: 6px;
-  margin-bottom: 18px;
-  overflow-x: auto;
-  padding-bottom: 6px;
-  scrollbar-width: none;
-}
-
-.filter-tabs::-webkit-scrollbar { display: none; }
-
-.filter-tab {
-  padding: 8px 14px;
-  background: var(--white);
-  border: 2px solid #8A7060;
-  border-radius: 20px;
-  font-size: 0.6rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #302820;
-  cursor: pointer;
-  white-space: nowrap;
-  transition: all 0.2s;
-}
-
-.filter-tab.active {
-  background: #2A3C58;
-  color: #F0EAD8;
-  border-color: #2A3C58;
-}
-
-/* INFO BOX */
-.info-box {
-  background: #CEC0A8;
-  border-radius: 8px;
-  padding: 16px;
-  margin-bottom: 20px;
-  border-left: 5px solid #5A4030;
-}
-
-.info-box h3 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #1E1A14;
-  margin-bottom: 6px;
-}
-
-.info-box p {
-  font-size: 0.7rem;
-  font-weight: 400;
-  color: #2A2018;
-  line-height: 1.6;
-}
-
-/* DIVIDER */
-.divider {
-  height: 2px;
-  background: #8A7060;
-  margin: 22px 0;
-}
-
-/* SCROLLBAR */
-::-webkit-scrollbar { width: 5px; }
-::-webkit-scrollbar-track { background: #EDE5D0; }
-::-webkit-scrollbar-thumb { background: #8A7060; border-radius: 3px; }
-
-/* CATEGORY */
-.category { margin-bottom: 28px; }
-
-.category-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: #1E1A14;
-  margin-bottom: 14px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.category-title::after {
-  content: '';
-  flex: 1;
-  height: 2px;
-  background: #8A7060;
-}
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap');
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+body{font-family:'Montserrat',sans-serif;font-weight:300;background:#EDE5D0;color:#1E1A14;min-height:100vh;max-width:480px;margin:0 auto;}
+.app-header{background:#2A3C58;color:#F0EAD8;padding:22px 20px 16px;position:sticky;top:0;z-index:100;}
+.app-header h1{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:1.8rem;letter-spacing:.06em;color:#F0EAD8;}
+.app-header p{font-size:.6rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:#C8B890;margin-top:4px;}
+.nav{display:flex;background:#F8F2E4;border-bottom:2px solid #8A7060;position:sticky;top:80px;z-index:99;}
+.nav-btn{flex:1;padding:14px 4px;background:none;border:none;font-family:'Montserrat',sans-serif;font-size:.6rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:#5A5248;cursor:pointer;border-bottom:3px solid transparent;transition:all .2s;}
+.nav-btn.active{color:#1E1A14;border-bottom-color:#6A4A30;font-weight:700;}
+.section{display:none;padding:20px 16px 100px;}
+.section.active{display:block;}
+.section-label{font-size:.7rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#3A3028;margin-bottom:16px;padding-bottom:10px;border-bottom:2px solid #8A7060;}
+.category{margin-bottom:28px;}
+.category-title{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;color:#1E1A14;margin-bottom:14px;display:flex;align-items:center;gap:10px;}
+.category-title::after{content:'';flex:1;height:2px;background:#8A7060;}
+.item-card{background:#F8F2E4;border-radius:8px;padding:14px 16px;margin-bottom:10px;display:flex;align-items:center;gap:14px;box-shadow:0 2px 6px rgba(0,0,0,.10);border-left:4px solid #8A7060;}
+.item-card.dashed{border-left:4px dashed #507858;opacity:.78;}
+.item-color{width:40px;height:40px;border-radius:8px;flex-shrink:0;border:2px solid rgba(0,0,0,.15);}
+.item-info{flex:1;min-width:0;}
+.item-name{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:#1E1A14;line-height:1.3;}
+.item-brand{font-size:.62rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:#5A5248;margin-top:3px;}
+.item-stilista{font-size:.65rem;font-weight:500;color:#6A4A30;margin-top:5px;font-style:italic;}
+.badge{font-size:.55rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 9px;border-radius:20px;white-space:nowrap;}
+.b-ok{background:#B8D8A8;color:#1A4018;}
+.b-warn{background:#E8D090;color:#4A2800;}
+.b-rep{background:#E8B8A0;color:#6A1800;}
+.b-pend{background:#A8C8E0;color:#102848;}
+.b-ai{background:#D8D0C0;color:#3A3028;}
+.filter-tabs{display:flex;gap:6px;margin-bottom:18px;overflow-x:auto;padding-bottom:6px;scrollbar-width:none;}
+.filter-tabs::-webkit-scrollbar{display:none;}
+.filter-tab{padding:8px 14px;background:#F8F2E4;border:2px solid #8A7060;border-radius:20px;font-size:.6rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#302820;cursor:pointer;white-space:nowrap;transition:all .2s;}
+.filter-tab.active,.outfit-tab.active{background:#2A3C58;color:#F0EAD8;border-color:#2A3C58;}
+.outfit-tabs{display:flex;gap:8px;margin-bottom:18px;}
+.outfit-tab{flex:1;padding:12px;background:#F8F2E4;border:2px solid #8A7060;border-radius:8px;font-family:'Montserrat',sans-serif;font-size:.62rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#302820;cursor:pointer;transition:all .2s;}
+.outfit-panel{display:none;}
+.outfit-panel.active{display:block;}
+.outfit-card{background:#F8F2E4;border-radius:10px;margin-bottom:14px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.12);}
+.oh{background:#2A3C58;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;}
+.oh.cas{background:#3A5028;}
+.oh.spt{background:#582A2A;}
+.oh-day{font-family:'Cormorant Garamond',serif;font-size:1.15rem;color:#F0EAD8;font-weight:500;}
+.oh-type{font-size:.6rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:#C0B090;}
+.ob{padding:14px 16px;}
+.ob-stil{font-size:.65rem;font-weight:500;color:#6A4A30;margin-bottom:12px;font-style:italic;background:#EDE5D0;padding:6px 10px;border-radius:4px;}
+.ol{display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid #EDE5D0;font-size:.82rem;font-weight:500;color:#302820;}
+.ol:last-of-type{border-bottom:none;}
+.ln{font-size:.65rem;font-weight:700;color:#2A3C58;width:18px;flex-shrink:0;}
+.extras{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;padding-top:10px;border-top:2px solid #EDE5D0;}
+.xt{font-size:.6rem;font-weight:500;padding:4px 10px;border-radius:20px;background:#EDE5D0;color:#302820;}
+.xt.pf{background:#D8C0D8;color:#402848;}
+.xt.sh{background:#C0D0E0;color:#203050;}
+.rule-box{background:#2A3C58;color:#F0EAD8;border-radius:10px;padding:18px;margin-top:20px;}
+.rule-box h3{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;margin-bottom:12px;color:#D8C890;}
+.ri{display:flex;gap:10px;margin-bottom:10px;font-size:.7rem;line-height:1.5;color:#D8CCBA;}
+.rd{width:8px;height:8px;border-radius:50%;background:#D8C890;flex-shrink:0;margin-top:5px;}
+.info-box{background:#CEC0A8;border-radius:8px;padding:16px;margin-bottom:20px;border-left:5px solid #5A4030;}
+.info-box h3{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:#1E1A14;margin-bottom:6px;}
+.info-box p{font-size:.7rem;color:#2A2018;line-height:1.6;}
+.ac{background:#F8F2E4;border-radius:8px;padding:16px;margin-bottom:12px;box-shadow:0 2px 6px rgba(0,0,0,.10);border-left:5px solid #8A7060;}
+.ac.p1{border-left-color:#A84020;}.ac.p2{border-left-color:#906020;}.ac.p3{border-left-color:#507030;}.ac.p4{border-left-color:#305878;}.ac.p5{border-left-color:#507858;}.ac.ps{border-left-color:#A84020;}
+.ac-h{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px;}
+.ac-name{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:600;color:#1E1A14;flex:1;line-height:1.3;}
+.ac-price{font-size:.75rem;font-weight:700;color:#302820;margin-left:10px;white-space:nowrap;}
+.ac-desc{font-size:.7rem;color:#3A3028;line-height:1.6;margin-bottom:10px;}
+.ac-where{font-size:.62rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#6A4A30;}
+.pl{font-size:.55rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;border-radius:20px;margin-top:8px;display:inline-block;}
+.ac.p1 .pl{background:#E8B8A0;color:#6A1800;}.ac.p2 .pl{background:#E8D090;color:#5A3000;}.ac.p3 .pl{background:#B8D8A8;color:#204010;}.ac.p4 .pl{background:#A8C8E0;color:#102848;}.ac.p5 .pl{background:#B0D0B8;color:#183828;}.ac.ps .pl{background:#E8B8A0;color:#6A1800;}
+.divider{height:2px;background:#8A7060;margin:22px 0;}
+.pal-sec{margin-bottom:26px;}
+.pal-title{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;color:#1E1A14;margin-bottom:12px;padding-bottom:6px;border-bottom:2px solid #8A7060;}
+.pg{display:grid;gap:8px;grid-template-columns:repeat(5,1fr);}
+.pg.g4{grid-template-columns:repeat(4,1fr);}
+.pg.g3{grid-template-columns:repeat(3,1fr);}
+.ci{border-radius:8px;overflow:hidden;box-shadow:0 2px 5px rgba(0,0,0,.14);}
+.cs{height:60px;width:100%;}
+.cl{background:#F8F2E4;padding:6px 7px;border-top:2px solid #8A7060;}
+.cn{font-family:'Cormorant Garamond',serif;font-size:.78rem;font-weight:600;color:#1E1A14;line-height:1.2;}
+.cb{font-size:.5rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#5A4A38;margin-top:2px;}
+.ag{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;}
+.ai{border-radius:8px;overflow:hidden;position:relative;box-shadow:0 2px 4px rgba(0,0,0,.15);}
+.as{height:44px;}
+.al{background:#F0D0C8;padding:5px 6px;font-size:.5rem;font-weight:700;text-transform:uppercase;color:#801808;}
+.ax{position:absolute;top:4px;right:4px;width:18px;height:18px;background:rgba(140,30,10,.9);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:white;}
 </style>
 </head>
 <body>
@@ -632,1407 +98,310 @@ body {
 </div>
 
 <nav class="nav">
-  <button class="nav-btn active" onclick="showSection('guardaroba')">Armadio</button>
-  <button class="nav-btn" onclick="showSection('outfit')">Outfit</button>
-  <button class="nav-btn" onclick="showSection('acquisti')">Acquisti</button>
-  <button class="nav-btn" onclick="showSection('palette')">Palette</button>
+  <button class="nav-btn active" onclick="showSec('guardaroba',this)">Armadio</button>
+  <button class="nav-btn" onclick="showSec('outfit',this)">Outfit</button>
+  <button class="nav-btn" onclick="showSec('acquisti',this)">Acquisti</button>
+  <button class="nav-btn" onclick="showSec('palette',this)">Palette</button>
 </nav>
 
-<!-- ===================== GUARDAROBA ===================== -->
+<!-- GUARDAROBA -->
 <div id="guardaroba" class="section active">
-  <div class="section-label">Guardaroba Completo</div>
-
-  <div class="filter-tabs">
-    <button class="filter-tab active" onclick="filterCategory('all', this)">Tutto</button>
-    <button class="filter-tab" onclick="filterCategory('outerwear', this)">Outerwear</button>
-    <button class="filter-tab" onclick="filterCategory('camicie', this)">Camicie</button>
-    <button class="filter-tab" onclick="filterCategory('maglieria', this)">Maglieria</button>
-    <button class="filter-tab" onclick="filterCategory('tshirt', this)">T-Shirt & Polo</button>
-    <button class="filter-tab" onclick="filterCategory('pantaloni', this)">Pantaloni</button>
-    <button class="filter-tab" onclick="filterCategory('scarpe', this)">Scarpe</button>
-    <button class="filter-tab" onclick="filterCategory('accessori', this)">Accessori</button>
-    <button class="filter-tab" onclick="filterCategory('profumi', this)">Profumi</button>
-  </div>
-
-  <!-- OUTERWEAR -->
-  <div class="category" data-cat="outerwear">
-    <div class="category-title">Outerwear</div>
-
-    <div class="item-card">
-      <div class="item-color" style="background:#1E3050;"></div>
-      <div class="item-info">
-        <div class="item-name">Giacca Wax Ashby</div>
-        <div class="item-brand">Barbour</div>
-        <div class="item-stilista">Barbour · Ralph Lauren RRL</div>
-      </div>
-      <div class="item-badge">✓ Presente</div>
-    </div>
-
-    <div class="item-card">
-      <div class="item-color" style="background:#1E3050;"></div>
-      <div class="item-info">
-        <div class="item-name">Giacca Quilted Liddesdale</div>
-        <div class="item-brand">Barbour</div>
-        <div class="item-stilista">Barbour · Ralph Lauren</div>
-      </div>
-      <div class="item-badge">✓ Presente</div>
-    </div>
-
-    <div class="item-card">
-      <div class="item-color" style="background:#E8E0D0;"></div>
-      <div class="item-info">
-        <div class="item-name">Trench Beige</div>
-        <div class="item-brand">Massimo Dutti</div>
-        <div class="item-stilista">Burberry · Armani</div>
-      </div>
-      <div class="item-badge">✓ Presente</div>
-    </div>
-
-    <div class="item-card">
-      <div class="item-color" style="background:#F5F0E8;"></div>
-      <div class="item-info">
-        <div class="item-name">Blazer Lino Ecru</div>
-        <div class="item-brand">H&M</div>
-        <div class="item-stilista">Cucinelli · Armani</div>
-      </div>
-      <div class="item-badge">✓ Presente</div>
-    </div>
-
-    <div class="item-card">
-      <div class="item-color" style="background:#1E3050;"></div>
-      <div class="item-info">
-        <div class="item-name">Gilet Piumino Navy</div>
-        <div class="item-brand">Patagonia</div>
-        <div class="item-stilista">Ralph Lauren Sport</div>
-      </div>
-      <div class="item-badge pending">zip rosse</div>
-    </div>
-
-    <div class="item-card" style="opacity:0.6; border: 1px dashed var(--taupe);">
-      <div class="item-color" style="background:#7A90A4;"></div>
-      <div class="item-info">
-        <div class="item-name">Blazer Lino Azzurro</div>
-        <div class="item-brand">OVS Piombo</div>
-        <div class="item-stilista">Armani · Cucinelli</div>
-      </div>
-      <div class="item-badge pending">da acquistare</div>
-    </div>
-
-    <div class="item-card">
-      <div class="item-color" style="background:#1E3050; position:relative; overflow:hidden;">
-        <div style="position:absolute;bottom:0;left:0;right:0;height:40%;background:repeating-linear-gradient(45deg,#2A4060 0px,#2A4060 3px,#1A2840 3px,#1A2840 8px);"></div>
-      </div>
-      <div class="item-info">
-        <div class="item-name">Montgomery Misto Lana</div>
-        <div class="item-brand">— · Interno fantasia</div>
-        <div class="item-stilista">Burberry · Ralph Lauren ✦ A/I</div>
-      </div>
-      <div class="item-badge">✓ Presente</div>
-    </div>
-
-    <div class="item-card">
-      <div class="item-color" style="background:#1A2C48;"></div>
-      <div class="item-info">
-        <div class="item-name">Parka Gore-Tex Impermeabile</div>
-        <div class="item-brand">Woolrich</div>
-        <div class="item-stilista">Ralph Lauren RRL · Barbour ✦ A/I</div>
-      </div>
-      <div class="item-badge">✓ Presente</div>
-    </div>
-
-  </div>
-
-  <!-- CAMICIE -->
-  <div class="category" data-cat="camicie">
-    <div class="category-title">Camicie</div>
-
-    <div class="item-card">
-      <div class="item-color" style="background:#D8B8B0;"></div>
-      <div class="item-info">
-        <div class="item-name">Camicia Rosa Antico</div>
-        <div class="item-brand">—</div>
-        <div class="item-stilista">Cucinelli · Armani</div>
-      </div>
-      <div class="item-badge">✓ Presente</div>
-    </div>
-
-    <div class="item-card">
-      <div class="item-color" style="background:#B0BEC8;"></div>
-      <div class="item-info">
-        <div class="item-name">Camicia Azzurro Oxford</div>
-        <div class="item-brand">—</div>
-        <div class="item-stilista">Armani · Burberry</div>
-      </div>
-      <div class="item-badge">✓ Presente</div>
-    </div>
-
-    <div class="item-card">
-      <div class="item-color" style="background:#8A96A4;"></div>
-      <div class="item-info">
-        <div class="item-name">Camicia Micro Quadri Grigio-Blu</div>
-        <div class="item-brand">—</div>
-        <div class="item-stilista">Ralph Lauren · Armani</div>
-      </div>
-      <div class="item-badge">✓ Presente</div>
-    </div>
-
-    <div class="item-card">
-      <div class="item-color" style="background:repeating-linear-gradient(90deg,#1E3050 0px,#1E3050 4px,#FDFAF6 4px,#FDFAF6 10px);"></div>
-      <div class="item-info">
-        <div class="item-name">Camicia Righe Navy/Bianco</div>
-        <div class="item-brand">—</div>
-        <div class="item-stilista">Burberry · Ralph Lauren</div>
-      </div>
-      <div class="item-badge pending">alto contrasto</div>
-    </div>
-
-    <div class="item-card">
-      <div class="item-color" style="background:repeating-linear-gradient(90deg,#7A90A4 0px,#7A90A4 3px,#FDFAF6 3px,#FDFAF6 9px);"></div>
-      <div class="item-info">
-        <div class="item-name">Camicia Righe Azzurro/Bianco</div>
-        <div class="item-brand">—</div>
-        <div class="item-stilista">Ralph Lauren · Burberry</div>
-      </div>
-      <div class="item-badge">✓ Presente</div>
-    </div>
-
-    <div class="item-card">
-      <div class="item-color" style="background:#6080A0;"></div>
-      <div class="item-info">
-        <div class="item-name">Camicia Azzurro Oxford Scuro</div>
-        <div class="item-brand">—</div>
-        <div class="item-stilista">Armani · Ralph Lauren</div>
-      </div>
-      <div class="item-badge">✓ Presente</div>
-    </div>
-
-    <div class="item-card">
-      <div class="item-color" style="background:repeating-linear-gradient(90deg,#FDFAF6 0px,#FDFAF6 6px,#7A90A4 6px,#7A90A4 12px);"></div>
-      <div class="item-info">
-        <div class="item-name">Camicia Righe Bianco/Azzurro Medie</div>
-        <div class="item-brand">—</div>
-        <div class="item-stilista">Ralph Lauren · Burberry</div>
-      </div>
-      <div class="item-badge">✓ Presente</div>
-    </div>
-
-    <div class="item-card">
-      <div class="item-color" style="background:#FDFAF6;border:1px solid #E8E0D0;"></div>
-      <div class="item-info">
-        <div class="item-name">Camicia Bianca</div>
-        <div class="item-brand">—</div>
-        <div class="item-stilista">Armani · Cucinelli</div>
-      </div>
-      <div class="item-badge">✓ Presente</div>
-    </div>
-  </div>
-
-  <!-- MAGLIERIA -->
-  <div class="category" data-cat="maglieria">
-    <div class="category-title">Maglieria</div>
-
-    <div class="item-card">
-      <div class="item-color" style="background:#1E3050;"></div>
-      <div class="item-info">
-        <div class="item-name">Cardigan Navy</div>
-        <div class="item-brand">OVS</div>
-        <div class="item-stilista">Armani · Ralph Lauren</div>
-      </div>
-      <div class="item-badge">✓ Presente</div>
-    </div>
-
-    <div class="item-card">
-      <div class="item-color" style="background:#1A3A8A;"></div>
-      <div class="item-info">
-        <div class="item-name">Girocollo Blu Royal</div>
-        <div class="item-brand">OVS</div>
-        <div class="item-stilista">—</div>
-      </div>
-      <div class="item-badge replace">da sostituire</div>
-    </div>
-
-    <div class="item-card">
-      <div class="item-color" style="background:#F5F0E8;"></div>
-      <div class="item-info">
-        <div class="item-name">Girocollo Panna</div>
-        <div class="item-brand">OVS</div>
-        <div class="item-stilista">Cucinelli</div>
-      </div>
-      <div class="item-badge">✓ Presente</div>
-    </div>
-
-    <div class="item-card">
-      <div class="item-color" style="background:#1E3050;"></div>
-      <div class="item-info">
-        <div class="item-name">Gilet Navy</div>
-        <div class="item-brand">OVS</div>
-        <div class="item-stilista">Armani · Burberry</div>
-      </div>
-      <div class="item-badge">✓ Presente</div>
-    </div>
-
-    <div class="item-card">
-      <div class="item-color" style="background:#E8E4DE;"></div>
-      <div class="item-info">
-        <div class="item-name">Felpa Girocollo Bianco Sporco</div>
-        <div class="item-brand">Uniqlo</div>
-        <div class="item-stilista">Cucinelli · Armani</div>
-      </div>
-      <div class="item-badge">✓ Presente</div>
-    </div>
-  </div>
-
-  <!-- T-SHIRT & POLO -->
-  <div class="category" data-cat="tshirt">
-    <div class="category-title">T-Shirt & Polo</div>
-
-    <div class="item-card">
-      <div class="item-color" style="background:#888480;"></div>
-      <div class="item-info">
-        <div class="item-name">T-Shirt Grigio Ardesia</div>
-        <div class="item-brand">Uniqlo</div>
-        <div class="item-stilista">Armani</div>
-      </div>
-      <div class="item-badge">✓ Presente</div>
-    </div>
-
-    <div class="item-card">
-      <div class="item-color" style="background:#FDFAF6; border:1px solid #E8E0D0;"></div>
-      <div class="item-info">
-        <div class="item-name">T-Shirt Bianca</div>
-        <div class="item-brand">Uniqlo</div>
-        <div class="item-stilista">Armani · Cucinelli</div>
-      </div>
-      <div class="item-badge">✓ Presente</div>
-    </div>
-
-    <div class="item-card">
-      <div class="item-color" style="background:#E8D0C8;"></div>
-      <div class="item-info">
-        <div class="item-name">T-Shirt Rosa Cipria</div>
-        <div class="item-brand">Uniqlo</div>
-        <div class="item-stilista">Cucinelli</div>
-      </div>
-      <div class="item-badge">✓ Presente</div>
-    </div>
-
-    <div class="item-card">
-      <div class="item-color" style="background:#F5F0E8;"></div>
-      <div class="item-info">
-        <div class="item-name">Polo Cotone/Lino Panna</div>
-        <div class="item-brand">Piombo OVS</div>
-        <div class="item-stilista">Ralph Lauren · Cucinelli</div>
-      </div>
-      <div class="item-badge">✓ Presente</div>
-    </div>
-
-    <div class="item-card">
-      <div class="item-color" style="background:#1E3050;"></div>
-      <div class="item-info">
-        <div class="item-name">Polo Cotone Navy</div>
-        <div class="item-brand">Piombo OVS</div>
-        <div class="item-stilista">Ralph Lauren · Armani</div>
-      </div>
-      <div class="item-badge">✓ Presente</div>
-    </div>
-  </div>
-
-  <!-- PANTALONI -->
-  <div class="category" data-cat="pantaloni">
-    <div class="category-title">Pantaloni</div>
-
-    <div class="item-card">
-      <div class="item-color" style="background:#B8B4AE;"></div>
-      <div class="item-info">
-        <div class="item-name">Pantalone Flanella Grigio</div>
-        <div class="item-brand">—</div>
-        <div class="item-stilista">Armani ✦ Autunno/Inverno</div>
-      </div>
-      <div class="item-badge pending">A/I</div>
-    </div>
-
-    <div class="item-card">
-      <div class="item-color" style="background:#1E3050;"></div>
-      <div class="item-info">
-        <div class="item-name">Chino Navy</div>
-        <div class="item-brand">—</div>
-        <div class="item-stilista">Armani · Ralph Lauren</div>
-      </div>
-      <div class="item-badge">✓ Presente</div>
-    </div>
-
-    <div class="item-card">
-      <div class="item-color" style="background:#E8E0D0;"></div>
-      <div class="item-info">
-        <div class="item-name">Chino Beige/Sabbia</div>
-        <div class="item-brand">—</div>
-        <div class="item-stilista">Cucinelli · Burberry</div>
-      </div>
-      <div class="item-badge">✓ Presente</div>
-    </div>
-
-    <div class="item-card">
-      <div class="item-color" style="background:#F5F0E8;"></div>
-      <div class="item-info">
-        <div class="item-name">Chino Bianco/Panna</div>
-        <div class="item-brand">—</div>
-        <div class="item-stilista">Ralph Lauren · Cucinelli</div>
-      </div>
-      <div class="item-badge">✓ Presente</div>
-    </div>
-
-    <div class="item-card">
-      <div class="item-color" style="background:#7A90A4;"></div>
-      <div class="item-info">
-        <div class="item-name">Chino Standard Taper Blu Polvere</div>
-        <div class="item-brand">Levi's</div>
-        <div class="item-stilista">Armani · Cucinelli</div>
-      </div>
-      <div class="item-badge">✓ Presente</div>
-    </div>
-
-    <div class="item-card">
-      <div class="item-color" style="background:#D8D4CE;"></div>
-      <div class="item-info">
-        <div class="item-name">Chino Standard Taper Grigio Chiaro</div>
-        <div class="item-brand">Levi's</div>
-        <div class="item-stilista">Armani</div>
-      </div>
-      <div class="item-badge">✓ Presente</div>
-    </div>
-
-    <div class="item-card">
-      <div class="item-color" style="background:#2A4060;"></div>
-      <div class="item-info">
-        <div class="item-name">Jeans Blu Scuro</div>
-        <div class="item-brand">—</div>
-        <div class="item-stilista">Ralph Lauren</div>
-      </div>
-      <div class="item-badge">✓ Presente</div>
-    </div>
-
-    <div class="item-card">
-      <div class="item-color" style="background:#4A6888;"></div>
-      <div class="item-info">
-        <div class="item-name">Jeans Blu Medio</div>
-        <div class="item-brand">—</div>
-        <div class="item-stilista">Ralph Lauren · Armani</div>
-      </div>
-      <div class="item-badge">✓ Presente</div>
-    </div>
-
-    <div class="item-card">
-      <div class="item-color" style="background:#A0B8C8;"></div>
-      <div class="item-info">
-        <div class="item-name">Jeans Azzurro Slavato</div>
-        <div class="item-brand">—</div>
-        <div class="item-stilista">Ralph Lauren · Cucinelli</div>
-      </div>
-      <div class="item-badge">✓ Presente</div>
-    </div>
-
-    <div class="item-card">
-      <div class="item-color" style="background:#F5F0E8; border:1px solid #E8E0D0;"></div>
-      <div class="item-info">
-        <div class="item-name">Shorts Felpa Bianchi</div>
-        <div class="item-brand">—</div>
-        <div class="item-stilista">Ralph Lauren Sport</div>
-      </div>
-      <div class="item-badge">✓ Presente</div>
-    </div>
-
-    <div class="item-card">
-      <div class="item-color" style="background:#C8B89A;"></div>
-      <div class="item-info">
-        <div class="item-name">Shorts Cargo Beige</div>
-        <div class="item-brand">—</div>
-        <div class="item-stilista">Outdoor casual</div>
-      </div>
-      <div class="item-badge pending">outdoor only</div>
-    </div>
-
-    <div class="item-card">
-      <div class="item-color" style="background:#1E3050;"></div>
-      <div class="item-info">
-        <div class="item-name">Shorts Felpa Navy</div>
-        <div class="item-brand">—</div>
-        <div class="item-stilista">Ralph Lauren Sport</div>
-      </div>
-      <div class="item-badge">✓ Presente</div>
-    </div>
-  </div>
-
-  <!-- SCARPE -->
-  <div class="category" data-cat="scarpe">
-    <div class="category-title">Scarpe</div>
-
-    <div class="item-card">
-      <div class="item-color" style="background:#3A2820;"></div>
-      <div class="item-info">
-        <div class="item-name">Loafer Morsetto</div>
-        <div class="item-brand">Cesare Paciotti</div>
-        <div class="item-stilista">Armani · Cucinelli</div>
-      </div>
-      <div class="item-badge">✓ Presente</div>
-    </div>
-
-    <div class="item-card">
-      <div class="item-color" style="background:#D4C8B8;"></div>
-      <div class="item-info">
-        <div class="item-name">Sneaker Tennis Taupe</div>
-        <div class="item-brand">Valsport Tournament</div>
-        <div class="item-stilista">Cucinelli · Armani</div>
-      </div>
-      <div class="item-badge">✓ Presente</div>
-    </div>
-
-    <div class="item-card">
-      <div class="item-color" style="background:#8A7060;"></div>
-      <div class="item-info">
-        <div class="item-name">Boat Shoes Marrone</div>
-        <div class="item-brand">Timberland</div>
-        <div class="item-stilista">Ralph Lauren · Barbour</div>
-      </div>
-      <div class="item-badge">✓ Presente</div>
-    </div>
-
-    <div class="item-card">
-      <div class="item-color" style="background:#4A6080;"></div>
-      <div class="item-info">
-        <div class="item-name">Sneaker Blu</div>
-        <div class="item-brand">WOZ Robbie</div>
-        <div class="item-stilista">Ralph Lauren casual</div>
-      </div>
-      <div class="item-badge">✓ Presente</div>
-    </div>
-
-    <div class="item-card">
-      <div class="item-color" style="background:#1E3050;"></div>
-      <div class="item-info">
-        <div class="item-name">Sneaker Navy</div>
-        <div class="item-brand">Camper</div>
-        <div class="item-stilista">Sport / palestra</div>
-      </div>
-      <div class="item-badge pending">sport only</div>
-    </div>
-
-    <div class="item-card">
-      <div class="item-color" style="background:#FDFAF6; border:1px solid #E8E0D0;"></div>
-      <div class="item-info">
-        <div class="item-name">Sneaker Bianca</div>
-        <div class="item-brand">Lotto</div>
-        <div class="item-stilista">—</div>
-      </div>
-      <div class="item-badge replace">da sostituire</div>
-    </div>
-  </div>
-
-  <!-- ACCESSORI -->
-  <div class="category" data-cat="accessori">
-    <div class="category-title">Accessori</div>
-
-    <div class="item-card">
-      <div class="item-color" style="background:#1A2840;"></div>
-      <div class="item-info">
-        <div class="item-name">Cintura Reversibile Pelle/Suede</div>
-        <div class="item-brand">Gutteridge</div>
-        <div class="item-stilista">Armani · Burberry</div>
-      </div>
-      <div class="item-badge">✓ Presente</div>
-    </div>
-
-    <div class="item-card">
-      <div class="item-color" style="background:#1E3050;"></div>
-      <div class="item-info">
-        <div class="item-name">Cap Navy Yankees</div>
-        <div class="item-brand">New Era</div>
-        <div class="item-stilista">Ralph Lauren Sport</div>
-      </div>
-      <div class="item-badge">✓ Presente</div>
-    </div>
-
-    <div class="item-card">
-      <div class="item-color" style="background:#2A3848;"></div>
-      <div class="item-info">
-        <div class="item-name">Cap Navy</div>
-        <div class="item-brand">Barbour</div>
-        <div class="item-stilista">Barbour · Ralph Lauren</div>
-      </div>
-      <div class="item-badge">✓ Presente</div>
-    </div>
-  </div>
-
-  <!-- PROFUMI -->
-  <div class="category" data-cat="profumi">
-    <div class="category-title">Profumi</div>
-
-    <div class="item-card">
-      <div class="item-color" style="background:#D4C0D8;"></div>
-      <div class="item-info">
-        <div class="item-name">L'Homme</div>
-        <div class="item-brand">Prada</div>
-        <div class="item-stilista">Ufficio · Serate eleganti</div>
-      </div>
-      <div class="item-badge">✓ Presente</div>
-    </div>
-
-    <div class="item-card">
-      <div class="item-color" style="background:#A8C8D8;"></div>
-      <div class="item-info">
-        <div class="item-name">Acqua di Gio</div>
-        <div class="item-brand">Giorgio Armani</div>
-        <div class="item-stilista">Casual · Aperitivo</div>
-      </div>
-      <div class="item-badge">✓ Presente</div>
-    </div>
-
-    <div class="item-card">
-      <div class="item-color" style="background:#E8D890;"></div>
-      <div class="item-info">
-        <div class="item-name">Amalfi Sunray</div>
-        <div class="item-brand">Zara</div>
-        <div class="item-stilista">Weekend · Outdoor estivo</div>
-      </div>
-      <div class="item-badge">✓ Presente</div>
-    </div>
-
-    <div class="item-card">
-      <div class="item-color" style="background:#D0C8B8;"></div>
-      <div class="item-info">
-        <div class="item-name">Fierce</div>
-        <div class="item-brand">Abercrombie</div>
-        <div class="item-stilista">Sport · Palestra</div>
-      </div>
-      <div class="item-badge pending">sport only</div>
-    </div>
-
-    <div class="item-card">
-      <div class="item-color" style="background:#C8D8C0;"></div>
-      <div class="item-info">
-        <div class="item-name">Dancing Flowers</div>
-        <div class="item-brand">Nord</div>
-        <div class="item-stilista">Casual elevato · Aperitivo</div>
-      </div>
-      <div class="item-badge pending">in valutazione</div>
-    </div>
-  </div>
-
+<div class="section-label">Guardaroba Completo</div>
+<div class="filter-tabs">
+  <button class="filter-tab active" onclick="filterCat('all',this)">Tutto</button>
+  <button class="filter-tab" onclick="filterCat('outerwear',this)">Outerwear</button>
+  <button class="filter-tab" onclick="filterCat('camicie',this)">Camicie</button>
+  <button class="filter-tab" onclick="filterCat('maglieria',this)">Maglieria</button>
+  <button class="filter-tab" onclick="filterCat('tshirt',this)">T-Shirt & Polo</button>
+  <button class="filter-tab" onclick="filterCat('pantaloni',this)">Pantaloni</button>
+  <button class="filter-tab" onclick="filterCat('scarpe',this)">Scarpe</button>
+  <button class="filter-tab" onclick="filterCat('accessori',this)">Accessori</button>
+  <button class="filter-tab" onclick="filterCat('profumi',this)">Profumi</button>
 </div>
 
-<!-- ===================== OUTFIT ===================== -->
+<div class="category" data-cat="outerwear">
+<div class="category-title">Outerwear</div>
+<div class="item-card"><div class="item-color" style="background:#1A2A40;"></div><div class="item-info"><div class="item-name">Giacca Wax Ashby Navy</div><div class="item-brand">Barbour</div><div class="item-stilista">Barbour · Ralph Lauren RRL</div></div><span class="badge b-ok">✓</span></div>
+<div class="item-card"><div class="item-color" style="background:#1A2A40;"></div><div class="item-info"><div class="item-name">Giacca Quilted Liddesdale Navy</div><div class="item-brand">Barbour</div><div class="item-stilista">Barbour · Ralph Lauren</div></div><span class="badge b-ok">✓</span></div>
+<div class="item-card"><div class="item-color" style="background:#D8CCBA;"></div><div class="item-info"><div class="item-name">Trench Beige</div><div class="item-brand">Massimo Dutti</div><div class="item-stilista">Burberry · Armani</div></div><span class="badge b-ok">✓</span></div>
+<div class="item-card"><div class="item-color" style="background:#F0EAD8;"></div><div class="item-info"><div class="item-name">Blazer Lino Ecru</div><div class="item-brand">H&M</div><div class="item-stilista">Cucinelli · Armani</div></div><span class="badge b-ok">✓</span></div>
+<div class="item-card"><div class="item-color" style="background:#1A2A40;"></div><div class="item-info"><div class="item-name">Gilet Piumino Navy (zip rosse)</div><div class="item-brand">The North Sails</div><div class="item-stilista">Ralph Lauren Sport</div></div><span class="badge b-warn">zip rosse</span></div>
+<div class="item-card"><div class="item-color" style="background:#1A2A40;position:relative;overflow:hidden;"><div style="position:absolute;bottom:0;left:0;right:0;height:40%;background:repeating-linear-gradient(45deg,#2A4060 0,#2A4060 3px,#1A2840 3px,#1A2840 8px);"></div></div><div class="item-info"><div class="item-name">Montgomery Misto Lana Navy</div><div class="item-brand">Gutteridge · Interno fantasia</div><div class="item-stilista">Burberry · Ralph Lauren ✦ A/I</div></div><span class="badge b-ai">A/I</span></div>
+<div class="item-card"><div class="item-color" style="background:#182638;"></div><div class="item-info"><div class="item-name">Parka Gore-Tex Navy</div><div class="item-brand">Woolrich</div><div class="item-stilista">Ralph Lauren RRL · Barbour ✦ A/I</div></div><span class="badge b-ai">A/I</span></div>
+<div class="item-card dashed"><div class="item-color" style="background:#6A88A0;"></div><div class="item-info"><div class="item-name">Blazer Lino Azzurro</div><div class="item-brand">OVS Piombo</div><div class="item-stilista">Armani · Cucinelli</div></div><span class="badge b-pend">acquisto</span></div>
+</div>
+
+<div class="category" data-cat="camicie">
+<div class="category-title">Camicie</div>
+<div class="item-card"><div class="item-color" style="background:#C8A898;"></div><div class="item-info"><div class="item-name">Camicia Rosa Antico</div><div class="item-brand">Camicissima</div><div class="item-stilista">Cucinelli · Armani</div></div><span class="badge b-ok">✓</span></div>
+<div class="item-card"><div class="item-color" style="background:#7890A8;"></div><div class="item-info"><div class="item-name">Camicia Azzurro Oxford Medio</div><div class="item-brand">Camicissima</div><div class="item-stilista">Armani · Burberry</div></div><span class="badge b-ok">✓</span></div>
+<div class="item-card"><div class="item-color" style="background:#486080;"></div><div class="item-info"><div class="item-name">Camicia Azzurro Oxford Scuro</div><div class="item-brand">Camicissima</div><div class="item-stilista">Armani · Ralph Lauren</div></div><span class="badge b-ok">✓</span></div>
+<div class="item-card"><div class="item-color" style="background:#708090;"></div><div class="item-info"><div class="item-name">Camicia Micro Quadri Grigio-Blu</div><div class="item-brand">Camicissima</div><div class="item-stilista">Ralph Lauren · Armani</div></div><span class="badge b-ok">✓</span></div>
+<div class="item-card"><div class="item-color" style="background:repeating-linear-gradient(90deg,#1A2A40 0,#1A2A40 4px,#F8F2E4 4px,#F8F2E4 10px);"></div><div class="item-info"><div class="item-name">Camicia Righe Navy/Bianco</div><div class="item-brand">Camicissima</div><div class="item-stilista">Burberry · Ralph Lauren</div></div><span class="badge b-warn">contrasto alto</span></div>
+<div class="item-card"><div class="item-color" style="background:repeating-linear-gradient(90deg,#5878A0 0,#5878A0 3px,#F8F2E4 3px,#F8F2E4 9px);"></div><div class="item-info"><div class="item-name">Camicia Righe Azzurro/Bianco Sottili</div><div class="item-brand">Camicissima</div><div class="item-stilista">Ralph Lauren · Burberry</div></div><span class="badge b-ok">✓</span></div>
+<div class="item-card"><div class="item-color" style="background:repeating-linear-gradient(90deg,#F8F2E4 0,#F8F2E4 6px,#5878A0 6px,#5878A0 12px);"></div><div class="item-info"><div class="item-name">Camicia Righe Bianco/Azzurro Medie</div><div class="item-brand">Camicissima</div><div class="item-stilista">Ralph Lauren · Burberry</div></div><span class="badge b-ok">✓</span></div>
+<div class="item-card"><div class="item-color" style="background:#F5F0E8;border:1px solid #C8B890;"></div><div class="item-info"><div class="item-name">Camicia Bianca</div><div class="item-brand">Camicissima</div><div class="item-stilista">Armani · Cucinelli</div></div><span class="badge b-ok">✓</span></div>
+</div>
+
+<div class="category" data-cat="maglieria">
+<div class="category-title">Maglieria & Felpe</div>
+<div class="item-card"><div class="item-color" style="background:#1A2A40;"></div><div class="item-info"><div class="item-name">Cardigan Navy</div><div class="item-brand">OVS</div><div class="item-stilista">Armani · Ralph Lauren</div></div><span class="badge b-ok">✓</span></div>
+<div class="item-card"><div class="item-color" style="background:#1A3A8A;"></div><div class="item-info"><div class="item-name">Girocollo Blu Royal</div><div class="item-brand">OVS</div><div class="item-stilista">—</div></div><span class="badge b-rep">sostituire</span></div>
+<div class="item-card"><div class="item-color" style="background:#F0E8D8;"></div><div class="item-info"><div class="item-name">Girocollo Panna</div><div class="item-brand">OVS</div><div class="item-stilista">Cucinelli</div></div><span class="badge b-ok">✓</span></div>
+<div class="item-card"><div class="item-color" style="background:#1A2A40;"></div><div class="item-info"><div class="item-name">Gilet Navy</div><div class="item-brand">OVS</div><div class="item-stilista">Armani · Burberry</div></div><span class="badge b-ok">✓</span></div>
+<div class="item-card"><div class="item-color" style="background:#D8D0C0;"></div><div class="item-info"><div class="item-name">Felpa Girocollo Bianco Sporco</div><div class="item-brand">Uniqlo</div><div class="item-stilista">Cucinelli · Armani</div></div><span class="badge b-ok">✓</span></div>
+</div>
+
+<div class="category" data-cat="tshirt">
+<div class="category-title">T-Shirt & Polo</div>
+<div class="item-card"><div class="item-color" style="background:#707068;"></div><div class="item-info"><div class="item-name">T-Shirt Grigio Ardesia</div><div class="item-brand">Uniqlo</div><div class="item-stilista">Armani</div></div><span class="badge b-ok">✓</span></div>
+<div class="item-card"><div class="item-color" style="background:#F5F0E8;border:1px solid #C8B890;"></div><div class="item-info"><div class="item-name">T-Shirt Bianca</div><div class="item-brand">Uniqlo</div><div class="item-stilista">Armani · Cucinelli</div></div><span class="badge b-ok">✓</span></div>
+<div class="item-card"><div class="item-color" style="background:#D8B8B0;"></div><div class="item-info"><div class="item-name">T-Shirt Rosa Cipria</div><div class="item-brand">Uniqlo</div><div class="item-stilista">Cucinelli</div></div><span class="badge b-ok">✓</span></div>
+<div class="item-card"><div class="item-color" style="background:#F0E8D8;"></div><div class="item-info"><div class="item-name">Polo Panna Cotone/Lino</div><div class="item-brand">Piombo OVS</div><div class="item-stilista">Ralph Lauren · Cucinelli</div></div><span class="badge b-ok">✓</span></div>
+<div class="item-card"><div class="item-color" style="background:#1A2A40;"></div><div class="item-info"><div class="item-name">Polo Navy Cotone</div><div class="item-brand">Piombo OVS</div><div class="item-stilista">Ralph Lauren · Armani</div></div><span class="badge b-ok">✓</span></div>
+</div>
+
+<div class="category" data-cat="pantaloni">
+<div class="category-title">Pantaloni</div>
+<div class="item-card"><div class="item-color" style="background:#909088;"></div><div class="item-info"><div class="item-name">Pantalone Flanella Grigio Medio</div><div class="item-brand">Tela Blu</div><div class="item-stilista">Armani ✦ A/I</div></div><span class="badge b-ai">A/I</span></div>
+<div class="item-card"><div class="item-color" style="background:#1A2A40;"></div><div class="item-info"><div class="item-name">Chino Navy</div><div class="item-brand">Camicissima</div><div class="item-stilista">Armani · Ralph Lauren</div></div><span class="badge b-ok">✓</span></div>
+<div class="item-card"><div class="item-color" style="background:#C8BCA8;"></div><div class="item-info"><div class="item-name">Chino Beige/Sabbia</div><div class="item-brand">Camicissima</div><div class="item-stilista">Cucinelli · Burberry</div></div><span class="badge b-ok">✓</span></div>
+<div class="item-card"><div class="item-color" style="background:#F0EAD8;border:1px solid #C8B890;"></div><div class="item-info"><div class="item-name">Chino Bianco/Panna</div><div class="item-brand">OVS</div><div class="item-stilista">Ralph Lauren · Cucinelli</div></div><span class="badge b-ok">✓</span></div>
+<div class="item-card"><div class="item-color" style="background:#587890;"></div><div class="item-info"><div class="item-name">Chino Std Taper Blu Polvere</div><div class="item-brand">Levi's</div><div class="item-stilista">Armani · Cucinelli</div></div><span class="badge b-ok">✓</span></div>
+<div class="item-card"><div class="item-color" style="background:#B0ACA8;"></div><div class="item-info"><div class="item-name">Chino Std Taper Grigio Chiaro</div><div class="item-brand">Levi's</div><div class="item-stilista">Armani</div></div><span class="badge b-ok">✓</span></div>
+<div class="item-card"><div class="item-color" style="background:#203050;"></div><div class="item-info"><div class="item-name">Jeans Blu Scuro</div><div class="item-brand">Levi's</div><div class="item-stilista">Ralph Lauren</div></div><span class="badge b-ok">✓</span></div>
+<div class="item-card"><div class="item-color" style="background:#385878;"></div><div class="item-info"><div class="item-name">Jeans Blu Medio</div><div class="item-brand">Levi's</div><div class="item-stilista">Ralph Lauren · Armani</div></div><span class="badge b-ok">✓</span></div>
+<div class="item-card"><div class="item-color" style="background:#707068;"></div><div class="item-info"><div class="item-name">Jeans Grigio Medio</div><div class="item-brand">Levi's</div><div class="item-stilista">Armani · Cucinelli</div></div><span class="badge b-ok">✓</span></div>
+<div class="item-card"><div class="item-color" style="background:#7898B0;"></div><div class="item-info"><div class="item-name">Jeans Azzurro Slavato</div><div class="item-brand">H&M</div><div class="item-stilista">Ralph Lauren · Cucinelli</div></div><span class="badge b-ok">✓</span></div>
+<div class="item-card"><div class="item-color" style="background:#F5F0E8;border:1px solid #C8B890;"></div><div class="item-info"><div class="item-name">Shorts Felpa Bianchi</div><div class="item-brand">—</div><div class="item-stilista">Ralph Lauren Sport</div></div><span class="badge b-ok">✓</span></div>
+<div class="item-card"><div class="item-color" style="background:#A89878;"></div><div class="item-info"><div class="item-name">Shorts Cargo Beige</div><div class="item-brand">—</div><div class="item-stilista">Outdoor casual</div></div><span class="badge b-warn">outdoor only</span></div>
+<div class="item-card"><div class="item-color" style="background:#1A2A40;"></div><div class="item-info"><div class="item-name">Shorts Felpa Navy</div><div class="item-brand">—</div><div class="item-stilista">Ralph Lauren Sport</div></div><span class="badge b-ok">✓</span></div>
+</div>
+
+<div class="category" data-cat="scarpe">
+<div class="category-title">Scarpe</div>
+<div class="item-card"><div class="item-color" style="background:#302018;"></div><div class="item-info"><div class="item-name">Loafer Morsetto Marrone Scuro</div><div class="item-brand">Cesare Paciotti</div><div class="item-stilista">Armani · Cucinelli</div></div><span class="badge b-ok">✓</span></div>
+<div class="item-card"><div class="item-color" style="background:#B0A090;"></div><div class="item-info"><div class="item-name">Sneaker Tennis Taupe</div><div class="item-brand">Valsport Tournament</div><div class="item-stilista">Cucinelli · Armani</div></div><span class="badge b-ok">✓</span></div>
+<div class="item-card"><div class="item-color" style="background:#806050;"></div><div class="item-info"><div class="item-name">Boat Shoes Marrone Classico</div><div class="item-brand">Timberland</div><div class="item-stilista">Ralph Lauren · Barbour</div></div><span class="badge b-ok">✓</span></div>
+<div class="item-card"><div class="item-color" style="background:#385870;"></div><div class="item-info"><div class="item-name">Sneaker Blu</div><div class="item-brand">WOZ Robbie</div><div class="item-stilista">Ralph Lauren casual</div></div><span class="badge b-ok">✓</span></div>
+<div class="item-card"><div class="item-color" style="background:#1A2A40;"></div><div class="item-info"><div class="item-name">Sneaker Navy</div><div class="item-brand">Camper</div><div class="item-stilista">Sport / palestra</div></div><span class="badge b-warn">sport only</span></div>
+<div class="item-card"><div class="item-color" style="background:#F5F0E8;border:1px solid #C8B890;"></div><div class="item-info"><div class="item-name">Sneaker Bianca</div><div class="item-brand">Lotto</div><div class="item-stilista">—</div></div><span class="badge b-rep">sostituire</span></div>
+</div>
+
+<div class="category" data-cat="accessori">
+<div class="category-title">Accessori</div>
+<div class="item-card"><div class="item-color" style="background:#18243A;"></div><div class="item-info"><div class="item-name">Cintura Reversibile Pelle/Suede Navy</div><div class="item-brand">Gutteridge</div><div class="item-stilista">Armani · Burberry</div></div><span class="badge b-ok">✓</span></div>
+<div class="item-card"><div class="item-color" style="background:#1A2A40;"></div><div class="item-info"><div class="item-name">Cap Navy Yankees</div><div class="item-brand">New Era</div><div class="item-stilista">Ralph Lauren Sport</div></div><span class="badge b-ok">✓</span></div>
+<div class="item-card"><div class="item-color" style="background:#223040;"></div><div class="item-info"><div class="item-name">Cap Navy</div><div class="item-brand">Barbour</div><div class="item-stilista">Barbour · Ralph Lauren</div></div><span class="badge b-ok">✓</span></div>
+</div>
+
+<div class="category" data-cat="profumi">
+<div class="category-title">Profumi</div>
+<div class="item-card"><div class="item-color" style="background:#C0A8C8;"></div><div class="item-info"><div class="item-name">L'Homme</div><div class="item-brand">Prada</div><div class="item-stilista">Ufficio · Serate eleganti</div></div><span class="badge b-ok">✓</span></div>
+<div class="item-card"><div class="item-color" style="background:#88B8C8;"></div><div class="item-info"><div class="item-name">Acqua di Gio</div><div class="item-brand">Giorgio Armani</div><div class="item-stilista">Casual · Aperitivo</div></div><span class="badge b-ok">✓</span></div>
+<div class="item-card"><div class="item-color" style="background:#C8C070;"></div><div class="item-info"><div class="item-name">Amalfi Sunray</div><div class="item-brand">Zara</div><div class="item-stilista">Weekend · Outdoor estivo</div></div><span class="badge b-ok">✓</span></div>
+<div class="item-card"><div class="item-color" style="background:#C0B8A8;"></div><div class="item-info"><div class="item-name">Fierce</div><div class="item-brand">Abercrombie</div><div class="item-stilista">Sport · Palestra only</div></div><span class="badge b-warn">sport only</span></div>
+<div class="item-card"><div class="item-color" style="background:#A8C0A0;"></div><div class="item-info"><div class="item-name">Dancing Flowers</div><div class="item-brand">Nord</div><div class="item-stilista">Casual elevato · Aperitivo</div></div><span class="badge b-pend">valutazione</span></div>
+</div>
+</div>
+
+<!-- OUTFIT -->
 <div id="outfit" class="section">
-  <div class="section-label">Piano Outfit — 14 Giorni + Sport</div>
-
-  <div class="week-selector">
-    <button class="week-btn active" onclick="showWeek(1, this)">Ufficio</button>
-    <button class="week-btn" onclick="showWeek(2, this)">Casual</button>
-    <button class="week-btn" onclick="showWeek(3, this)">Sport</button>
-  </div>
-
-  <!-- SETTIMANA 1 -->
-  <div id="week1">
-
-    <div class="outfit-card">
-      <div class="outfit-header">
-        <div class="outfit-day">Lunedì</div>
-        <div class="outfit-type">Ufficio</div>
-      </div>
-      <div class="outfit-body">
-        <div class="outfit-stilista">Giorgio Armani SS26 — layering sartoriale rosa/grigio</div>
-        <div class="outfit-layers">
-          <div class="outfit-layer"><span class="layer-num">①</span>Camicia Rosa Antico</div>
-          <div class="outfit-layer"><span class="layer-num">②</span>Gilet Navy OVS (aperto)</div>
-          <div class="outfit-layer"><span class="layer-num">③</span>Blazer Lino Ecru H&M</div>
-        </div>
-        <div class="outfit-extras">
-          <span class="extra-tag">Chino Grigio Chiaro Levi's</span>
-          <span class="extra-tag shoes">Tournament Taupe</span>
-          <span class="extra-tag perfume">Prada L'Homme</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="outfit-card">
-      <div class="outfit-header">
-        <div class="outfit-day">Martedì</div>
-        <div class="outfit-type">Casual</div>
-      </div>
-      <div class="outfit-body">
-        <div class="outfit-stilista">Ralph Lauren Purple Label SS26 — polo/felpa/Barbour</div>
-        <div class="outfit-layers">
-          <div class="outfit-layer"><span class="layer-num">①</span>Polo Panna Piombo</div>
-          <div class="outfit-layer"><span class="layer-num">②</span>Felpa Bianco Sporco Uniqlo</div>
-          <div class="outfit-layer"><span class="layer-num">③</span>Barbour Ashby Navy</div>
-        </div>
-        <div class="outfit-extras">
-          <span class="extra-tag">Chino Blu Polvere Levi's</span>
-          <span class="extra-tag shoes">Timberland Boat Shoes</span>
-          <span class="extra-tag perfume">Zara Amalfi Sunray</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="outfit-card">
-      <div class="outfit-header">
-        <div class="outfit-day">Mercoledì</div>
-        <div class="outfit-type">Ufficio</div>
-      </div>
-      <div class="outfit-body">
-        <div class="outfit-stilista">Emporio Armani SS26 — ton sur ton azzurro/beige/panna</div>
-        <div class="outfit-layers">
-          <div class="outfit-layer"><span class="layer-num">①</span>Camicia Azzurro Oxford</div>
-          <div class="outfit-layer"><span class="layer-num">②</span>Maglione Panna OVS</div>
-          <div class="outfit-layer"><span class="layer-num">③</span>Trench Beige Massimo Dutti</div>
-        </div>
-        <div class="outfit-extras">
-          <span class="extra-tag">Chino Beige/Sabbia</span>
-          <span class="extra-tag shoes">Tournament Taupe</span>
-          <span class="extra-tag perfume">Prada L'Homme</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="outfit-card">
-      <div class="outfit-header">
-        <div class="outfit-day">Giovedì</div>
-        <div class="outfit-type">Casual</div>
-      </div>
-      <div class="outfit-body">
-        <div class="outfit-stilista">Brunello Cucinelli Resort 26 — t-shirt/cardigan/Barbour</div>
-        <div class="outfit-layers">
-          <div class="outfit-layer"><span class="layer-num">①</span>T-Shirt Bianca Uniqlo</div>
-          <div class="outfit-layer"><span class="layer-num">②</span>Cardigan Navy OVS (aperto)</div>
-          <div class="outfit-layer"><span class="layer-num">③</span>Barbour Liddesdale Navy</div>
-        </div>
-        <div class="outfit-extras">
-          <span class="extra-tag">Chino Blu Polvere Levi's</span>
-          <span class="extra-tag shoes">WOZ Robbie Blue</span>
-          <span class="extra-tag perfume">Acqua di Gio</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="outfit-card">
-      <div class="outfit-header">
-        <div class="outfit-day">Venerdì</div>
-        <div class="outfit-type">Casual</div>
-      </div>
-      <div class="outfit-body">
-        <div class="outfit-stilista">Giorgio Armani Emporio SS26 — camicia su t-shirt, trench</div>
-        <div class="outfit-layers">
-          <div class="outfit-layer"><span class="layer-num">①</span>T-Shirt Grigio Ardesia Uniqlo</div>
-          <div class="outfit-layer"><span class="layer-num">②</span>Camicia Micro Quadri (aperta)</div>
-          <div class="outfit-layer"><span class="layer-num">③</span>Trench Beige Massimo Dutti</div>
-        </div>
-        <div class="outfit-extras">
-          <span class="extra-tag">Chino Grigio Chiaro Levi's</span>
-          <span class="extra-tag shoes">Tournament Taupe</span>
-          <span class="extra-tag perfume">Acqua di Gio</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="outfit-card">
-      <div class="outfit-header">
-        <div class="outfit-day">Sabato</div>
-        <div class="outfit-type">Casual</div>
-      </div>
-      <div class="outfit-body">
-        <div class="outfit-stilista">Barbour × Ralph Lauren RRL — ton sur ton navy outdoor</div>
-        <div class="outfit-layers">
-          <div class="outfit-layer"><span class="layer-num">①</span>Polo Navy Piombo</div>
-          <div class="outfit-layer"><span class="layer-num">②</span>Felpa Bianco Sporco Uniqlo</div>
-          <div class="outfit-layer"><span class="layer-num">③</span>Barbour Ashby Navy</div>
-        </div>
-        <div class="outfit-extras">
-          <span class="extra-tag">Chino Navy</span>
-          <span class="extra-tag shoes">Timberland Boat Shoes</span>
-          <span class="extra-tag">Barbour Cap Navy</span>
-          <span class="extra-tag perfume">Zara Amalfi Sunray</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="outfit-card">
-      <div class="outfit-header">
-        <div class="outfit-day">Domenica</div>
-        <div class="outfit-type">Casual</div>
-      </div>
-      <div class="outfit-body">
-        <div class="outfit-stilista">Brunello Cucinelli SS26 — t-shirt cipria/maglione/Barbour</div>
-        <div class="outfit-layers">
-          <div class="outfit-layer"><span class="layer-num">①</span>T-Shirt Rosa Cipria Uniqlo</div>
-          <div class="outfit-layer"><span class="layer-num">②</span>Maglione Panna OVS</div>
-          <div class="outfit-layer"><span class="layer-num">③</span>Barbour Liddesdale Navy</div>
-        </div>
-        <div class="outfit-extras">
-          <span class="extra-tag">Jeans Blu Medio</span>
-          <span class="extra-tag shoes">WOZ Robbie Blue</span>
-          <span class="extra-tag perfume">Acqua di Gio</span>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- SETTIMANA 2 -->
-  <div id="week2" style="display:none;">
-
-    <div class="outfit-card">
-      <div class="outfit-header">
-        <div class="outfit-day">Lunedì</div>
-        <div class="outfit-type">Casual</div>
-      </div>
-      <div class="outfit-body">
-        <div class="outfit-stilista">Ralph Lauren Purple Label SS26 — polo/camicia aperta/Barbour</div>
-        <div class="outfit-layers">
-          <div class="outfit-layer"><span class="layer-num">①</span>Polo Panna Piombo</div>
-          <div class="outfit-layer"><span class="layer-num">②</span>Camicia Bianca (aperta)</div>
-          <div class="outfit-layer"><span class="layer-num">③</span>Barbour Ashby Navy</div>
-        </div>
-        <div class="outfit-extras">
-          <span class="extra-tag">Chino Blu Polvere Levi's</span>
-          <span class="extra-tag shoes">Tournament Taupe</span>
-          <span class="extra-tag perfume">Zara Amalfi Sunray</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="outfit-card">
-      <div class="outfit-header">
-        <div class="outfit-day">Martedì</div>
-        <div class="outfit-type">Ufficio</div>
-      </div>
-      <div class="outfit-body">
-        <div class="outfit-stilista">Giorgio Armani SS26 — blazer lino su azzurro e grigio chiaro</div>
-        <div class="outfit-layers">
-          <div class="outfit-layer"><span class="layer-num">①</span>Camicia Azzurro Oxford</div>
-          <div class="outfit-layer"><span class="layer-num">②</span>Gilet Navy OVS (aperto)</div>
-          <div class="outfit-layer"><span class="layer-num">③</span>Blazer Lino Ecru H&M</div>
-        </div>
-        <div class="outfit-extras">
-          <span class="extra-tag">Chino Grigio Chiaro Levi's</span>
-          <span class="extra-tag shoes">Tournament Taupe</span>
-          <span class="extra-tag perfume">Prada L'Homme</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="outfit-card">
-      <div class="outfit-header">
-        <div class="outfit-day">Mercoledì</div>
-        <div class="outfit-type">Casual</div>
-      </div>
-      <div class="outfit-body">
-        <div class="outfit-stilista">Ralph Lauren Polo Country SS26 — grigio/panna/navy degradé</div>
-        <div class="outfit-layers">
-          <div class="outfit-layer"><span class="layer-num">①</span>T-Shirt Grigio Ardesia Uniqlo</div>
-          <div class="outfit-layer"><span class="layer-num">②</span>Maglione Panna OVS</div>
-          <div class="outfit-layer"><span class="layer-num">③</span>Barbour Liddesdale Navy</div>
-        </div>
-        <div class="outfit-extras">
-          <span class="extra-tag">Jeans Blu Medio</span>
-          <span class="extra-tag shoes">WOZ Robbie Blue</span>
-          <span class="extra-tag perfume">Acqua di Gio</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="outfit-card">
-      <div class="outfit-header">
-        <div class="outfit-day">Giovedì</div>
-        <div class="outfit-type">Ufficio</div>
-      </div>
-      <div class="outfit-body">
-        <div class="outfit-stilista">Brunello Cucinelli SS26 — rosa/cardigan/trench, eleganza italiana</div>
-        <div class="outfit-layers">
-          <div class="outfit-layer"><span class="layer-num">①</span>Camicia Rosa Antico</div>
-          <div class="outfit-layer"><span class="layer-num">②</span>Cardigan Navy OVS (aperto)</div>
-          <div class="outfit-layer"><span class="layer-num">③</span>Trench Beige Massimo Dutti</div>
-        </div>
-        <div class="outfit-extras">
-          <span class="extra-tag">Chino Grigio Chiaro Levi's</span>
-          <span class="extra-tag shoes">Tournament Taupe</span>
-          <span class="extra-tag perfume">Prada L'Homme</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="outfit-card">
-      <div class="outfit-header">
-        <div class="outfit-day">Venerdì</div>
-        <div class="outfit-type">Casual</div>
-      </div>
-      <div class="outfit-body">
-        <div class="outfit-stilista">Emporio Armani SS26 — polo navy/righe aperta/trench</div>
-        <div class="outfit-layers">
-          <div class="outfit-layer"><span class="layer-num">①</span>Polo Navy Piombo</div>
-          <div class="outfit-layer"><span class="layer-num">②</span>Camicia Righe Azzurro/Bianco (aperta)</div>
-          <div class="outfit-layer"><span class="layer-num">③</span>Trench Beige Massimo Dutti</div>
-        </div>
-        <div class="outfit-extras">
-          <span class="extra-tag">Chino Blu Polvere Levi's</span>
-          <span class="extra-tag shoes">Tournament Taupe</span>
-          <span class="extra-tag perfume">Acqua di Gio</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="outfit-card">
-      <div class="outfit-header">
-        <div class="outfit-day">Sabato</div>
-        <div class="outfit-type">Casual</div>
-      </div>
-      <div class="outfit-body">
-        <div class="outfit-stilista">Ralph Lauren RRL SS26 — t-shirt/felpa/Barbour, punto luce</div>
-        <div class="outfit-layers">
-          <div class="outfit-layer"><span class="layer-num">①</span>T-Shirt Grigio Ardesia Uniqlo</div>
-          <div class="outfit-layer"><span class="layer-num">②</span>Felpa Bianco Sporco Uniqlo</div>
-          <div class="outfit-layer"><span class="layer-num">③</span>Barbour Ashby Navy</div>
-        </div>
-        <div class="outfit-extras">
-          <span class="extra-tag">Jeans Azzurro Slavato</span>
-          <span class="extra-tag shoes">Timberland Boat Shoes</span>
-          <span class="extra-tag">Barbour Cap Navy</span>
-          <span class="extra-tag perfume">Zara Amalfi Sunray</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="outfit-card">
-      <div class="outfit-header">
-        <div class="outfit-day">Domenica</div>
-        <div class="outfit-type">Casual</div>
-      </div>
-      <div class="outfit-body">
-        <div class="outfit-stilista">Brunello Cucinelli SS26 — ton sur ton beige/panna/ecru</div>
-        <div class="outfit-layers">
-          <div class="outfit-layer"><span class="layer-num">①</span>Polo Panna Piombo</div>
-          <div class="outfit-layer"><span class="layer-num">②</span>Maglione Panna OVS</div>
-          <div class="outfit-layer"><span class="layer-num">③</span>Blazer Lino Ecru H&M</div>
-        </div>
-        <div class="outfit-extras">
-          <span class="extra-tag">Chino Beige/Sabbia</span>
-          <span class="extra-tag shoes">Tournament Taupe</span>
-          <span class="extra-tag perfume">Acqua di Gio</span>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- SPORT -->
-  <div id="week3" style="display:none;">
-
-    <div class="outfit-card">
-      <div class="outfit-header">
-        <div class="outfit-day">Sport 1 — Trail Urbano</div>
-        <div class="outfit-type">Sport</div>
-      </div>
-      <div class="outfit-body">
-        <div class="outfit-stilista">Ralph Lauren Sport — ton sur ton navy sportivo consapevole</div>
-        <div class="outfit-layers">
-          <div class="outfit-layer"><span class="layer-num">①</span>T-Shirt Bianca Uniqlo</div>
-          <div class="outfit-layer"><span class="layer-num">②</span>Polo Navy Piombo</div>
-          <div class="outfit-layer"><span class="layer-num">③</span>Gilet Patagonia Navy</div>
-        </div>
-        <div class="outfit-extras">
-          <span class="extra-tag">Shorts Felpa Bianchi</span>
-          <span class="extra-tag shoes">Camper Navy</span>
-          <span class="extra-tag">New Era Yankees</span>
-          <span class="extra-tag perfume">Acqua di Gio</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="outfit-card">
-      <div class="outfit-header">
-        <div class="outfit-day">Sport 2 — Outdoor Elevated</div>
-        <div class="outfit-type">Sport</div>
-      </div>
-      <div class="outfit-body">
-        <div class="outfit-stilista">Ralph Lauren Purple Label outdoor — lusso funzionale british</div>
-        <div class="outfit-layers">
-          <div class="outfit-layer"><span class="layer-num">①</span>T-Shirt Grigio Ardesia Uniqlo</div>
-          <div class="outfit-layer"><span class="layer-num">②</span>Felpa Bianco Sporco Uniqlo</div>
-          <div class="outfit-layer"><span class="layer-num">③</span>Gilet Patagonia Navy</div>
-        </div>
-        <div class="outfit-extras">
-          <span class="extra-tag">Chino Blu Polvere Levi's</span>
-          <span class="extra-tag shoes">Timberland Boat Shoes</span>
-          <span class="extra-tag">Barbour Cap Navy</span>
-          <span class="extra-tag perfume">Zara Amalfi Sunray</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="outfit-card">
-      <div class="outfit-header">
-        <div class="outfit-day">Sport 3 — Casual Attivo Armani</div>
-        <div class="outfit-type">Sport</div>
-      </div>
-      <div class="outfit-body">
-        <div class="outfit-stilista">Emporio Armani Sport SS26 — grigio urbano tre strati</div>
-        <div class="outfit-layers">
-          <div class="outfit-layer"><span class="layer-num">①</span>T-Shirt Grigio Ardesia Uniqlo</div>
-          <div class="outfit-layer"><span class="layer-num">②</span>Camicia Bianca (aperta)</div>
-          <div class="outfit-layer"><span class="layer-num">③</span>Barbour Liddesdale Navy</div>
-        </div>
-        <div class="outfit-extras">
-          <span class="extra-tag">Shorts Felpa Bianchi</span>
-          <span class="extra-tag shoes">Tournament Taupe</span>
-          <span class="extra-tag perfume">Acqua di Gio</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="outfit-card">
-      <div class="outfit-header">
-        <div class="outfit-day">Sport 4 — British Countryside</div>
-        <div class="outfit-type">Sport</div>
-      </div>
-      <div class="outfit-body">
-        <div class="outfit-stilista">Barbour outdoor — t-shirt/polo/gilet, layering british</div>
-        <div class="outfit-layers">
-          <div class="outfit-layer"><span class="layer-num">①</span>T-Shirt Rosa Cipria Uniqlo</div>
-          <div class="outfit-layer"><span class="layer-num">②</span>Polo Panna Piombo</div>
-          <div class="outfit-layer"><span class="layer-num">③</span>Gilet Patagonia Navy</div>
-        </div>
-        <div class="outfit-extras">
-          <span class="extra-tag">Shorts Cargo Beige</span>
-          <span class="extra-tag shoes">Timberland Boat Shoes</span>
-          <span class="extra-tag">Barbour Cap Navy</span>
-          <span class="extra-tag perfume">Zara Amalfi Sunray</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="rule-box">
-      <h3>Ton Sur Ton — I 3 Look Speciali</h3>
-      <div class="rule-item"><div class="rule-dot"></div><div><strong>Navy Armani:</strong> Camicia Oxford + Gilet Navy + Chino Navy + Tournament Taupe · Prada L'Homme</div></div>
-      <div class="rule-item"><div class="rule-dot"></div><div><strong>Beige/Panna Cucinelli:</strong> Polo Panna + Maglione Panna + Chino Beige + Tournament Taupe · Acqua di Gio</div></div>
-      <div class="rule-item"><div class="rule-dot"></div><div><strong>Grigio Armani:</strong> T-Shirt Ardesia + Chino Grigio Chiaro + Tournament Taupe · Acqua di Gio</div></div>
-    </div>
-
-  </div>
+<div class="section-label">Look · Sistema Layering ①②③</div>
+<div class="outfit-tabs">
+  <button class="outfit-tab active" onclick="showOutfit('ufficio',this)">Ufficio</button>
+  <button class="outfit-tab" onclick="showOutfit('casual',this)">Casual</button>
+  <button class="outfit-tab" onclick="showOutfit('sport',this)">Sport</button>
 </div>
 
-<!-- ===================== ACQUISTI ===================== -->
+<div id="ufficio" class="outfit-panel active">
+  <div class="outfit-card"><div class="oh"><div class="oh-day">Ufficio 1</div><div class="oh-type">Ufficio</div></div><div class="ob"><div class="ob-stil">Giorgio Armani SS26 — layering sartoriale rosa/grigio, destrutturato milanese</div><div class="ol"><span class="ln">①</span>Camicia Rosa Antico · Camicissima</div><div class="ol"><span class="ln">②</span>Gilet Navy OVS (aperto)</div><div class="ol"><span class="ln">③</span>Blazer Lino Ecru H&M</div><div class="extras"><span class="xt">Chino Grigio Chiaro Levi's</span><span class="xt sh">Tournament Taupe</span><span class="xt pf">Prada L'Homme</span></div></div></div>
+
+  <div class="outfit-card"><div class="oh"><div class="oh-day">Ufficio 2</div><div class="oh-type">Ufficio</div></div><div class="ob"><div class="ob-stil">Emporio Armani SS26 — ton sur ton azzurro/beige/panna, trench come chiusura nobile</div><div class="ol"><span class="ln">①</span>Camicia Azzurro Oxford Medio · Camicissima</div><div class="ol"><span class="ln">②</span>Maglione Panna OVS</div><div class="ol"><span class="ln">③</span>Trench Beige Massimo Dutti</div><div class="extras"><span class="xt">Chino Beige/Sabbia Camicissima</span><span class="xt sh">Tournament Taupe</span><span class="xt pf">Prada L'Homme</span></div></div></div>
+
+  <div class="outfit-card"><div class="oh"><div class="oh-day">Ufficio 3</div><div class="oh-type">Ufficio</div></div><div class="ob"><div class="ob-stil">Giorgio Armani SS26 — blazer lino su azzurro e grigio chiaro, Milano power casual</div><div class="ol"><span class="ln">①</span>Camicia Azzurro Oxford Medio · Camicissima</div><div class="ol"><span class="ln">②</span>Gilet Navy OVS (aperto)</div><div class="ol"><span class="ln">③</span>Blazer Lino Ecru H&M</div><div class="extras"><span class="xt">Chino Grigio Chiaro Levi's</span><span class="xt sh">Tournament Taupe</span><span class="xt pf">Prada L'Homme</span></div></div></div>
+
+  <div class="outfit-card"><div class="oh"><div class="oh-day">Ufficio 4</div><div class="oh-type">Ufficio</div></div><div class="ob"><div class="ob-stil">Brunello Cucinelli SS26 — rosa/cardigan/trench, eleganza informale italiana</div><div class="ol"><span class="ln">①</span>Camicia Rosa Antico · Camicissima</div><div class="ol"><span class="ln">②</span>Cardigan Navy OVS (aperto)</div><div class="ol"><span class="ln">③</span>Trench Beige Massimo Dutti</div><div class="extras"><span class="xt">Chino Grigio Chiaro Levi's</span><span class="xt sh">Tournament Taupe</span><span class="xt pf">Prada L'Homme</span></div></div></div>
+
+  <div class="rule-box"><h3>Ton Sur Ton — I 3 Look Speciali</h3><div class="ri"><div class="rd"></div><div><strong>Navy Armani:</strong> Camicia Oxford + Gilet Navy + Chino Navy + Tournament Taupe · Prada L'Homme</div></div><div class="ri"><div class="rd"></div><div><strong>Beige/Panna Cucinelli:</strong> Polo Panna + Maglione Panna + Chino Beige + Tournament Taupe · Acqua di Gio</div></div><div class="ri"><div class="rd"></div><div><strong>Grigio Armani:</strong> T-Shirt Ardesia + Chino Grigio Chiaro + Tournament Taupe · Acqua di Gio</div></div></div>
+</div>
+
+<div id="casual" class="outfit-panel">
+  <div class="outfit-card"><div class="oh cas"><div class="oh-day">Casual 1</div><div class="oh-type">Casual</div></div><div class="ob"><div class="ob-stil">Ralph Lauren Purple Label SS26 — polo/felpa/Barbour, preppy layering outdoor</div><div class="ol"><span class="ln">①</span>Polo Panna Piombo OVS</div><div class="ol"><span class="ln">②</span>Felpa Bianco Sporco Uniqlo</div><div class="ol"><span class="ln">③</span>Barbour Ashby Navy</div><div class="extras"><span class="xt">Chino Blu Polvere Levi's</span><span class="xt sh">Timberland Boat Shoes</span><span class="xt pf">Zara Amalfi Sunray</span></div></div></div>
+
+  <div class="outfit-card"><div class="oh cas"><div class="oh-day">Casual 2</div><div class="oh-type">Casual</div></div><div class="ob"><div class="ob-stil">Brunello Cucinelli Resort 26 — t-shirt/cardigan aperto/Barbour, layering morbido british</div><div class="ol"><span class="ln">①</span>T-Shirt Bianca Uniqlo</div><div class="ol"><span class="ln">②</span>Cardigan Navy OVS (aperto)</div><div class="ol"><span class="ln">③</span>Barbour Liddesdale Navy</div><div class="extras"><span class="xt">Chino Blu Polvere Levi's</span><span class="xt sh">WOZ Robbie Blue</span><span class="xt pf">Acqua di Gio</span></div></div></div>
+
+  <div class="outfit-card"><div class="oh cas"><div class="oh-day">Casual 3</div><div class="oh-type">Casual</div></div><div class="ob"><div class="ob-stil">Giorgio Armani Emporio SS26 — camicia su t-shirt, trench come terzo strato smart casual</div><div class="ol"><span class="ln">①</span>T-Shirt Grigio Ardesia Uniqlo</div><div class="ol"><span class="ln">②</span>Camicia Micro Quadri Grigio-Blu (aperta)</div><div class="ol"><span class="ln">③</span>Trench Beige Massimo Dutti</div><div class="extras"><span class="xt">Chino Grigio Chiaro Levi's</span><span class="xt sh">Tournament Taupe</span><span class="xt pf">Acqua di Gio</span></div></div></div>
+
+  <div class="outfit-card"><div class="oh cas"><div class="oh-day">Casual 4</div><div class="oh-type">Casual</div></div><div class="ob"><div class="ob-stil">Barbour × Ralph Lauren RRL SS26 — ton sur ton navy outdoor consapevole, tre texture diverse</div><div class="ol"><span class="ln">①</span>Polo Navy Piombo OVS</div><div class="ol"><span class="ln">②</span>Felpa Bianco Sporco Uniqlo</div><div class="ol"><span class="ln">③</span>Barbour Ashby Navy</div><div class="extras"><span class="xt">Chino Navy Camicissima</span><span class="xt sh">Timberland Boat Shoes</span><span class="xt">Barbour Cap Navy</span><span class="xt pf">Zara Amalfi Sunray</span></div></div></div>
+
+  <div class="outfit-card"><div class="oh cas"><div class="oh-day">Casual 5</div><div class="oh-type">Casual</div></div><div class="ob"><div class="ob-stil">Brunello Cucinelli SS26 — cipria/panna/navy, punto luce rosa vicino al viso</div><div class="ol"><span class="ln">①</span>T-Shirt Rosa Cipria Uniqlo</div><div class="ol"><span class="ln">②</span>Maglione Panna OVS</div><div class="ol"><span class="ln">③</span>Barbour Liddesdale Navy</div><div class="extras"><span class="xt">Jeans Blu Medio Levi's</span><span class="xt sh">WOZ Robbie Blue</span><span class="xt pf">Acqua di Gio</span></div></div></div>
+
+  <div class="outfit-card"><div class="oh cas"><div class="oh-day">Casual 6</div><div class="oh-type">Casual</div></div><div class="ob"><div class="ob-stil">Ralph Lauren Purple Label SS26 — polo/camicia aperta/Barbour, preppy elevated</div><div class="ol"><span class="ln">①</span>Polo Panna Piombo OVS</div><div class="ol"><span class="ln">②</span>Camicia Bianca (aperta) · Camicissima</div><div class="ol"><span class="ln">③</span>Barbour Ashby Navy</div><div class="extras"><span class="xt">Chino Blu Polvere Levi's</span><span class="xt sh">Tournament Taupe</span><span class="xt pf">Zara Amalfi Sunray</span></div></div></div>
+
+  <div class="outfit-card"><div class="oh cas"><div class="oh-day">Casual 7</div><div class="oh-type">Casual</div></div><div class="ob"><div class="ob-stil">Ralph Lauren Polo Country SS26 — grigio/panna/navy, degradé cromatico outdoor</div><div class="ol"><span class="ln">①</span>T-Shirt Grigio Ardesia Uniqlo</div><div class="ol"><span class="ln">②</span>Maglione Panna OVS</div><div class="ol"><span class="ln">③</span>Barbour Liddesdale Navy</div><div class="extras"><span class="xt">Jeans Blu Medio Levi's</span><span class="xt sh">WOZ Robbie Blue</span><span class="xt pf">Acqua di Gio</span></div></div></div>
+
+  <div class="outfit-card"><div class="oh cas"><div class="oh-day">Casual 8</div><div class="oh-type">Casual</div></div><div class="ob"><div class="ob-stil">Emporio Armani SS26 — polo navy/righe aperta/trench, ton sur ton blu gestito con maestria</div><div class="ol"><span class="ln">①</span>Polo Navy Piombo OVS</div><div class="ol"><span class="ln">②</span>Camicia Righe Azzurro/Bianco (aperta) · Camicissima</div><div class="ol"><span class="ln">③</span>Trench Beige Massimo Dutti</div><div class="extras"><span class="xt">Chino Blu Polvere Levi's</span><span class="xt sh">Tournament Taupe</span><span class="xt pf">Acqua di Gio</span></div></div></div>
+
+  <div class="outfit-card"><div class="oh cas"><div class="oh-day">Casual 9</div><div class="oh-type">Casual</div></div><div class="ob"><div class="ob-stil">Ralph Lauren RRL SS26 — t-shirt/felpa/Barbour, punto luce bianco sporco centrale</div><div class="ol"><span class="ln">①</span>T-Shirt Grigio Ardesia Uniqlo</div><div class="ol"><span class="ln">②</span>Felpa Bianco Sporco Uniqlo</div><div class="ol"><span class="ln">③</span>Barbour Ashby Navy</div><div class="extras"><span class="xt">Jeans Azzurro Slavato H&M</span><span class="xt sh">Timberland Boat Shoes</span><span class="xt">Barbour Cap Navy</span><span class="xt pf">Zara Amalfi Sunray</span></div></div></div>
+
+  <div class="outfit-card"><div class="oh cas"><div class="oh-day">Casual 10</div><div class="oh-type">Casual</div></div><div class="ob"><div class="ob-stil">Brunello Cucinelli SS26 — ton sur ton beige/panna/ecru, tre neutri caldi sovrapposti</div><div class="ol"><span class="ln">①</span>Polo Panna Piombo OVS</div><div class="ol"><span class="ln">②</span>Maglione Panna OVS</div><div class="ol"><span class="ln">③</span>Blazer Lino Ecru H&M</div><div class="extras"><span class="xt">Chino Beige/Sabbia Camicissima</span><span class="xt sh">Tournament Taupe</span><span class="xt pf">Acqua di Gio</span></div></div></div>
+</div>
+
+<div id="sport" class="outfit-panel">
+  <div class="outfit-card"><div class="oh spt"><div class="oh-day">Sport 1 — Trail Urbano</div><div class="oh-type">Sport</div></div><div class="ob"><div class="ob-stil">Ralph Lauren Sport — ton sur ton navy sportivo consapevole, shorts bianchi come punto luce</div><div class="ol"><span class="ln">①</span>T-Shirt Bianca Uniqlo</div><div class="ol"><span class="ln">②</span>Polo Navy Piombo OVS</div><div class="ol"><span class="ln">③</span>Gilet Piumino Navy The North Sails</div><div class="extras"><span class="xt">Shorts Felpa Bianchi</span><span class="xt sh">Camper Navy</span><span class="xt">New Era Yankees</span><span class="xt pf">Acqua di Gio</span></div></div></div>
+
+  <div class="outfit-card"><div class="oh spt"><div class="oh-day">Sport 2 — Outdoor Elevated</div><div class="oh-type">Sport</div></div><div class="ob"><div class="ob-stil">Ralph Lauren Purple Label outdoor — lusso funzionale british, t-shirt/felpa/gilet</div><div class="ol"><span class="ln">①</span>T-Shirt Grigio Ardesia Uniqlo</div><div class="ol"><span class="ln">②</span>Felpa Bianco Sporco Uniqlo</div><div class="ol"><span class="ln">③</span>Gilet Piumino Navy The North Sails</div><div class="extras"><span class="xt">Chino Blu Polvere Levi's</span><span class="xt sh">Timberland Boat Shoes</span><span class="xt">Barbour Cap Navy</span><span class="xt pf">Zara Amalfi Sunray</span></div></div></div>
+
+  <div class="outfit-card"><div class="oh spt"><div class="oh-day">Sport 3 — Casual Attivo Armani</div><div class="oh-type">Sport</div></div><div class="ob"><div class="ob-stil">Emporio Armani Sport SS26 — grigio urbano tre strati autonomi, mai sportivo in senso volgare</div><div class="ol"><span class="ln">①</span>T-Shirt Grigio Ardesia Uniqlo</div><div class="ol"><span class="ln">②</span>Camicia Bianca (aperta) · Camicissima</div><div class="ol"><span class="ln">③</span>Barbour Liddesdale Navy</div><div class="extras"><span class="xt">Shorts Felpa Bianchi</span><span class="xt sh">Tournament Taupe</span><span class="xt pf">Acqua di Gio</span></div></div></div>
+
+  <div class="outfit-card"><div class="oh spt"><div class="oh-day">Sport 4 — British Countryside</div><div class="oh-type">Sport</div></div><div class="ob"><div class="ob-stil">Barbour outdoor — t-shirt/polo/gilet, layering british tre strati sempre autonomi</div><div class="ol"><span class="ln">①</span>T-Shirt Rosa Cipria Uniqlo</div><div class="ol"><span class="ln">②</span>Polo Panna Piombo OVS</div><div class="ol"><span class="ln">③</span>Gilet Piumino Navy The North Sails</div><div class="extras"><span class="xt">Shorts Cargo Beige</span><span class="xt sh">Timberland Boat Shoes</span><span class="xt">Barbour Cap Navy</span><span class="xt pf">Zara Amalfi Sunray</span></div></div></div>
+</div>
+</div>
+
+<!-- ACQUISTI -->
 <div id="acquisti" class="section">
-  <div class="section-label">Lista Acquisti Prioritari</div>
+<div class="section-label">Lista Acquisti Prioritari</div>
+<div class="info-box"><h3>Approccio 50/50</h3><p>Ogni acquisto è calibrato al 50% sull'armocromia Estate Soft e al 50% sulla coerenza stilistica Cucinelli / Armani / Ralph Lauren / Barbour / Burberry.</p></div>
 
-  <div class="info-box">
-    <h3>Approccio 50/50</h3>
-    <p>Ogni acquisto è calibrato al 50% sull'armocromia Estate Soft e al 50% sulla coerenza stilistica Cucinelli / Armani / Ralph Lauren / Barbour / Burberry.</p>
-  </div>
+<div class="ac p1"><div class="ac-h"><div class="ac-name">Blazer Lino Azzurro</div><div class="ac-price">€89,99</div></div><div class="ac-desc">Il pezzo che manca di più. Eleva 2 look ufficio e 1 casual. L'azzurro polvere è il colore Armani per eccellenza — su camicia bianca o rosa antico con chino grigio chiaro è un look completo.</div><div class="ac-where">OVS Piombo</div><div class="pl">Priorità 1 — Urgente</div></div>
 
-  <div class="acquisto-card priority-1">
-    <div class="acquisto-header">
-      <div class="acquisto-name">Blazer Lino Azzurro Piombo</div>
-      <div class="acquisto-price">€89,99</div>
-    </div>
-    <div class="acquisto-desc">Il pezzo che manca di più. Eleva immediatamente 2 look ufficio e 1 casual. L'azzurro polvere è il colore Armani per eccellenza — su camicia bianca o rosa antico con chino grigio chiaro è un look completo.</div>
-    <div class="acquisto-where">OVS Piombo</div>
-    <div class="priority-label">Priorità 1 — Urgente</div>
-  </div>
+<div class="ac p2"><div class="ac-h"><div class="ac-name">Loafer Cuoio Cognac</div><div class="ac-price">€130–150</div></div><div class="ac-desc">Eleva i look da ufficio più eleganti. Il cuoio marrone porta a un registro superiore alla Tournament Taupe. Essenziale per il look Cucinelli/Armani completo.</div><div class="ac-where">Massimo Dutti · Clarks</div><div class="pl">Priorità 2 — Alta</div></div>
 
-  <div class="acquisto-card priority-2">
-    <div class="acquisto-header">
-      <div class="acquisto-name">Loafer Cuoio Cognac</div>
-      <div class="acquisto-price">€130–150</div>
-    </div>
-    <div class="acquisto-desc">Eleva i look da ufficio più eleganti dove la Tournament Taupe funziona ma il cuoio marrone porta a un registro superiore. Essenziale per il look Cucinelli/Armani completo.</div>
-    <div class="acquisto-where">Massimo Dutti · Clarks</div>
-    <div class="priority-label">Priorità 2 — Alta</div>
-  </div>
+<div class="ac p3"><div class="ac-h"><div class="ac-name">Cintura Cuoio Cognac Intrecciata</div><div class="ac-price">€60–80</div></div><div class="ac-desc">Hai la Gutteridge navy ma manca una cintura in cuoio caldo per i look beige/panna/Cucinelli. Entra in almeno 6 outfit del piano.</div><div class="ac-where">Ralph Lauren · Massimo Dutti</div><div class="pl">Priorità 3 — Alta</div></div>
 
-  <div class="acquisto-card priority-3">
-    <div class="acquisto-header">
-      <div class="acquisto-name">Cintura Cuoio Cognac Intrecciata</div>
-      <div class="acquisto-price">€60–80</div>
-    </div>
-    <div class="acquisto-desc">Hai la Gutteridge navy ma manca una cintura in cuoio caldo per i look beige/panna/Cucinelli. La cintura cognac intrecciata entra in almeno 6 outfit del piano.</div>
-    <div class="acquisto-where">Ralph Lauren · Massimo Dutti</div>
-    <div class="priority-label">Priorità 3 — Alta</div>
-  </div>
+<div class="ac p4"><div class="ac-h"><div class="ac-name">Valsport Davis Shadow Blue</div><div class="ac-price">€219</div></div><div class="ac-desc">Sostituisce le Camper navy. Pelle ombreggiata a mano in blu polvere — dialoga con i chino Levi's blu polvere.</div><div class="ac-where">valsport.it</div><div class="pl">Priorità 4 — Media</div></div>
 
-  <div class="acquisto-card priority-4">
-    <div class="acquisto-header">
-      <div class="acquisto-name">Sneaker Valsport Davis Shadow Blue</div>
-      <div class="acquisto-price">€219</div>
-    </div>
-    <div class="acquisto-desc">Sostituisce le Camper navy nei contesti sport elevated. Pelle ombreggiata a mano in blu polvere — unica nel panorama sneaker, dialoga con i chino Levi's blu polvere.</div>
-    <div class="acquisto-where">Valsport.it</div>
-    <div class="priority-label">Priorità 4 — Media</div>
-  </div>
+<div class="ac p4"><div class="ac-h"><div class="ac-name">Occhiali da Sole Montatura Sottile</div><div class="ac-price">€120–180</div></div><div class="ac-desc">Il dettaglio Armani/Cucinelli che completa ogni look. Montatura in titanio o acetato tortoise, forma ovale o rettangolare.</div><div class="ac-where">Persol · Emporio Armani</div><div class="pl">Priorità 4 — Media</div></div>
 
-  <div class="acquisto-card priority-4">
-    <div class="acquisto-header">
-      <div class="acquisto-name">Occhiali da Sole Montatura Sottile</div>
-      <div class="acquisto-price">€120–180</div>
-    </div>
-    <div class="acquisto-desc">Il dettaglio Armani/Cucinelli che completa ogni look. Montatura sottile in titanio o acetato tortoise — forma ovale o rettangolare leggera. Persol 714 o Emporio Armani.</div>
-    <div class="acquisto-where">Persol · Emporio Armani</div>
-    <div class="priority-label">Priorità 4 — Media</div>
-  </div>
+<div class="ac p5"><div class="ac-h"><div class="ac-name">Chino Short da Città</div><div class="ac-price">€70–90</div></div><div class="ac-desc">Lunghezza al ginocchio, senza elastico, senza tasche cargo. Puro Ralph Lauren estate.</div><div class="ac-where">Ralph Lauren · Massimo Dutti</div><div class="pl">Priorità 5 — Estate</div></div>
 
-  <div class="acquisto-card priority-5">
-    <div class="acquisto-header">
-      <div class="acquisto-name">Chino Short da Città</div>
-      <div class="acquisto-price">€70–90</div>
-    </div>
-    <div class="acquisto-desc">Sostituisce i cargo beige e gli shorts felpa nei contesti outdoor estivi. Lunghezza al ginocchio, senza elastico, senza tasche cargo. Puro Ralph Lauren estate.</div>
-    <div class="acquisto-where">Ralph Lauren · Massimo Dutti</div>
-    <div class="priority-label">Priorità 5 — Estate</div>
-  </div>
+<div class="ac p5"><div class="ac-h"><div class="ac-name">Maglione Cammello Cashmere Blend</div><div class="ac-price">€80–120</div></div><div class="ac-desc">Il colore Cucinelli/Burberry più assente nel guardaroba. Su camicia bianca o rosa antico con chino grigio chiaro è un outfit raffinatissimo.</div><div class="ac-where">Massimo Dutti · Uniqlo Premium</div><div class="pl">Priorità 5 — Autunno</div></div>
 
-  <div class="acquisto-card priority-5">
-    <div class="acquisto-header">
-      <div class="acquisto-name">Maglione Cammello Cashmere Blend</div>
-      <div class="acquisto-price">€80–120</div>
-    </div>
-    <div class="acquisto-desc">Il colore Cucinelli/Burberry più assente nel guardaroba. Su camicia bianca o rosa antico con chino grigio chiaro e Tournament Taupe è un outfit completo e raffinatissimo.</div>
-    <div class="acquisto-where">Massimo Dutti · Uniqlo Premium</div>
-    <div class="priority-label">Priorità 5 — Autunno</div>
-  </div>
+<div class="ac p5"><div class="ac-h"><div class="ac-name">Polo Rosa Cipria Ralph Lauren</div><div class="ac-price">€90–110</div></div><div class="ac-desc">Il colore stagione ancora assente nelle polo. Autentica RL in piqué.</div><div class="ac-where">Ralph Lauren online · Outlet</div><div class="pl">Priorità 5 — Prossima stagione</div></div>
 
-  <div class="acquisto-card priority-5">
-    <div class="acquisto-header">
-      <div class="acquisto-name">Polo Rosa Cipria Ralph Lauren</div>
-      <div class="acquisto-price">€90–110</div>
-    </div>
-    <div class="acquisto-desc">Il colore stagione ancora assente nelle polo. Autentica RL in piqué, rosa cipria — il colore più flattering per l'armocromia estate soft tra quelli ancora mancanti.</div>
-    <div class="acquisto-where">Ralph Lauren online · Outlet</div>
-    <div class="priority-label">Priorità 5 — Prossima stagione</div>
-  </div>
+<div class="ac p5"><div class="ac-h"><div class="ac-name">Sciarpa Cashmere Burberry</div><div class="ac-price">€150–200</div></div><div class="ac-desc">Tinta unita — no check classico con nero. Grigio perla, rosa antico o azzurro polveroso.</div><div class="ac-where">Vestiaire Collective · Burberry Outlet</div><div class="pl">Priorità 5 — A/I</div></div>
 
-  <div class="acquisto-card priority-5">
-    <div class="acquisto-header">
-      <div class="acquisto-name">Sciarpa Cashmere Burberry</div>
-      <div class="acquisto-price">€150–200</div>
-    </div>
-    <div class="acquisto-desc">Il pezzo iconico Burberry. Tinta unita — no check classico con nero. Grigio perla, rosa antico o azzurro polveroso per rispettare l'armocromia. Acquisto autunno/inverno.</div>
-    <div class="acquisto-where">Vestiaire Collective · Burberry Outlet</div>
-    <div class="priority-label">Priorità 5 — Autunno/Inverno</div>
-  </div>
+<div class="divider"></div>
+<div class="section-label">Da Sostituire</div>
 
-  <div class="divider"></div>
+<div class="ac ps"><div class="ac-h"><div class="ac-name">Sneaker Lotto Bianche</div><div class="ac-price">—</div></div><div class="ac-desc">Brand non coerente con l'estetica costruita. Sostituire con sneaker bianca minimal di qualità.</div><div class="ac-where">Ralph Lauren Polo Court · Filling Pieces</div><div class="pl">Da sostituire</div></div>
 
-  <div class="section-label">Da Sostituire</div>
-
-  <div class="acquisto-card" style="border-left-color:#A05040;">
-    <div class="acquisto-header">
-      <div class="acquisto-name">Sneaker Lotto Bianche</div>
-      <div class="acquisto-price">—</div>
-    </div>
-    <div class="acquisto-desc">Brand non coerente con l'estetica costruita. Sostituire con sneaker bianca minimal di qualità — Ralph Lauren Polo Court o Filling Pieces Low Top.</div>
-    <div class="acquisto-where">Ralph Lauren · Filling Pieces</div>
-    <div class="priority-label" style="background:#FCE8E0; color:#A05030;">Da sostituire</div>
-  </div>
-
-  <div class="acquisto-card" style="border-left-color:#A05040;">
-    <div class="acquisto-header">
-      <div class="acquisto-name">Girocollo Blu Royal OVS</div>
-      <div class="acquisto-price">—</div>
-    </div>
-    <div class="acquisto-desc">Troppo saturo per l'armocromia estate soft. Sostituire con girocollo in merino blu polvere o verde salvia — Uniqlo Premium Merino è la scelta ottimale.</div>
-    <div class="acquisto-where">Uniqlo Premium Merino</div>
-    <div class="priority-label" style="background:#FCE8E0; color:#A05030;">Da sostituire</div>
-  </div>
-
+<div class="ac ps"><div class="ac-h"><div class="ac-name">Girocollo Blu Royal OVS</div><div class="ac-price">—</div></div><div class="ac-desc">Troppo saturo per l'armocromia estate soft. Sostituire con merino blu polvere o verde salvia.</div><div class="ac-where">Uniqlo Premium Merino</div><div class="pl">Da sostituire</div></div>
 </div>
 
-<!-- ===================== PALETTE ===================== -->
+<!-- PALETTE -->
 <div id="palette" class="section">
-  <div class="section-label">Tavolozza Personale — Estate Soft</div>
+<div class="section-label">Palette per Tipologia di Prodotto</div>
 
-  <div class="palette-section">
-    <div class="palette-title">Neutri Base</div>
-    <div class="palette-grid five">
-      <div class="color-item">
-        <div class="color-swatch" style="background:#F5F0E8;"></div>
-        <div class="color-label">
-          <div class="color-name">Panna</div>
-          <div class="color-brand">Cucinelli</div>
-        </div>
-      </div>
-      <div class="color-item">
-        <div class="color-swatch" style="background:#E8E0D0;"></div>
-        <div class="color-label">
-          <div class="color-name">Beige</div>
-          <div class="color-brand">Burberry</div>
-        </div>
-      </div>
-      <div class="color-item">
-        <div class="color-swatch" style="background:#D4C8B8;"></div>
-        <div class="color-label">
-          <div class="color-name">Taupe</div>
-          <div class="color-brand">Armani</div>
-        </div>
-      </div>
-      <div class="color-item">
-        <div class="color-swatch" style="background:#C8B89A;"></div>
-        <div class="color-label">
-          <div class="color-name">Cammello</div>
-          <div class="color-brand">Burberry</div>
-        </div>
-      </div>
-      <div class="color-item">
-        <div class="color-swatch" style="background:#E8E4DE;"></div>
-        <div class="color-label">
-          <div class="color-name">Bianco Sporco</div>
-          <div class="color-brand">Armani</div>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="pal-sec"><div class="pal-title">👔 Camicie</div><div class="pg">
+<div class="ci"><div class="cs" style="background:#C8A898;"></div><div class="cl"><div class="cn">Rosa Antico</div><div class="cb">Cucinelli</div></div></div>
+<div class="ci"><div class="cs" style="background:#D8B8B0;"></div><div class="cl"><div class="cn">Rosa Cipria</div><div class="cb">Cucinelli</div></div></div>
+<div class="ci"><div class="cs" style="background:#7890A8;"></div><div class="cl"><div class="cn">Azzurro Polv.</div><div class="cb">Armani</div></div></div>
+<div class="ci"><div class="cs" style="background:#486080;"></div><div class="cl"><div class="cn">Blu Polvere</div><div class="cb">Armani</div></div></div>
+<div class="ci"><div class="cs" style="background:#D8D0C0;"></div><div class="cl"><div class="cn">Bianco Sporco</div><div class="cb">Armani</div></div></div>
+<div class="ci"><div class="cs" style="background:#88A880;"></div><div class="cl"><div class="cn">Verde Salvia</div><div class="cb">Cucinelli</div></div></div>
+<div class="ci"><div class="cs" style="background:#B0ACA8;"></div><div class="cl"><div class="cn">Grigio Chiaro</div><div class="cb">Armani</div></div></div>
+<div class="ci"><div class="cs" style="background:#A87878;"></div><div class="cl"><div class="cn">Rosa Malva</div><div class="cb">Armani</div></div></div>
+<div class="ci"><div class="cs" style="background:#789888;"></div><div class="cl"><div class="cn">Verde Acqua</div><div class="cb">Armani</div></div></div>
+<div class="ci"><div class="cs" style="background:#F5F0E8;border:1px solid #8A7060;"></div><div class="cl"><div class="cn">Bianco</div><div class="cb">Tutti</div></div></div>
+</div></div>
 
-  <div class="palette-section">
-    <div class="palette-title">Grigi — Territorio Armani</div>
-    <div class="palette-grid">
-      <div class="color-item">
-        <div class="color-swatch" style="background:#D8D4CE;"></div>
-        <div class="color-label">
-          <div class="color-name">Grigio Chiaro</div>
-          <div class="color-brand">Armani</div>
-        </div>
-      </div>
-      <div class="color-item">
-        <div class="color-swatch" style="background:#B8B4AE;"></div>
-        <div class="color-label">
-          <div class="color-name">Grigio Medio</div>
-          <div class="color-brand">Armani</div>
-        </div>
-      </div>
-      <div class="color-item">
-        <div class="color-swatch" style="background:#888480;"></div>
-        <div class="color-label">
-          <div class="color-name">Ardesia</div>
-          <div class="color-brand">Armani</div>
-        </div>
-      </div>
-      <div class="color-item">
-        <div class="color-swatch" style="background:#A8A4A0;"></div>
-        <div class="color-label">
-          <div class="color-name">Grigio Perla</div>
-          <div class="color-brand">Burberry</div>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="pal-sec"><div class="pal-title">👕 T-Shirt & Polo</div><div class="pg">
+<div class="ci"><div class="cs" style="background:#D8B8B0;"></div><div class="cl"><div class="cn">Rosa Cipria</div><div class="cb">Cucinelli</div></div></div>
+<div class="ci"><div class="cs" style="background:#C8A898;"></div><div class="cl"><div class="cn">Rosa Antico</div><div class="cb">Cucinelli</div></div></div>
+<div class="ci"><div class="cs" style="background:#F0E8D8;"></div><div class="cl"><div class="cn">Panna</div><div class="cb">Cucinelli</div></div></div>
+<div class="ci"><div class="cs" style="background:#707068;"></div><div class="cl"><div class="cn">Grigio Ardesia</div><div class="cb">Armani</div></div></div>
+<div class="ci"><div class="cs" style="background:#B0ACA8;"></div><div class="cl"><div class="cn">Grigio Chiaro</div><div class="cb">Armani</div></div></div>
+<div class="ci"><div class="cs" style="background:#88A880;"></div><div class="cl"><div class="cn">Verde Salvia</div><div class="cb">Cucinelli</div></div></div>
+<div class="ci"><div class="cs" style="background:#7890A8;"></div><div class="cl"><div class="cn">Azzurro Polv.</div><div class="cb">Armani</div></div></div>
+<div class="ci"><div class="cs" style="background:#1A2A40;"></div><div class="cl"><div class="cn">Navy</div><div class="cb">R. Lauren</div></div></div>
+<div class="ci"><div class="cs" style="background:#D8D0C0;"></div><div class="cl"><div class="cn">Bianco Sporco</div><div class="cb">Armani</div></div></div>
+<div class="ci"><div class="cs" style="background:#6A8860;"></div><div class="cl"><div class="cn">Eucalipto</div><div class="cb">Armani</div></div></div>
+</div></div>
 
-  <div class="palette-section">
-    <div class="palette-title">Blu & Navy — Tutti Utilizzabili</div>
-    <div class="palette-grid five">
-      <div class="color-item">
-        <div class="color-swatch" style="background:#B0BEC8;"></div>
-        <div class="color-label">
-          <div class="color-name">Azzurro Polv.</div>
-          <div class="color-brand">Armani</div>
-        </div>
-      </div>
-      <div class="color-item">
-        <div class="color-swatch" style="background:#7A90A4;"></div>
-        <div class="color-label">
-          <div class="color-name">Blu Polvere</div>
-          <div class="color-brand">Armani</div>
-        </div>
-      </div>
-      <div class="color-item">
-        <div class="color-swatch" style="background:#6080A0;"></div>
-        <div class="color-label">
-          <div class="color-name">Blu Medio</div>
-          <div class="color-brand">R. Lauren</div>
-        </div>
-      </div>
-      <div class="color-item">
-        <div class="color-swatch" style="background:#3A5070;"></div>
-        <div class="color-label">
-          <div class="color-name">Navy Smorzato</div>
-          <div class="color-brand">Armani</div>
-        </div>
-      </div>
-      <div class="color-item">
-        <div class="color-swatch" style="background:#1E3050;"></div>
-        <div class="color-label">
-          <div class="color-name">Navy Profondo</div>
-          <div class="color-brand">Barbour</div>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="pal-sec"><div class="pal-title">🧶 Maglieria & Felpe</div><div class="pg">
+<div class="ci"><div class="cs" style="background:#F0E8D8;"></div><div class="cl"><div class="cn">Panna</div><div class="cb">Cucinelli</div></div></div>
+<div class="ci"><div class="cs" style="background:#A89060;"></div><div class="cl"><div class="cn">Cammello</div><div class="cb">Burberry</div></div></div>
+<div class="ci"><div class="cs" style="background:#B0ACA8;"></div><div class="cl"><div class="cn">Grigio Chiaro</div><div class="cb">Armani</div></div></div>
+<div class="ci"><div class="cs" style="background:#888480;"></div><div class="cl"><div class="cn">Grigio Perla</div><div class="cb">Burberry</div></div></div>
+<div class="ci"><div class="cs" style="background:#88A880;"></div><div class="cl"><div class="cn">Verde Salvia</div><div class="cb">Cucinelli</div></div></div>
+<div class="ci"><div class="cs" style="background:#486080;"></div><div class="cl"><div class="cn">Blu Polvere</div><div class="cb">Armani</div></div></div>
+<div class="ci"><div class="cs" style="background:#284060;"></div><div class="cl"><div class="cn">Navy Smorzato</div><div class="cb">Armani</div></div></div>
+<div class="ci"><div class="cs" style="background:#486048;"></div><div class="cl"><div class="cn">Verde Muschio</div><div class="cb">Barbour</div></div></div>
+<div class="ci"><div class="cs" style="background:#D8B8B0;"></div><div class="cl"><div class="cn">Rosa Cipria</div><div class="cb">Cucinelli</div></div></div>
+<div class="ci"><div class="cs" style="background:#D8D0C0;"></div><div class="cl"><div class="cn">Bianco Sporco</div><div class="cb">Cucinelli</div></div></div>
+</div></div>
 
-  <div class="palette-section">
-    <div class="palette-title">Verdi — Smorzati e Polverosi</div>
-    <div class="palette-grid five">
-      <div class="color-item">
-        <div class="color-swatch" style="background:#A8B8A0;"></div>
-        <div class="color-label">
-          <div class="color-name">Salvia</div>
-          <div class="color-brand">Cucinelli</div>
-        </div>
-      </div>
-      <div class="color-item">
-        <div class="color-swatch" style="background:#8A9E88;"></div>
-        <div class="color-label">
-          <div class="color-name">Eucalipto</div>
-          <div class="color-brand">Armani</div>
-        </div>
-      </div>
-      <div class="color-item">
-        <div class="color-swatch" style="background:#748A68;"></div>
-        <div class="color-label">
-          <div class="color-name">Oliva</div>
-          <div class="color-brand">Barbour</div>
-        </div>
-      </div>
-      <div class="color-item">
-        <div class="color-swatch" style="background:#5A7058;"></div>
-        <div class="color-label">
-          <div class="color-name">Muschio</div>
-          <div class="color-brand">Barbour</div>
-        </div>
-      </div>
-      <div class="color-item">
-        <div class="color-swatch" style="background:#90A898;"></div>
-        <div class="color-label">
-          <div class="color-name">Acqua</div>
-          <div class="color-brand">Armani</div>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="pal-sec"><div class="pal-title">👖 Pantaloni & Chino</div><div class="pg g4">
+<div class="ci"><div class="cs" style="background:#C8BCA8;"></div><div class="cl"><div class="cn">Beige/Sabbia</div><div class="cb">Cucinelli</div></div></div>
+<div class="ci"><div class="cs" style="background:#F0EAD8;border:1px solid #8A7060;"></div><div class="cl"><div class="cn">Bianco/Panna</div><div class="cb">R. Lauren</div></div></div>
+<div class="ci"><div class="cs" style="background:#B0ACA8;"></div><div class="cl"><div class="cn">Grigio Chiaro</div><div class="cb">Armani</div></div></div>
+<div class="ci"><div class="cs" style="background:#909088;"></div><div class="cl"><div class="cn">Grigio Medio</div><div class="cb">Armani</div></div></div>
+<div class="ci"><div class="cs" style="background:#587890;"></div><div class="cl"><div class="cn">Blu Polvere</div><div class="cb">Armani</div></div></div>
+<div class="ci"><div class="cs" style="background:#1A2A40;"></div><div class="cl"><div class="cn">Navy</div><div class="cb">R. Lauren</div></div></div>
+<div class="ci"><div class="cs" style="background:#587848;"></div><div class="cl"><div class="cn">Verde Oliva</div><div class="cb">Barbour</div></div></div>
+<div class="ci"><div class="cs" style="background:#B0A088;"></div><div class="cl"><div class="cn">Taupe/Khaki</div><div class="cb">Armani</div></div></div>
+</div></div>
 
-  <div class="palette-section">
-    <div class="palette-title">Rosa & Cipria — I Più Flattering</div>
-    <div class="palette-grid three">
-      <div class="color-item">
-        <div class="color-swatch" style="background:#E8D0C8;"></div>
-        <div class="color-label">
-          <div class="color-name">Rosa Cipria</div>
-          <div class="color-brand">Cucinelli</div>
-        </div>
-      </div>
-      <div class="color-item">
-        <div class="color-swatch" style="background:#D8B8B0;"></div>
-        <div class="color-label">
-          <div class="color-name">Rosa Antico</div>
-          <div class="color-brand">Cucinelli</div>
-        </div>
-      </div>
-      <div class="color-item">
-        <div class="color-swatch" style="background:#C8A0A0;"></div>
-        <div class="color-label">
-          <div class="color-name">Rosa Malva</div>
-          <div class="color-brand">Armani</div>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="pal-sec"><div class="pal-title">🧥 Outerwear & Blazer</div><div class="pg g4">
+<div class="ci"><div class="cs" style="background:#F0E8D8;"></div><div class="cl"><div class="cn">Ecru/Panna</div><div class="cb">Cucinelli</div></div></div>
+<div class="ci"><div class="cs" style="background:#D8CCBA;"></div><div class="cl"><div class="cn">Beige/Cammello</div><div class="cb">Burberry</div></div></div>
+<div class="ci"><div class="cs" style="background:#B0ACA8;"></div><div class="cl"><div class="cn">Grigio Chiaro</div><div class="cb">Armani</div></div></div>
+<div class="ci"><div class="cs" style="background:#7890A8;"></div><div class="cl"><div class="cn">Azzurro Polv.</div><div class="cb">Armani</div></div></div>
+<div class="ci"><div class="cs" style="background:#1A2A40;"></div><div class="cl"><div class="cn">Navy</div><div class="cb">Barbour</div></div></div>
+<div class="ci"><div class="cs" style="background:#587848;"></div><div class="cl"><div class="cn">Verde Oliva</div><div class="cb">Barbour</div></div></div>
+<div class="ci"><div class="cs" style="background:#A89060;"></div><div class="cl"><div class="cn">Cammello</div><div class="cb">Burberry</div></div></div>
+<div class="ci"><div class="cs" style="background:#707068;"></div><div class="cl"><div class="cn">Grigio Ardesia</div><div class="cb">Armani</div></div></div>
+</div></div>
 
-  <div class="palette-section">
-    <div class="palette-title">Terrosi — Scarpe & Accessori</div>
-    <div class="palette-grid">
-      <div class="color-item">
-        <div class="color-swatch" style="background:#B89880;"></div>
-        <div class="color-label">
-          <div class="color-name">Cognac</div>
-          <div class="color-brand">R. Lauren</div>
-        </div>
-      </div>
-      <div class="color-item">
-        <div class="color-swatch" style="background:#A08868;"></div>
-        <div class="color-label">
-          <div class="color-name">Nocciola</div>
-          <div class="color-brand">Barbour</div>
-        </div>
-      </div>
-      <div class="color-item">
-        <div class="color-swatch" style="background:#907058;"></div>
-        <div class="color-label">
-          <div class="color-name">Tabacco</div>
-          <div class="color-brand">Cucinelli</div>
-        </div>
-      </div>
-      <div class="color-item">
-        <div class="color-swatch" style="background:#C0A888;"></div>
-        <div class="color-label">
-          <div class="color-name">Greige</div>
-          <div class="color-brand">Armani</div>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="pal-sec"><div class="pal-title">👟 Scarpe</div><div class="pg g4">
+<div class="ci"><div class="cs" style="background:#B0A090;"></div><div class="cl"><div class="cn">Taupe</div><div class="cb">Cucinelli</div></div></div>
+<div class="ci"><div class="cs" style="background:#A07850;"></div><div class="cl"><div class="cn">Cognac</div><div class="cb">R. Lauren</div></div></div>
+<div class="ci"><div class="cs" style="background:#886040;"></div><div class="cl"><div class="cn">Nocciola</div><div class="cb">Barbour</div></div></div>
+<div class="ci"><div class="cs" style="background:#785038;"></div><div class="cl"><div class="cn">Tabacco</div><div class="cb">Cucinelli</div></div></div>
+<div class="ci"><div class="cs" style="background:#503020;"></div><div class="cl"><div class="cn">Marrone Scuro</div><div class="cb">Armani</div></div></div>
+<div class="ci"><div class="cs" style="background:#D8D0C0;"></div><div class="cl"><div class="cn">Bianco/Crema</div><div class="cb">Armani</div></div></div>
+<div class="ci"><div class="cs" style="background:#587890;"></div><div class="cl"><div class="cn">Blu Polvere</div><div class="cb">Armani</div></div></div>
+<div class="ci"><div class="cs" style="background:#A89878;"></div><div class="cl"><div class="cn">Greige/Sand</div><div class="cb">Cucinelli</div></div></div>
+</div></div>
 
-  <div class="palette-section">
-    <div class="palette-title">Da Evitare</div>
-    <div class="avoid-grid">
-      <div class="avoid-item">
-        <div class="avoid-swatch" style="background:#1A3A8A;"></div>
-        <div class="avoid-label">Blu Royal</div>
-        <div class="avoid-x">✕</div>
-      </div>
-      <div class="avoid-item">
-        <div class="avoid-swatch" style="background:#000000;"></div>
-        <div class="avoid-label">Nero</div>
-        <div class="avoid-x">✕</div>
-      </div>
-      <div class="avoid-item">
-        <div class="avoid-swatch" style="background:#CC2200;"></div>
-        <div class="avoid-label">Rosso</div>
-        <div class="avoid-x">✕</div>
-      </div>
-      <div class="avoid-item">
-        <div class="avoid-swatch" style="background:#E8C800;"></div>
-        <div class="avoid-label">Giallo</div>
-        <div class="avoid-x">✕</div>
-      </div>
-      <div class="avoid-item">
-        <div class="avoid-swatch" style="background:#228B22;"></div>
-        <div class="avoid-label">V. Prato</div>
-        <div class="avoid-x">✕</div>
-      </div>
-    </div>
-  </div>
+<div class="pal-sec"><div class="pal-title">⌚ Accessori & Cinture</div><div class="pg g3">
+<div class="ci"><div class="cs" style="background:#A07850;"></div><div class="cl"><div class="cn">Cognac</div><div class="cb">R. Lauren</div></div></div>
+<div class="ci"><div class="cs" style="background:#785038;"></div><div class="cl"><div class="cn">Tabacco</div><div class="cb">Cucinelli</div></div></div>
+<div class="ci"><div class="cs" style="background:#18243A;"></div><div class="cl"><div class="cn">Navy/Inchiostro</div><div class="cb">Armani</div></div></div>
+<div class="ci"><div class="cs" style="background:#888480;"></div><div class="cl"><div class="cn">Grigio Perla</div><div class="cb">Burberry</div></div></div>
+<div class="ci"><div class="cs" style="background:#D8B8B0;"></div><div class="cl"><div class="cn">Rosa Antico</div><div class="cb">Burberry</div></div></div>
+<div class="ci"><div class="cs" style="background:#A89060;"></div><div class="cl"><div class="cn">Cammello</div><div class="cb">Burberry</div></div></div>
+</div></div>
 
-  <div class="rule-box">
-    <h3>Regola d'Oro — Approccio 50/50</h3>
-    <div class="rule-item"><div class="rule-dot"></div><div>Colori smorzati e polverosi valorizzano la carnagione Estate Soft</div></div>
-    <div class="rule-item"><div class="rule-dot"></div><div>I colori saturi funzionano nel ton sur ton consapevole stile Armani/Cucinelli</div></div>
-    <div class="rule-item"><div class="rule-dot"></div><div>I neutri terrosi sono sempre sicuri per scarpe e accessori</div></div>
-    <div class="rule-item"><div class="rule-dot"></div><div>Rosa e cipria vicino al viso per massima luminosità</div></div>
-    <div class="rule-item"><div class="rule-dot"></div><div>Navy: mai unico colore saturo — sempre un layer chiaro di rottura</div></div>
-  </div>
+<div class="pal-sec"><div class="pal-title">🌸 Profumi — Per Registro</div><div class="pg g3">
+<div class="ci"><div class="cs" style="background:#C0A8C8;"></div><div class="cl"><div class="cn">Ufficio & Sera</div><div class="cb">Prada L'Homme</div></div></div>
+<div class="ci"><div class="cs" style="background:#88B8C8;"></div><div class="cl"><div class="cn">Casual & Aperitivo</div><div class="cb">Acqua di Gio · Dancing Flowers</div></div></div>
+<div class="ci"><div class="cs" style="background:#C8C070;"></div><div class="cl"><div class="cn">Weekend & Outdoor</div><div class="cb">Zara Amalfi Sunray</div></div></div>
+</div></div>
 
+<div class="pal-sec"><div class="pal-title">Da Evitare — In Tutti i Capi</div><div class="ag">
+<div class="ai"><div class="as" style="background:#1A3A8A;"></div><div class="al">Blu Royal</div><div class="ax">✕</div></div>
+<div class="ai"><div class="as" style="background:#101010;"></div><div class="al">Nero</div><div class="ax">✕</div></div>
+<div class="ai"><div class="as" style="background:#CC2200;"></div><div class="al">Rosso</div><div class="ax">✕</div></div>
+<div class="ai"><div class="as" style="background:#D8C000;"></div><div class="al">Giallo</div><div class="ax">✕</div></div>
+<div class="ai"><div class="as" style="background:#208020;"></div><div class="al">V. Prato</div><div class="ax">✕</div></div>
+</div></div>
+
+<div class="rule-box"><h3>Regola d'Oro — Approccio 50/50</h3>
+<div class="ri"><div class="rd"></div><div>Colori smorzati e polverosi valorizzano la carnagione Estate Soft</div></div>
+<div class="ri"><div class="rd"></div><div>I colori saturi funzionano nel ton sur ton consapevole stile Armani/Cucinelli</div></div>
+<div class="ri"><div class="rd"></div><div>I marroni/cuoio sono riservati a scarpe e cinture — mai nei capi sopra</div></div>
+<div class="ri"><div class="rd"></div><div>Rosa e cipria vicino al viso — massima luminosità per l'Estate Soft</div></div>
+<div class="ri"><div class="rd"></div><div>Navy: sempre un layer chiaro di rottura — mai l'unico colore saturo</div></div>
+</div>
 </div>
 
 <script>
-function showSection(id) {
-  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-  event.target.classList.add('active');
-}
-
-function showWeek(num, btn) {
-  document.querySelectorAll('#week1, #week2, #week3').forEach(w => w.style.display = 'none');
-  document.querySelectorAll('.week-btn').forEach(b => b.classList.remove('active'));
-  document.getElementById('week' + num).style.display = 'block';
-  btn.classList.add('active');
-}
-
-function filterCategory(cat, btn) {
-  document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
-  btn.classList.add('active');
-  document.querySelectorAll('.category').forEach(c => {
-    if (cat === 'all' || c.dataset.cat === cat) {
-      c.style.display = 'block';
-    } else {
-      c.style.display = 'none';
-    }
-  });
-}
+function showSec(id,btn){document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));document.getElementById(id).classList.add('active');btn.classList.add('active');}
+function showOutfit(id,btn){document.querySelectorAll('.outfit-panel').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.outfit-tab').forEach(b=>b.classList.remove('active'));document.getElementById(id).classList.add('active');btn.classList.add('active');}
+function filterCat(cat,btn){document.querySelectorAll('.filter-tab').forEach(t=>t.classList.remove('active'));btn.classList.add('active');document.querySelectorAll('.category').forEach(c=>{c.style.display=(cat==='all'||c.dataset.cat===cat)?'block':'none';});}
 </script>
-
 </body>
 </html>
