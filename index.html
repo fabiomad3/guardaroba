@@ -444,10 +444,14 @@ cursor:pointer; width:100%; margin-bottom:12px;
 
 <div id="outfit" class="section">
   <div class="section-label">Look · Sistema Layering ①②③</div>
+  <div class="outfit-tabs" style="margin-bottom:10px;">
+    <button class="outfit-tab active stagione-btn" onclick="showStagione('pe',this)">☀️ P/E</button>
+    <button class="outfit-tab stagione-btn" onclick="showStagione('ai',this)">❄️ A/I</button>
+  </div>
   <div class="outfit-tabs">
-    <button class="outfit-tab active" onclick="showOutfit('ufficio',this)">Ufficio</button>
-    <button class="outfit-tab" onclick="showOutfit('casual',this)">Casual</button>
-    <button class="outfit-tab" onclick="showOutfit('sport',this)">Sport</button>
+    <button class="outfit-tab active" id="tab-ufficio" onclick="showOutfit('ufficio',this)">Ufficio</button>
+    <button class="outfit-tab" id="tab-casual" onclick="showOutfit('casual',this)">Casual</button>
+    <button class="outfit-tab" id="tab-sport" onclick="showOutfit('sport',this)">Sport</button>
   </div>
   <div id="ufficio" class="outfit-panel active"></div>
   <div id="casual" class="outfit-panel"></div>
@@ -677,6 +681,10 @@ const INITIAL_CAPI = [
   {id:'c56',cat:'maglieria',name:'Girocollo Lana Merino Navy',brand:'Tela Blu',stilista:'Armani · Burberry — merino fine',color:'#1A2A40',badge:'b-ai',badgeText:'A/I',stagione:'ai'},
   {id:'c57',cat:'maglieria',name:'Girocollo Lana Blu Notte',brand:'H&M',stilista:'Armani — casual A/I',color:'#1A1E28',badge:'b-ai',badgeText:'A/I',stagione:'ai'},
   {id:'c58',cat:'maglieria',name:'Felpa Girocollo Greige/Sabbia',brand:'Gutteridge',stilista:'Cucinelli · Armani — pesante invernale',color:'#C8C0B0',badge:'b-ai',badgeText:'A/I',stagione:'ai'},
+  {id:'c60',cat:'maglieria',name:'Maglia ML Navy 1',brand:'H&M',stilista:'Armani — base layer A/I',color:'#1A2A40',badge:'b-ai',badgeText:'A/I',stagione:'ai'},
+  {id:'c61',cat:'maglieria',name:'Maglia ML Navy 2',brand:'H&M',stilista:'Armani — base layer A/I',color:'#1E3050',badge:'b-ai',badgeText:'A/I',stagione:'ai'},
+  {id:'c62',cat:'maglieria',name:'Maglia ML Blu Polvere',brand:'H&M',stilista:'Armani — base layer A/I',color:'#587890',badge:'b-ai',badgeText:'A/I',stagione:'ai'},
+  {id:'c63',cat:'maglieria',name:'Maglia ML Grigio',brand:'H&M',stilista:'Armani — base layer A/I',color:'#909088',badge:'b-ai',badgeText:'A/I',stagione:'ai'},
   // T-SHIRT & POLO
   {id:'c22',cat:'tshirt',name:'T-Shirt Grigio Ardesia',brand:'Uniqlo',stilista:'Armani',color:'#707068',badge:'b-ok',badgeText:'P/E',stagione:'pe'},
   {id:'c23',cat:'tshirt',name:'T-Shirt Bianca',brand:'Uniqlo',stilista:'Armani · Cucinelli',color:'#F5F0E8',badge:'b-ok',badgeText:'P/E',stagione:'pe'},
@@ -704,6 +712,7 @@ const INITIAL_CAPI = [
   {id:'c43',cat:'scarpe',name:'Sneaker Blu',brand:'WOZ Robbie',stilista:'Ralph Lauren casual',color:'#385870',badge:'b-ok',badgeText:'P/E',stagione:'pe'},
   {id:'c44',cat:'scarpe',name:'Sneaker Navy',brand:'Camper',stilista:'Sport / palestra',color:'#1A2A40',badge:'b-warn',badgeText:'sport only',stagione:'cross'},
   {id:'c45',cat:'scarpe',name:'Sneaker Bianca',brand:'Lotto',stilista:'—',color:'#F5F0E8',badge:'b-rep',badgeText:'sostituire',stagione:'cross'},
+  {id:'c59',cat:'scarpe',name:'Baryden 2fit ABX Navy',brand:'Geox',stilista:'Armani · Cucinelli — scarpa ufficio A/I',color:'#1A2A40',badge:'b-ai',badgeText:'A/I',stagione:'ai'},
   // ACCESSORI
   {id:'c46',cat:'accessori',name:'Cintura Reversibile Pelle/Suede Navy',brand:'Gutteridge',stilista:'Armani · Burberry',color:'#18243A',badge:'b-ok',badgeText:'Cross',stagione:'cross'},
   {id:'c47',cat:'accessori',name:'Cap Navy Yankees',brand:'New Era',stilista:'Ralph Lauren Sport',color:'#1A2A40',badge:'b-ok',badgeText:'Cross',stagione:'cross'},
@@ -718,31 +727,48 @@ const INITIAL_CAPI = [
 ];
 
 const INITIAL_OUTFIT = [
-  // UFFICIO — BLAZER LINO ECRU
-  {id:'o1',type:'ufficio',title:'A1 — Blazer Ecru',stilista:'Giorgio Armani SS26 — layering sartoriale rosa/grigio, destrutturato milanese',layers:['Camicia Rosa Antico · Camicissima','Gilet Navy OVS (aperto)','Blazer Lino Ecru H&M'],extras:['Chino Grigio Chiaro Levi\'s'],shoes:'Valsport Tournament Taupe',perfume:'Prada L\'Homme'},
-  {id:'o2',type:'ufficio',title:'A2 — Blazer Ecru',stilista:'Brunello Cucinelli SS26 — azzurro/panna/ecru, tono su tono caldo e raffinato',layers:['Camicia Azzurro Oxford Medio · Camicissima','Maglione Panna OVS','Blazer Lino Ecru H&M'],extras:['Chino Beige/Sabbia Camicissima'],shoes:'Loafer Paciotti',perfume:'Prada L\'Homme'},
-  // UFFICIO — TRENCH BEIGE
-  {id:'o3',type:'ufficio',title:'B1 — Trench Beige',stilista:'Emporio Armani SS26 — azzurro scuro/navy/beige, contrasto freddo-caldo calibrato',layers:['Camicia Azzurro Oxford Scuro · Camicissima','Cardigan Navy OVS (aperto)','Trench Beige Massimo Dutti'],extras:['Chino Blu Polvere Levi\'s'],shoes:'Valsport Tournament Taupe',perfume:'Prada L\'Homme'},
-  {id:'o4',type:'ufficio',title:'B2 — Trench Beige',stilista:'Brunello Cucinelli SS26 — rosa/panna/beige, ton sur ton caldo con punto luce rosa',layers:['Camicia Rosa Antico · Camicissima','Girocollo Panna OVS','Trench Beige Massimo Dutti'],extras:['Chino Navy Camicissima'],shoes:'Loafer Cognac (da acquistare)',perfume:'Prada L\'Homme'},
-  // UFFICIO — BARBOUR QUILTED
-  {id:'o5',type:'ufficio',title:'C1 — Barbour Quilted',stilista:'Barbour × Armani — ton sur ton navy con rottura grigio chiaro, british elegance',layers:['Camicia Azzurro Oxford Medio · Camicissima','Gilet Navy OVS (aperto)','Barbour Liddesdale Navy'],extras:['Chino Grigio Chiaro Levi\'s'],shoes:'Loafer Paciotti',perfume:'Prada L\'Homme'},
-  {id:'o6',type:'ufficio',title:'C2 — Barbour Quilted',stilista:'Barbour × Cucinelli — rosa/panna/navy, calore e luminosità con il Barbour come chiusura',layers:['Camicia Rosa Antico · Camicissima','Maglione Panna OVS','Barbour Liddesdale Navy'],extras:['Chino Beige/Sabbia Camicissima'],shoes:'Loafer Cognac (da acquistare)',perfume:'Prada L\'Homme'},
-  // CASUAL
-  {id:'o7',type:'casual',title:'Casual 1',stilista:'Ralph Lauren Purple Label SS26 — polo/felpa/Barbour, preppy layering outdoor',layers:['Polo Panna Piombo OVS','Felpa Bianco Sporco Uniqlo','Barbour Ashby Navy'],extras:['Chino Blu Polvere Levi\'s'],shoes:'Timberland Boat Shoes',perfume:'Zara Amalfi Sunray'},
-  {id:'o8',type:'casual',title:'Casual 2',stilista:'Brunello Cucinelli Resort 26 — t-shirt/cardigan aperto/Barbour, layering morbido british',layers:['T-Shirt Bianca Uniqlo','Cardigan Navy OVS (aperto)','Barbour Liddesdale Navy'],extras:['Chino Blu Polvere Levi\'s'],shoes:'WOZ Robbie Blue',perfume:'Acqua di Gio'},
-  {id:'o9',type:'casual',title:'Casual 3',stilista:'Giorgio Armani Emporio SS26 — camicia su t-shirt, trench come terzo strato smart casual',layers:['T-Shirt Grigio Ardesia Uniqlo','Camicia Micro Quadri Grigio-Blu (aperta)','Trench Beige Massimo Dutti'],extras:['Chino Grigio Chiaro Levi\'s'],shoes:'Valsport Tournament Taupe',perfume:'Acqua di Gio'},
-  {id:'o10',type:'casual',title:'Casual 4',stilista:'Barbour × Ralph Lauren RRL SS26 — ton sur ton navy outdoor consapevole',layers:['Polo Navy Piombo OVS','Felpa Bianco Sporco Uniqlo','Barbour Ashby Navy'],extras:['Chino Navy Camicissima','Barbour Cap Navy'],shoes:'Timberland Boat Shoes',perfume:'Zara Amalfi Sunray'},
-  {id:'o11',type:'casual',title:'Casual 5',stilista:'Brunello Cucinelli SS26 — cipria/panna/navy, punto luce rosa vicino al viso',layers:['T-Shirt Rosa Cipria Uniqlo','Maglione Panna OVS','Barbour Liddesdale Navy'],extras:['Jeans Blu Medio Levi\'s'],shoes:'WOZ Robbie Blue',perfume:'Acqua di Gio'},
-  {id:'o12',type:'casual',title:'Casual 6',stilista:'Ralph Lauren Purple Label SS26 — polo/camicia aperta/Barbour, preppy elevated',layers:['Polo Panna Piombo OVS','Camicia Bianca (aperta) · Camicissima','Barbour Ashby Navy'],extras:['Chino Blu Polvere Levi\'s'],shoes:'Valsport Tournament Taupe',perfume:'Zara Amalfi Sunray'},
-  {id:'o13',type:'casual',title:'Casual 7',stilista:'Ralph Lauren Polo Country SS26 — grigio/panna/navy, degradé cromatico outdoor',layers:['T-Shirt Grigio Ardesia Uniqlo','Maglione Panna OVS','Barbour Liddesdale Navy'],extras:['Jeans Blu Medio Levi\'s'],shoes:'WOZ Robbie Blue',perfume:'Acqua di Gio'},
-  {id:'o14',type:'casual',title:'Casual 8',stilista:'Emporio Armani SS26 — polo navy/righe aperta/trench, ton sur ton blu gestito',layers:['Polo Navy Piombo OVS','Camicia Righe Azzurro/Bianco (aperta) · Camicissima','Trench Beige Massimo Dutti'],extras:['Chino Blu Polvere Levi\'s'],shoes:'Valsport Tournament Taupe',perfume:'Acqua di Gio'},
-  {id:'o15',type:'casual',title:'Casual 9',stilista:'Ralph Lauren RRL SS26 — t-shirt/felpa/Barbour, punto luce bianco sporco centrale',layers:['T-Shirt Grigio Ardesia Uniqlo','Felpa Bianco Sporco Uniqlo','Barbour Ashby Navy'],extras:['Jeans Azzurro Slavato H&M','Barbour Cap Navy'],shoes:'Timberland Boat Shoes',perfume:'Zara Amalfi Sunray'},
-  {id:'o16',type:'casual',title:'Casual 10',stilista:'Brunello Cucinelli SS26 — ton sur ton beige/panna/ecru, tre neutri caldi sovrapposti',layers:['Polo Panna Piombo OVS','Maglione Panna OVS','Blazer Lino Ecru H&M'],extras:['Chino Beige/Sabbia Camicissima'],shoes:'Valsport Tournament Taupe',perfume:'Acqua di Gio'},
-  // SPORT
-  {id:'o17',type:'sport',title:'Sport 1 — Trail Urbano',stilista:'Ralph Lauren Sport — ton sur ton navy sportivo consapevole',layers:['T-Shirt Bianca Uniqlo','Polo Navy Piombo OVS','Gilet Piumino Navy The North Sails'],extras:['Shorts Felpa Bianchi','New Era Yankees'],shoes:'Camper Navy',perfume:'Acqua di Gio'},
-  {id:'o18',type:'sport',title:'Sport 2 — Outdoor Elevated',stilista:'Ralph Lauren Purple Label outdoor — lusso funzionale british',layers:['T-Shirt Grigio Ardesia Uniqlo','Felpa Bianco Sporco Uniqlo','Gilet Piumino Navy The North Sails'],extras:['Chino Blu Polvere Levi\'s','Barbour Cap Navy'],shoes:'Timberland Boat Shoes',perfume:'Zara Amalfi Sunray'},
-  {id:'o19',type:'sport',title:'Sport 3 — Casual Attivo Armani',stilista:'Emporio Armani Sport SS26 — grigio urbano tre strati autonomi',layers:['T-Shirt Grigio Ardesia Uniqlo','Camicia Bianca (aperta) · Camicissima','Barbour Liddesdale Navy'],extras:['Shorts Felpa Bianchi'],shoes:'Valsport Tournament Taupe',perfume:'Acqua di Gio'},
-  {id:'o20',type:'sport',title:'Sport 4 — British Countryside',stilista:'Barbour outdoor — t-shirt/polo/gilet, layering british tre strati autonomi',layers:['T-Shirt Rosa Cipria Uniqlo','Polo Panna Piombo OVS','Gilet Piumino Navy The North Sails'],extras:['Shorts Cargo Beige','Barbour Cap Navy'],shoes:'Timberland Boat Shoes',perfume:'Zara Amalfi Sunray'},
+  // ── UFFICIO P/E ─────────────────────────────
+  {id:'o1',type:'ufficio',stagione:'pe',title:'A1 — Blazer Ecru',stilista:'Giorgio Armani SS26 — layering sartoriale rosa/grigio, destrutturato milanese',layers:['Camicia Rosa Antico · Camicissima','Gilet Navy OVS (aperto)','Blazer Lino Ecru H&M'],extras:['Chino Grigio Chiaro Levi\'s'],shoes:'Valsport Tournament Taupe',perfume:'Prada L\'Homme'},
+  {id:'o2',type:'ufficio',stagione:'pe',title:'A2 — Blazer Ecru',stilista:'Brunello Cucinelli SS26 — azzurro/panna/ecru, tono su tono caldo e raffinato',layers:['Camicia Azzurro Oxford Medio · Camicissima','Maglione Panna OVS','Blazer Lino Ecru H&M'],extras:['Chino Beige/Sabbia Camicissima'],shoes:'Loafer Paciotti',perfume:'Prada L\'Homme'},
+  {id:'o3',type:'ufficio',stagione:'pe',title:'B1 — Trench Beige',stilista:'Emporio Armani SS26 — azzurro scuro/navy/beige, contrasto freddo-caldo calibrato',layers:['Camicia Azzurro Oxford Scuro · Camicissima','Cardigan Navy OVS (aperto)','Trench Beige Massimo Dutti'],extras:['Chino Blu Polvere Levi\'s'],shoes:'Valsport Tournament Taupe',perfume:'Prada L\'Homme'},
+  {id:'o4',type:'ufficio',stagione:'pe',title:'B2 — Trench Beige',stilista:'Brunello Cucinelli SS26 — rosa/panna/beige, ton sur ton caldo con punto luce rosa',layers:['Camicia Rosa Antico · Camicissima','Girocollo Panna OVS','Trench Beige Massimo Dutti'],extras:['Chino Navy Camicissima'],shoes:'Loafer Cognac (da acquistare)',perfume:'Prada L\'Homme'},
+  {id:'o5',type:'ufficio',stagione:'pe',title:'C1 — Barbour Quilted',stilista:'Barbour × Armani — ton sur ton navy con rottura grigio chiaro, british elegance',layers:['Camicia Azzurro Oxford Medio · Camicissima','Gilet Navy OVS (aperto)','Barbour Liddesdale Navy'],extras:['Chino Grigio Chiaro Levi\'s'],shoes:'Loafer Paciotti',perfume:'Prada L\'Homme'},
+  {id:'o6',type:'ufficio',stagione:'pe',title:'C2 — Barbour Quilted',stilista:'Barbour × Cucinelli — rosa/panna/navy, calore e luminosità con Barbour come chiusura',layers:['Camicia Rosa Antico · Camicissima','Maglione Panna OVS','Barbour Liddesdale Navy'],extras:['Chino Beige/Sabbia Camicissima'],shoes:'Loafer Cognac (da acquistare)',perfume:'Prada L\'Homme'},
+  // ── UFFICIO A/I ─────────────────────────────
+  {id:'o21',type:'ufficio',stagione:'ai',title:'A1 — Montgomery Gutteridge',stilista:'Brunello Cucinelli AW26 — Ars Imitatur Naturam, esploratore elegante, neutri profondi e lana',layers:['Camicia Rosa Antico · Camicissima','Girocollo Lana Grigio Chiaro H&M','Montgomery Misto Lana Gutteridge'],extras:['Chino Grigio Chiaro Levi\'s'],shoes:'Geox Baryden Navy',perfume:'Prada L\'Homme'},
+  {id:'o22',type:'ufficio',stagione:'ai',title:'A2 — Montgomery Gutteridge',stilista:'Giorgio Armani AW26 — grigi profondi e blu notturni, sartorialità fluida invernale',layers:['Camicia Azzurro Oxford Scuro · Camicissima','Girocollo Lana Merino Navy · Tela Blu','Montgomery Misto Lana Gutteridge'],extras:['Pantalone Flanella Grigio Medio Tela Blu'],shoes:'Valsport Tournament Taupe',perfume:'Prada L\'Homme'},
+  {id:'o23',type:'ufficio',stagione:'ai',title:'B1 — Woolrich Parka',stilista:'Brunello Cucinelli AW26 — maglieria protagonista, esploratore urbano in lana e parka',layers:['Camicia Azzurro Oxford Medio · Camicissima','Cardigan Navy OVS (aperto)','Woolrich Parka Gore-Tex Navy'],extras:['Chino Navy Camicissima'],shoes:'Geox Baryden Navy',perfume:'Prada L\'Homme'},
+  {id:'o24',type:'ufficio',stagione:'ai',title:'B2 — Woolrich Parka',stilista:'Ralph Lauren Purple Label AW26 — après-ski urbano, greige/rosa/navy, cashmere e lana',layers:['Camicia Rosa Antico · Camicissima','Felpa Girocollo Greige Gutteridge','Woolrich Parka Gore-Tex Navy'],extras:['Chino Beige/Sabbia Camicissima'],shoes:'Loafer Cognac (da acquistare)',perfume:'Prada L\'Homme'},
+  {id:'o25',type:'ufficio',stagione:'ai',title:'C1 — Barbour Quilted',stilista:'Barbour × Armani AW26 — blu notturno su flanella grigia, british invernale con base lana',layers:['Camicia Azzurro Oxford Scuro · Camicissima','Girocollo Lana Blu Notte H&M','Barbour Liddesdale Navy'],extras:['Pantalone Flanella Grigio Medio Tela Blu'],shoes:'Valsport Tournament Taupe',perfume:'Prada L\'Homme'},
+  {id:'o26',type:'ufficio',stagione:'ai',title:'C2 — Barbour Quilted',stilista:'Barbour × Cucinelli AW26 — rosa/greige/navy, punto luce rosato, layering caldo invernale',layers:['Camicia Rosa Antico · Camicissima','Felpa Girocollo Greige Gutteridge','Barbour Liddesdale Navy'],extras:['Chino Grigio Chiaro Levi\'s'],shoes:'Geox Baryden Navy',perfume:'Prada L\'Homme'},
+  // ── CASUAL P/E ──────────────────────────────
+  {id:'o7',type:'casual',stagione:'pe',title:'Casual 1',stilista:'Ralph Lauren Purple Label SS26 — polo/felpa/Barbour, preppy layering outdoor',layers:['Polo Panna Piombo OVS','Felpa Bianco Sporco Uniqlo','Barbour Ashby Navy'],extras:['Chino Blu Polvere Levi\'s'],shoes:'Timberland Boat Shoes',perfume:'Zara Amalfi Sunray'},
+  {id:'o8',type:'casual',stagione:'pe',title:'Casual 2',stilista:'Brunello Cucinelli Resort 26 — t-shirt/cardigan aperto/Barbour, layering morbido british',layers:['T-Shirt Bianca Uniqlo','Cardigan Navy OVS (aperto)','Barbour Liddesdale Navy'],extras:['Chino Blu Polvere Levi\'s'],shoes:'WOZ Robbie Blue',perfume:'Acqua di Gio'},
+  {id:'o9',type:'casual',stagione:'pe',title:'Casual 3',stilista:'Giorgio Armani Emporio SS26 — camicia su t-shirt, trench come terzo strato smart casual',layers:['T-Shirt Grigio Ardesia Uniqlo','Camicia Micro Quadri Grigio-Blu (aperta)','Trench Beige Massimo Dutti'],extras:['Chino Grigio Chiaro Levi\'s'],shoes:'Valsport Tournament Taupe',perfume:'Acqua di Gio'},
+  {id:'o10',type:'casual',stagione:'pe',title:'Casual 4',stilista:'Barbour × Ralph Lauren RRL SS26 — ton sur ton navy outdoor consapevole',layers:['Polo Navy Piombo OVS','Felpa Bianco Sporco Uniqlo','Barbour Ashby Navy'],extras:['Chino Navy Camicissima','Barbour Cap Navy'],shoes:'Timberland Boat Shoes',perfume:'Zara Amalfi Sunray'},
+  {id:'o11',type:'casual',stagione:'pe',title:'Casual 5',stilista:'Brunello Cucinelli SS26 — cipria/panna/navy, punto luce rosa vicino al viso',layers:['T-Shirt Rosa Cipria Uniqlo','Maglione Panna OVS','Barbour Liddesdale Navy'],extras:['Jeans Blu Medio Levi\'s'],shoes:'WOZ Robbie Blue',perfume:'Acqua di Gio'},
+  {id:'o12',type:'casual',stagione:'pe',title:'Casual 6',stilista:'Ralph Lauren Purple Label SS26 — polo/camicia aperta/Barbour, preppy elevated',layers:['Polo Panna Piombo OVS','Camicia Bianca (aperta) · Camicissima','Barbour Ashby Navy'],extras:['Chino Blu Polvere Levi\'s'],shoes:'Valsport Tournament Taupe',perfume:'Zara Amalfi Sunray'},
+  {id:'o13',type:'casual',stagione:'pe',title:'Casual 7',stilista:'Ralph Lauren Polo Country SS26 — grigio/panna/navy, degradé cromatico outdoor',layers:['T-Shirt Grigio Ardesia Uniqlo','Maglione Panna OVS','Barbour Liddesdale Navy'],extras:['Jeans Blu Medio Levi\'s'],shoes:'WOZ Robbie Blue',perfume:'Acqua di Gio'},
+  {id:'o14',type:'casual',stagione:'pe',title:'Casual 8',stilista:'Emporio Armani SS26 — polo navy/righe aperta/trench, ton sur ton blu gestito',layers:['Polo Navy Piombo OVS','Camicia Righe Azzurro/Bianco (aperta) · Camicissima','Trench Beige Massimo Dutti'],extras:['Chino Blu Polvere Levi\'s'],shoes:'Valsport Tournament Taupe',perfume:'Acqua di Gio'},
+  {id:'o15',type:'casual',stagione:'pe',title:'Casual 9',stilista:'Ralph Lauren RRL SS26 — t-shirt/felpa/Barbour, punto luce bianco sporco centrale',layers:['T-Shirt Grigio Ardesia Uniqlo','Felpa Bianco Sporco Uniqlo','Barbour Ashby Navy'],extras:['Jeans Azzurro Slavato H&M','Barbour Cap Navy'],shoes:'Timberland Boat Shoes',perfume:'Zara Amalfi Sunray'},
+  {id:'o16',type:'casual',stagione:'pe',title:'Casual 10',stilista:'Brunello Cucinelli SS26 — ton sur ton beige/panna/ecru, tre neutri caldi sovrapposti',layers:['Polo Panna Piombo OVS','Maglione Panna OVS','Blazer Lino Ecru H&M'],extras:['Chino Beige/Sabbia Camicissima'],shoes:'Valsport Tournament Taupe',perfume:'Acqua di Gio'},
+  // ── CASUAL A/I ──────────────────────────────
+  {id:'o27',type:'casual',stagione:'ai',title:'Casual A/I 1',stilista:'Ralph Lauren Purple Label AW26 — maglia ML navy/greige/Barbour, après-ski urbano milanese',layers:['Maglia ML Navy H&M','Felpa Girocollo Greige Gutteridge','Barbour Ashby Navy'],extras:['Jeans Blu Medio Levi\'s'],shoes:'Geox Baryden Navy',perfume:'Acqua di Gio'},
+  {id:'o28',type:'casual',stagione:'ai',title:'Casual A/I 2',stilista:'Brunello Cucinelli AW26 — Ars Imitatur Naturam, maglia ML grigio/cardigan/Barbour, esploratore',layers:['Maglia ML Grigio H&M','Cardigan Navy OVS (aperto)','Barbour Liddesdale Navy'],extras:['Chino Grigio Chiaro Levi\'s'],shoes:'Valsport Tournament Taupe',perfume:'Acqua di Gio'},
+  {id:'o29',type:'casual',stagione:'ai',title:'Casual A/I 3',stilista:'Giorgio Armani AW26 — ML blu polvere/felpa bianco sporco/Barbour, grigi e blu profondi',layers:['Maglia ML Blu Polvere H&M','Felpa Bianco Sporco Uniqlo','Barbour Ashby Navy'],extras:['Jeans Grigio Medio Levi\'s','Barbour Cap Navy'],shoes:'Geox Baryden Navy',perfume:'Acqua di Gio'},
+  {id:'o30',type:'casual',stagione:'ai',title:'Casual A/I 4',stilista:'Barbour × Armani AW26 — ML navy/lana merino/montgomery, blu profondo stratificato',layers:['Maglia ML Navy H&M','Girocollo Lana Merino Navy · Tela Blu','Montgomery Misto Lana Gutteridge'],extras:['Jeans Blu Scuro Levi\'s'],shoes:'Geox Baryden Navy',perfume:'Acqua di Gio'},
+  {id:'o31',type:'casual',stagione:'ai',title:'Casual A/I 5',stilista:'Brunello Cucinelli AW26 — ML grigio/greige/montgomery, neutri invernali sovrapposti',layers:['Maglia ML Grigio H&M','Felpa Girocollo Greige Gutteridge','Montgomery Misto Lana Gutteridge'],extras:['Chino Navy Camicissima'],shoes:'Valsport Tournament Taupe',perfume:'Prada L\'Homme'},
+  {id:'o32',type:'casual',stagione:'ai',title:'Casual A/I 6',stilista:'Ralph Lauren RRL AW26 — ML blu polvere/lana grigio/Barbour, texture e trame british',layers:['Maglia ML Blu Polvere H&M','Girocollo Lana Grigio Chiaro H&M','Barbour Liddesdale Navy'],extras:['Chino Beige/Sabbia Camicissima'],shoes:'Valsport Tournament Taupe',perfume:'Acqua di Gio'},
+  // ── SPORT P/E ───────────────────────────────
+  {id:'o17',type:'sport',stagione:'pe',title:'Sport 1 — Trail Urbano',stilista:'Ralph Lauren Sport SS26 — ton sur ton navy sportivo consapevole',layers:['T-Shirt Bianca Uniqlo','Polo Navy Piombo OVS','Gilet Piumino Navy The North Sails'],extras:['Shorts Felpa Bianchi','New Era Yankees'],shoes:'Camper Navy',perfume:'Acqua di Gio'},
+  {id:'o18',type:'sport',stagione:'pe',title:'Sport 2 — Outdoor Elevated',stilista:'Ralph Lauren Purple Label SS26 — lusso funzionale british outdoor',layers:['T-Shirt Grigio Ardesia Uniqlo','Felpa Bianco Sporco Uniqlo','Gilet Piumino Navy The North Sails'],extras:['Chino Blu Polvere Levi\'s','Barbour Cap Navy'],shoes:'Timberland Boat Shoes',perfume:'Zara Amalfi Sunray'},
+  {id:'o19',type:'sport',stagione:'pe',title:'Sport 3 — Casual Attivo Armani',stilista:'Emporio Armani Sport SS26 — grigio urbano tre strati autonomi',layers:['T-Shirt Grigio Ardesia Uniqlo','Camicia Bianca (aperta) · Camicissima','Barbour Liddesdale Navy'],extras:['Shorts Felpa Bianchi'],shoes:'Valsport Tournament Taupe',perfume:'Acqua di Gio'},
+  {id:'o20',type:'sport',stagione:'pe',title:'Sport 4 — British Countryside',stilista:'Barbour SS26 — t-shirt/polo/gilet, layering british tre strati autonomi',layers:['T-Shirt Rosa Cipria Uniqlo','Polo Panna Piombo OVS','Gilet Piumino Navy The North Sails'],extras:['Shorts Cargo Beige','Barbour Cap Navy'],shoes:'Timberland Boat Shoes',perfume:'Zara Amalfi Sunray'},
+  // ── SPORT A/I ───────────────────────────────
+  {id:'o33',type:'sport',stagione:'ai',title:'Sport A/I 1 — Urban Winter',stilista:'Ralph Lauren Sport AW26 — ML navy/greige/gilet, après-ski urbano con base calda',layers:['Maglia ML Navy H&M','Felpa Girocollo Greige Gutteridge','Gilet Piumino Navy The North Sails'],extras:['Jeans Grigio Medio Levi\'s','New Era Yankees'],shoes:'Geox Baryden Navy',perfume:'Acqua di Gio'},
+  {id:'o34',type:'sport',stagione:'ai',title:'Sport A/I 2 — Outdoor Elevated',stilista:'Ralph Lauren Purple Label AW26 — ML grigio/felpa bianco sporco/Barbour, esploratore british',layers:['Maglia ML Grigio H&M','Felpa Bianco Sporco Uniqlo','Barbour Ashby Navy'],extras:['Chino Grigio Chiaro Levi\'s','Barbour Cap Navy'],shoes:'Geox Baryden Navy',perfume:'Acqua di Gio'},
+  {id:'o35',type:'sport',stagione:'ai',title:'Sport A/I 3 — Casual Freddo',stilista:'Emporio Armani AW26 — ML blu polvere/greige/Barbour, contrasto caldo-freddo invernale',layers:['Maglia ML Blu Polvere H&M','Felpa Girocollo Greige Gutteridge','Barbour Liddesdale Navy'],extras:['Jeans Blu Scuro Levi\'s','Barbour Cap Navy'],shoes:'Geox Baryden Navy',perfume:'Acqua di Gio'},
+  {id:'o36',type:'sport',stagione:'ai',title:'Sport A/I 4 — British Countryside',stilista:'Barbour × Cucinelli AW26 — ML navy/lana grigio/montgomery, layering invernale british',layers:['Maglia ML Navy H&M','Girocollo Lana Grigio Chiaro H&M','Montgomery Misto Lana Gutteridge'],extras:['Jeans Blu Medio Levi\'s','Barbour Cap Navy'],shoes:'Valsport Tournament Taupe',perfume:'Acqua di Gio'},
 ];
 
 const CATS = {
@@ -754,7 +780,7 @@ const CATS = {
 // ═══════════════════════════════════════════════
 // VERSIONE — forza reload dati iniziali se aggiornati
 // ═══════════════════════════════════════════════
-const APP_VERSION = '2.2';
+const APP_VERSION = '2.4';
 if(localStorage.getItem('guardaroba_version') !== APP_VERSION) {
   localStorage.removeItem('guardaroba_capi');
   localStorage.removeItem('guardaroba_outfit');
@@ -845,10 +871,30 @@ function filterCat(cat, btn) {
 // ═══════════════════════════════════════════════
 // RENDER OUTFIT
 // ═══════════════════════════════════════════════
+let currentStagione = 'pe';
+
+function showStagione(s, btn) {
+  currentStagione = s;
+  document.querySelectorAll('.stagione-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('#tab-ufficio, #tab-casual, #tab-sport').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-ufficio').classList.add('active');
+  document.querySelectorAll('.outfit-panel').forEach(p => p.classList.remove('active'));
+  document.getElementById('ufficio').classList.add('active');
+  renderOutfits();
+}
+
+function showOutfit(id, btn) {
+  document.querySelectorAll('.outfit-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('#tab-ufficio, #tab-casual, #tab-sport').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+}
+
 function renderOutfits() {
   ['ufficio','casual','sport'].forEach(type => {
     const panel = document.getElementById(type);
-    const items = outfits.filter(o => o.type === type);
+    const items = outfits.filter(o => o.type === type && o.stagione === currentStagione);
     panel.innerHTML = '';
 
     items.forEach(o => {
@@ -856,12 +902,13 @@ function renderOutfits() {
       const extras = (o.extras||[]).map(e => `<span class="xt">${e}</span>`).join('');
       const shoes = o.shoes ? `<span class="xt sh">${o.shoes}</span>` : '';
       const perf = o.perfume ? `<span class="xt pf">${o.perfume}</span>` : '';
+      const hc = type === 'casual' ? 'cas' : type === 'sport' ? 'spt' : 'uff';
       panel.innerHTML += `
       <div class="outfit-card">
-        <div class="oh ${type}">
+        <div class="oh ${hc}">
           <div class="oh-day">${o.title}</div>
           <div style="display:flex;align-items:center;gap:8px;">
-            <div class="oh-type">${type.charAt(0).toUpperCase()+type.slice(1)}</div>
+            <div class="oh-type">${currentStagione==='ai'?'❄️':'☀️'} ${type}</div>
             <div class="oh-actions">
               <button class="btn-icon btn-edit" style="width:24px;height:24px;font-size:11px;" onclick="editOutfit('${o.id}')">✏️</button>
               <button class="btn-icon btn-del" style="width:24px;height:24px;font-size:11px;" onclick="askDeleteOutfit('${o.id}','${o.title.replace(/'/g,"\\'")}')">🗑</button>
@@ -876,12 +923,18 @@ function renderOutfits() {
       </div>`;
     });
 
-    if(type === 'ufficio') {
-      panel.innerHTML += `
-      <div class="rule-box"><h3>Ton Sur Ton — I 3 Look Speciali</h3>
+    if(type === 'ufficio' && currentStagione === 'pe') {
+      panel.innerHTML += `<div class="rule-box"><h3>Ton Sur Ton — I 3 Look Speciali ☀️ P/E</h3>
       <div class="ri"><div class="rd"></div><div><strong>Navy Armani:</strong> Camicia Oxford + Gilet Navy + Chino Navy + Tournament Taupe · Prada L'Homme</div></div>
       <div class="ri"><div class="rd"></div><div><strong>Beige/Panna Cucinelli:</strong> Polo Panna + Maglione Panna + Chino Beige + Tournament Taupe · Acqua di Gio</div></div>
       <div class="ri"><div class="rd"></div><div><strong>Grigio Armani:</strong> T-Shirt Ardesia + Chino Grigio Chiaro + Tournament Taupe · Acqua di Gio</div></div>
+      </div>`;
+    }
+    if(type === 'ufficio' && currentStagione === 'ai') {
+      panel.innerHTML += `<div class="rule-box"><h3>Ton Sur Ton — I 3 Look Speciali ❄️ A/I</h3>
+      <div class="ri"><div class="rd"></div><div><strong>Grigio Profondo Armani:</strong> Camicia Azzurro Scuro + Lana Grigio H&M + Flanella Grigio Tela Blu + Geox Navy · Prada L'Homme</div></div>
+      <div class="ri"><div class="rd"></div><div><strong>Neutri Cucinelli:</strong> Camicia Rosa Antico + Greige Gutteridge + Trench Beige + Loafer Cognac · Prada L'Homme</div></div>
+      <div class="ri"><div class="rd"></div><div><strong>Navy British:</strong> Camicia Oxford + Merino Navy Tela Blu + Barbour Navy + Geox Navy · Prada L'Homme</div></div>
       </div>`;
     }
   });
