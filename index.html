@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="it">
 <head>
 <meta charset="UTF-8">
@@ -8,143 +9,143 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap');
 
 :root {
-  --bg: #EDE5D0;
-  --card: #F8F2E4;
-  --navy: #2A3C58;
-  --navy2: #3A5028;
-  --navy3: #582A2A;
-  --gold: #C8B890;
-  --brown: #8A7060;
-  --brown2: #6A4A30;
-  --dark: #1E1A14;
-  --mid: #3A3028;
-  --light: #5A5248;
-  --beige: #CEC0A8;
-  --ok: #B8D8A8; --ok-t: #1A4018;
-  --warn: #E8D090; --warn-t: #4A2800;
-  --rep: #E8B8A0; --rep-t: #6A1800;
-  --pend: #A8C8E0; --pend-t: #102848;
-  --ai: #D8D0C0; --ai-t: #3A3028;
+–bg: #EDE5D0;
+–card: #F8F2E4;
+–navy: #2A3C58;
+–navy2: #3A5028;
+–navy3: #582A2A;
+–gold: #C8B890;
+–brown: #8A7060;
+–brown2: #6A4A30;
+–dark: #1E1A14;
+–mid: #3A3028;
+–light: #5A5248;
+–beige: #CEC0A8;
+–ok: #B8D8A8; –ok-t: #1A4018;
+–warn: #E8D090; –warn-t: #4A2800;
+–rep: #E8B8A0; –rep-t: #6A1800;
+–pend: #A8C8E0; –pend-t: #102848;
+–ai: #D8D0C0; –ai-t: #3A3028;
 }
 
-* { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+- { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
 
 body {
-  font-family:'Montserrat',sans-serif;
-  font-weight:300;
-  background:var(--bg);
-  color:var(--dark);
-  min-height:100vh;
-  max-width:480px;
-  margin:0 auto;
+font-family:‘Montserrat’,sans-serif;
+font-weight:300;
+background:var(–bg);
+color:var(–dark);
+min-height:100vh;
+max-width:480px;
+margin:0 auto;
 }
 
 /* HEADER */
 .app-header {
-  background:var(--navy);
-  padding:22px 20px 14px;
-  position:sticky; top:0; z-index:200;
+background:var(–navy);
+padding:22px 20px 14px;
+position:sticky; top:0; z-index:200;
 }
 .app-header h1 {
-  font-family:'Cormorant Garamond',serif;
-  font-weight:400; font-size:1.8rem;
-  letter-spacing:.06em; color:#F0EAD8;
+font-family:‘Cormorant Garamond’,serif;
+font-weight:400; font-size:1.8rem;
+letter-spacing:.06em; color:#F0EAD8;
 }
 .app-header p {
-  font-size:.58rem; font-weight:500;
-  letter-spacing:.2em; text-transform:uppercase;
-  color:var(--gold); margin-top:3px;
+font-size:.58rem; font-weight:500;
+letter-spacing:.2em; text-transform:uppercase;
+color:var(–gold); margin-top:3px;
 }
 
 /* NAV */
 .nav {
-  display:flex; background:var(--card);
-  border-bottom:2px solid var(--brown);
-  position:sticky; top:76px; z-index:199;
+display:flex; background:var(–card);
+border-bottom:2px solid var(–brown);
+position:sticky; top:76px; z-index:199;
 }
 .nav-btn {
-  flex:1; padding:13px 2px;
-  background:none; border:none;
-  font-family:'Montserrat',sans-serif;
-  font-size:.58rem; font-weight:500;
-  letter-spacing:.1em; text-transform:uppercase;
-  color:var(--light); cursor:pointer;
-  border-bottom:3px solid transparent;
-  transition:all .2s;
+flex:1; padding:13px 2px;
+background:none; border:none;
+font-family:‘Montserrat’,sans-serif;
+font-size:.58rem; font-weight:500;
+letter-spacing:.1em; text-transform:uppercase;
+color:var(–light); cursor:pointer;
+border-bottom:3px solid transparent;
+transition:all .2s;
 }
-.nav-btn.active { color:var(--dark); border-bottom-color:var(--brown2); font-weight:700; }
+.nav-btn.active { color:var(–dark); border-bottom-color:var(–brown2); font-weight:700; }
 
 /* SECTIONS */
 .section { display:none; padding:18px 14px 110px; }
 .section.active { display:block; }
 .section-label {
-  font-size:.68rem; font-weight:600;
-  letter-spacing:.18em; text-transform:uppercase;
-  color:var(--mid); margin-bottom:14px;
-  padding-bottom:8px; border-bottom:2px solid var(--brown);
+font-size:.68rem; font-weight:600;
+letter-spacing:.18em; text-transform:uppercase;
+color:var(–mid); margin-bottom:14px;
+padding-bottom:8px; border-bottom:2px solid var(–brown);
 }
 
 /* FILTER TABS */
 .filter-tabs {
-  display:flex; gap:6px; margin-bottom:16px;
-  overflow-x:auto; padding-bottom:4px; scrollbar-width:none;
+display:flex; gap:6px; margin-bottom:16px;
+overflow-x:auto; padding-bottom:4px; scrollbar-width:none;
 }
 .filter-tabs::-webkit-scrollbar { display:none; }
 .filter-tab {
-  padding:7px 12px; background:var(--card);
-  border:2px solid var(--brown); border-radius:20px;
-  font-size:.58rem; font-weight:600;
-  letter-spacing:.08em; text-transform:uppercase;
-  color:var(--mid); cursor:pointer; white-space:nowrap;
-  transition:all .2s;
+padding:7px 12px; background:var(–card);
+border:2px solid var(–brown); border-radius:20px;
+font-size:.58rem; font-weight:600;
+letter-spacing:.08em; text-transform:uppercase;
+color:var(–mid); cursor:pointer; white-space:nowrap;
+transition:all .2s;
 }
-.filter-tab.active { background:var(--navy); color:#F0EAD8; border-color:var(--navy); }
+.filter-tab.active { background:var(–navy); color:#F0EAD8; border-color:var(–navy); }
 
 /* CATEGORY */
 .category { margin-bottom:24px; }
 .category-title {
-  font-family:'Cormorant Garamond',serif;
-  font-size:1.25rem; font-weight:600;
-  color:var(--dark); margin-bottom:12px;
-  display:flex; align-items:center; gap:8px;
+font-family:‘Cormorant Garamond’,serif;
+font-size:1.25rem; font-weight:600;
+color:var(–dark); margin-bottom:12px;
+display:flex; align-items:center; gap:8px;
 }
-.category-title::after { content:''; flex:1; height:2px; background:var(--brown); }
+.category-title::after { content:’’; flex:1; height:2px; background:var(–brown); }
 
 /* ITEM CARD */
 .item-card {
-  background:var(--card); border-radius:8px;
-  padding:12px 14px; margin-bottom:9px;
-  display:flex; align-items:center; gap:12px;
-  box-shadow:0 2px 6px rgba(0,0,0,.09);
-  border-left:4px solid var(--brown);
-  position:relative;
+background:var(–card); border-radius:8px;
+padding:12px 14px; margin-bottom:9px;
+display:flex; align-items:center; gap:12px;
+box-shadow:0 2px 6px rgba(0,0,0,.09);
+border-left:4px solid var(–brown);
+position:relative;
 }
 .item-card.dashed { border-left:4px dashed #507858; opacity:.8; }
 .item-color {
-  width:38px; height:38px; border-radius:7px;
-  flex-shrink:0; border:2px solid rgba(0,0,0,.14);
+width:38px; height:38px; border-radius:7px;
+flex-shrink:0; border:2px solid rgba(0,0,0,.14);
 }
 .item-info { flex:1; min-width:0; }
 .item-name {
-  font-family:'Cormorant Garamond',serif;
-  font-size:1.05rem; font-weight:600;
-  color:var(--dark); line-height:1.3;
+font-family:‘Cormorant Garamond’,serif;
+font-size:1.05rem; font-weight:600;
+color:var(–dark); line-height:1.3;
 }
 .item-brand {
-  font-size:.6rem; font-weight:600;
-  letter-spacing:.14em; text-transform:uppercase;
-  color:var(--light); margin-top:2px;
+font-size:.6rem; font-weight:600;
+letter-spacing:.14em; text-transform:uppercase;
+color:var(–light); margin-top:2px;
 }
 .item-stilista {
-  font-size:.62rem; font-weight:500;
-  color:var(--brown2); margin-top:4px; font-style:italic;
+font-size:.62rem; font-weight:500;
+color:var(–brown2); margin-top:4px; font-style:italic;
 }
 .item-actions { display:flex; gap:5px; flex-shrink:0; }
 .btn-icon {
-  width:28px; height:28px; border-radius:6px;
-  border:none; cursor:pointer;
-  display:flex; align-items:center; justify-content:center;
-  font-size:13px; transition:all .15s;
+width:28px; height:28px; border-radius:6px;
+border:none; cursor:pointer;
+display:flex; align-items:center; justify-content:center;
+font-size:13px; transition:all .15s;
 }
 .btn-edit { background:#E8D090; color:#5A3000; }
 .btn-del { background:#E8B8A0; color:#6A1800; }
@@ -152,207 +153,207 @@ body {
 .btn-del:hover { background:#D4906A; }
 
 .badge {
-  font-size:.52rem; font-weight:700;
-  letter-spacing:.07em; text-transform:uppercase;
-  padding:3px 8px; border-radius:20px; white-space:nowrap;
+font-size:.52rem; font-weight:700;
+letter-spacing:.07em; text-transform:uppercase;
+padding:3px 8px; border-radius:20px; white-space:nowrap;
 }
-.b-ok { background:var(--ok); color:var(--ok-t); }
-.b-warn { background:var(--warn); color:var(--warn-t); }
-.b-rep { background:var(--rep); color:var(--rep-t); }
-.b-pend { background:var(--pend); color:var(--pend-t); }
-.b-ai { background:var(--ai); color:var(--ai-t); }
+.b-ok { background:var(–ok); color:var(–ok-t); }
+.b-warn { background:var(–warn); color:var(–warn-t); }
+.b-rep { background:var(–rep); color:var(–rep-t); }
+.b-pend { background:var(–pend); color:var(–pend-t); }
+.b-ai { background:var(–ai); color:var(–ai-t); }
 
 /* FAB */
 .fab {
-  position:fixed; bottom:24px; right:24px;
-  width:56px; height:56px; border-radius:50%;
-  background:var(--navy); color:#F0EAD8;
-  border:none; font-size:26px; cursor:pointer;
-  box-shadow:0 4px 16px rgba(0,0,0,.25);
-  display:flex; align-items:center; justify-content:center;
-  z-index:300; transition:transform .2s;
+position:fixed; bottom:24px; right:24px;
+width:56px; height:56px; border-radius:50%;
+background:var(–navy); color:#F0EAD8;
+border:none; font-size:26px; cursor:pointer;
+box-shadow:0 4px 16px rgba(0,0,0,.25);
+display:flex; align-items:center; justify-content:center;
+z-index:300; transition:transform .2s;
 }
 .fab:hover { transform:scale(1.08); }
 .fab.hidden { display:none; }
 
 /* MODAL */
 .modal-overlay {
-  display:none; position:fixed;
-  inset:0; background:rgba(0,0,0,.55);
-  z-index:400; align-items:flex-end;
+display:none; position:fixed;
+inset:0; background:rgba(0,0,0,.55);
+z-index:400; align-items:flex-end;
 }
 .modal-overlay.open { display:flex; }
 .modal {
-  background:var(--card); border-radius:18px 18px 0 0;
-  padding:24px 20px 40px; width:100%;
-  max-height:90vh; overflow-y:auto;
+background:var(–card); border-radius:18px 18px 0 0;
+padding:24px 20px 40px; width:100%;
+max-height:90vh; overflow-y:auto;
 }
 .modal h2 {
-  font-family:'Cormorant Garamond',serif;
-  font-size:1.4rem; font-weight:600;
-  color:var(--dark); margin-bottom:18px;
+font-family:‘Cormorant Garamond’,serif;
+font-size:1.4rem; font-weight:600;
+color:var(–dark); margin-bottom:18px;
 }
 .form-group { margin-bottom:14px; }
 .form-group label {
-  display:block; font-size:.62rem; font-weight:600;
-  letter-spacing:.12em; text-transform:uppercase;
-  color:var(--light); margin-bottom:5px;
+display:block; font-size:.62rem; font-weight:600;
+letter-spacing:.12em; text-transform:uppercase;
+color:var(–light); margin-bottom:5px;
 }
 .form-group input,
 .form-group select,
 .form-group textarea {
-  width:100%; padding:10px 12px;
-  background:#EDE5D0; border:2px solid var(--beige);
-  border-radius:7px; font-family:'Montserrat',sans-serif;
-  font-size:.8rem; color:var(--dark);
-  outline:none; transition:border-color .2s;
+width:100%; padding:10px 12px;
+background:#EDE5D0; border:2px solid var(–beige);
+border-radius:7px; font-family:‘Montserrat’,sans-serif;
+font-size:.8rem; color:var(–dark);
+outline:none; transition:border-color .2s;
 }
 .form-group input:focus,
 .form-group select:focus,
-.form-group textarea:focus { border-color:var(--navy); }
+.form-group textarea:focus { border-color:var(–navy); }
 .form-group textarea { resize:none; height:60px; }
 .color-preview {
-  width:100%; height:40px; border-radius:7px;
-  border:2px solid var(--beige); margin-top:6px;
-  cursor:pointer;
+width:100%; height:40px; border-radius:7px;
+border:2px solid var(–beige); margin-top:6px;
+cursor:pointer;
 }
 .form-row { display:flex; gap:10px; }
 .form-row .form-group { flex:1; }
 .btn-primary {
-  width:100%; padding:13px;
-  background:var(--navy); color:#F0EAD8;
-  border:none; border-radius:8px;
-  font-family:'Montserrat',sans-serif;
-  font-size:.7rem; font-weight:600;
-  letter-spacing:.1em; text-transform:uppercase;
-  cursor:pointer; margin-top:6px; transition:all .2s;
+width:100%; padding:13px;
+background:var(–navy); color:#F0EAD8;
+border:none; border-radius:8px;
+font-family:‘Montserrat’,sans-serif;
+font-size:.7rem; font-weight:600;
+letter-spacing:.1em; text-transform:uppercase;
+cursor:pointer; margin-top:6px; transition:all .2s;
 }
 .btn-primary:hover { background:#1A2A40; }
 .btn-secondary {
-  width:100%; padding:11px;
-  background:transparent; color:var(--light);
-  border:2px solid var(--beige); border-radius:8px;
-  font-family:'Montserrat',sans-serif;
-  font-size:.7rem; font-weight:600;
-  letter-spacing:.1em; text-transform:uppercase;
-  cursor:pointer; margin-top:8px;
+width:100%; padding:11px;
+background:transparent; color:var(–light);
+border:2px solid var(–beige); border-radius:8px;
+font-family:‘Montserrat’,sans-serif;
+font-size:.7rem; font-weight:600;
+letter-spacing:.1em; text-transform:uppercase;
+cursor:pointer; margin-top:8px;
 }
 
 /* OUTFIT */
 .outfit-tabs { display:flex; gap:8px; margin-bottom:16px; }
 .outfit-tab {
-  flex:1; padding:11px;
-  background:var(--card); border:2px solid var(--brown);
-  border-radius:8px; font-family:'Montserrat',sans-serif;
-  font-size:.6rem; font-weight:600;
-  letter-spacing:.1em; text-transform:uppercase;
-  color:var(--mid); cursor:pointer; transition:all .2s;
+flex:1; padding:11px;
+background:var(–card); border:2px solid var(–brown);
+border-radius:8px; font-family:‘Montserrat’,sans-serif;
+font-size:.6rem; font-weight:600;
+letter-spacing:.1em; text-transform:uppercase;
+color:var(–mid); cursor:pointer; transition:all .2s;
 }
-.outfit-tab.active { background:var(--navy); color:#F0EAD8; border-color:var(--navy); }
+.outfit-tab.active { background:var(–navy); color:#F0EAD8; border-color:var(–navy); }
 .outfit-panel { display:none; }
 .outfit-panel.active { display:block; }
 
 .outfit-card {
-  background:var(--card); border-radius:10px;
-  margin-bottom:12px; overflow:hidden;
-  box-shadow:0 2px 8px rgba(0,0,0,.11);
+background:var(–card); border-radius:10px;
+margin-bottom:12px; overflow:hidden;
+box-shadow:0 2px 8px rgba(0,0,0,.11);
 }
 .oh { padding:11px 14px; display:flex; justify-content:space-between; align-items:center; }
 .oh.uff { background:#2A3C58; }
 .oh.cas { background:#3A5028; }
 .oh.spt { background:#582A2A; }
-.oh-day { font-family:'Cormorant Garamond',serif; font-size:1.1rem; color:#F0EAD8; font-weight:500; }
-.oh-type { font-size:.58rem; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--gold); }
+.oh-day { font-family:‘Cormorant Garamond’,serif; font-size:1.1rem; color:#F0EAD8; font-weight:500; }
+.oh-type { font-size:.58rem; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(–gold); }
 .oh-actions { display:flex; gap:4px; }
 .ob { padding:13px 14px; }
 .ob-stil {
-  font-size:.63rem; font-weight:500; color:var(--brown2);
-  margin-bottom:10px; font-style:italic;
-  background:#EDE5D0; padding:6px 9px; border-radius:4px;
+font-size:.63rem; font-weight:500; color:var(–brown2);
+margin-bottom:10px; font-style:italic;
+background:#EDE5D0; padding:6px 9px; border-radius:4px;
 }
 .ol {
-  display:flex; align-items:center; gap:9px;
-  padding:6px 0; border-bottom:1px solid #EDE5D0;
-  font-size:.8rem; font-weight:500; color:var(--mid);
+display:flex; align-items:center; gap:9px;
+padding:6px 0; border-bottom:1px solid #EDE5D0;
+font-size:.8rem; font-weight:500; color:var(–mid);
 }
 .ol:last-of-type { border-bottom:none; }
-.ln { font-size:.63rem; font-weight:700; color:var(--navy); width:16px; flex-shrink:0; }
+.ln { font-size:.63rem; font-weight:700; color:var(–navy); width:16px; flex-shrink:0; }
 .extras {
-  display:flex; flex-wrap:wrap; gap:5px;
-  margin-top:9px; padding-top:9px;
-  border-top:2px solid #EDE5D0;
+display:flex; flex-wrap:wrap; gap:5px;
+margin-top:9px; padding-top:9px;
+border-top:2px solid #EDE5D0;
 }
-.xt { font-size:.58rem; font-weight:500; padding:3px 9px; border-radius:20px; background:#EDE5D0; color:var(--mid); }
+.xt { font-size:.58rem; font-weight:500; padding:3px 9px; border-radius:20px; background:#EDE5D0; color:var(–mid); }
 .xt.pf { background:#D8C0D8; color:#402848; }
 .xt.sh { background:#C0D0E0; color:#203050; }
 
 /* RULE BOX */
 .rule-box {
-  background:var(--navy); color:#F0EAD8;
-  border-radius:10px; padding:16px; margin-top:18px;
+background:var(–navy); color:#F0EAD8;
+border-radius:10px; padding:16px; margin-top:18px;
 }
 .rule-box h3 {
-  font-family:'Cormorant Garamond',serif;
-  font-size:1.05rem; font-weight:600;
-  margin-bottom:10px; color:var(--gold);
+font-family:‘Cormorant Garamond’,serif;
+font-size:1.05rem; font-weight:600;
+margin-bottom:10px; color:var(–gold);
 }
 .ri { display:flex; gap:9px; margin-bottom:9px; font-size:.68rem; line-height:1.5; color:#D8CCBA; }
-.rd { width:7px; height:7px; border-radius:50%; background:var(--gold); flex-shrink:0; margin-top:5px; }
+.rd { width:7px; height:7px; border-radius:50%; background:var(–gold); flex-shrink:0; margin-top:5px; }
 
 /* ACQUISTI */
 .info-box {
-  background:var(--beige); border-radius:8px;
-  padding:14px; margin-bottom:18px;
-  border-left:5px solid var(--brown2);
+background:var(–beige); border-radius:8px;
+padding:14px; margin-bottom:18px;
+border-left:5px solid var(–brown2);
 }
 .info-box h3 {
-  font-family:'Cormorant Garamond',serif;
-  font-size:1.05rem; font-weight:600;
-  color:var(--dark); margin-bottom:5px;
+font-family:‘Cormorant Garamond’,serif;
+font-size:1.05rem; font-weight:600;
+color:var(–dark); margin-bottom:5px;
 }
-.info-box p { font-size:.68rem; color:var(--mid); line-height:1.6; }
+.info-box p { font-size:.68rem; color:var(–mid); line-height:1.6; }
 
 .ac {
-  background:var(--card); border-radius:8px;
-  padding:14px; margin-bottom:10px;
-  box-shadow:0 2px 6px rgba(0,0,0,.09);
-  border-left:5px solid var(--brown);
-  position:relative;
+background:var(–card); border-radius:8px;
+padding:14px; margin-bottom:10px;
+box-shadow:0 2px 6px rgba(0,0,0,.09);
+border-left:5px solid var(–brown);
+position:relative;
 }
 .ac.p1{border-left-color:#A84020;} .ac.p2{border-left-color:#906020;}
 .ac.p3{border-left-color:#507030;} .ac.p4{border-left-color:#305878;}
 .ac.p5{border-left-color:#507858;} .ac.ps{border-left-color:#A84020;}
 .ac-h { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:6px; }
-.ac-name { font-family:'Cormorant Garamond',serif; font-size:1.1rem; font-weight:600; color:var(--dark); flex:1; line-height:1.3; }
-.ac-price { font-size:.72rem; font-weight:700; color:var(--mid); margin-left:8px; white-space:nowrap; }
-.ac-desc { font-size:.68rem; color:var(--mid); line-height:1.6; margin-bottom:8px; }
-.ac-where { font-size:.6rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--brown2); }
+.ac-name { font-family:‘Cormorant Garamond’,serif; font-size:1.1rem; font-weight:600; color:var(–dark); flex:1; line-height:1.3; }
+.ac-price { font-size:.72rem; font-weight:700; color:var(–mid); margin-left:8px; white-space:nowrap; }
+.ac-desc { font-size:.68rem; color:var(–mid); line-height:1.6; margin-bottom:8px; }
+.ac-where { font-size:.6rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(–brown2); }
 .pl {
-  font-size:.52rem; font-weight:700; letter-spacing:.1em;
-  text-transform:uppercase; padding:3px 8px;
-  border-radius:20px; margin-top:7px; display:inline-block;
+font-size:.52rem; font-weight:700; letter-spacing:.1em;
+text-transform:uppercase; padding:3px 8px;
+border-radius:20px; margin-top:7px; display:inline-block;
 }
 .ac.p1 .pl{background:#E8B8A0;color:#6A1800;} .ac.p2 .pl{background:#E8D090;color:#5A3000;}
 .ac.p3 .pl{background:#B8D8A8;color:#204010;} .ac.p4 .pl{background:#A8C8E0;color:#102848;}
 .ac.p5 .pl{background:#B0D0B8;color:#183828;} .ac.ps .pl{background:#E8B8A0;color:#6A1800;}
-.divider { height:2px; background:var(--brown); margin:20px 0; }
+.divider { height:2px; background:var(–brown); margin:20px 0; }
 
 /* PALETTE */
 .pal-sec { margin-bottom:24px; }
 .pal-title {
-  font-family:'Cormorant Garamond',serif;
-  font-size:1.15rem; font-weight:600;
-  color:var(--dark); margin-bottom:10px;
-  padding-bottom:5px; border-bottom:2px solid var(--brown);
+font-family:‘Cormorant Garamond’,serif;
+font-size:1.15rem; font-weight:600;
+color:var(–dark); margin-bottom:10px;
+padding-bottom:5px; border-bottom:2px solid var(–brown);
 }
 .pg { display:grid; gap:7px; grid-template-columns:repeat(5,1fr); }
 .pg.g4 { grid-template-columns:repeat(4,1fr); }
 .pg.g3 { grid-template-columns:repeat(3,1fr); }
 .ci { border-radius:7px; overflow:hidden; box-shadow:0 2px 4px rgba(0,0,0,.13); }
 .cs { height:56px; width:100%; }
-.cl { background:var(--card); padding:5px 6px; border-top:2px solid var(--brown); }
-.cn { font-family:'Cormorant Garamond',serif; font-size:.74rem; font-weight:600; color:var(--dark); line-height:1.2; }
-.cb { font-size:.48rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--light); margin-top:1px; }
+.cl { background:var(–card); padding:5px 6px; border-top:2px solid var(–brown); }
+.cn { font-family:‘Cormorant Garamond’,serif; font-size:.74rem; font-weight:600; color:var(–dark); line-height:1.2; }
+.cb { font-size:.48rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(–light); margin-top:1px; }
 .ag { display:grid; grid-template-columns:repeat(5,1fr); gap:6px; }
 .ai { border-radius:7px; overflow:hidden; position:relative; box-shadow:0 2px 4px rgba(0,0,0,.14); }
 .as { height:42px; }
@@ -361,42 +362,42 @@ body {
 
 /* TOAST */
 .toast {
-  position:fixed; bottom:90px; left:50%;
-  transform:translateX(-50%) translateY(20px);
-  background:var(--navy); color:#F0EAD8;
-  padding:10px 20px; border-radius:20px;
-  font-size:.68rem; font-weight:600;
-  opacity:0; transition:all .3s; z-index:500;
-  white-space:nowrap; pointer-events:none;
+position:fixed; bottom:90px; left:50%;
+transform:translateX(-50%) translateY(20px);
+background:var(–navy); color:#F0EAD8;
+padding:10px 20px; border-radius:20px;
+font-size:.68rem; font-weight:600;
+opacity:0; transition:all .3s; z-index:500;
+white-space:nowrap; pointer-events:none;
 }
 .toast.show { opacity:1; transform:translateX(-50%) translateY(0); }
 
 /* CONFIRM DIALOG */
 .confirm-overlay {
-  display:none; position:fixed; inset:0;
-  background:rgba(0,0,0,.55); z-index:500;
-  align-items:center; justify-content:center;
+display:none; position:fixed; inset:0;
+background:rgba(0,0,0,.55); z-index:500;
+align-items:center; justify-content:center;
 }
 .confirm-overlay.open { display:flex; }
 .confirm-box {
-  background:var(--card); border-radius:14px;
-  padding:24px 20px; width:88%; max-width:360px;
-  text-align:center;
+background:var(–card); border-radius:14px;
+padding:24px 20px; width:88%; max-width:360px;
+text-align:center;
 }
 .confirm-box h3 {
-  font-family:'Cormorant Garamond',serif;
-  font-size:1.3rem; font-weight:600;
-  color:var(--dark); margin-bottom:8px;
+font-family:‘Cormorant Garamond’,serif;
+font-size:1.3rem; font-weight:600;
+color:var(–dark); margin-bottom:8px;
 }
-.confirm-box p { font-size:.72rem; color:var(--light); margin-bottom:20px; line-height:1.5; }
+.confirm-box p { font-size:.72rem; color:var(–light); margin-bottom:20px; line-height:1.5; }
 .confirm-btns { display:flex; gap:10px; }
 .confirm-btns button {
-  flex:1; padding:11px; border-radius:8px;
-  border:none; font-family:'Montserrat',sans-serif;
-  font-size:.68rem; font-weight:600;
-  letter-spacing:.08em; text-transform:uppercase; cursor:pointer;
+flex:1; padding:11px; border-radius:8px;
+border:none; font-family:‘Montserrat’,sans-serif;
+font-size:.68rem; font-weight:600;
+letter-spacing:.08em; text-transform:uppercase; cursor:pointer;
 }
-.btn-cancel { background:var(--beige); color:var(--mid); }
+.btn-cancel { background:var(–beige); color:var(–mid); }
 .btn-confirm-del { background:#E8B8A0; color:#6A1800; }
 
 /* OUTFIT MODAL extras */
@@ -404,17 +405,18 @@ body {
 .layer-row { display:flex; gap:8px; align-items:center; margin-bottom:8px; }
 .layer-row input { flex:1; }
 .btn-rm-layer {
-  width:30px; height:30px; border-radius:6px;
-  border:none; background:#E8B8A0; color:#6A1800;
-  cursor:pointer; font-size:16px; flex-shrink:0;
+width:30px; height:30px; border-radius:6px;
+border:none; background:#E8B8A0; color:#6A1800;
+cursor:pointer; font-size:16px; flex-shrink:0;
 }
 .btn-add-layer {
-  padding:7px 12px; border-radius:7px;
-  border:2px dashed var(--beige); background:transparent;
-  color:var(--light); font-size:.62rem; font-weight:600;
-  cursor:pointer; width:100%; margin-bottom:12px;
+padding:7px 12px; border-radius:7px;
+border:2px dashed var(–beige); background:transparent;
+color:var(–light); font-size:.62rem; font-weight:600;
+cursor:pointer; width:100%; margin-bottom:12px;
 }
 </style>
+
 </head>
 <body>
 
@@ -431,6 +433,7 @@ body {
 </nav>
 
 <!-- GUARDAROBA -->
+
 <div id="guardaroba" class="section active">
   <div class="section-label">Guardaroba Completo</div>
   <div class="filter-tabs" id="filterTabs"></div>
@@ -438,6 +441,7 @@ body {
 </div>
 
 <!-- OUTFIT -->
+
 <div id="outfit" class="section">
   <div class="section-label">Look · Sistema Layering ①②③</div>
   <div class="outfit-tabs">
@@ -451,6 +455,7 @@ body {
 </div>
 
 <!-- ACQUISTI -->
+
 <div id="acquisti" class="section">
   <div class="section-label">Lista Acquisti Prioritari</div>
   <div class="info-box">
@@ -461,15 +466,18 @@ body {
 </div>
 
 <!-- PALETTE -->
+
 <div id="palette" class="section">
   <div class="section-label">Palette per Tipologia di Prodotto</div>
   <div id="paletteContent"></div>
 </div>
 
-<!-- FAB -->
-<button class="fab" id="fab" onclick="openModal()">＋</button>
+<!-- FAB — solo Acquisti -->
+
+<button class="fab hidden" id="fab" onclick="openAcquistoModal()">＋</button>
 
 <!-- MODAL CAPO -->
+
 <div class="modal-overlay" id="modalOverlay">
   <div class="modal">
     <h2 id="modalTitle">Nuovo Capo</h2>
@@ -533,9 +541,10 @@ body {
 </div>
 
 <!-- MODAL OUTFIT -->
+
 <div class="modal-overlay" id="outfitModalOverlay">
   <div class="modal">
-    <h2 id="outfitModalTitle">Nuovo Outfit</h2>
+    <h2 id="outfitModalTitle">Modifica Outfit</h2>
     <div class="form-row">
       <div class="form-group">
         <label>Titolo</label>
@@ -576,7 +585,50 @@ body {
   </div>
 </div>
 
+<!-- MODAL ACQUISTO -->
+
+<div class="modal-overlay" id="acquistoModalOverlay">
+  <div class="modal">
+    <h2>Nuovo Acquisto</h2>
+    <div class="form-group">
+      <label>Nome</label>
+      <input type="text" id="acName" placeholder="es. Loafer Cognac Tod's">
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label>Prezzo</label>
+        <input type="text" id="acPrice" placeholder="es. €150">
+      </div>
+      <div class="form-group">
+        <label>Priorità</label>
+        <select id="acPl">
+          <option value="p1">1 — Urgente</option>
+          <option value="p2">2 — Alta</option>
+          <option value="p3">3 — Alta</option>
+          <option value="p4">4 — Media</option>
+          <option value="p5" selected>5 — Bassa</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Descrizione</label>
+      <textarea id="acDesc" placeholder="Perché lo vuoi, come si abbina..."></textarea>
+    </div>
+    <div class="form-group">
+      <label>Dove acquistare</label>
+      <input type="text" id="acWhere" placeholder="es. Massimo Dutti · Clarks">
+    </div>
+    <div class="form-group" style="display:flex;align-items:center;gap:10px;margin-top:4px;">
+      <input type="checkbox" id="acSostituire" style="width:18px;height:18px;cursor:pointer;">
+      <label for="acSostituire" style="font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--light);cursor:pointer;">Da sostituire (non da acquistare)</label>
+    </div>
+    <button class="btn-primary" onclick="saveAcquisto()">Salva</button>
+    <button class="btn-secondary" onclick="closeAcquistoModal()">Annulla</button>
+  </div>
+</div>
+
 <!-- CONFIRM -->
+
 <div class="confirm-overlay" id="confirmOverlay">
   <div class="confirm-box">
     <h3>Elimina</h3>
@@ -589,6 +641,7 @@ body {
 </div>
 
 <!-- TOAST -->
+
 <div class="toast" id="toast"></div>
 
 <script>
@@ -814,43 +867,111 @@ function renderOutfits() {
 }
 
 // ═══════════════════════════════════════════════
-// RENDER ACQUISTI (statico)
+// ACQUISTI — DINAMICI
 // ═══════════════════════════════════════════════
-function renderAcquisti() {
-  const acquisti = [
-    {cl:'p1',name:'Blazer Lino Azzurro',price:'€89,99',desc:'Il pezzo che manca di più. Eleva 2 look ufficio e 1 casual. L\'azzurro polvere è il colore Armani per eccellenza.',where:'OVS Piombo',pl:'Priorità 1 — Urgente'},
-    {cl:'p2',name:'Loafer Cuoio Cognac',price:'€130–150',desc:'Eleva i look da ufficio. Il cuoio marrone porta a un registro superiore alla Tournament Taupe.',where:'Massimo Dutti · Clarks',pl:'Priorità 2 — Alta'},
-    {cl:'p3',name:'Cintura Cuoio Cognac Intrecciata',price:'€60–80',desc:'Manca una cintura in cuoio caldo per i look beige/panna/Cucinelli. Entra in almeno 6 outfit.',where:'Ralph Lauren · Massimo Dutti',pl:'Priorità 3 — Alta'},
-    {cl:'p4',name:'Valsport Davis Shadow Blue',price:'€219',desc:'Pelle ombreggiata a mano in blu polvere — dialoga con i chino Levi\'s blu polvere.',where:'valsport.it',pl:'Priorità 4 — Media'},
-    {cl:'p4',name:'Occhiali da Sole Montatura Sottile',price:'€120–180',desc:'Il dettaglio Armani/Cucinelli che completa ogni look. Montatura in titanio o acetato tortoise.',where:'Persol · Emporio Armani',pl:'Priorità 4 — Media'},
-    {cl:'p5',name:'Chino Short da Città',price:'€70–90',desc:'Lunghezza al ginocchio, senza elastico, senza tasche cargo. Puro Ralph Lauren estate.',where:'Ralph Lauren · Massimo Dutti',pl:'Priorità 5 — Estate'},
-    {cl:'p5',name:'Maglione Cammello Cashmere Blend',price:'€80–120',desc:'Il colore Cucinelli/Burberry più assente. Su camicia bianca o rosa antico è raffinatissimo.',where:'Massimo Dutti · Uniqlo Premium',pl:'Priorità 5 — Autunno'},
-    {cl:'p5',name:'Polo Rosa Cipria Ralph Lauren',price:'€90–110',desc:'Il colore stagione ancora assente nelle polo. Autentica RL in piqué.',where:'Ralph Lauren online · Outlet',pl:'Priorità 5 — Prossima stagione'},
-    {cl:'p5',name:'Sciarpa Cashmere Burberry',price:'€150–200',desc:'Tinta unita — no check classico con nero. Grigio perla, rosa antico o azzurro polveroso.',where:'Vestiaire Collective · Burberry Outlet',pl:'Priorità 5 — A/I'},
-  ];
-  const sostituire = [
-    {name:'Sneaker Lotto Bianche',desc:'Brand non coerente con l\'estetica costruita.',where:'Ralph Lauren Polo Court · Filling Pieces'},
-    {name:'Girocollo Blu Royal OVS',desc:'Troppo saturo per l\'armocromia estate soft. Sostituire con merino blu polvere o verde salvia.',where:'Uniqlo Premium Merino'},
-  ];
+const INITIAL_ACQUISTI = [
+  {id:'a1',cl:'p1',name:'Blazer Lino Azzurro',price:'€89,99',desc:"Il pezzo che manca di più. Eleva 2 look ufficio e 1 casual. L'azzurro polvere è il colore Armani per eccellenza.",where:'OVS Piombo',pl:'Priorità 1 — Urgente',sostituire:false},
+  {id:'a2',cl:'p2',name:'Loafer Cuoio Cognac',price:'€130–150',desc:'Eleva i look da ufficio. Il cuoio marrone porta a un registro superiore alla Tournament Taupe.',where:'Massimo Dutti · Clarks',pl:'Priorità 2 — Alta',sostituire:false},
+  {id:'a3',cl:'p3',name:'Cintura Cuoio Cognac Intrecciata',price:'€60–80',desc:'Manca una cintura in cuoio caldo per i look beige/panna/Cucinelli. Entra in almeno 6 outfit.',where:'Ralph Lauren · Massimo Dutti',pl:'Priorità 3 — Alta',sostituire:false},
+  {id:'a4',cl:'p4',name:'Valsport Davis Shadow Blue',price:'€219',desc:"Pelle ombreggiata a mano in blu polvere — dialoga con i chino Levi's blu polvere.",where:'valsport.it',pl:'Priorità 4 — Media',sostituire:false},
+  {id:'a5',cl:'p4',name:'Occhiali da Sole Montatura Sottile',price:'€120–180',desc:'Il dettaglio Armani/Cucinelli che completa ogni look. Montatura in titanio o acetato tortoise.',where:'Persol · Emporio Armani',pl:'Priorità 4 — Media',sostituire:false},
+  {id:'a6',cl:'p5',name:'Chino Short da Città',price:'€70–90',desc:'Lunghezza al ginocchio, senza elastico, senza tasche cargo. Puro Ralph Lauren estate.',where:'Ralph Lauren · Massimo Dutti',pl:'Priorità 5 — Estate',sostituire:false},
+  {id:'a7',cl:'p5',name:'Maglione Cammello Cashmere Blend',price:'€80–120',desc:"Il colore Cucinelli/Burberry più assente. Su camicia bianca o rosa antico è raffinatissimo.",where:'Massimo Dutti · Uniqlo Premium',pl:'Priorità 5 — Autunno',sostituire:false},
+  {id:'a8',cl:'p5',name:'Polo Rosa Cipria Ralph Lauren',price:'€90–110',desc:'Il colore stagione ancora assente nelle polo. Autentica RL in piqué.',where:'Ralph Lauren online · Outlet',pl:'Priorità 5 — Prossima stagione',sostituire:false},
+  {id:'a9',cl:'p5',name:'Sciarpa Cashmere Burberry',price:'€150–200',desc:'Tinta unita — no check classico con nero. Grigio perla, rosa antico o azzurro polveroso.',where:'Vestiaire Collective · Burberry Outlet',pl:'Priorità 5 — A/I',sostituire:false},
+  {id:'a10',cl:'ps',name:'Sneaker Lotto Bianche',price:'—',desc:"Brand non coerente con l'estetica costruita.",where:'Ralph Lauren Polo Court · Filling Pieces',pl:'Da sostituire',sostituire:true},
+  {id:'a11',cl:'ps',name:'Girocollo Blu Royal OVS',price:'—',desc:'Troppo saturo per l\'armocromia estate soft. Sostituire con merino blu polvere o verde salvia.',where:'Uniqlo Premium Merino',pl:'Da sostituire',sostituire:true},
+];
 
-  let html = acquisti.map(a => `
+function loadAcquisti() {
+  try {
+    const s = localStorage.getItem('guardaroba_acquisti');
+    return s ? JSON.parse(s) : JSON.parse(JSON.stringify(INITIAL_ACQUISTI));
+  } catch(e) { return JSON.parse(JSON.stringify(INITIAL_ACQUISTI)); }
+}
+function saveAcquisti(data) { localStorage.setItem('guardaroba_acquisti', JSON.stringify(data)); }
+
+let acquisti = loadAcquisti();
+
+function renderAcquisti() {
+  const normali = acquisti.filter(a => !a.sostituire);
+  const sostituire = acquisti.filter(a => a.sostituire);
+
+  let html = normali.map(a => `
   <div class="ac ${a.cl}">
-    <div class="ac-h"><div class="ac-name">${a.name}</div><div class="ac-price">${a.price}</div></div>
+    <div class="ac-h">
+      <div class="ac-name">${a.name}</div>
+      <div style="display:flex;align-items:center;gap:6px;">
+        <div class="ac-price">${a.price}</div>
+        <button class="btn-icon btn-del" style="width:26px;height:26px;font-size:11px;flex-shrink:0;" onclick="askDeleteAcquisto('${a.id}','${a.name.replace(/'/g,"\\'")}')">🗑</button>
+      </div>
+    </div>
     <div class="ac-desc">${a.desc}</div>
     <div class="ac-where">${a.where}</div>
     <div class="pl">${a.pl}</div>
   </div>`).join('');
 
-  html += '<div class="divider"></div><div class="section-label">Da Sostituire</div>';
-  html += sostituire.map(a => `
-  <div class="ac ps">
-    <div class="ac-h"><div class="ac-name">${a.name}</div><div class="ac-price">—</div></div>
-    <div class="ac-desc">${a.desc}</div>
-    <div class="ac-where">${a.where}</div>
-    <div class="pl">Da sostituire</div>
-  </div>`).join('');
+  if(sostituire.length) {
+    html += '<div class="divider"></div><div class="section-label">Da Sostituire</div>';
+    html += sostituire.map(a => `
+    <div class="ac ps">
+      <div class="ac-h">
+        <div class="ac-name">${a.name}</div>
+        <button class="btn-icon btn-del" style="width:26px;height:26px;font-size:11px;" onclick="askDeleteAcquisto('${a.id}','${a.name.replace(/'/g,"\\'")}')">🗑</button>
+      </div>
+      <div class="ac-desc">${a.desc}</div>
+      <div class="ac-where">${a.where}</div>
+      <div class="pl">Da sostituire</div>
+    </div>`).join('');
+  }
 
   document.getElementById('acquistiList').innerHTML = html;
+}
+
+// Modal acquisto
+let acquistoModalEl = null;
+function openAcquistoModal() {
+  document.getElementById('acName').value = '';
+  document.getElementById('acPrice').value = '';
+  document.getElementById('acDesc').value = '';
+  document.getElementById('acWhere').value = '';
+  document.getElementById('acPl').value = 'p5';
+  document.getElementById('acSostituire').checked = false;
+  document.getElementById('acquistoModalOverlay').classList.add('open');
+}
+function closeAcquistoModal() {
+  document.getElementById('acquistoModalOverlay').classList.remove('open');
+}
+function saveAcquisto() {
+  const name = document.getElementById('acName').value.trim();
+  if(!name) { showToast('Inserisci un nome'); return; }
+  const plMap = {p1:'Priorità 1 — Urgente',p2:'Priorità 2 — Alta',p3:'Priorità 3 — Alta',p4:'Priorità 4 — Media',p5:'Priorità 5',ps:'Da sostituire'};
+  const cl = document.getElementById('acSostituire').checked ? 'ps' : document.getElementById('acPl').value;
+  const a = {
+    id: 'a_' + Date.now(),
+    cl,
+    name,
+    price: document.getElementById('acPrice').value.trim() || '—',
+    desc: document.getElementById('acDesc').value.trim(),
+    where: document.getElementById('acWhere').value.trim(),
+    pl: plMap[cl] || 'Priorità 5',
+    sostituire: document.getElementById('acSostituire').checked,
+  };
+  acquisti.push(a);
+  saveAcquisti(acquisti);
+  renderAcquisti();
+  closeAcquistoModal();
+  showToast('Acquisto aggiunto ✓');
+}
+function askDeleteAcquisto(id, name) {
+  document.getElementById('confirmMsg').textContent = `Eliminare "${name}" dalla lista?`;
+  deleteCallback = () => {
+    acquisti = acquisti.filter(a => a.id !== id);
+    saveAcquisti(acquisti);
+    renderAcquisti();
+    showToast('Eliminato');
+  };
+  document.getElementById('confirmOverlay').classList.add('open');
 }
 
 // ═══════════════════════════════════════════════
@@ -953,10 +1074,7 @@ function showSec(id, btn) {
   document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
   document.getElementById(id).classList.add('active');
   btn.classList.add('active');
-  // Show FAB only on wardrobe and outfit
-  document.getElementById('fab').className = (id === 'guardaroba' || id === 'outfit') ? 'fab' : 'fab hidden';
-  document.getElementById('fab').textContent = id === 'outfit' ? '＋' : '＋';
-  document.getElementById('fab').onclick = id === 'outfit' ? openOutfitModal : openModal;
+  document.getElementById('fab').className = id === 'acquisti' ? 'fab' : 'fab hidden';
 }
 
 function showOutfit(id, btn) {
@@ -1163,13 +1281,19 @@ document.getElementById('outfitModalOverlay').addEventListener('click', function
   if(e.target === this) closeOutfitModal();
 });
 
+document.getElementById('acquistoModalOverlay').addEventListener('click', function(e) {
+  if(e.target === this) closeAcquistoModal();
+});
+
 // ═══════════════════════════════════════════════
 // INIT
 // ═══════════════════════════════════════════════
+acquisti = loadAcquisti();
 renderWardrobe();
 renderOutfits();
 renderAcquisti();
 renderPalette();
 </script>
+
 </body>
 </html>
