@@ -121,7 +121,8 @@ nav::-webkit-scrollbar { display: none; }
 <div class="subtitle">Milano · Estate Soft · 50/50</div>
 
 <nav>
-  <button class="nav-btn active" onclick="showSec('guardaroba',this)">Armadio</button>
+  <button class="nav-btn active" onclick="showSec('guardaroba',this)">Cucinelli</button>
+  <button class="nav-btn" onclick="showSec('guardaroba-ai',this)">Armani</button>
   <button class="nav-btn" onclick="showSec('outfit',this)">Outfit</button>
   <button class="nav-btn" onclick="showSec('acquisti',this)">Acquisti</button>
   <button class="nav-btn" onclick="showSec('palette',this)">Palette</button>
@@ -130,13 +131,8 @@ nav::-webkit-scrollbar { display: none; }
 <!-- GUARDAROBA -->
 
 <div id="guardaroba" class="section active">
-  <div class="section-label">Guardaroba Completo</div>
+  <div class="section-label">Guardaroba · Cucinelli P/E</div>
 
-  <div class="tabs" style="margin-bottom:8px;">
-    <button class="tab active" id="stil-all" onclick="setStilista('all',this)">Tutti</button>
-    <button class="tab" id="stil-cucinelli" onclick="setStilista('cucinelli',this)">Cucinelli</button>
-    <button class="tab" id="stil-armani" onclick="setStilista('armani',this)">Armani</button>
-  </div>
   <div class="tabs" style="margin-bottom:16px;">
     <button class="tab active" id="cat-all" onclick="filtraCat('all',this)">Tutti</button>
     <button class="tab" id="cat-outerwear" onclick="filtraCat('outerwear',this)">Outerwear</button>
@@ -145,112 +141,155 @@ nav::-webkit-scrollbar { display: none; }
     <button class="tab" id="cat-tshirt" onclick="filtraCat('tshirt',this)">T-Shirt &amp; Polo</button>
     <button class="tab" id="cat-pantaloni" onclick="filtraCat('pantaloni',this)">Pantaloni</button>
     <button class="tab" id="cat-scarpe" onclick="filtraCat('scarpe',this)">Scarpe</button>
-    <button class="tab" id="cat-accessori" onclick="filtraCat('accessori',this)">Accessori</button>
     <button class="tab" id="cat-profumi" onclick="filtraCat('profumi',this)">Profumi</button>
   </div>
 
   <div class="cat-group" data-cat="outerwear">
     <div class="cat-label">Outerwear</div>
-    <div class="item-card" data-stil="cucinelli armani"><div class="item-color" style="background:#D8CCBA"></div><div class="item-info"><div class="item-name">Trench Beige</div><div class="item-brand">Massimo Dutti</div><div class="item-stil">Cucinelli · Armani</div></div><span class="badge b-ok">Cross</span></div>
-    <div class="item-card" data-stil="cucinelli armani"><div class="item-color" style="background:#F0EAD8"></div><div class="item-info"><div class="item-name">Blazer Lino Ecru/Sabbia</div><div class="item-brand">—</div><div class="item-stil">Cucinelli · Armani</div></div><span class="badge b-pe">P/E</span></div>
-    <div class="item-card" data-stil="cucinelli armani"><div class="item-color" style="background:#1A2A40"></div><div class="item-info"><div class="item-name">Giacca Quilted Liddesdale Navy</div><div class="item-brand">Barbour</div><div class="item-stil">Cucinelli · Armani</div></div><span class="badge b-ok">Cross</span></div>
-    <div class="item-card" data-stil="armani"><div class="item-color" style="background:#1A2A40"></div><div class="item-info"><div class="item-name">Giacca Wax Ashby Navy</div><div class="item-brand">Barbour</div><div class="item-stil">Armani</div></div><span class="badge b-ok">Cross</span></div>
-    <div class="item-card" data-stil="cucinelli armani"><div class="item-color" style="background:#1A2A40"></div><div class="item-info"><div class="item-name">Montgomery Misto Lana Navy</div><div class="item-brand">Gutteridge</div><div class="item-stil">Cucinelli · Armani</div></div><span class="badge b-ai">A/I</span></div>
-    <div class="item-card" data-stil="armani"><div class="item-color" style="background:#182638"></div><div class="item-info"><div class="item-name">Parka Gore-Tex Navy</div><div class="item-brand">Woolrich</div><div class="item-stil">Armani</div></div><span class="badge b-ai">A/I</span></div>
+    <div class="item-card"><div class="item-color" style="background:#F0EAD8"></div><div class="item-info"><div class="item-name">Blazer Lino Ecru/Sabbia</div><div class="item-brand">H&M</div><div class="item-stil">Cucinelli · Armani</div></div><span class="badge b-pe">P/E</span></div>
+    <div class="item-card"><div class="item-color" style="background:#D8CCBA"></div><div class="item-info"><div class="item-name">Trench Beige</div><div class="item-brand">Massimo Dutti</div><div class="item-stil">Cucinelli · Armani</div></div><span class="badge b-ok">Cross</span></div>
+    <div class="item-card"><div class="item-color" style="background:#1A2A40"></div><div class="item-info"><div class="item-name">Giacca Quilted Liddesdale Navy</div><div class="item-brand">Barbour</div><div class="item-stil">Cucinelli · Armani</div></div><span class="badge b-ok">Cross</span></div>
   </div>
 
   <div class="cat-group" data-cat="camicie">
     <div class="cat-label">Camicie</div>
-    <div class="item-card" data-stil="cucinelli"><div class="item-color" style="background:#C8A898"></div><div class="item-info"><div class="item-name">Camicia Rosa Antico</div><div class="item-brand">Camicissima</div><div class="item-stil">Cucinelli</div></div><span class="badge b-ok">Cross</span></div>
-    <div class="item-card" data-stil="cucinelli"><div class="item-color" style="background:#F5F0E8"></div><div class="item-info"><div class="item-name">Camicia Bianca</div><div class="item-brand">Camicissima</div><div class="item-stil">Cucinelli</div></div><span class="badge b-ok">Cross</span></div>
-    <div class="item-card" data-stil="cucinelli"><div class="item-color" style="background:#F5F0E8"></div><div class="item-info"><div class="item-name">Camicia Bianca con Gemelli</div><div class="item-brand">Boggi</div><div class="item-stil">Cucinelli — ufficio formale</div></div><span class="badge b-ok">Cross</span></div>
-    <div class="item-card" data-stil="armani"><div class="item-color" style="background:#7890A8"></div><div class="item-info"><div class="item-name">Camicia Azzurro Oxford Chiaro</div><div class="item-brand">—</div><div class="item-stil">Armani</div></div><span class="badge b-ok">Cross</span></div>
-    <div class="item-card" data-stil="armani"><div class="item-color" style="background:#486080"></div><div class="item-info"><div class="item-name">Camicia Azzurro Oxford Scuro</div><div class="item-brand">Camicissima</div><div class="item-stil">Armani</div></div><span class="badge b-ok">Cross</span></div>
-    <div class="item-card" data-stil="armani"><div class="item-color" style="background:repeating-linear-gradient(90deg,#5878A0 0,#5878A0 3px,#F8F2E4 3px,#F8F2E4 9px)"></div><div class="item-info"><div class="item-name">Camicia Righe Azzurro/Bianco Sottili</div><div class="item-brand">Camicissima</div><div class="item-stil">Armani</div></div><span class="badge b-ok">Cross</span></div>
-    <div class="item-card" data-stil="armani"><div class="item-color" style="background:repeating-linear-gradient(90deg,#F8F2E4 0,#F8F2E4 6px,#5878A0 6px,#5878A0 12px)"></div><div class="item-info"><div class="item-name">Camicia Righe Azzurro/Bianco Medie</div><div class="item-brand">Camicissima</div><div class="item-stil">Armani</div></div><span class="badge b-ok">Cross</span></div>
-    <div class="item-card" data-stil="armani"><div class="item-color" style="background:#708090"></div><div class="item-info"><div class="item-name">Camicia Micro Quadri Grigio-Blu</div><div class="item-brand">Camicissima</div><div class="item-stil">Armani</div></div><span class="badge b-ok">Cross</span></div>
-    <div class="item-card" data-stil="armani"><div class="item-color" style="background:repeating-linear-gradient(90deg,#1A2A40 0,#1A2A40 4px,#F8F2E4 4px,#F8F2E4 10px)"></div><div class="item-info"><div class="item-name">Camicia Righe Navy/Bianco</div><div class="item-brand">Camicissima</div><div class="item-stil">Armani — contrasto alto</div></div><span class="badge b-warn">Cross</span></div>
-    <div class="item-card" data-stil="armani"><div class="item-color" style="background:#3A3880"></div><div class="item-info"><div class="item-name">Camicia Fantasia Micro Motivo Navy</div><div class="item-brand">—</div><div class="item-stil">fuori palette — colletto contrasto</div></div><span class="badge b-rep">Valutare</span></div>
+    <div class="item-card"><div class="item-color" style="background:#C8A898"></div><div class="item-info"><div class="item-name">Camicia Rosa Antico</div><div class="item-brand">Camicissima</div><div class="item-stil">Cucinelli</div></div><span class="badge b-ok">Cross</span></div>
+    <div class="item-card"><div class="item-color" style="background:#F5F0E8"></div><div class="item-info"><div class="item-name">Camicia Bianca</div><div class="item-brand">Camicissima</div><div class="item-stil">Cucinelli</div></div><span class="badge b-ok">Cross</span></div>
+    <div class="item-card"><div class="item-color" style="background:#F5F0E8"></div><div class="item-info"><div class="item-name">Camicia Bianca con Gemelli</div><div class="item-brand">Boggi</div><div class="item-stil">Cucinelli — ufficio formale/serale</div></div><span class="badge b-ok">Cross</span></div>
+    <div class="item-card"><div class="item-color" style="background:repeating-linear-gradient(90deg,#5878A0 0,#5878A0 3px,#F8F2E4 3px,#F8F2E4 9px)"></div><div class="item-info"><div class="item-name">Camicia Righe Azzurro/Bianco Sottili</div><div class="item-brand">Camicissima</div><div class="item-stil">Cucinelli — righe come texture</div></div><span class="badge b-ok">Cross</span></div>
   </div>
 
   <div class="cat-group" data-cat="maglieria">
     <div class="cat-label">Maglieria &amp; Felpe</div>
-
-```
-<div class="item-card" data-stil="cucinelli"><div class="item-color" style="background:#F0E8D8"></div><div class="item-info"><div class="item-name">Maglione Panna</div><div class="item-brand">OVS</div><div class="item-stil">Cucinelli</div></div><span class="badge b-pe">P/E</span></div>
-<div class="item-card" data-stil="cucinelli"><div class="item-color" style="background:#C8C0B0"></div><div class="item-info"><div class="item-name">Felpa Girocollo Greige/Sabbia</div><div class="item-brand">Gutteridge</div><div class="item-stil">Cucinelli — pesante invernale</div></div><span class="badge b-ai">A/I</span></div>
-<div class="item-card" data-stil="cucinelli armani"><div class="item-color" style="background:#B0ACA8"></div><div class="item-info"><div class="item-name">Girocollo Lana Grigio Chiaro</div><div class="item-brand">H&amp;M</div><div class="item-stil">Cucinelli · Armani</div></div><span class="badge b-ai">A/I</span></div>
-<div class="item-card" data-stil="cucinelli armani"><div class="item-color" style="background:#D8D0C0"></div><div class="item-info"><div class="item-name">Felpa Girocollo Bianco Sporco</div><div class="item-brand">Uniqlo</div><div class="item-stil">Cucinelli · Armani — solo strato ①</div></div><span class="badge b-ok">Cross</span></div>
-<div class="item-card" data-stil="cucinelli"><div class="item-color" style="background:#C8A898"></div><div class="item-info"><div class="item-name">Felpa Girocollo Rosa Antico</div><div class="item-brand">Uniqlo</div><div class="item-stil">Cucinelli — Travelwear</div></div><span class="badge b-pe">P/E</span></div>
-<div class="item-card" data-stil="cucinelli armani"><div class="item-color" style="background:#1A2A40"></div><div class="item-info"><div class="item-name">Gilet Navy</div><div class="item-brand">OVS</div><div class="item-stil">Cucinelli · Armani</div></div><span class="badge b-ok">Cross</span></div>
-<div class="item-card" data-stil="cucinelli armani"><div class="item-color" style="background:#1A2A40"></div><div class="item-info"><div class="item-name">Cardigan Navy</div><div class="item-brand">OVS</div><div class="item-stil">Cucinelli · Armani</div></div><span class="badge b-ai">A/I</span></div>
-<div class="item-card" data-stil="armani"><div class="item-color" style="background:#1A2A40"></div><div class="item-info"><div class="item-name">Girocollo Lana Merino Navy</div><div class="item-brand">Tela Blu</div><div class="item-stil">Armani — merino fine</div></div><span class="badge b-ai">A/I</span></div>
-<div class="item-card" data-stil="armani"><div class="item-color" style="background:#1A1E28"></div><div class="item-info"><div class="item-name">Girocollo Lana Blu Notte</div><div class="item-brand">H&amp;M</div><div class="item-stil">Armani</div></div><span class="badge b-ai">A/I</span></div>
-<div class="item-card" data-stil="armani"><div class="item-color" style="background:#1A2A40"></div><div class="item-info"><div class="item-name">Maglia ML Navy 1</div><div class="item-brand">H&amp;M</div><div class="item-stil">Armani — base layer A/I</div></div><span class="badge b-ai">A/I</span></div>
-<div class="item-card" data-stil="armani"><div class="item-color" style="background:#1E3050"></div><div class="item-info"><div class="item-name">Maglia ML Navy 2</div><div class="item-brand">H&amp;M</div><div class="item-stil">Armani — base layer A/I</div></div><span class="badge b-ai">A/I</span></div>
-<div class="item-card" data-stil="armani"><div class="item-color" style="background:#587890"></div><div class="item-info"><div class="item-name">Maglia ML Blu Polvere</div><div class="item-brand">H&amp;M</div><div class="item-stil">Armani — base layer A/I</div></div><span class="badge b-ai">A/I</span></div>
-<div class="item-card" data-stil="armani"><div class="item-color" style="background:#909088"></div><div class="item-info"><div class="item-name">Maglia ML Grigio</div><div class="item-brand">H&amp;M</div><div class="item-stil">Armani — base layer A/I</div></div><span class="badge b-ai">A/I</span></div>
-```
-
+    <div class="item-card"><div class="item-color" style="background:#F0E8D8"></div><div class="item-info"><div class="item-name">Maglione Panna</div><div class="item-brand">OVS</div><div class="item-stil">Cucinelli — secondo strato P/E</div></div><span class="badge b-pe">P/E</span></div>
+    <div class="item-card"><div class="item-color" style="background:#D8D0C0"></div><div class="item-info"><div class="item-name">Felpa Girocollo Bianco Sporco</div><div class="item-brand">Uniqlo</div><div class="item-stil">Cucinelli Travelwear</div></div><span class="badge b-ok">Cross</span></div>
+    <div class="item-card"><div class="item-color" style="background:#C8A898"></div><div class="item-info"><div class="item-name">Felpa Girocollo Rosa Antico</div><div class="item-brand">Uniqlo</div><div class="item-stil">Cucinelli Travelwear</div></div><span class="badge b-pe">P/E</span></div>
+    <div class="item-card"><div class="item-color" style="background:#1A2A40"></div><div class="item-info"><div class="item-name">Gilet Navy</div><div class="item-brand">OVS</div><div class="item-stil">Cucinelli — accento navy</div></div><span class="badge b-ok">Cross</span></div>
+    <div class="item-card"><div class="item-color" style="background:#B0ACA8"></div><div class="item-info"><div class="item-name">Girocollo Lana Grigio Chiaro</div><div class="item-brand">H&amp;M</div><div class="item-stil">Cucinelli — base layer</div></div><span class="badge b-ai">A/I</span></div>
   </div>
 
   <div class="cat-group" data-cat="tshirt">
     <div class="cat-label">T-Shirt &amp; Polo</div>
-    <div class="item-card" data-stil="cucinelli"><div class="item-color" style="background:#D8B8B0"></div><div class="item-info"><div class="item-name">T-Shirt Rosa Cipria · oversize</div><div class="item-brand">Uniqlo</div><div class="item-stil">Cucinelli</div></div><span class="badge b-pe">P/E</span></div>
-    <div class="item-card" data-stil="cucinelli armani"><div class="item-color" style="background:#F5F0E8"></div><div class="item-info"><div class="item-name">T-Shirt Bianca · oversize</div><div class="item-brand">Uniqlo</div><div class="item-stil">Cucinelli · Armani</div></div><span class="badge b-pe">P/E</span></div>
-    <div class="item-card" data-stil="cucinelli"><div class="item-color" style="background:#B8B4B0"></div><div class="item-info"><div class="item-name">T-Shirt Grigio Chiaro</div><div class="item-brand">Dsquared2 Underwear</div><div class="item-stil">Cucinelli — grigio polveroso smorzato</div></div><span class="badge b-pe">P/E</span></div>
-    <div class="item-card" data-stil="armani"><div class="item-color" style="background:#707068"></div><div class="item-info"><div class="item-name">T-Shirt Grigio Ardesia · oversize</div><div class="item-brand">Uniqlo</div><div class="item-stil">Armani</div></div><span class="badge b-pe">P/E</span></div>
-    <div class="item-card" data-stil="cucinelli"><div class="item-color" style="background:#F0E8D8"></div><div class="item-info"><div class="item-name">Polo Panna</div><div class="item-brand">OVS Piombo</div><div class="item-stil">Cucinelli</div></div><span class="badge b-pe">P/E</span></div>
-    <div class="item-card" data-stil="armani"><div class="item-color" style="background:#1A2A40"></div><div class="item-info"><div class="item-name">Polo Navy</div><div class="item-brand">OVS Piombo</div><div class="item-stil">Armani</div></div><span class="badge b-pe">P/E</span></div>
+    <div class="item-card"><div class="item-color" style="background:#D8B8B0"></div><div class="item-info"><div class="item-name">T-Shirt Rosa Cipria · oversize</div><div class="item-brand">Uniqlo</div><div class="item-stil">Cucinelli</div></div><span class="badge b-pe">P/E</span></div>
+    <div class="item-card"><div class="item-color" style="background:#F5F0E8"></div><div class="item-info"><div class="item-name">T-Shirt Bianca · oversize</div><div class="item-brand">Uniqlo</div><div class="item-stil">Cucinelli</div></div><span class="badge b-pe">P/E</span></div>
+    <div class="item-card"><div class="item-color" style="background:#B8B4B0"></div><div class="item-info"><div class="item-name">T-Shirt Grigio Chiaro</div><div class="item-brand">Dsquared2 Underwear</div><div class="item-stil">Cucinelli — grigio polveroso smorzato</div></div><span class="badge b-pe">P/E</span></div>
+    <div class="item-card"><div class="item-color" style="background:#F0E8D8"></div><div class="item-info"><div class="item-name">Polo Panna</div><div class="item-brand">OVS Piombo</div><div class="item-stil">Cucinelli</div></div><span class="badge b-pe">P/E</span></div>
   </div>
 
   <div class="cat-group" data-cat="pantaloni">
     <div class="cat-label">Pantaloni</div>
-    <div class="item-card" data-stil="cucinelli"><div class="item-color" style="background:#C8BCA8"></div><div class="item-info"><div class="item-name">Chino Beige/Sabbia</div><div class="item-brand">Camicissima</div><div class="item-stil">Cucinelli</div></div><span class="badge b-ok">Cross</span></div>
-    <div class="item-card" data-stil="cucinelli"><div class="item-color" style="background:#F0EAD8"></div><div class="item-info"><div class="item-name">Chino Bianco/Panna</div><div class="item-brand">OVS</div><div class="item-stil">Cucinelli</div></div><span class="badge b-pe">P/E</span></div>
-    <div class="item-card" data-stil="cucinelli armani"><div class="item-color" style="background:#B0ACA8"></div><div class="item-info"><div class="item-name">Chino Grigio Chiaro</div><div class="item-brand">Levi's</div><div class="item-stil">Cucinelli · Armani</div></div><span class="badge b-ok">Cross</span></div>
-    <div class="item-card" data-stil="cucinelli armani"><div class="item-color" style="background:#909088"></div><div class="item-info"><div class="item-name">Pantalone Flanella Grigio Medio</div><div class="item-brand">Tela Blu</div><div class="item-stil">Cucinelli · Armani</div></div><span class="badge b-ai">A/I</span></div>
-    <div class="item-card" data-stil="armani"><div class="item-color" style="background:#587890"></div><div class="item-info"><div class="item-name">Chino Blu Polvere</div><div class="item-brand">Levi's Standard Taper</div><div class="item-stil">Armani</div></div><span class="badge b-ok">Cross</span></div>
-    <div class="item-card" data-stil="armani"><div class="item-color" style="background:#1A2A40"></div><div class="item-info"><div class="item-name">Chino Deep Navy</div><div class="item-brand">Camicissima</div><div class="item-stil">Armani</div></div><span class="badge b-ok">Cross</span></div>
-    <div class="item-card" data-stil="armani"><div class="item-color" style="background:#1A2A40"></div><div class="item-info"><div class="item-name">Chino Navy</div><div class="item-brand">Camicissima</div><div class="item-stil">Armani</div></div><span class="badge b-ok">Cross</span></div>
-    <div class="item-card" data-stil="cucinelli"><div class="item-color" style="background:#7898B0"></div><div class="item-info"><div class="item-name">Jeans Azzurro Slavato</div><div class="item-brand">H&amp;M</div><div class="item-stil">Cucinelli</div></div><span class="badge b-pe">P/E</span></div>
-    <div class="item-card" data-stil="cucinelli"><div class="item-color" style="background:#F5F0E8"></div><div class="item-info"><div class="item-name">Shorts Felpa Bianchi</div><div class="item-brand">OVS</div><div class="item-stil">Cucinelli Travelwear</div></div><span class="badge b-pe">P/E</span></div>
-    <div class="item-card" data-stil="armani"><div class="item-color" style="background:#1A2A40"></div><div class="item-info"><div class="item-name">Shorts Felpa Navy</div><div class="item-brand">OVS</div><div class="item-stil">Armani Sport</div></div><span class="badge b-pe">P/E</span></div>
-    <div class="item-card" data-stil="cucinelli armani"><div class="item-color" style="background:#A89878"></div><div class="item-info"><div class="item-name">Shorts Cargo Beige</div><div class="item-brand">OVS</div><div class="item-stil">Outdoor casual</div></div><span class="badge b-warn">P/E · outdoor</span></div>
-    <div class="item-card" data-stil="armani"><div class="item-color" style="background:#203050"></div><div class="item-info"><div class="item-name">Jeans Blu Scuro</div><div class="item-brand">Levi's</div><div class="item-stil">Armani</div></div><span class="badge b-ok">Cross</span></div>
-    <div class="item-card" data-stil="armani"><div class="item-color" style="background:#707068"></div><div class="item-info"><div class="item-name">Jeans Grigio</div><div class="item-brand">Levi's</div><div class="item-stil">Armani · Cucinelli</div></div><span class="badge b-ok">Cross</span></div>
+    <div class="section-label" style="font-size:.55rem;margin:10px 0 6px;border:none;padding:0;color:#9A8C7A;">Ufficio — solo chino</div>
+    <div class="item-card"><div class="item-color" style="background:#C8BCA8"></div><div class="item-info"><div class="item-name">Chino Beige/Sabbia</div><div class="item-brand">Camicissima</div><div class="item-stil">Cucinelli — ufficio</div></div><span class="badge b-ok">Cross</span></div>
+    <div class="item-card"><div class="item-color" style="background:#F0EAD8"></div><div class="item-info"><div class="item-name">Chino Bianco/Panna</div><div class="item-brand">OVS</div><div class="item-stil">Cucinelli — ufficio</div></div><span class="badge b-pe">P/E</span></div>
+    <div class="item-card"><div class="item-color" style="background:#B0ACA8"></div><div class="item-info"><div class="item-name">Chino Grigio Chiaro</div><div class="item-brand">Levi's</div><div class="item-stil">Cucinelli — ufficio</div></div><span class="badge b-ok">Cross</span></div>
+    <div class="section-label" style="font-size:.55rem;margin:14px 0 6px;border:none;padding:0;color:#9A8C7A;">Casual — jeans e shorts</div>
+    <div class="item-card"><div class="item-color" style="background:#7898B0"></div><div class="item-info"><div class="item-name">Jeans Azzurro Slavato</div><div class="item-brand">H&amp;M</div><div class="item-stil">Cucinelli — casual</div></div><span class="badge b-pe">P/E</span></div>
+    <div class="item-card"><div class="item-color" style="background:#707068"></div><div class="item-info"><div class="item-name">Jeans Grigio</div><div class="item-brand">Levi's</div><div class="item-stil">Cucinelli — casual</div></div><span class="badge b-ok">Cross</span></div>
+    <div class="item-card"><div class="item-color" style="background:#F5F0E8"></div><div class="item-info"><div class="item-name">Shorts Felpa Bianchi</div><div class="item-brand">OVS</div><div class="item-stil">Cucinelli Travelwear — casual</div></div><span class="badge b-pe">P/E</span></div>
+    <div class="item-card"><div class="item-color" style="background:#A89878"></div><div class="item-info"><div class="item-name">Shorts Cargo Beige</div><div class="item-brand">OVS</div><div class="item-stil">Cucinelli — casual outdoor</div></div><span class="badge b-warn">P/E · outdoor</span></div>
   </div>
 
   <div class="cat-group" data-cat="scarpe">
     <div class="cat-label">Scarpe</div>
-    <div class="item-card" data-stil="cucinelli armani"><div class="item-color" style="background:#B0A090"></div><div class="item-info"><div class="item-name">Sneaker Tennis Taupe</div><div class="item-brand">Valsport Tournament</div><div class="item-stil">Cucinelli · Armani</div></div><span class="badge b-ok">Cross</span></div>
-
-```
-<div class="item-card" data-stil="cucinelli armani"><div class="item-color" style="background:#302018"></div><div class="item-info"><div class="item-name">Loafer Morsetto Marrone Scuro</div><div class="item-brand">Cesare Paciotti</div><div class="item-stil">Cucinelli · Armani — P/E ufficio</div></div><span class="badge b-ok">Cross</span></div>
-<div class="item-card" data-stil="armani"><div class="item-color" style="background:#1A2A40"></div><div class="item-info"><div class="item-name">Baryden 2fit ABX Navy</div><div class="item-brand">Geox</div><div class="item-stil">Armani — ufficio A/I</div></div><span class="badge b-ai">A/I</span></div>
-<div class="item-card" data-stil="armani"><div class="item-color" style="background:#806050"></div><div class="item-info"><div class="item-name">Boat Shoes Marrone</div><div class="item-brand">Timberland</div><div class="item-stil">Armani outdoor</div></div><span class="badge b-pe">P/E</span></div>
-<div class="item-card" data-stil="armani"><div class="item-color" style="background:#385870"></div><div class="item-info"><div class="item-name">Sneaker Blu</div><div class="item-brand">WOZ Robbie</div><div class="item-stil">Armani casual</div></div><span class="badge b-pe">P/E</span></div>
-<div class="item-card" data-stil="armani"><div class="item-color" style="background:#1A2A40"></div><div class="item-info"><div class="item-name">Sneaker Navy</div><div class="item-brand">Camper</div><div class="item-stil">Sport only</div></div><span class="badge b-warn">Sport only</span></div>
-<div class="item-card" data-stil="cucinelli armani"><div class="item-color" style="background:#F5F0E8"></div><div class="item-info"><div class="item-name">Sneaker Bianca</div><div class="item-brand">Lotto</div><div class="item-stil">brand incoerente</div></div><span class="badge b-rep">Sostituire</span></div>
-```
-
-  </div>
-
-  <div class="cat-group" data-cat="accessori">
-    <div class="cat-label">Accessori</div>
-    <div class="item-card" data-stil="cucinelli armani"><div class="item-color" style="background:#18243A"></div><div class="item-info"><div class="item-name">Cintura Reversibile Pelle/Suede Navy</div><div class="item-brand">Gutteridge</div><div class="item-stil">Cucinelli · Armani</div></div><span class="badge b-ok">Cross</span></div>
-    <div class="item-card" data-stil="armani"><div class="item-color" style="background:#1A2A40"></div><div class="item-info"><div class="item-name">Cap Navy Yankees</div><div class="item-brand">New Era</div><div class="item-stil">Armani Sport</div></div><span class="badge b-ok">Cross</span></div>
-    <div class="item-card" data-stil="armani"><div class="item-color" style="background:#223040"></div><div class="item-info"><div class="item-name">Cap Navy</div><div class="item-brand">Barbour</div><div class="item-stil">Armani · Barbour</div></div><span class="badge b-ok">Cross</span></div>
-    <div class="item-card" data-stil="cucinelli armani"><div class="item-color" style="background:repeating-radial-gradient(circle,#7890A8 0,#7890A8 4px,#1A2A40 4px,#1A2A40 12px)"></div><div class="item-info"><div class="item-name">Sciarpa Lana Vergine Navy/Azzurro</div><div class="item-brand">Spada Roma</div><div class="item-stil">Cucinelli · Armani — medaglioni</div></div><span class="badge b-ai">A/I</span></div>
+    <div class="item-card"><div class="item-color" style="background:#B0A090"></div><div class="item-info"><div class="item-name">Sneaker Tennis Taupe</div><div class="item-brand">Valsport Tournament</div><div class="item-stil">Cucinelli · Armani</div></div><span class="badge b-ok">Cross</span></div>
+    <div class="item-card"><div class="item-color" style="background:#302018"></div><div class="item-info"><div class="item-name">Loafer Morsetto Marrone Scuro</div><div class="item-brand">Cesare Paciotti</div><div class="item-stil">Cucinelli — ufficio/serale</div></div><span class="badge b-ok">Cross</span></div>
+    <div class="item-card"><div class="item-color" style="background:#806050"></div><div class="item-info"><div class="item-name">Boat Shoes Marrone</div><div class="item-brand">Timberland</div><div class="item-stil">Cucinelli — casual outdoor</div></div><span class="badge b-pe">P/E</span></div>
   </div>
 
   <div class="cat-group" data-cat="profumi">
     <div class="cat-label">Profumi</div>
-    <div class="item-card" data-stil="cucinelli armani"><div class="item-color" style="background:#C0A8C8"></div><div class="item-info"><div class="item-name">L'Homme</div><div class="item-brand">Prada</div><div class="item-stil">Ufficio · Serate — Cucinelli/Armani</div></div><span class="badge b-ok">Cross</span></div>
-    <div class="item-card" data-stil="cucinelli armani"><div class="item-color" style="background:#88B8C8"></div><div class="item-info"><div class="item-name">Acqua di Gio</div><div class="item-brand">Giorgio Armani</div><div class="item-stil">Casual · Aperitivo</div></div><span class="badge b-ok">Cross</span></div>
-    <div class="item-card" data-stil="cucinelli"><div class="item-color" style="background:#C8C070"></div><div class="item-info"><div class="item-name">Amalfi Sunray</div><div class="item-brand">Zara</div><div class="item-stil">Cucinelli — Weekend · Outdoor</div></div><span class="badge b-pe">P/E</span></div>
-    <div class="item-card" data-stil="armani"><div class="item-color" style="background:#C0B8A8"></div><div class="item-info"><div class="item-name">Fierce</div><div class="item-brand">Abercrombie</div><div class="item-stil">Sport only</div></div><span class="badge b-warn">Sport only</span></div>
-    <div class="item-card" data-stil="cucinelli armani"><div class="item-color" style="background:#A8C0A0"></div><div class="item-info"><div class="item-name">Dancing Flowers</div><div class="item-brand">Nord</div><div class="item-stil">Casual elevato · Aperitivo</div></div><span class="badge b-pend">Valutazione</span></div>
+    <div class="item-card"><div class="item-color" style="background:#88B8C8"></div><div class="item-info"><div class="item-name">Acqua di Gio</div><div class="item-brand">Giorgio Armani</div><div class="item-stil">Casual · Aperitivo</div></div><span class="badge b-ok">Cross</span></div>
+    <div class="item-card"><div class="item-color" style="background:#C8C070"></div><div class="item-info"><div class="item-name">Amalfi Sunray</div><div class="item-brand">Zara</div><div class="item-stil">Weekend · Outdoor</div></div><span class="badge b-pe">P/E</span></div>
+    <div class="item-card"><div class="item-color" style="background:#C0A8C8"></div><div class="item-info"><div class="item-name">L'Homme</div><div class="item-brand">Prada</div><div class="item-stil">Ufficio · Serate</div></div><span class="badge b-ok">Cross</span></div>
+  </div>
+
+</div>
+
+<!-- GUARDAROBA ARMANI -->
+
+<div id="guardaroba-ai" class="section">
+  <div class="section-label">Guardaroba · Armani A/I </div>
+
+  <div class="tabs" style="margin-bottom:16px;">
+    <button class="tab active" id="ai-cat-all" onclick="filtraCatAI('all',this)">Tutti</button>
+    <button class="tab" id="ai-cat-outerwear" onclick="filtraCatAI('outerwear',this)">Outerwear</button>
+    <button class="tab" id="ai-cat-camicie" onclick="filtraCatAI('camicie',this)">Camicie</button>
+    <button class="tab" id="ai-cat-maglieria" onclick="filtraCatAI('maglieria',this)">Maglieria</button>
+    <button class="tab" id="ai-cat-tshirt" onclick="filtraCatAI('tshirt',this)">T-Shirt &amp; Polo</button>
+    <button class="tab" id="ai-cat-pantaloni" onclick="filtraCatAI('pantaloni',this)">Pantaloni</button>
+    <button class="tab" id="ai-cat-scarpe" onclick="filtraCatAI('scarpe',this)">Scarpe</button>
+    <button class="tab" id="ai-cat-accessori" onclick="filtraCatAI('accessori',this)">Accessori</button>
+    <button class="tab" id="ai-cat-profumi" onclick="filtraCatAI('profumi',this)">Profumi</button>
+  </div>
+
+  <div class="ai-cat-group" data-cat="outerwear">
+    <div class="cat-label">Outerwear</div>
+    <div class="item-card"><div class="item-color" style="background:#1A2A40"></div><div class="item-info"><div class="item-name">Giacca Wax Ashby Navy</div><div class="item-brand">Barbour</div><div class="item-stil">Armani</div></div><span class="badge b-ai">A/I</span></div>
+    <div class="item-card"><div class="item-color" style="background:#1A2A40"></div><div class="item-info"><div class="item-name">Montgomery Misto Lana Navy</div><div class="item-brand">Gutteridge</div><div class="item-stil">Armani · Cucinelli</div></div><span class="badge b-ai">A/I</span></div>
+    <div class="item-card"><div class="item-color" style="background:#182638"></div><div class="item-info"><div class="item-name">Parka Gore-Tex Navy</div><div class="item-brand">Woolrich</div><div class="item-stil">Armani</div></div><span class="badge b-ai">A/I</span></div>
+  </div>
+
+  <div class="ai-cat-group" data-cat="camicie">
+    <div class="cat-label">Camicie</div>
+    <div class="item-card"><div class="item-color" style="background:#7890A8"></div><div class="item-info"><div class="item-name">Camicia Azzurro Oxford Chiaro · Camicissima</div><div class="item-brand">Camicissima</div><div class="item-stil">Armani</div></div><span class="badge b-ok">Cross</span></div>
+    <div class="item-card"><div class="item-color" style="background:#486080"></div><div class="item-info"><div class="item-name">Camicia Azzurro Oxford Scuro</div><div class="item-brand">Camicissima</div><div class="item-stil">Armani</div></div><span class="badge b-ok">Cross</span></div>
+    <div class="item-card"><div class="item-color" style="background:repeating-linear-gradient(90deg,#5878A0 0,#5878A0 3px,#F8F2E4 3px,#F8F2E4 9px)"></div><div class="item-info"><div class="item-name">Camicia Righe Azzurro/Bianco Sottili</div><div class="item-brand">Camicissima</div><div class="item-stil">Armani</div></div><span class="badge b-ok">Cross</span></div>
+    <div class="item-card"><div class="item-color" style="background:repeating-linear-gradient(90deg,#F8F2E4 0,#F8F2E4 6px,#5878A0 6px,#5878A0 12px)"></div><div class="item-info"><div class="item-name">Camicia Righe Bianco/Azzurro Medie</div><div class="item-brand">Camicissima</div><div class="item-stil">Armani</div></div><span class="badge b-ok">Cross</span></div>
+    <div class="item-card"><div class="item-color" style="background:#708090"></div><div class="item-info"><div class="item-name">Camicia Micro Quadri Grigio-Blu</div><div class="item-brand">Camicissima</div><div class="item-stil">Armani</div></div><span class="badge b-ok">Cross</span></div>
+    <div class="item-card"><div class="item-color" style="background:#3A3880"></div><div class="item-info"><div class="item-name">Camicia Fantasia Micro Motivo Navy</div><div class="item-brand">Camicissima</div><div class="item-stil">fuori palette — da valutare</div></div><span class="badge b-rep">Valutare</span></div>
+  </div>
+
+  <div class="ai-cat-group" data-cat="maglieria">
+    <div class="cat-label">Maglieria &amp; Felpe</div>
+    <div class="item-card"><div class="item-color" style="background:#1A2A40"></div><div class="item-info"><div class="item-name">Cardigan Navy</div><div class="item-brand">OVS</div><div class="item-stil">Armani — secondo strato</div></div><span class="badge b-ai">A/I</span></div>
+    <div class="item-card"><div class="item-color" style="background:#1A2A40"></div><div class="item-info"><div class="item-name">Gilet Navy</div><div class="item-brand">OVS</div><div class="item-stil">Armani — secondo strato</div></div><span class="badge b-ok">Cross</span></div>
+    <div class="item-card"><div class="item-color" style="background:#1A2A40"></div><div class="item-info"><div class="item-name">Girocollo Lana Merino Navy</div><div class="item-brand">Tela Blu</div><div class="item-stil">Armani — merino fine</div></div><span class="badge b-ai">A/I</span></div>
+    <div class="item-card"><div class="item-color" style="background:#1A1E28"></div><div class="item-info"><div class="item-name">Girocollo Lana Blu Notte</div><div class="item-brand">H&amp;M</div><div class="item-stil">Armani</div></div><span class="badge b-ai">A/I</span></div>
+    <div class="item-card"><div class="item-color" style="background:#B0ACA8"></div><div class="item-info"><div class="item-name">Girocollo Lana Grigio Chiaro</div><div class="item-brand">H&amp;M</div><div class="item-stil">Armani — base layer</div></div><span class="badge b-ai">A/I</span></div>
+    <div class="item-card"><div class="item-color" style="background:#C8C0B0"></div><div class="item-info"><div class="item-name">Felpa Girocollo Greige/Sabbia</div><div class="item-brand">Gutteridge</div><div class="item-stil">Armani — pesante invernale</div></div><span class="badge b-ai">A/I</span></div>
+    <div class="item-card"><div class="item-color" style="background:#1A2A40"></div><div class="item-info"><div class="item-name">Maglia ML Navy 1</div><div class="item-brand">H&amp;M</div><div class="item-stil">Armani — base layer A/I</div></div><span class="badge b-ai">A/I</span></div>
+    <div class="item-card"><div class="item-color" style="background:#1E3050"></div><div class="item-info"><div class="item-name">Maglia ML Navy 2</div><div class="item-brand">H&amp;M</div><div class="item-stil">Armani — base layer A/I</div></div><span class="badge b-ai">A/I</span></div>
+    <div class="item-card"><div class="item-color" style="background:#587890"></div><div class="item-info"><div class="item-name">Maglia ML Blu Polvere</div><div class="item-brand">H&amp;M</div><div class="item-stil">Armani — base layer A/I</div></div><span class="badge b-ai">A/I</span></div>
+    <div class="item-card"><div class="item-color" style="background:#909088"></div><div class="item-info"><div class="item-name">Maglia ML Grigio</div><div class="item-brand">H&amp;M</div><div class="item-stil">Armani — base layer A/I</div></div><span class="badge b-ai">A/I</span></div>
+  </div>
+
+  <div class="ai-cat-group" data-cat="tshirt">
+    <div class="cat-label">T-Shirt &amp; Polo</div>
+    <div class="item-card"><div class="item-color" style="background:#707068"></div><div class="item-info"><div class="item-name">T-Shirt Grigio Ardesia · oversize</div><div class="item-brand">Uniqlo</div><div class="item-stil">Armani</div></div><span class="badge b-pe">P/E</span></div>
+    <div class="item-card"><div class="item-color" style="background:#1A2A40"></div><div class="item-info"><div class="item-name">Polo Navy</div><div class="item-brand">OVS Piombo</div><div class="item-stil">Armani</div></div><span class="badge b-pe">P/E</span></div>
+  </div>
+
+  <div class="ai-cat-group" data-cat="pantaloni">
+    <div class="cat-label">Pantaloni</div>
+    <div class="item-card"><div class="item-color" style="background:#587890"></div><div class="item-info"><div class="item-name">Chino Blu Polvere</div><div class="item-brand">Levi's Standard Taper</div><div class="item-stil">Armani</div></div><span class="badge b-ok">Cross</span></div>
+    <div class="item-card"><div class="item-color" style="background:#1A2A40"></div><div class="item-info"><div class="item-name">Chino Deep Navy</div><div class="item-brand">Camicissima</div><div class="item-stil">Armani</div></div><span class="badge b-ok">Cross</span></div>
+    <div class="item-card"><div class="item-color" style="background:#1A2A40"></div><div class="item-info"><div class="item-name">Chino Navy</div><div class="item-brand">Camicissima</div><div class="item-stil">Armani</div></div><span class="badge b-ok">Cross</span></div>
+    <div class="item-card"><div class="item-color" style="background:#909088"></div><div class="item-info"><div class="item-name">Pantalone Flanella Grigio Medio</div><div class="item-brand">Tela Blu</div><div class="item-stil">Armani</div></div><span class="badge b-ai">A/I</span></div>
+    <div class="item-card"><div class="item-color" style="background:#203050"></div><div class="item-info"><div class="item-name">Jeans Blu Scuro</div><div class="item-brand">Levi's</div><div class="item-stil">Armani</div></div><span class="badge b-ok">Cross</span></div>
+    <div class="item-card"><div class="item-color" style="background:#1A2A40"></div><div class="item-info"><div class="item-name">Shorts Felpa Navy</div><div class="item-brand">OVS</div><div class="item-stil">Armani Sport</div></div><span class="badge b-pe">P/E</span></div>
+  </div>
+
+  <div class="ai-cat-group" data-cat="scarpe">
+    <div class="cat-label">Scarpe</div>
+    <div class="item-card"><div class="item-color" style="background:#1A2A40"></div><div class="item-info"><div class="item-name">Baryden 2fit ABX Navy</div><div class="item-brand">Geox</div><div class="item-stil">Armani — ufficio A/I</div></div><span class="badge b-ai">A/I</span></div>
+    <div class="item-card"><div class="item-color" style="background:#B0A090"></div><div class="item-info"><div class="item-name">Sneaker Tennis Taupe</div><div class="item-brand">Valsport Tournament</div><div class="item-stil">Armani · Cucinelli</div></div><span class="badge b-ok">Cross</span></div>
+    <div class="item-card"><div class="item-color" style="background:#385870"></div><div class="item-info"><div class="item-name">Sneaker Blu</div><div class="item-brand">WOZ Robbie</div><div class="item-stil">Armani casual</div></div><span class="badge b-pe">P/E</span></div>
+    <div class="item-card"><div class="item-color" style="background:#1A2A40"></div><div class="item-info"><div class="item-name">Sneaker Navy</div><div class="item-brand">Camper</div><div class="item-stil">Sport only</div></div><span class="badge b-warn">Sport only</span></div>
+  </div>
+
+  <div class="ai-cat-group" data-cat="accessori">
+    <div class="cat-label">Accessori</div>
+    <div class="item-card"><div class="item-color" style="background:#18243A"></div><div class="item-info"><div class="item-name">Cintura Reversibile Pelle/Suede Navy</div><div class="item-brand">Gutteridge</div><div class="item-stil">Armani · Cucinelli</div></div><span class="badge b-ok">Cross</span></div>
+    <div class="item-card"><div class="item-color" style="background:#1A2A40"></div><div class="item-info"><div class="item-name">Cap Navy Yankees</div><div class="item-brand">New Era</div><div class="item-stil">Armani Sport</div></div><span class="badge b-ok">Cross</span></div>
+    <div class="item-card"><div class="item-color" style="background:#223040"></div><div class="item-info"><div class="item-name">Cap Navy</div><div class="item-brand">Barbour</div><div class="item-stil">Armani · Barbour</div></div><span class="badge b-ok">Cross</span></div>
+    <div class="item-card"><div class="item-color" style="background:repeating-radial-gradient(circle,#7890A8 0,#7890A8 4px,#1A2A40 4px,#1A2A40 12px)"></div><div class="item-info"><div class="item-name">Sciarpa Lana Vergine Navy/Azzurro</div><div class="item-brand">Spada Roma</div><div class="item-stil">Armani — medaglioni</div></div><span class="badge b-ai">A/I</span></div>
+  </div>
+
+  <div class="ai-cat-group" data-cat="profumi">
+    <div class="cat-label">Profumi</div>
+    <div class="item-card"><div class="item-color" style="background:#C0A8C8"></div><div class="item-info"><div class="item-name">L'Homme</div><div class="item-brand">Prada</div><div class="item-stil">Ufficio · Serate</div></div><span class="badge b-ok">Cross</span></div>
+    <div class="item-card"><div class="item-color" style="background:#88B8C8"></div><div class="item-info"><div class="item-name">Acqua di Gio</div><div class="item-brand">Giorgio Armani</div><div class="item-stil">Casual · Aperitivo</div></div><span class="badge b-ok">Cross</span></div>
+    <div class="item-card"><div class="item-color" style="background:#C0B8A8"></div><div class="item-info"><div class="item-name">Fierce</div><div class="item-brand">Abercrombie</div><div class="item-stil">Sport only</div></div><span class="badge b-warn">Sport only</span></div>
   </div>
 
 </div>
@@ -258,10 +297,11 @@ nav::-webkit-scrollbar { display: none; }
 <!-- OUTFIT -->
 
 <div id="outfit" class="section">
-  <div class="section-label">Look · Cucinelli P/E · Sistema 🧥👖👔🧶👟</div>
+  <div class="section-label">Look · Cucinelli P/E · Sistema ①②③④</div>
   <div class="tabs" style="margin-bottom:14px;">
     <button class="tab active" id="t-ufficio" onclick="setTipo('ufficio',this)">Ufficio</button>
     <button class="tab" id="t-casual" onclick="setTipo('casual',this)">Casual</button>
+    <button class="tab" id="t-serale" onclick="setTipo('serale',this)">Serale</button>
   </div>
 
   <!-- UFFICIO -->
@@ -277,24 +317,27 @@ nav::-webkit-scrollbar { display: none; }
 </div>
 
 <div class="uf-group" data-giacca="blazer">
-  <div style="background:#2A3018;border:1px solid #3A4828;border-radius:8px;padding:8px 12px;margin:8px 0;font-family:'Cormorant Garamond',serif;font-size:.9rem;color:#D8CCBA;letter-spacing:.1em;">🌿 Blazer Lino Ecru/Sabbia</div>
-  <div class="outfit-card"><div class="oh uff"><div class="oh-title">Blazer · 1</div><div class="oh-tag">☀️ Cucinelli</div></div><div class="ob"><div class="ob-stil">Brunello Cucinelli SS26 — rosa/panna/ecru, neutri caldi sovrapposti</div><div class="ol"><span class="ln">🧥</span>Blazer Lino Ecru/Sabbia</div><div class="ol"><span class="ln">👖</span>Chino Beige/Sabbia Camicissima</div><div class="ol"><span class="ln">👔</span>Camicia Rosa Antico · Camicissima</div><div class="ol"><span class="ln">🧶</span>Maglione Panna OVS</div><div class="extras"><span class="xt sh">👟 Valsport Tournament Taupe</span><span class="xt pf">🌸 Acqua di Gio</span></div></div></div>
-  <div class="outfit-card"><div class="oh uff"><div class="oh-title">Blazer · 2</div><div class="oh-tag">☀️ Cucinelli</div></div><div class="ob"><div class="ob-stil">Brunello Cucinelli SS26 — bianca/gilet navy/ecru, rottura navy come accento</div><div class="ol"><span class="ln">🧥</span>Blazer Lino Ecru/Sabbia</div><div class="ol"><span class="ln">👖</span>Chino Bianco/Panna OVS</div><div class="ol"><span class="ln">👔</span>Camicia Bianca · Camicissima</div><div class="ol"><span class="ln">🧶</span>Gilet Navy OVS (aperto)</div><div class="extras"><span class="xt sh">👟 Loafer Paciotti</span><span class="xt pf">🌸 Acqua di Gio</span></div></div></div>
-  <div class="outfit-card"><div class="oh uff"><div class="oh-title">Blazer · 3</div><div class="oh-tag">☀️ Cucinelli</div></div><div class="ob"><div class="ob-stil">Brunello Cucinelli SS26 — righe sottili/panna/ecru, texture discreta come elemento Cucinelli</div><div class="ol"><span class="ln">🧥</span>Blazer Lino Ecru/Sabbia</div><div class="ol"><span class="ln">👖</span>Chino Grigio Chiaro Levi's</div><div class="ol"><span class="ln">👔</span>Camicia Righe Az/Bi Sottili · Camicissima</div><div class="ol"><span class="ln">🧶</span>Maglione Panna OVS</div><div class="extras"><span class="xt sh">👟 Valsport Tournament Taupe</span><span class="xt pf">🌸 Acqua di Gio</span></div></div></div>
+  <div style="background:#2A3018;border:1px solid #3A4828;border-radius:8px;padding:8px 12px;margin:8px 0;font-family:'Cormorant Garamond',serif;font-size:.9rem;color:#D8CCBA;letter-spacing:.1em;">Blazer Lino Ecru/Sabbia</div>
+  <div class="outfit-card"><div class="oh uff"><div class="oh-title">Blazer · 1</div><div class="oh-tag">Cucinelli</div></div><div class="ob"><div class="ob-stil">Brunello Cucinelli SS26 — rosa/panna/ecru, neutri caldi sovrapposti</div><div class="ol"><span class="ln">①</span>Blazer Lino Ecru/Sabbia</div><div class="ol"><span class="ln">②</span>Chino Beige/Sabbia Camicissima</div><div class="ol"><span class="ln">③</span>Camicia Rosa Antico · Camicissima</div><div class="ol"><span class="ln">④</span>Maglione Panna OVS</div><div class="extras"><span class="xt sh">Valsport Tournament Taupe</span><span class="xt pf">Acqua di Gio</span></div></div></div>
+  <div class="outfit-card"><div class="oh uff"><div class="oh-title">Blazer · 2</div><div class="oh-tag">Cucinelli</div></div><div class="ob"><div class="ob-stil">Brunello Cucinelli SS26 — bianca/gilet navy/ecru, rottura navy come accento</div><div class="ol"><span class="ln">①</span>Blazer Lino Ecru/Sabbia</div><div class="ol"><span class="ln">②</span>Chino Bianco/Panna OVS</div><div class="ol"><span class="ln">③</span>Camicia Bianca · Camicissima</div><div class="ol"><span class="ln">④</span>Gilet Navy OVS (aperto)</div><div class="extras"><span class="xt sh">Loafer Paciotti</span><span class="xt pf">Acqua di Gio</span></div></div></div>
+  <div class="outfit-card"><div class="oh uff"><div class="oh-title">Blazer · 3</div><div class="oh-tag">Cucinelli</div></div><div class="ob"><div class="ob-stil">Brunello Cucinelli SS26 — righe sottili/panna/ecru, texture discreta come elemento Cucinelli</div><div class="ol"><span class="ln">①</span>Blazer Lino Ecru/Sabbia</div><div class="ol"><span class="ln">②</span>Chino Grigio Chiaro Levi's</div><div class="ol"><span class="ln">③</span>Camicia Righe Az/Bi Sottili · Camicissima</div><div class="ol"><span class="ln">④</span>Maglione Panna OVS</div><div class="extras"><span class="xt sh">Valsport Tournament Taupe</span><span class="xt pf">Acqua di Gio</span></div></div></div>
+  <div class="outfit-card"><div class="oh uff"><div class="oh-title">Blazer · 4</div><div class="oh-tag">Cucinelli</div></div><div class="ob"><div class="ob-stil">Brunello Cucinelli SS26 — blazer/bianco/panna/panna, polo come base con ton sur ton caldo assoluto</div><div class="ol"><span class="ln">①</span>Blazer Lino Ecru/Sabbia</div><div class="ol"><span class="ln">②</span>Chino Bianco/Panna OVS</div><div class="ol"><span class="ln">③</span>Polo Panna OVS Piombo</div><div class="ol"><span class="ln">④</span>Gilet Navy OVS (aperto)</div><div class="extras"><span class="xt sh">Loafer Paciotti</span><span class="xt pf">Acqua di Gio</span></div></div></div>
 </div>
 
 <div class="uf-group" data-giacca="trench">
-  <div style="background:#2A3018;border:1px solid #3A4828;border-radius:8px;padding:8px 12px;margin:8px 0;font-family:'Cormorant Garamond',serif;font-size:.9rem;color:#D8CCBA;letter-spacing:.1em;">🌿 Trench Beige · Massimo Dutti</div>
-  <div class="outfit-card"><div class="oh uff"><div class="oh-title">Trench · 1</div><div class="oh-tag">☀️ Cucinelli</div></div><div class="ob"><div class="ob-stil">Brunello Cucinelli SS26 — rosa/panna/beige, punto luce rosato con chiusura calda</div><div class="ol"><span class="ln">🧥</span>Trench Beige · Massimo Dutti</div><div class="ol"><span class="ln">👖</span>Chino Bianco/Panna OVS</div><div class="ol"><span class="ln">👔</span>Camicia Rosa Antico · Camicissima</div><div class="ol"><span class="ln">🧶</span>Maglione Panna OVS</div><div class="extras"><span class="xt sh">👟 Loafer Paciotti</span><span class="xt pf">🌸 Acqua di Gio</span></div></div></div>
-  <div class="outfit-card"><div class="oh uff"><div class="oh-title">Trench · 2</div><div class="oh-tag">☀️ Cucinelli</div></div><div class="ob"><div class="ob-stil">Brunello Cucinelli SS26 — bianca/gilet navy/beige, rottura navy con chiusura calda</div><div class="ol"><span class="ln">🧥</span>Trench Beige · Massimo Dutti</div><div class="ol"><span class="ln">👖</span>Chino Beige/Sabbia Camicissima</div><div class="ol"><span class="ln">👔</span>Camicia Bianca · Camicissima</div><div class="ol"><span class="ln">🧶</span>Gilet Navy OVS (aperto)</div><div class="extras"><span class="xt sh">👟 Valsport Tournament Taupe</span><span class="xt pf">🌸 Acqua di Gio</span></div></div></div>
-  <div class="outfit-card"><div class="oh uff"><div class="oh-title">Trench · 3</div><div class="oh-tag">☀️ Cucinelli</div></div><div class="ob"><div class="ob-stil">Brunello Cucinelli SS26 — righe sottili/panna/beige, texture con base calda</div><div class="ol"><span class="ln">🧥</span>Trench Beige · Massimo Dutti</div><div class="ol"><span class="ln">👖</span>Chino Grigio Chiaro Levi's</div><div class="ol"><span class="ln">👔</span>Camicia Righe Az/Bi Sottili · Camicissima</div><div class="ol"><span class="ln">🧶</span>Maglione Panna OVS</div><div class="extras"><span class="xt sh">👟 Valsport Tournament Taupe</span><span class="xt pf">🌸 Acqua di Gio</span></div></div></div>
+  <div style="background:#2A3018;border:1px solid #3A4828;border-radius:8px;padding:8px 12px;margin:8px 0;font-family:'Cormorant Garamond',serif;font-size:.9rem;color:#D8CCBA;letter-spacing:.1em;">Trench Beige · Massimo Dutti</div>
+  <div class="outfit-card"><div class="oh uff"><div class="oh-title">Trench · 1</div><div class="oh-tag">Cucinelli</div></div><div class="ob"><div class="ob-stil">Brunello Cucinelli SS26 — rosa/panna/beige, punto luce rosato con chiusura calda</div><div class="ol"><span class="ln">①</span>Trench Beige · Massimo Dutti</div><div class="ol"><span class="ln">②</span>Chino Bianco/Panna OVS</div><div class="ol"><span class="ln">③</span>Camicia Rosa Antico · Camicissima</div><div class="ol"><span class="ln">④</span>Maglione Panna OVS</div><div class="extras"><span class="xt sh">Loafer Paciotti</span><span class="xt pf">Acqua di Gio</span></div></div></div>
+  <div class="outfit-card"><div class="oh uff"><div class="oh-title">Trench · 2</div><div class="oh-tag">Cucinelli</div></div><div class="ob"><div class="ob-stil">Brunello Cucinelli SS26 — bianca/gilet navy/beige, rottura navy con chiusura calda</div><div class="ol"><span class="ln">①</span>Trench Beige · Massimo Dutti</div><div class="ol"><span class="ln">②</span>Chino Beige/Sabbia Camicissima</div><div class="ol"><span class="ln">③</span>Camicia Bianca · Camicissima</div><div class="ol"><span class="ln">④</span>Gilet Navy OVS (aperto)</div><div class="extras"><span class="xt sh">Valsport Tournament Taupe</span><span class="xt pf">Acqua di Gio</span></div></div></div>
+  <div class="outfit-card"><div class="oh uff"><div class="oh-title">Trench · 3</div><div class="oh-tag">Cucinelli</div></div><div class="ob"><div class="ob-stil">Brunello Cucinelli SS26 — righe sottili/panna/beige, texture con base calda</div><div class="ol"><span class="ln">①</span>Trench Beige · Massimo Dutti</div><div class="ol"><span class="ln">②</span>Chino Grigio Chiaro Levi's</div><div class="ol"><span class="ln">③</span>Camicia Righe Az/Bi Sottili · Camicissima</div><div class="ol"><span class="ln">④</span>Maglione Panna OVS</div><div class="extras"><span class="xt sh">Valsport Tournament Taupe</span><span class="xt pf">Acqua di Gio</span></div></div></div>
+  <div class="outfit-card"><div class="oh uff"><div class="oh-title">Trench · 4</div><div class="oh-tag">Cucinelli</div></div><div class="ob"><div class="ob-stil">Brunello Cucinelli SS26 — trench/beige/panna/panna, polo come base con chiusura beige raffinata</div><div class="ol"><span class="ln">①</span>Trench Beige · Massimo Dutti</div><div class="ol"><span class="ln">②</span>Chino Beige/Sabbia Camicissima</div><div class="ol"><span class="ln">③</span>Polo Panna OVS Piombo</div><div class="ol"><span class="ln">④</span>Maglione Panna OVS</div><div class="extras"><span class="xt sh">Valsport Tournament Taupe</span><span class="xt pf">Acqua di Gio</span></div></div></div>
 </div>
 
 <div class="uf-group" data-giacca="barbour">
-  <div style="background:#2A3018;border:1px solid #3A4828;border-radius:8px;padding:8px 12px;margin:8px 0;font-family:'Cormorant Garamond',serif;font-size:.9rem;color:#D8CCBA;letter-spacing:.1em;">🌿 Barbour Liddesdale Navy</div>
-  <div class="outfit-card"><div class="oh uff"><div class="oh-title">Barbour · 1</div><div class="oh-tag">☀️ Cucinelli</div></div><div class="ob"><div class="ob-stil">Brunello Cucinelli SS26 — rosa/panna/navy, calore con chiusura british</div><div class="ol"><span class="ln">🧥</span>Barbour Liddesdale Navy</div><div class="ol"><span class="ln">👖</span>Chino Beige/Sabbia Camicissima</div><div class="ol"><span class="ln">👔</span>Camicia Rosa Antico · Camicissima</div><div class="ol"><span class="ln">🧶</span>Maglione Panna OVS</div><div class="extras"><span class="xt sh">👟 Loafer Paciotti</span><span class="xt pf">🌸 Acqua di Gio</span></div></div></div>
-  <div class="outfit-card"><div class="oh uff"><div class="oh-title">Barbour · 2</div><div class="oh-tag">☀️ Cucinelli</div></div><div class="ob"><div class="ob-stil">Brunello Cucinelli SS26 — bianca gemelli/gilet navy/navy, eleganza formale british</div><div class="ol"><span class="ln">🧥</span>Barbour Liddesdale Navy</div><div class="ol"><span class="ln">👖</span>Chino Grigio Chiaro Levi's</div><div class="ol"><span class="ln">👔</span>Camicia Bianca con Gemelli · Boggi</div><div class="ol"><span class="ln">🧶</span>Gilet Navy OVS (aperto)</div><div class="extras"><span class="xt sh">👟 Valsport Tournament Taupe</span><span class="xt pf">🌸 Acqua di Gio</span></div></div></div>
-  <div class="outfit-card"><div class="oh uff"><div class="oh-title">Barbour · 3</div><div class="oh-tag">☀️ Cucinelli</div></div><div class="ob"><div class="ob-stil">Brunello Cucinelli SS26 — righe sottili/panna/navy, texture discreta con base calda british</div><div class="ol"><span class="ln">🧥</span>Barbour Liddesdale Navy</div><div class="ol"><span class="ln">👖</span>Chino Bianco/Panna OVS</div><div class="ol"><span class="ln">👔</span>Camicia Righe Az/Bi Sottili · Camicissima</div><div class="ol"><span class="ln">🧶</span>Maglione Panna OVS</div><div class="extras"><span class="xt sh">👟 Valsport Tournament Taupe</span><span class="xt pf">🌸 Acqua di Gio</span></div></div></div>
+  <div style="background:#2A3018;border:1px solid #3A4828;border-radius:8px;padding:8px 12px;margin:8px 0;font-family:'Cormorant Garamond',serif;font-size:.9rem;color:#D8CCBA;letter-spacing:.1em;">Barbour Liddesdale Navy</div>
+  <div class="outfit-card"><div class="oh uff"><div class="oh-title">Barbour · 1</div><div class="oh-tag">Cucinelli</div></div><div class="ob"><div class="ob-stil">Brunello Cucinelli SS26 — rosa/panna/navy, calore con chiusura british</div><div class="ol"><span class="ln">①</span>Barbour Liddesdale Navy</div><div class="ol"><span class="ln">②</span>Chino Beige/Sabbia Camicissima</div><div class="ol"><span class="ln">③</span>Camicia Rosa Antico · Camicissima</div><div class="ol"><span class="ln">④</span>Maglione Panna OVS</div><div class="extras"><span class="xt sh">Loafer Paciotti</span><span class="xt pf">Acqua di Gio</span></div></div></div>
+  <div class="outfit-card"><div class="oh uff"><div class="oh-title">Barbour · 2</div><div class="oh-tag">Cucinelli</div></div><div class="ob"><div class="ob-stil">Brunello Cucinelli SS26 — bianca gemelli/gilet navy/navy, eleganza formale british</div><div class="ol"><span class="ln">①</span>Barbour Liddesdale Navy</div><div class="ol"><span class="ln">②</span>Chino Grigio Chiaro Levi's</div><div class="ol"><span class="ln">③</span>Camicia Bianca con Gemelli · Boggi</div><div class="ol"><span class="ln">④</span>Gilet Navy OVS (aperto)</div><div class="extras"><span class="xt sh">Valsport Tournament Taupe</span><span class="xt pf">Acqua di Gio</span></div></div></div>
+  <div class="outfit-card"><div class="oh uff"><div class="oh-title">Barbour · 3</div><div class="oh-tag">Cucinelli</div></div><div class="ob"><div class="ob-stil">Brunello Cucinelli SS26 — righe sottili/panna/navy, texture discreta con base calda british</div><div class="ol"><span class="ln">①</span>Barbour Liddesdale Navy</div><div class="ol"><span class="ln">②</span>Chino Bianco/Panna OVS</div><div class="ol"><span class="ln">③</span>Camicia Righe Az/Bi Sottili · Camicissima</div><div class="ol"><span class="ln">④</span>Maglione Panna OVS</div><div class="extras"><span class="xt sh">Valsport Tournament Taupe</span><span class="xt pf">Acqua di Gio</span></div></div></div>
+  <div class="outfit-card"><div class="oh uff"><div class="oh-title">Barbour · 4</div><div class="oh-tag">Cucinelli</div></div><div class="ob"><div class="ob-stil">Brunello Cucinelli SS26 — Barbour/grigio chiaro/panna/panna, polo british con ton sur ton caldo</div><div class="ol"><span class="ln">①</span>Barbour Liddesdale Navy</div><div class="ol"><span class="ln">②</span>Chino Grigio Chiaro Levi's</div><div class="ol"><span class="ln">③</span>Polo Panna OVS Piombo</div><div class="ol"><span class="ln">④</span>Gilet Navy OVS (aperto)</div><div class="extras"><span class="xt sh">Loafer Paciotti</span><span class="xt pf">Acqua di Gio</span></div></div></div>
 </div>
 
 <div class="rule-box"><h3>Regola Ufficio P/E Cucinelli</h3><div class="ri"><div class="rd"></div><div><strong>Pantaloni:</strong> solo chino — beige/sabbia, bianco/panna, grigio chiaro.</div></div><div class="ri"><div class="rd"></div><div><strong>Palette:</strong> neutri caldi sempre — panna, beige, ecru, rosa cipria. Acqua di Gio.</div></div></div>
@@ -316,34 +359,57 @@ nav::-webkit-scrollbar { display: none; }
 </div>
 
 <div class="cas-group" data-pant="jas">
-  <div style="background:#2A3018;border:1px solid #3A4828;border-radius:8px;padding:8px 12px;margin:8px 0;font-family:'Cormorant Garamond',serif;font-size:.9rem;color:#D8CCBA;letter-spacing:.1em;">🌿 Jeans Azzurro Slavato</div>
-  <div class="outfit-card"><div class="oh cas"><div class="oh-title">JAS · 1</div><div class="oh-tag">☀️ Cucinelli</div></div><div class="ob"><div class="ob-stil">Brunello Cucinelli SS26 — blazer/slavato/cipria/rosa antico, neutri caldi con denim polveroso</div><div class="ol"><span class="ln">🧥</span>Blazer Lino Ecru/Sabbia</div><div class="ol"><span class="ln">👖</span>Jeans Azzurro Slavato H&amp;M</div><div class="ol"><span class="ln">👔</span>T-Shirt Rosa Cipria Uniqlo (oversize)</div><div class="ol"><span class="ln">🧶</span>Felpa Rosa Antico Uniqlo</div><div class="extras"><span class="xt sh">👟 Valsport Tournament Taupe</span><span class="xt pf">🌸 Acqua di Gio</span></div></div></div>
-  <div class="outfit-card"><div class="oh cas"><div class="oh-title">JAS · 2</div><div class="oh-tag">☀️ Cucinelli</div></div><div class="ob"><div class="ob-stil">Brunello Cucinelli SS26 — trench/slavato/bianca/bianco sporco, ton sur ton freddo con chiusura calda</div><div class="ol"><span class="ln">🧥</span>Trench Beige · Massimo Dutti</div><div class="ol"><span class="ln">👖</span>Jeans Azzurro Slavato H&amp;M</div><div class="ol"><span class="ln">👔</span>T-Shirt Bianca Uniqlo (oversize)</div><div class="ol"><span class="ln">🧶</span>Felpa Bianco Sporco Uniqlo</div><div class="extras"><span class="xt sh">👟 Loafer Paciotti</span><span class="xt pf">🌸 Amalfi Sunray</span></div></div></div>
-  <div class="outfit-card"><div class="oh cas"><div class="oh-title">JAS · 3</div><div class="oh-tag">☀️ Cucinelli</div></div><div class="ob"><div class="ob-stil">Brunello Cucinelli SS26 — blazer/slavato/grigio chiaro/bianco sporco, neutro smorzato con denim polveroso</div><div class="ol"><span class="ln">🧥</span>Blazer Lino Ecru/Sabbia</div><div class="ol"><span class="ln">👖</span>Jeans Azzurro Slavato H&amp;M</div><div class="ol"><span class="ln">👔</span>T-Shirt Grigio Chiaro Dsquared2</div><div class="ol"><span class="ln">🧶</span>Felpa Bianco Sporco Uniqlo</div><div class="extras"><span class="xt sh">👟 Valsport Tournament Taupe</span><span class="xt pf">🌸 Acqua di Gio</span></div></div></div>
+  <div style="background:#2A3018;border:1px solid #3A4828;border-radius:8px;padding:8px 12px;margin:8px 0;font-family:'Cormorant Garamond',serif;font-size:.9rem;color:#D8CCBA;letter-spacing:.1em;">Jeans Azzurro Slavato</div>
+  <div class="outfit-card"><div class="oh cas"><div class="oh-title">JAS · 1</div><div class="oh-tag">Cucinelli</div></div><div class="ob"><div class="ob-stil">Brunello Cucinelli SS26 — blazer/slavato/cipria/rosa antico, neutri caldi con denim polveroso</div><div class="ol"><span class="ln">①</span>Blazer Lino Ecru/Sabbia</div><div class="ol"><span class="ln">②</span>Jeans Azzurro Slavato H&amp;M</div><div class="ol"><span class="ln">③</span>T-Shirt Rosa Cipria Uniqlo (oversize)</div><div class="ol"><span class="ln">④</span>Felpa Rosa Antico Uniqlo</div><div class="extras"><span class="xt sh">Valsport Tournament Taupe</span><span class="xt pf">Acqua di Gio</span></div></div></div>
+  <div class="outfit-card"><div class="oh cas"><div class="oh-title">JAS · 2</div><div class="oh-tag">Cucinelli</div></div><div class="ob"><div class="ob-stil">Brunello Cucinelli SS26 — trench/slavato/bianca/bianco sporco, ton sur ton freddo con chiusura calda</div><div class="ol"><span class="ln">①</span>Trench Beige · Massimo Dutti</div><div class="ol"><span class="ln">②</span>Jeans Azzurro Slavato H&amp;M</div><div class="ol"><span class="ln">③</span>T-Shirt Bianca Uniqlo (oversize)</div><div class="ol"><span class="ln">④</span>Felpa Bianco Sporco Uniqlo</div><div class="extras"><span class="xt sh">Loafer Paciotti</span><span class="xt pf">Amalfi Sunray</span></div></div></div>
+  <div class="outfit-card"><div class="oh cas"><div class="oh-title">JAS · 3</div><div class="oh-tag">Cucinelli</div></div><div class="ob"><div class="ob-stil">Brunello Cucinelli SS26 — Barbour/slavato/grigio chiaro/bianco sporco, british con denim polveroso</div><div class="ol"><span class="ln">①</span>Barbour Liddesdale Navy</div><div class="ol"><span class="ln">②</span>Jeans Azzurro Slavato H&amp;M</div><div class="ol"><span class="ln">③</span>T-Shirt Grigio Chiaro Dsquared2</div><div class="ol"><span class="ln">④</span>Felpa Bianco Sporco Uniqlo</div><div class="extras"><span class="xt sh">Valsport Tournament Taupe</span><span class="xt pf">Acqua di Gio</span></div></div></div>
 </div>
 
 <div class="cas-group" data-pant="jg">
-  <div style="background:#2A3018;border:1px solid #3A4828;border-radius:8px;padding:8px 12px;margin:8px 0;font-family:'Cormorant Garamond',serif;font-size:.9rem;color:#D8CCBA;letter-spacing:.1em;">🌿 Jeans Grigio Levi's</div>
-  <div class="outfit-card"><div class="oh cas"><div class="oh-title">JG · 1</div><div class="oh-tag">☀️ Cucinelli</div></div><div class="ob"><div class="ob-stil">Brunello Cucinelli SS26 — trench/grigio/cipria/bianco sporco, neutro freddo con punto luce caldo</div><div class="ol"><span class="ln">🧥</span>Trench Beige · Massimo Dutti</div><div class="ol"><span class="ln">👖</span>Jeans Grigio Levi's</div><div class="ol"><span class="ln">👔</span>T-Shirt Rosa Cipria Uniqlo (oversize)</div><div class="ol"><span class="ln">🧶</span>Felpa Bianco Sporco Uniqlo</div><div class="extras"><span class="xt sh">👟 Valsport Tournament Taupe</span><span class="xt pf">🌸 Acqua di Gio</span></div></div></div>
-  <div class="outfit-card"><div class="oh cas"><div class="oh-title">JG · 2</div><div class="oh-tag">☀️ Cucinelli</div></div><div class="ob"><div class="ob-stil">Brunello Cucinelli SS26 — Barbour/grigio/polo panna/rosa antico, british con base calda</div><div class="ol"><span class="ln">🧥</span>Barbour Liddesdale Navy</div><div class="ol"><span class="ln">👖</span>Jeans Grigio Levi's</div><div class="ol"><span class="ln">👔</span>Polo Panna OVS Piombo</div><div class="ol"><span class="ln">🧶</span>Felpa Rosa Antico Uniqlo</div><div class="extras"><span class="xt sh">👟 Valsport Tournament Taupe</span><span class="xt pf">🌸 Acqua di Gio</span></div></div></div>
-  <div class="outfit-card"><div class="oh cas"><div class="oh-title">JG · 3</div><div class="oh-tag">☀️ Cucinelli</div></div><div class="ob"><div class="ob-stil">Brunello Cucinelli SS26 — trench/grigio/grigio chiaro/rosa antico, ton sur ton grigio con punto luce rosa</div><div class="ol"><span class="ln">🧥</span>Trench Beige · Massimo Dutti</div><div class="ol"><span class="ln">👖</span>Jeans Grigio Levi's</div><div class="ol"><span class="ln">👔</span>T-Shirt Grigio Chiaro Dsquared2</div><div class="ol"><span class="ln">🧶</span>Felpa Rosa Antico Uniqlo</div><div class="extras"><span class="xt sh">👟 Valsport Tournament Taupe</span><span class="xt pf">🌸 Acqua di Gio</span></div></div></div>
+  <div style="background:#2A3018;border:1px solid #3A4828;border-radius:8px;padding:8px 12px;margin:8px 0;font-family:'Cormorant Garamond',serif;font-size:.9rem;color:#D8CCBA;letter-spacing:.1em;">Jeans Grigio Levi's</div>
+  <div class="outfit-card"><div class="oh cas"><div class="oh-title">JG · 1</div><div class="oh-tag">Cucinelli</div></div><div class="ob"><div class="ob-stil">Brunello Cucinelli SS26 — trench/grigio/cipria/bianco sporco, neutro freddo con punto luce caldo</div><div class="ol"><span class="ln">①</span>Trench Beige · Massimo Dutti</div><div class="ol"><span class="ln">②</span>Jeans Grigio Levi's</div><div class="ol"><span class="ln">③</span>T-Shirt Rosa Cipria Uniqlo (oversize)</div><div class="ol"><span class="ln">④</span>Felpa Bianco Sporco Uniqlo</div><div class="extras"><span class="xt sh">Valsport Tournament Taupe</span><span class="xt pf">Acqua di Gio</span></div></div></div>
+  <div class="outfit-card"><div class="oh cas"><div class="oh-title">JG · 2</div><div class="oh-tag">Cucinelli</div></div><div class="ob"><div class="ob-stil">Brunello Cucinelli SS26 — Barbour/grigio/polo panna/rosa antico, british con base calda</div><div class="ol"><span class="ln">①</span>Barbour Liddesdale Navy</div><div class="ol"><span class="ln">②</span>Jeans Grigio Levi's</div><div class="ol"><span class="ln">③</span>Polo Panna OVS Piombo</div><div class="ol"><span class="ln">④</span>Felpa Rosa Antico Uniqlo</div><div class="extras"><span class="xt sh">Valsport Tournament Taupe</span><span class="xt pf">Acqua di Gio</span></div></div></div>
+  <div class="outfit-card"><div class="oh cas"><div class="oh-title">JG · 3</div><div class="oh-tag">Cucinelli</div></div><div class="ob"><div class="ob-stil">Brunello Cucinelli SS26 — blazer/grigio/grigio chiaro/rosa antico, ton sur ton grigio con punto luce rosa</div><div class="ol"><span class="ln">①</span>Blazer Lino Ecru/Sabbia</div><div class="ol"><span class="ln">②</span>Jeans Grigio Levi's</div><div class="ol"><span class="ln">③</span>T-Shirt Grigio Chiaro Dsquared2</div><div class="ol"><span class="ln">④</span>Felpa Rosa Antico Uniqlo</div><div class="extras"><span class="xt sh">Valsport Tournament Taupe</span><span class="xt pf">Acqua di Gio</span></div></div></div>
 </div>
 
 <div class="cas-group" data-pant="sb">
-  <div style="background:#2A3018;border:1px solid #3A4828;border-radius:8px;padding:8px 12px;margin:8px 0;font-family:'Cormorant Garamond',serif;font-size:.9rem;color:#D8CCBA;letter-spacing:.1em;">🌿 Shorts Felpa Bianchi</div>
-  <div class="outfit-card"><div class="oh cas"><div class="oh-title">SB · 1</div><div class="oh-tag">☀️ Cucinelli</div></div><div class="ob"><div class="ob-stil">Brunello Cucinelli SS26 — blazer/bianchi/cipria/rosa antico, Travelwear estivo luminoso</div><div class="ol"><span class="ln">🧥</span>Blazer Lino Ecru/Sabbia</div><div class="ol"><span class="ln">👖</span>Shorts Felpa Bianchi OVS</div><div class="ol"><span class="ln">👔</span>T-Shirt Rosa Cipria Uniqlo (oversize)</div><div class="ol"><span class="ln">🧶</span>Felpa Rosa Antico Uniqlo</div><div class="extras"><span class="xt sh">👟 Valsport Tournament Taupe</span><span class="xt pf">🌸 Acqua di Gio</span></div></div></div>
-  <div class="outfit-card"><div class="oh cas"><div class="oh-title">SB · 2</div><div class="oh-tag">☀️ Cucinelli</div></div><div class="ob"><div class="ob-stil">Brunello Cucinelli SS26 — trench/bianchi/bianca/bianco sporco, ton sur ton caldo minimalista</div><div class="ol"><span class="ln">🧥</span>Trench Beige · Massimo Dutti</div><div class="ol"><span class="ln">👖</span>Shorts Felpa Bianchi OVS</div><div class="ol"><span class="ln">👔</span>T-Shirt Bianca Uniqlo (oversize)</div><div class="ol"><span class="ln">🧶</span>Felpa Bianco Sporco Uniqlo</div><div class="extras"><span class="xt sh">👟 Loafer Paciotti</span><span class="xt pf">🌸 Acqua di Gio</span></div></div></div>
-  <div class="outfit-card"><div class="oh cas"><div class="oh-title">SB · 3</div><div class="oh-tag">☀️ Cucinelli</div></div><div class="ob"><div class="ob-stil">Brunello Cucinelli SS26 — Barbour/bianchi/grigio chiaro/bianco sporco, british estivo con base neutra</div><div class="ol"><span class="ln">🧥</span>Barbour Liddesdale Navy</div><div class="ol"><span class="ln">👖</span>Shorts Felpa Bianchi OVS</div><div class="ol"><span class="ln">👔</span>T-Shirt Grigio Chiaro Dsquared2</div><div class="ol"><span class="ln">🧶</span>Felpa Bianco Sporco Uniqlo</div><div class="extras"><span class="xt sh">👟 Valsport Tournament Taupe</span><span class="xt pf">🌸 Acqua di Gio</span></div></div></div>
+  <div style="background:#2A3018;border:1px solid #3A4828;border-radius:8px;padding:8px 12px;margin:8px 0;font-family:'Cormorant Garamond',serif;font-size:.9rem;color:#D8CCBA;letter-spacing:.1em;">Shorts Felpa Bianchi</div>
+  <div class="outfit-card"><div class="oh cas"><div class="oh-title">SB · 1</div><div class="oh-tag">Cucinelli</div></div><div class="ob"><div class="ob-stil">Brunello Cucinelli SS26 — blazer/bianchi/cipria/rosa antico, Travelwear estivo luminoso</div><div class="ol"><span class="ln">①</span>Blazer Lino Ecru/Sabbia</div><div class="ol"><span class="ln">②</span>Shorts Felpa Bianchi OVS</div><div class="ol"><span class="ln">③</span>T-Shirt Rosa Cipria Uniqlo (oversize)</div><div class="ol"><span class="ln">④</span>Felpa Rosa Antico Uniqlo</div><div class="extras"><span class="xt sh">Valsport Tournament Taupe</span><span class="xt pf">Acqua di Gio</span></div></div></div>
+  <div class="outfit-card"><div class="oh cas"><div class="oh-title">SB · 2</div><div class="oh-tag">Cucinelli</div></div><div class="ob"><div class="ob-stil">Brunello Cucinelli SS26 — trench/bianchi/bianca/bianco sporco, ton sur ton caldo minimalista</div><div class="ol"><span class="ln">①</span>Trench Beige · Massimo Dutti</div><div class="ol"><span class="ln">②</span>Shorts Felpa Bianchi OVS</div><div class="ol"><span class="ln">③</span>T-Shirt Bianca Uniqlo (oversize)</div><div class="ol"><span class="ln">④</span>Felpa Bianco Sporco Uniqlo</div><div class="extras"><span class="xt sh">Loafer Paciotti</span><span class="xt pf">Acqua di Gio</span></div></div></div>
+  <div class="outfit-card"><div class="oh cas"><div class="oh-title">SB · 3</div><div class="oh-tag">Cucinelli</div></div><div class="ob"><div class="ob-stil">Brunello Cucinelli SS26 — Barbour/bianchi/grigio chiaro/bianco sporco, british estivo con base neutra</div><div class="ol"><span class="ln">①</span>Barbour Liddesdale Navy</div><div class="ol"><span class="ln">②</span>Shorts Felpa Bianchi OVS</div><div class="ol"><span class="ln">③</span>T-Shirt Grigio Chiaro Dsquared2</div><div class="ol"><span class="ln">④</span>Felpa Bianco Sporco Uniqlo</div><div class="extras"><span class="xt sh">Valsport Tournament Taupe</span><span class="xt pf">Acqua di Gio</span></div></div></div>
 </div>
 
 <div class="cas-group" data-pant="sc">
-  <div style="background:#2A3018;border:1px solid #3A4828;border-radius:8px;padding:8px 12px;margin:8px 0;font-family:'Cormorant Garamond',serif;font-size:.9rem;color:#D8CCBA;letter-spacing:.1em;">🌿 Shorts Cargo Beige</div>
-  <div class="outfit-card"><div class="oh cas"><div class="oh-title">SC · 1</div><div class="oh-tag">☀️ Cucinelli</div></div><div class="ob"><div class="ob-stil">Brunello Cucinelli SS26 — Barbour/cargo beige/polo panna/bianco sporco, outdoor elevated british</div><div class="ol"><span class="ln">🧥</span>Barbour Liddesdale Navy</div><div class="ol"><span class="ln">👖</span>Shorts Cargo Beige OVS</div><div class="ol"><span class="ln">👔</span>Polo Panna OVS Piombo</div><div class="ol"><span class="ln">🧶</span>Felpa Bianco Sporco Uniqlo</div><div class="extras"><span class="xt sh">👟 Timberland Boat Shoes</span><span class="xt pf">🌸 Amalfi Sunray</span></div></div></div>
-  <div class="outfit-card"><div class="oh cas"><div class="oh-title">SC · 2</div><div class="oh-tag">☀️ Cucinelli</div></div><div class="ob"><div class="ob-stil">Brunello Cucinelli SS26 — blazer/cargo beige/cipria/panna, outdoor con registro elevato</div><div class="ol"><span class="ln">🧥</span>Blazer Lino Ecru/Sabbia</div><div class="ol"><span class="ln">👖</span>Shorts Cargo Beige OVS</div><div class="ol"><span class="ln">👔</span>T-Shirt Rosa Cipria Uniqlo (oversize)</div><div class="ol"><span class="ln">🧶</span>Maglione Panna OVS</div><div class="extras"><span class="xt sh">👟 Valsport Tournament Taupe</span><span class="xt pf">🌸 Amalfi Sunray</span></div></div></div>
-  <div class="outfit-card"><div class="oh cas"><div class="oh-title">SC · 3</div><div class="oh-tag">☀️ Cucinelli</div></div><div class="ob"><div class="ob-stil">Brunello Cucinelli SS26 — trench/cargo beige/grigio chiaro/rosa antico, outdoor elegante con punto luce rosa</div><div class="ol"><span class="ln">🧥</span>Trench Beige · Massimo Dutti</div><div class="ol"><span class="ln">👖</span>Shorts Cargo Beige OVS</div><div class="ol"><span class="ln">👔</span>T-Shirt Grigio Chiaro Dsquared2</div><div class="ol"><span class="ln">🧶</span>Felpa Rosa Antico Uniqlo</div><div class="extras"><span class="xt sh">👟 Timberland Boat Shoes</span><span class="xt pf">🌸 Amalfi Sunray</span></div></div></div>
+  <div style="background:#2A3018;border:1px solid #3A4828;border-radius:8px;padding:8px 12px;margin:8px 0;font-family:'Cormorant Garamond',serif;font-size:.9rem;color:#D8CCBA;letter-spacing:.1em;">Shorts Cargo Beige</div>
+  <div class="outfit-card"><div class="oh cas"><div class="oh-title">SC · 1</div><div class="oh-tag">Cucinelli</div></div><div class="ob"><div class="ob-stil">Brunello Cucinelli SS26 — Barbour/cargo beige/polo panna/bianco sporco, outdoor elevated british</div><div class="ol"><span class="ln">①</span>Barbour Liddesdale Navy</div><div class="ol"><span class="ln">②</span>Shorts Cargo Beige OVS</div><div class="ol"><span class="ln">③</span>Polo Panna OVS Piombo</div><div class="ol"><span class="ln">④</span>Felpa Bianco Sporco Uniqlo</div><div class="extras"><span class="xt sh">Timberland Boat Shoes</span><span class="xt pf">Amalfi Sunray</span></div></div></div>
+  <div class="outfit-card"><div class="oh cas"><div class="oh-title">SC · 2</div><div class="oh-tag">Cucinelli</div></div><div class="ob"><div class="ob-stil">Brunello Cucinelli SS26 — blazer/cargo beige/cipria/panna, outdoor con registro elevato</div><div class="ol"><span class="ln">①</span>Blazer Lino Ecru/Sabbia</div><div class="ol"><span class="ln">②</span>Shorts Cargo Beige OVS</div><div class="ol"><span class="ln">③</span>T-Shirt Rosa Cipria Uniqlo (oversize)</div><div class="ol"><span class="ln">④</span>Maglione Panna OVS</div><div class="extras"><span class="xt sh">Valsport Tournament Taupe</span><span class="xt pf">Amalfi Sunray</span></div></div></div>
+  <div class="outfit-card"><div class="oh cas"><div class="oh-title">SC · 3</div><div class="oh-tag">Cucinelli</div></div><div class="ob"><div class="ob-stil">Brunello Cucinelli SS26 — trench/cargo beige/grigio chiaro/rosa antico, outdoor elegante con punto luce rosa</div><div class="ol"><span class="ln">①</span>Trench Beige · Massimo Dutti</div><div class="ol"><span class="ln">②</span>Shorts Cargo Beige OVS</div><div class="ol"><span class="ln">③</span>T-Shirt Grigio Chiaro Dsquared2</div><div class="ol"><span class="ln">④</span>Felpa Rosa Antico Uniqlo</div><div class="extras"><span class="xt sh">Timberland Boat Shoes</span><span class="xt pf">Amalfi Sunray</span></div></div></div>
 </div>
 
 <div class="rule-box"><h3>Regola Casual P/E Cucinelli</h3><div class="ri"><div class="rd"></div><div><strong>Pantaloni:</strong> solo jeans e shorts — niente chino, quelli sono per l'ufficio.</div></div><div class="ri"><div class="rd"></div><div><strong>Palette:</strong> neutri caldi — cipria, panna, bianco sporco, rosa antico. Acqua di Gio o Amalfi Sunray.</div></div></div>
+```
+
+  </div>
+
+  <!-- SERALE -->
+
+  <div class="outfit-panel" id="pe-serale">
+    <div style="background:#2A2018;border:1px solid #3A3028;border-radius:8px;padding:8px 12px;margin:8px 0 14px;font-family:'Cormorant Garamond',serif;font-size:.85rem;color:#D8CCBA;letter-spacing:.08em;">2 look aperitivo/vernissage · 2 look cena elegante</div>
+
+```
+<div style="background:#2A3018;border:1px solid #3A4828;border-radius:8px;padding:8px 12px;margin:8px 0;font-family:'Cormorant Garamond',serif;font-size:.9rem;color:#D8CCBA;letter-spacing:.1em;">Aperitivo · Vernissage</div>
+
+<div class="outfit-card"><div class="oh uff"><div class="oh-title">Serale · 1</div><div class="oh-tag">Serale · Cucinelli</div></div><div class="ob"><div class="ob-stil">Brunello Cucinelli SS26 — blazer/bianco panna/rosa antico/panna, massima raffinatezza casual serale</div><div class="ol"><span class="ln">①</span>Blazer Lino Ecru/Sabbia</div><div class="ol"><span class="ln">②</span>Chino Bianco/Panna OVS</div><div class="ol"><span class="ln">③</span>Camicia Rosa Antico · Camicissima</div><div class="ol"><span class="ln">④</span>Maglione Panna OVS</div><div class="extras"><span class="xt sh">Loafer Paciotti</span><span class="xt pf">Prada L'Homme</span></div></div></div>
+
+<div class="outfit-card"><div class="oh uff"><div class="oh-title">Serale · 2</div><div class="oh-tag">Serale · Cucinelli</div></div><div class="ob"><div class="ob-stil">Brunello Cucinelli SS26 — trench/beige/bianca/gilet navy, eleganza informale con chiusura calda</div><div class="ol"><span class="ln">①</span>Trench Beige · Massimo Dutti</div><div class="ol"><span class="ln">②</span>Chino Beige/Sabbia Camicissima</div><div class="ol"><span class="ln">③</span>Camicia Bianca · Camicissima</div><div class="ol"><span class="ln">④</span>Gilet Navy OVS (aperto)</div><div class="extras"><span class="xt sh">Valsport Tournament Taupe</span><span class="xt pf">Prada L'Homme</span></div></div></div>
+
+<div style="background:#2A3018;border:1px solid #3A4828;border-radius:8px;padding:8px 12px;margin:16px 0 8px;font-family:'Cormorant Garamond',serif;font-size:.9rem;color:#D8CCBA;letter-spacing:.1em;">Cena Elegante</div>
+
+<div class="outfit-card"><div class="oh uff"><div class="oh-title">Serale · 3</div><div class="oh-tag">Serale · Cucinelli</div></div><div class="ob"><div class="ob-stil">Brunello Cucinelli SS26 — blazer/grigio chiaro/bianca gemelli/panna, registro formale con camicia da sera</div><div class="ol"><span class="ln">①</span>Blazer Lino Ecru/Sabbia</div><div class="ol"><span class="ln">②</span>Chino Grigio Chiaro Levi's</div><div class="ol"><span class="ln">③</span>Camicia Bianca con Gemelli · Boggi</div><div class="ol"><span class="ln">④</span>Maglione Panna OVS</div><div class="extras"><span class="xt sh">Loafer Paciotti</span><span class="xt pf">Prada L'Homme</span></div></div></div>
+
+<div class="outfit-card"><div class="oh uff"><div class="oh-title">Serale · 4</div><div class="oh-tag">Serale · Cucinelli</div></div><div class="ob"><div class="ob-stil">Brunello Cucinelli SS26 — trench/bianco panna/rosa antico/gilet navy, punto luce rosa con chiusura nobile</div><div class="ol"><span class="ln">①</span>Trench Beige · Massimo Dutti</div><div class="ol"><span class="ln">②</span>Chino Bianco/Panna OVS</div><div class="ol"><span class="ln">③</span>Camicia Rosa Antico · Camicissima</div><div class="ol"><span class="ln">④</span>Gilet Navy OVS (aperto)</div><div class="extras"><span class="xt sh">Loafer Paciotti</span><span class="xt pf">Prada L'Homme</span></div></div></div>
+
+<div class="rule-box"><h3>Regola Look Serale</h3><div class="ri"><div class="rd"></div><div><strong>Aperitivo/Vernissage:</strong> blazer o trench, chino, camicia. Registro smart casual elevato.</div></div><div class="ri"><div class="rd"></div><div><strong>Cena elegante:</strong> sempre blazer, camicia bianca con gemelli o rosa antico. Prada L'Homme sempre.</div></div></div>
 ```
 
   </div>
@@ -448,87 +514,23 @@ nav::-webkit-scrollbar { display: none; }
 <div class="toast" id="toast"></div>
 
 <script>
-// FILTRO CASUAL
-var casFeĺpa = 'all';
-var casStil = 'all';
-
-function filtroCasual(f, btn) {
-  casFeĺpa = f;
-  document.querySelectorAll('#cas-all,#cas-bs,#cas-ra').forEach(function(b) { b.classList.remove('active'); });
+// FILTRO CATEGORIA ARMADIO ARMANI A/I
+function filtraCatAI(c, btn) {
+  document.querySelectorAll('#ai-cat-all,#ai-cat-outerwear,#ai-cat-camicie,#ai-cat-maglieria,#ai-cat-tshirt,#ai-cat-pantaloni,#ai-cat-scarpe,#ai-cat-accessori,#ai-cat-profumi').forEach(function(b) { b.classList.remove('active'); });
   btn.classList.add('active');
-  applicaFiltroCasual();
-}
-
-function filtroCasualStil(s, btn) {
-  casStil = s;
-  document.querySelectorAll('#cas-stil-all,#cas-stil-cuc,#cas-stil-arm').forEach(function(b) { b.classList.remove('active'); });
-  btn.classList.add('active');
-  applicaFiltroCasual();
-}
-
-function applicaFiltroCasual() {
-  document.querySelectorAll('.cas-group').forEach(function(g) {
-    var felpaOk = casFeĺpa === 'all' || g.dataset.felpa === casFeĺpa;
-    var stilOk = casStil === 'all' || g.dataset.stil === casStil;
-    g.style.display = (felpaOk && stilOk) ? 'block' : 'none';
+  document.querySelectorAll('.ai-cat-group').forEach(function(g) {
+    g.style.display = (c === 'all' || g.dataset.cat === c) ? 'block' : 'none';
   });
 }
 
-// FILTRO UFFICIO
-var ufStil = 'all';
-var ufGiacca = 'all';
-
-function filtroUfficio(s, btn) {
-  ufStil = s;
-  document.querySelectorAll('#uf-all,#uf-cuc,#uf-arm').forEach(function(b) { b.classList.remove('active'); });
-  btn.classList.add('active');
-  applicaFiltroUfficio();
-}
-
-function filtroGiacca(g, btn) {
-  ufGiacca = g;
-  document.querySelectorAll('#uf-g-all,#uf-g-blazer,#uf-g-trench,#uf-g-barbour').forEach(function(b) { b.classList.remove('active'); });
-  btn.classList.add('active');
-  applicaFiltroUfficio();
-}
-
-function applicaFiltroUfficio() {
-  document.querySelectorAll('.uf-group').forEach(function(g) {
-    var stilOk = ufStil === 'all' || g.dataset.stil === ufStil;
-    var giacOk = ufGiacca === 'all' || g.dataset.giacca === ufGiacca;
-    g.style.display = (stilOk && giacOk) ? 'block' : 'none';
-  });
-}
-
-// FILTRO GUARDAROBA
-var stilCorrente = 'all';
+// FILTRO CATEGORIA ARMADIO
 var catCorrente = 'all';
-
-function setStilista(s, btn) {
-  stilCorrente = s;
-  document.querySelectorAll('#stil-all,#stil-cucinelli,#stil-armani,#stil-rl').forEach(function(b) { b.classList.remove('active'); });
-  btn.classList.add('active');
-  applicaFiltri();
-}
-
 function filtraCat(c, btn) {
   catCorrente = c;
-  document.querySelectorAll('#cat-all,#cat-outerwear,#cat-camicie,#cat-maglieria,#cat-tshirt,#cat-pantaloni,#cat-scarpe,#cat-accessori,#cat-profumi').forEach(function(b) { b.classList.remove('active'); });
+  document.querySelectorAll('#cat-all,#cat-outerwear,#cat-camicie,#cat-maglieria,#cat-tshirt,#cat-pantaloni,#cat-scarpe,#cat-profumi').forEach(function(b) { b.classList.remove('active'); });
   btn.classList.add('active');
-  applicaFiltri();
-}
-
-function applicaFiltri() {
   document.querySelectorAll('.cat-group').forEach(function(g) {
-    var catOk = catCorrente === 'all' || g.dataset.cat === catCorrente;
-    var haVisible = false;
-    g.querySelectorAll('.item-card').forEach(function(card) {
-      var stil = card.dataset.stil || '';
-      var stilOk = stilCorrente === 'all' || stil.indexOf(stilCorrente) !== -1;
-      card.style.display = (catOk && stilOk) ? 'flex' : 'none';
-      if (catOk && stilOk) haVisible = true;
-    });
-    g.style.display = (catOk && haVisible) ? 'block' : 'none';
+    g.style.display = (c === 'all' || g.dataset.cat === c) ? 'block' : 'none';
   });
 }
 
@@ -544,7 +546,7 @@ function showSec(id, btn) {
 // OUTFIT TABS
 function setTipo(t, btn) {
   document.querySelectorAll('.outfit-panel').forEach(function(p) { p.classList.remove('active'); });
-  document.querySelectorAll('#t-ufficio,#t-casual').forEach(function(b) { b.classList.remove('active'); });
+  document.querySelectorAll('#t-ufficio,#t-casual,#t-serale').forEach(function(b) { b.classList.remove('active'); });
   document.getElementById('pe-' + t).classList.add('active');
   btn.classList.add('active');
 }
@@ -580,7 +582,7 @@ var INIZIALI = [
   {id:'a9',cl:'p3',name:'Loafer Cuoio Cognac',price:'€110–150',desc:'Scarpa ufficio P/E Cucinelli/Armani. Cuoio cognac per i look beige/panna e grigio.',where:'Clarks Aldwin Step · Massimo Dutti',pl:'Priorità 3 — Prossimo acquisto'},
   {id:'a4',cl:'p4',name:'Polo Rosa Cipria Ralph Lauren',price:'€90–110',desc:'Il colore stagione ancora assente nelle polo. Autentica RL in piqué.',where:'Ralph Lauren online · Outlet',pl:'Priorità 4 — Media'},
   {id:'a5',cl:'p5',name:'Sciarpa Cashmere Burberry',price:'€150–200',desc:'Tinta unita — no check con nero. Grigio perla, rosa antico o azzurro polveroso.',where:'Vestiaire Collective · Burberry Outlet',pl:'Priorità 5 — A/I'},
-  {id:'a6',cl:'ps',name:'Sneaker Lotto Bianche',price:'—',desc:"Brand non coerente. Sostituire con Ralph Lauren Polo Court o Filling Pieces.",where:'Ralph Lauren · Filling Pieces',pl:'Da sostituire'},
+  
   {id:'a7',cl:'ps',name:'Girocollo Blu Royal OVS',price:'—',desc:'Troppo saturo per armocromia estate soft. Sostituire con merino blu polvere o verde salvia.',where:'Uniqlo Premium Merino',pl:'Da sostituire'}
 ];
 
