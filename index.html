@@ -126,6 +126,7 @@ nav::-webkit-scrollbar { display: none; }
   <button class="nav-btn" onclick="showSec('outfit',this)">Outfit</button>
   <button class="nav-btn" onclick="showSec('acquisti',this)">Acquisti</button>
   <button class="nav-btn" onclick="showSec('palette',this)">Palette</button>
+  <button class="nav-btn" onclick="showSec('daprovare',this)">Da Provare</button>
 </nav>
 
 <!-- GUARDAROBA -->
@@ -198,9 +199,9 @@ nav::-webkit-scrollbar { display: none; }
 
   <div class="cat-group" data-cat="profumi">
     <div class="cat-label">Profumi</div>
-    <div class="item-card"><div class="item-color" style="background:#88B8C8"></div><div class="item-info"><div class="item-name">Acqua di Gio</div><div class="item-brand">Giorgio Armani</div><div class="item-stil">Casual · Aperitivo</div></div><span class="badge b-ok">Cross</span></div>
-    <div class="item-card"><div class="item-color" style="background:#C8C070"></div><div class="item-info"><div class="item-name">Amalfi Sunray</div><div class="item-brand">Zara</div><div class="item-stil">Weekend · Outdoor</div></div><span class="badge b-pe">P/E</span></div>
-    <div class="item-card"><div class="item-color" style="background:#C0A8C8"></div><div class="item-info"><div class="item-name">L'Homme</div><div class="item-brand">Prada</div><div class="item-stil">Ufficio · Serate</div></div><span class="badge b-ok">Cross</span></div>
+    <div class="item-card"><div class="item-color" style="background:#88B8C8"></div><div class="item-info"><div class="item-name">Acqua di Gio</div><div class="item-brand">Giorgio Armani</div><div class="item-stil">Agrumi marini, gelsomino, muschio · Casual P/E · aperitivo · look Cucinelli diurni</div></div><span class="badge b-ok">Cross</span></div>
+    <div class="item-card"><div class="item-color" style="background:#C8C070"></div><div class="item-info"><div class="item-name">Amalfi Sunray</div><div class="item-brand">Zara</div><div class="item-stil">Agrumi, bergamotto, legno chiaro · Outdoor P/E · weekend · look Cucinelli casual con Timberland</div></div><span class="badge b-pe">P/E</span></div>
+    <div class="item-card"><div class="item-color" style="background:#C0A8C8"></div><div class="item-info"><div class="item-name">L'Homme</div><div class="item-brand">Prada</div><div class="item-stil">Iris, cedro, ambra · Ufficio A/I · serate eleganti · look Armani formali e Cucinelli serali</div></div><span class="badge b-ok">Cross</span></div>
   </div>
 
 </div>
@@ -288,9 +289,10 @@ nav::-webkit-scrollbar { display: none; }
 
   <div class="ai-cat-group" data-cat="profumi">
     <div class="cat-label">Profumi</div>
-    <div class="item-card"><div class="item-color" style="background:#C0A8C8"></div><div class="item-info"><div class="item-name">L'Homme</div><div class="item-brand">Prada</div><div class="item-stil">Ufficio · Serate</div></div><span class="badge b-ok">Cross</span></div>
-    <div class="item-card"><div class="item-color" style="background:#88B8C8"></div><div class="item-info"><div class="item-name">Acqua di Gio</div><div class="item-brand">Giorgio Armani</div><div class="item-stil">Casual · Aperitivo</div></div><span class="badge b-ok">Cross</span></div>
-    <div class="item-card"><div class="item-color" style="background:#C0B8A8"></div><div class="item-info"><div class="item-name">Fierce</div><div class="item-brand">Abercrombie</div><div class="item-stil">Sport only</div></div><span class="badge b-warn">Sport only</span></div>
+    <div class="item-card"><div class="item-color" style="background:#C0A8C8"></div><div class="item-info"><div class="item-name">L'Homme</div><div class="item-brand">Prada</div><div class="item-stil">Iris, cedro, ambra · Ufficio A/I · serate eleganti · look Armani formali e Cucinelli serali</div></div><span class="badge b-ok">Cross</span></div>
+    <div class="item-card"><div class="item-color" style="background:#88B8C8"></div><div class="item-info"><div class="item-name">Acqua di Gio</div><div class="item-brand">Giorgio Armani</div><div class="item-stil">Agrumi marini, gelsomino, muschio · Casual P/E · aperitivo · look Cucinelli diurni</div></div><span class="badge b-ok">Cross</span></div>
+    <div class="item-card"><div class="item-color" style="background:#C0B8A8"></div><div class="item-info"><div class="item-name">Fierce</div><div class="item-brand">Abercrombie</div><div class="item-stil">Legno, muschio, cedro · Sport e palestra only — fuori registro</div></div><span class="badge b-warn">Sport only</span></div>
+    <div class="item-card"><div class="item-color" style="background:#1A1008"></div><div class="item-info"><div class="item-name">Black Tobacco</div><div class="item-brand">WOMO</div><div class="item-stil">Serale invernale profondo · A/I · tabacco/spezie/vaniglia</div></div><span class="badge b-ai">A/I</span></div>
   </div>
 
 </div>
@@ -425,6 +427,47 @@ nav::-webkit-scrollbar { display: none; }
   <div id="acqPE"></div>
   <div style="background:#1A2030;border:1px solid #2A3548;border-radius:8px;padding:8px 12px;margin:16px 0 14px;font-family:'Cormorant Garamond',serif;font-size:.9rem;color:#D8CCBA;letter-spacing:.1em;">Armani · A/I</div>
   <div id="acqAI"></div>
+</div>
+
+<!-- DA PROVARE -->
+
+<div id="daprovare" class="section">
+  <div class="section-label">Da Provare · Valutare · Decidere</div>
+
+  <div style="background:#2A2820;border:1px solid #3A3828;border-radius:8px;padding:10px 14px;margin:0 0 6px;font-size:.62rem;color:#A89880;line-height:1.6;">
+    Capi, accessori e profumi da vedere dal vivo prima di decidere. Nessun impegno — solo curiosità da soddisfare.
+  </div>
+
+  <div class="cat-label">Profumi</div>
+
+  <div class="item-card"><div class="item-color" style="background:#C8B090"></div><div class="item-info"><div class="item-name">Santal 33</div><div class="item-brand">Le Labo</div><div class="item-stil">Sandalo, cedro, iris, violetta, muschio · Legnoso polveroso · registro Cucinelli serale · alternativa nobile al Prada L'Homme</div></div><span class="badge b-pend">Da annusare</span></div>
+
+  <div class="item-card"><div class="item-color" style="background:#D0C0A0"></div><div class="item-info"><div class="item-name">Bois d'Argent</div><div class="item-brand">Dior</div><div class="item-stil">Iris, sandalo, muschio bianco, elicriso · Legnoso elegante · perfetto con capelli sale e pepe e neutri caldi Cucinelli · serale raffinato</div></div><span class="badge b-pend">Da annusare</span></div>
+
+  <div class="item-card"><div class="item-color" style="background:#E8D8B8"></div><div class="item-info"><div class="item-name">Terre d'Hermès</div><div class="item-brand">Hermès</div><div class="item-stil">Arancia, pompelmo, pepe, vetiver, patchouli · Terroso agrumato · in palette Cucinelli · ufficio e casual diurno · classico senza tempo</div></div><span class="badge b-pend">Da annusare</span></div>
+
+  <div class="item-card"><div class="item-color" style="background:#D0C8B8"></div><div class="item-info"><div class="item-name">Wool & Silk</div><div class="item-brand">Ermenegildo Zegna</div><div class="item-stil">Cashmere, lana, seta — il profumo Cucinelli che non esiste. Discreto, polveroso, nobile.</div></div><span class="badge b-pend">Da annusare</span></div>
+
+  <div class="cat-label">Occhiali</div>
+
+  <div class="item-card"><div class="item-color" style="background:#8B5E3C"></div><div class="item-info"><div class="item-name">3152-S Havana</div><div class="item-brand">Persol</div><div class="item-stil">Tartarugata calda — secondo paio per look Cucinelli. Forma squadrata coerente con il tuo volto.</div></div><span class="badge b-pend">Da provare</span></div>
+
+  <div class="item-card"><div class="item-color" style="background:#6B5040"></div><div class="item-info"><div class="item-name">Brodsky Tortoise</div><div class="item-brand">Oliver Peoples</div><div class="item-stil">Acetato havana — raffinato, discreto. Il secondo paio ideale per i look caldi Cucinelli.</div></div><span class="badge b-pend">Da provare</span></div>
+
+  <div class="cat-label">Accessori</div>
+
+  <div class="item-card"><div class="item-color" style="background:#8B6040"></div><div class="item-info"><div class="item-name">Cinturino Apple Watch in Pelle Cognac</div><div class="item-brand">Massimo Dutti · Hirsch</div><div class="item-stil">Sostituisce il cinturino sport per i look serali e ufficio. Cambia completamente il registro dell'orologio.</div></div><span class="badge b-pend">Da valutare</span></div>
+
+  <div class="item-card"><div class="item-color" style="background:#906040"></div><div class="item-info"><div class="item-name">Card Holder Slim in Pelle Cognac/Marrone</div><div class="item-brand">Massimo Dutti · Gutteridge</div><div class="item-stil">Sostituisce il portafoglio classico. Coerente con il guardaroba — sottile, mai gonfio in tasca.</div></div><span class="badge b-pend">Da valutare</span></div>
+
+  <div class="item-card"><div class="item-color" style="background:#706050"></div><div class="item-info"><div class="item-name">Portachiavi in Pelle Sobrio</div><div class="item-brand">Massimo Dutti · Il Bisonte</div><div class="item-stil">Dettaglio quotidiano coerente con il registro Cucinelli. Pelle marrone o cognac, nessun logo visibile.</div></div><span class="badge b-pend">Da valutare</span></div>
+
+  <div class="cat-label">Orologi</div>
+
+  <div class="item-card"><div class="item-color" style="background:#C0B090"></div><div class="item-info"><div class="item-name">Tissot Le Locle Automatico</div><div class="item-brand">Tissot</div><div class="item-stil">Quadrante sobrio, acciaio, automatico. Registro serale Cucinelli/Armani sotto €500. Da vedere dal vivo.</div></div><span class="badge b-pend">Lungo termine</span></div>
+
+  <div class="item-card"><div class="item-color" style="background:#C8C0B0"></div><div class="item-info"><div class="item-name">Intra-Matic Automatico</div><div class="item-brand">Hamilton</div><div class="item-stil">Design anni '60, eleganza discreta, prezzo accessibile. Alternativa al Tissot con più carattere.</div></div><span class="badge b-pend">Lungo termine</span></div>
+
 </div>
 
 <!-- PALETTE -->
