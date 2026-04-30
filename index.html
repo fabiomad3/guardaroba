@@ -142,6 +142,7 @@ nav::-webkit-scrollbar { display: none; }
     <button class="tab" id="cat-tshirt" onclick="filtraCat('tshirt',this)">T-Shirt &amp; Polo</button>
     <button class="tab" id="cat-pantaloni" onclick="filtraCat('pantaloni',this)">Pantaloni</button>
     <button class="tab" id="cat-scarpe" onclick="filtraCat('scarpe',this)">Scarpe</button>
+    <button class="tab" id="cat-accessori" onclick="filtraCat('accessori',this)">Accessori</button>
     <button class="tab" id="cat-profumi" onclick="filtraCat('profumi',this)">Profumi</button>
   </div>
 
@@ -195,6 +196,11 @@ nav::-webkit-scrollbar { display: none; }
     <div class="item-card"><div class="item-color" style="background:#B0A090"></div><div class="item-info"><div class="item-name">Sneaker Tennis Taupe</div><div class="item-brand">Valsport Tournament</div><div class="item-stil">Cucinelli · Armani</div></div><span class="badge b-ok">Cross</span></div>
     <div class="item-card"><div class="item-color" style="background:#302018"></div><div class="item-info"><div class="item-name">Loafer Morsetto Marrone Scuro</div><div class="item-brand">Cesare Paciotti</div><div class="item-stil">Cucinelli — ufficio/serale</div></div><span class="badge b-ok">Cross</span></div>
     <div class="item-card"><div class="item-color" style="background:#806050"></div><div class="item-info"><div class="item-name">Boat Shoes Marrone</div><div class="item-brand">Timberland</div><div class="item-stil">Cucinelli — casual outdoor</div></div><span class="badge b-pe">P/E</span></div>
+  </div>
+
+  <div class="cat-group" data-cat="accessori">
+    <div class="cat-label">Accessori</div>
+    <div class="item-card"><div class="item-color" style="background:#C8B890"></div><div class="item-info"><div class="item-name">Cap Cotton Chino Nubuck</div><div class="item-brand">Polo Ralph Lauren</div><div class="item-stil">Cucinelli — look casual P/E</div></div><span class="badge b-pe">P/E</span></div>
   </div>
 
   <div class="cat-group" data-cat="profumi">
@@ -575,7 +581,7 @@ function filtraCatAI(c, btn) {
 var catCorrente = 'all';
 function filtraCat(c, btn) {
   catCorrente = c;
-  document.querySelectorAll('#cat-all,#cat-outerwear,#cat-camicie,#cat-maglieria,#cat-tshirt,#cat-pantaloni,#cat-scarpe,#cat-profumi').forEach(function(b) { b.classList.remove('active'); });
+  document.querySelectorAll('#cat-all,#cat-outerwear,#cat-camicie,#cat-maglieria,#cat-tshirt,#cat-pantaloni,#cat-scarpe,#cat-accessori,#cat-profumi').forEach(function(b) { b.classList.remove('active'); });
   btn.classList.add('active');
   document.querySelectorAll('.cat-group').forEach(function(g) {
     g.style.display = (c === 'all' || g.dataset.cat === c) ? 'block' : 'none';
