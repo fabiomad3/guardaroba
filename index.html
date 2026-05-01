@@ -312,6 +312,7 @@ nav::-webkit-scrollbar { display: none; }
   <div class="tabs" style="margin-bottom:14px;">
     <button class="tab active" id="t-ufficio" onclick="setTipo('ufficio',this)">Ufficio</button>
     <button class="tab" id="t-casual" onclick="setTipo('casual',this)">Casual</button>
+    <button class="tab" id="t-elevated" onclick="setTipo('elevated',this)">Elevated Casual</button>
   </div>
 
   <!-- UFFICIO -->
@@ -411,6 +412,26 @@ nav::-webkit-scrollbar { display: none; }
 </div>
 
 <div class="rule-box"><h3>Codice Casual</h3><div class="ri"><div class="rd"></div><div><strong>Ogni look ha un nome</strong> — non è un outfit, è una storia. Leggila prima di indossarlo.</div></div><div class="ri"><div class="rd"></div><div><strong>La scarpa sbagliata al posto giusto</strong> — Gucci GG con blazer ecru, Paciotti con gli shorts. Il cortocircuito è il punto.</div></div><div class="ri"><div class="rd"></div><div><strong>La rima cromatica</strong> — cap e scarpe parlano la stessa lingua. Testa e piedi si rispondono.</div></div></div>
+```
+
+  </div>
+
+  <!-- ELEVATED CASUAL -->
+
+  <div class="outfit-panel" id="pe-elevated">
+
+```
+<div style="background:#2A2010;border:1px solid #3A3020;border-radius:8px;padding:10px 14px;margin:0 0 14px;font-size:.62rem;color:#A89880;line-height:1.6;">
+  La zona grigia tra ufficio e casual dove i codici si mescolano intenzionalmente. Non è né formale né informale — è entrambi contemporaneamente. Ispirato alla sfilata Cucinelli AW26 "Ars Imitatur Naturam".
+</div>
+
+<div class="outfit-card"><div class="oh uff"><div class="oh-title">Ars · Jeans</div><div class="oh-tag">Elevated Casual</div></div><div class="ob"><div class="ob-stil">Cucinelli AW26 "Ars Imitatur Naturam" — azzurro slavato e azzurro oxford si parlano come due toni dello stesso neutro freddo. La felpa rosa antico rompe tutto con calore. I Paciotti alzano il registro da casual a casual elevato.</div><div class="ol"><span class="ln">①</span>Trench Beige · Massimo Dutti</div><div class="ol"><span class="ln">②</span>Jeans Azzurro Slavato · H&amp;M</div><div class="ol"><span class="ln">③</span>Camicia Azzurro Oxford Chiaro · Camicissima</div><div class="ol"><span class="ln">④</span>Felpa Rosa Antico · Uniqlo</div><div class="extras"><span class="xt sh">Loafer Paciotti</span><span class="xt pf">Prada L'Homme</span></div></div></div>
+
+<div class="outfit-card"><div class="oh uff"><div class="oh-title">Ars · Chino</div><div class="oh-tag">Elevated Casual</div></div><div class="ob"><div class="ob-stil">Cucinelli AW26 "Ars Imitatur Naturam" — il chino panna alza il registro verso l'ufficio informale e l'aperitivo elegante. Il confine tra casual e formale si dissolve. La versione piu vicina alla sfilata originale.</div><div class="ol"><span class="ln">①</span>Trench Beige · Massimo Dutti</div><div class="ol"><span class="ln">②</span>Chino Bianco/Panna · OVS</div><div class="ol"><span class="ln">③</span>Camicia Azzurro Oxford Chiaro · Camicissima</div><div class="ol"><span class="ln">④</span>Felpa Rosa Antico · Uniqlo</div><div class="extras"><span class="xt sh">Loafer Paciotti</span><span class="xt pf">Prada L'Homme</span></div></div></div>
+
+<div class="outfit-card"><div class="oh uff"><div class="oh-title">Ivory & Tan</div><div class="oh-tag">Elevated Casual</div></div><div class="ob"><div class="ob-stil">Ralph Lauren Purple Label SS26 — ton sur ton tan/avorio/beige. Trench, chino panna, maglione panna. Le righe sottili come unica texture che interrompe il monocromatismo caldo. Il cap nubuck chiude il cerchio.</div><div class="ol"><span class="ln">①</span>Trench Beige · Massimo Dutti</div><div class="ol"><span class="ln">②</span>Chino Bianco/Panna · OVS</div><div class="ol"><span class="ln">③</span>Camicia Righe Az/Bi Sottili · Camicissima</div><div class="ol"><span class="ln">④</span>Maglione Panna · OVS</div><div class="extras"><span class="xt sh">Valsport Tournament Taupe</span><span class="xt">Cap Nubuck · RL</span><span class="xt pf">Acqua di Gio</span></div></div></div>
+
+<div class="rule-box"><h3>Codice Elevated Casual</h3><div class="ri"><div class="rd"></div><div><strong>La camicia spunta dalla felpa</strong> — la stratificazione e visibile e intenzionale. Non si nasconde nulla.</div></div><div class="ri"><div class="rd"></div><div><strong>Le scarpe alzano il registro</strong> — Paciotti sempre, mai sneaker. E il profumo e Prada L'Homme.</div></div><div class="ri"><div class="rd"></div><div><strong>Il confine e il punto</strong> — non cercare di capire se e ufficio o casual. E entrambi. Questa e la mossa Nigo.</div></div></div>
 ```
 
   </div>
@@ -565,7 +586,7 @@ function showSec(id, btn) {
 
 function setTipo(t, btn) {
   document.querySelectorAll('.outfit-panel').forEach(function(p) { p.classList.remove('active'); });
-  document.querySelectorAll('#t-ufficio,#t-casual').forEach(function(b) { b.classList.remove('active'); });
+  document.querySelectorAll('#t-ufficio,#t-casual,#t-elevated').forEach(function(b) { b.classList.remove('active'); });
   document.getElementById('pe-' + t).classList.add('active');
   btn.classList.add('active');
 }
