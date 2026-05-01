@@ -123,7 +123,8 @@ nav::-webkit-scrollbar { display: none; }
 <nav>
   <button class="nav-btn active" onclick="showSec('guardaroba',this)">Cucinelli</button>
   <button class="nav-btn" onclick="showSec('guardaroba-ai',this)">Armani</button>
-  <button class="nav-btn" onclick="showSec('outfit',this)">Outfit</button>
+  <button class="nav-btn" onclick="showSec('outfit',this)">Outfit P/E</button>
+  <button class="nav-btn" onclick="showSec('outfit-ai',this)">Outfit A/I</button>
   <button class="nav-btn" onclick="showSec('acquisti',this)">Acquisti</button>
   <button class="nav-btn" onclick="showSec('palette',this)">Palette</button>
   <button class="nav-btn" onclick="showSec('daprovare',this)">Da Provare</button>
@@ -308,7 +309,7 @@ nav::-webkit-scrollbar { display: none; }
 <!-- OUTFIT -->
 
 <div id="outfit" class="section">
-  <div class="section-label">Look · Cucinelli P/E · Sistema ①②③④</div>
+  <div class="section-label">Outfit · Cucinelli P/E</div>
   <div class="tabs" style="margin-bottom:14px;">
     <button class="tab active" id="t-ufficio" onclick="setTipo('ufficio',this)">Ufficio</button>
     <button class="tab" id="t-casual" onclick="setTipo('casual',this)">Casual</button>
@@ -542,6 +543,149 @@ nav::-webkit-scrollbar { display: none; }
   <div class="item-card"><div class="item-color" style="background:#C8C0B0"></div><div class="item-info"><div class="item-name">Intra-Matic Automatico</div><div class="item-brand">Hamilton</div><div class="item-stil">Design anni '60, eleganza discreta — alternativa al Tissot con più carattere</div></div><span class="badge b-pend">Lungo termine</span></div>
 </div>
 
+<!-- OUTFIT A/I -->
+
+<div id="outfit-ai" class="section">
+  <div class="section-label">Outfit · Armani A/I</div>
+
+  <div class="tabs" style="margin-bottom:14px;">
+    <button class="tab active" id="ai-t-ufficio" onclick="setTipoAI('ufficio',this)">Ufficio</button>
+    <button class="tab" id="ai-t-casual" onclick="setTipoAI('casual',this)">Casual</button>
+    <button class="tab" id="ai-t-corto" onclick="setTipoAI('corto',this)">Cortocircuito</button>
+  </div>
+
+  <!-- UFFICIO A/I -->
+
+  <div class="outfit-panel active" id="ai-ufficio">
+
+```
+<div class="tabs" style="margin-bottom:14px;">
+  <button class="tab active" id="ai-uf-all" onclick="filtroGiaccaAI('all',this)">Tutte</button>
+  <button class="tab" id="ai-uf-barbour" onclick="filtroGiaccaAI('barbour',this)">Barbour Ashby</button>
+  <button class="tab" id="ai-uf-montgomery" onclick="filtroGiaccaAI('montgomery',this)">Montgomery</button>
+  <button class="tab" id="ai-uf-woolrich" onclick="filtroGiaccaAI('woolrich',this)">Woolrich</button>
+</div>
+
+<!-- BARBOUR ASHBY UFFICIO -->
+<div class="ai-uf-group" data-giacca="barbour">
+  <div style="background:#1A2030;border:1px solid #2A3548;border-radius:8px;padding:8px 12px;margin:8px 0;font-family:'Cormorant Garamond',serif;font-size:.9rem;color:#C8D4E8;letter-spacing:.1em;">Barbour Ashby Wax Navy</div>
+
+  <div class="outfit-card"><div class="oh uff" style="background:#1A2A40"><div class="oh-title">The Wax Chapter</div><div class="oh-tag">Zegna AW26</div></div><div class="ob"><div class="ob-stil">Tre texture diverse sullo stesso blu — wax opaco, maglia, cotone. Il grigio medio interrompe la colonna blu. La camicia azzurra spunta dal cardigan portando luce verso il viso.</div><div class="ol"><span class="ln">①</span>Barbour Ashby Wax Navy</div><div class="ol"><span class="ln">②</span>Chino Flanella Grigio Medio · Tela Blu</div><div class="ol"><span class="ln">③</span>Camicia Oxford Chiaro · Camicissima</div><div class="ol"><span class="ln">④</span>Cardigan Navy · OVS</div><div class="extras"><span class="xt sh">Geox Baryden Navy</span><span class="xt pf">Prada L'Homme</span></div></div></div>
+
+  <div class="outfit-card"><div class="oh uff" style="background:#1A2A40"><div class="oh-title">Greige Interruption</div><div class="oh-tag">Canali AW26</div></div><div class="ob"><div class="ob-stil">La felpa greige Gutteridge come interruzione calda inaspettata in un look tutto freddo. Deep navy/righe azzurre/greige/taupe — progressione dal freddo al caldo che si legge dal collo ai piedi.</div><div class="ol"><span class="ln">①</span>Barbour Ashby Wax Navy</div><div class="ol"><span class="ln">②</span>Chino Deep Navy · Camicissima</div><div class="ol"><span class="ln">③</span>Camicia Righe Az/Bi Sottili · Camicissima</div><div class="ol"><span class="ln">④</span>Felpa Greige/Sabbia · Gutteridge</div><div class="extras"><span class="xt sh">Valsport Tournament Taupe</span><span class="xt pf">Prada L'Homme</span></div></div></div>
+
+  <div class="outfit-card"><div class="oh uff" style="background:#1A2A40"><div class="oh-title">Oxford Profondo</div><div class="oh-tag">Armani AW26</div></div><div class="ob"><div class="ob-stil">Ton sur ton navy quasi monocromatico interrotto solo dal grigio chiaro del girocollo verso il viso e dal taupe della Valsport verso il basso. Due punti di luce agli estremi.</div><div class="ol"><span class="ln">①</span>Barbour Ashby Wax Navy</div><div class="ol"><span class="ln">②</span>Chino Navy · Camicissima</div><div class="ol"><span class="ln">③</span>Camicia Oxford Scuro · Camicissima</div><div class="ol"><span class="ln">④</span>Girocollo Grigio Chiaro · H&amp;M</div><div class="extras"><span class="xt sh">Valsport Tournament Taupe</span><span class="xt pf">Prada L'Homme</span></div></div></div>
+
+  <div class="outfit-card"><div class="oh uff" style="background:#1A2A40"><div class="oh-title">The Cognac Twist</div><div class="oh-tag">Bottega Veneta AW26</div></div><div class="ob"><div class="ob-stil">Il marrone della Timberland come unico elemento caldo in un look tutto freddo. Navy/grigio/oxford scuro/blu notte — poi il marrone che scalda dal basso. Il materiale che parla.</div><div class="ol"><span class="ln">①</span>Barbour Ashby Wax Navy</div><div class="ol"><span class="ln">②</span>Chino Flanella Grigio Medio · Tela Blu</div><div class="ol"><span class="ln">③</span>Camicia Oxford Scuro · Camicissima</div><div class="ol"><span class="ln">④</span>Girocollo Blu Notte · H&amp;M</div><div class="extras"><span class="xt sh">Timberland Chukka Marrone</span><span class="xt pf">Prada L'Homme</span></div></div></div>
+</div>
+
+<!-- MONTGOMERY UFFICIO -->
+<div class="ai-uf-group" data-giacca="montgomery">
+  <div style="background:#1A2030;border:1px solid #2A3548;border-radius:8px;padding:8px 12px;margin:8px 0;font-family:'Cormorant Garamond',serif;font-size:.9rem;color:#C8D4E8;letter-spacing:.1em;">Montgomery Misto Lana Navy · Gutteridge</div>
+
+  <div class="outfit-card"><div class="oh uff" style="background:#1A2A40"><div class="oh-title">Texture Symphony</div><div class="oh-tag">Zegna AW26</div></div><div class="ob"><div class="ob-stil">Tre navy sovrapposti con tre texture diverse — lana misto, cotone, maglia. Da lontano sembra monocromatico, da vicino e una conversazione di materiali.</div><div class="ol"><span class="ln">①</span>Montgomery Misto Lana Navy · Gutteridge</div><div class="ol"><span class="ln">②</span>Chino Navy · Camicissima</div><div class="ol"><span class="ln">③</span>Camicia Righe Bi/Az Medie · Camicissima</div><div class="ol"><span class="ln">④</span>Gilet Navy · OVS</div><div class="extras"><span class="xt sh">Geox Baryden Navy</span><span class="xt pf">Prada L'Homme</span></div></div></div>
+
+  <div class="outfit-card"><div class="oh uff" style="background:#1A2A40"><div class="oh-title">Grey Matters</div><div class="oh-tag">Cucinelli AW26</div></div><div class="ob"><div class="ob-stil">Il grigio medio della flanella come neutro che separa i due navy sopra e sotto. L'Oxford chiaro porta luce verso il viso. La Valsport taupe chiude verso il basso con calore.</div><div class="ol"><span class="ln">①</span>Montgomery Misto Lana Navy · Gutteridge</div><div class="ol"><span class="ln">②</span>Chino Flanella Grigio Medio · Tela Blu</div><div class="ol"><span class="ln">③</span>Camicia Oxford Chiaro · Camicissima</div><div class="ol"><span class="ln">④</span>Merino Navy · Tela Blu</div><div class="extras"><span class="xt sh">Valsport Tournament Taupe</span><span class="xt pf">Prada L'Homme</span></div></div></div>
+
+  <div class="outfit-card"><div class="oh uff" style="background:#1A2A40"><div class="oh-title">Micro Universe</div><div class="oh-tag">Armani AW26 Cangiante</div></div><div class="ob"><div class="ob-stil">La camicia micro quadri e il capo cangiante del guardaroba — reagisce alla luce in modo diverso rispetto ai toni piatti intorno. Da vicino e sofisticata, da lontano sparisce nel navy.</div><div class="ol"><span class="ln">①</span>Montgomery Misto Lana Navy · Gutteridge</div><div class="ol"><span class="ln">②</span>Chino Deep Navy · Camicissima</div><div class="ol"><span class="ln">③</span>Camicia Micro Quadri Grigio-Blu · Camicissima</div><div class="ol"><span class="ln">④</span>Cardigan Navy · OVS</div><div class="extras"><span class="xt sh">Geox Baryden Navy</span><span class="xt pf">Prada L'Homme</span></div></div></div>
+
+  <div class="outfit-card"><div class="oh uff" style="background:#1A2A40"><div class="oh-title">The Greige Statement</div><div class="oh-tag">Canali AW26</div></div><div class="ob"><div class="ob-stil">Profilo tutto navy con un colpo di calore al secondo strato e alle scarpe. Il greige Gutteridge e il marrone della Timberland si rispondono — calore in alto e in basso, freddo al centro.</div><div class="ol"><span class="ln">①</span>Montgomery Misto Lana Navy · Gutteridge</div><div class="ol"><span class="ln">②</span>Chino Deep Navy · Camicissima</div><div class="ol"><span class="ln">③</span>Camicia Oxford Scuro · Camicissima</div><div class="ol"><span class="ln">④</span>Felpa Greige/Sabbia · Gutteridge</div><div class="extras"><span class="xt sh">Timberland Chukka Marrone</span><span class="xt pf">Prada L'Homme</span></div></div></div>
+</div>
+
+<!-- WOOLRICH UFFICIO -->
+<div class="ai-uf-group" data-giacca="woolrich">
+  <div style="background:#1A2030;border:1px solid #2A3548;border-radius:8px;padding:8px 12px;margin:8px 0;font-family:'Cormorant Garamond',serif;font-size:.9rem;color:#C8D4E8;letter-spacing:.1em;">Woolrich Parka Gore-Tex Navy</div>
+
+  <div class="outfit-card"><div class="oh uff" style="background:#1A2A40"><div class="oh-title">Technical Elegance</div><div class="oh-tag">Loro Piana AW26</div></div><div class="ob"><div class="ob-stil">Il capo tecnico che aspira alla sartorialita. Il parka Gore-Tex con flanella e girocollo grigio chiaro porta il materiale outdoor in un registro urbano raffinato.</div><div class="ol"><span class="ln">①</span>Woolrich Parka Gore-Tex Navy</div><div class="ol"><span class="ln">②</span>Chino Flanella Grigio Medio · Tela Blu</div><div class="ol"><span class="ln">③</span>Camicia Righe Az/Bi Sottili · Camicissima</div><div class="ol"><span class="ln">④</span>Girocollo Grigio Chiaro · H&amp;M</div><div class="extras"><span class="xt sh">Geox Baryden Navy</span><span class="xt pf">Prada L'Homme</span></div></div></div>
+
+  <div class="outfit-card"><div class="oh uff" style="background:#1A2A40"><div class="oh-title">Navy Monolith</div><div class="oh-tag">Armani AW26</div></div><div class="ob"><div class="ob-stil">Tutto navy tranne l'Oxford chiaro e la Valsport taupe. Una colonna di blu che si apre solo in due punti strategici — luce vicino al viso, calore vicino al suolo.</div><div class="ol"><span class="ln">①</span>Woolrich Parka Gore-Tex Navy</div><div class="ol"><span class="ln">②</span>Chino Navy · Camicissima</div><div class="ol"><span class="ln">③</span>Camicia Oxford Chiaro · Camicissima</div><div class="ol"><span class="ln">④</span>Merino Navy · Tela Blu</div><div class="extras"><span class="xt sh">Valsport Tournament Taupe</span><span class="xt pf">Prada L'Homme</span></div></div></div>
+
+  <div class="outfit-card"><div class="oh uff" style="background:#1A2A40"><div class="oh-title">Powder & Tech</div><div class="oh-tag">Zegna AW26</div></div><div class="ob"><div class="ob-stil">Il blu notte come secondo strato che scurisce verso il basso mentre le righe bianco/azzurro portano luce verso il viso. La flanella grigio medio come base che bilancia.</div><div class="ol"><span class="ln">①</span>Woolrich Parka Gore-Tex Navy</div><div class="ol"><span class="ln">②</span>Chino Flanella Grigio Medio · Tela Blu</div><div class="ol"><span class="ln">③</span>Camicia Righe Bi/Az Medie · Camicissima</div><div class="ol"><span class="ln">④</span>Girocollo Blu Notte · H&amp;M</div><div class="extras"><span class="xt sh">Geox Baryden Navy</span><span class="xt pf">Prada L'Homme</span></div></div></div>
+
+  <div class="outfit-card"><div class="oh uff" style="background:#1A2A40"><div class="oh-title">Flannel Statement</div><div class="oh-tag">Bottega Veneta AW26</div></div><div class="ob"><div class="ob-stil">Il Woolrich tecnico con il greige caldo come secondo strato e il marrone come chiusura. Il micro quadro tiene il look nel registro ufficio. Il piu audace della stagione.</div><div class="ol"><span class="ln">①</span>Woolrich Parka Gore-Tex Navy</div><div class="ol"><span class="ln">②</span>Chino Flanella Grigio Medio · Tela Blu</div><div class="ol"><span class="ln">③</span>Camicia Micro Quadri Grigio-Blu · Camicissima</div><div class="ol"><span class="ln">④</span>Felpa Greige/Sabbia · Gutteridge</div><div class="extras"><span class="xt sh">Timberland Chukka Marrone</span><span class="xt pf">Prada L'Homme</span></div></div></div>
+</div>
+
+<div class="rule-box"><h3>Codice Ufficio A/I</h3><div class="ri"><div class="rd"></div><div><strong>La stratificazione e visibile:</strong> ogni strato ha una texture diversa e si legge chiaramente.</div></div><div class="ri"><div class="rd"></div><div><strong>La camicia spunta sempre</strong> dal girocollo o dal cardigan. Non si nasconde.</div></div><div class="ri"><div class="rd"></div><div><strong>Prada L'Homme sempre</strong> — e il profumo del registro formale A/I.</div></div></div>
+```
+
+  </div>
+
+  <!-- CASUAL A/I -->
+
+  <div class="outfit-panel" id="ai-casual">
+
+```
+<div class="tabs" style="margin-bottom:14px;">
+  <button class="tab active" id="ai-cas-all" onclick="filtroGiaccaAICas('all',this)">Tutte</button>
+  <button class="tab" id="ai-cas-barbour" onclick="filtroGiaccaAICas('barbour',this)">Barbour Ashby</button>
+  <button class="tab" id="ai-cas-montgomery" onclick="filtroGiaccaAICas('montgomery',this)">Montgomery</button>
+  <button class="tab" id="ai-cas-woolrich" onclick="filtroGiaccaAICas('woolrich',this)">Woolrich</button>
+</div>
+
+<!-- BARBOUR CASUAL -->
+<div class="ai-cas-group" data-giacca="barbour">
+  <div style="background:#1A2030;border:1px solid #2A3548;border-radius:8px;padding:8px 12px;margin:8px 0;font-family:'Cormorant Garamond',serif;font-size:.9rem;color:#C8D4E8;letter-spacing:.1em;">Barbour Ashby Wax Navy</div>
+
+  <div class="outfit-card"><div class="oh cas" style="background:#1A2A40"><div class="oh-title">Wax & Denim</div><div class="oh-tag">Canali AW26</div></div><div class="ob"><div class="ob-stil">Il Barbour cerato con jeans scuro e ML grigia come base. Il cardigan navy aperto lascia vedere il grigio sotto. British fuori, casual dentro.</div><div class="ol"><span class="ln">①</span>Barbour Ashby Wax Navy</div><div class="ol"><span class="ln">②</span>Jeans Blu Scuro · Levi's</div><div class="ol"><span class="ln">③</span>ML Grigio · H&amp;M</div><div class="ol"><span class="ln">④</span>Cardigan Navy · OVS</div><div class="extras"><span class="xt sh">Valsport Tournament Taupe</span><span class="xt pf">Acqua di Gio</span></div></div></div>
+
+  <div class="outfit-card"><div class="oh cas" style="background:#1A2A40"><div class="oh-title">Greige Weekend</div><div class="oh-tag">Zegna AW26</div></div><div class="ob"><div class="ob-stil">Il blu polvere come ML base che porta polverosita sotto la felpa greige. Il marrone della Timberland risponde al greige in alto. Due neutrali caldi agli estremi, blu freddo al centro.</div><div class="ol"><span class="ln">①</span>Barbour Ashby Wax Navy</div><div class="ol"><span class="ln">②</span>Jeans Blu Scuro · Levi's</div><div class="ol"><span class="ln">③</span>ML Blu Polvere · H&amp;M</div><div class="ol"><span class="ln">④</span>Felpa Greige/Sabbia · Gutteridge</div><div class="extras"><span class="xt sh">Timberland Chukka Marrone</span><span class="xt pf">Acqua di Gio</span></div></div></div>
+
+  <div class="outfit-card"><div class="oh cas" style="background:#1A2A40"><div class="oh-title">Ash Blue</div><div class="oh-tag">Armani AW26</div></div><div class="ob"><div class="ob-stil">Tre blu sovrapposti dal piu scuro al piu chiaro verso il basso. La Valsport taupe come unico elemento caldo. WOMO Black Tobacco — look da sera profonda.</div><div class="ol"><span class="ln">①</span>Barbour Ashby Wax Navy</div><div class="ol"><span class="ln">②</span>Jeans Blu Scuro · Levi's</div><div class="ol"><span class="ln">③</span>ML Navy 1 · H&amp;M</div><div class="ol"><span class="ln">④</span>Girocollo Blu Notte · H&amp;M</div><div class="extras"><span class="xt sh">Valsport Tournament Taupe</span><span class="xt pf">WOMO Black Tobacco</span></div></div></div>
+</div>
+
+<!-- MONTGOMERY CASUAL -->
+<div class="ai-cas-group" data-giacca="montgomery">
+  <div style="background:#1A2030;border:1px solid #2A3548;border-radius:8px;padding:8px 12px;margin:8px 0;font-family:'Cormorant Garamond',serif;font-size:.9rem;color:#C8D4E8;letter-spacing:.1em;">Montgomery Misto Lana Navy · Gutteridge</div>
+
+  <div class="outfit-card"><div class="oh cas" style="background:#1A2A40"><div class="oh-title">The Collector</div><div class="oh-tag">Zegna AW26 Armadio di Famiglia</div></div><div class="ob"><div class="ob-stil">L'uomo che prende da un guardaroba collezionato nel corso dei decenni. Il Montgomery come pezzo storico, il jeans come base eterna. Tutto ha una storia, niente e comprato insieme.</div><div class="ol"><span class="ln">①</span>Montgomery Misto Lana Navy · Gutteridge</div><div class="ol"><span class="ln">②</span>Jeans Blu Scuro · Levi's</div><div class="ol"><span class="ln">③</span>ML Grigio · H&amp;M</div><div class="ol"><span class="ln">④</span>Gilet Navy · OVS</div><div class="extras"><span class="xt sh">Valsport Tournament Taupe</span><span class="xt pf">Acqua di Gio</span></div></div></div>
+
+  <div class="outfit-card"><div class="oh cas" style="background:#1A2A40"><div class="oh-title">Cognac & Wool</div><div class="oh-tag">Bottega Veneta AW26</div></div><div class="ob"><div class="ob-stil">Il marrone della Timberland come firma calda su un look tutto freddo. Il blu polvere polveroso della ML contro il navy del cardigan e del Montgomery. WOMO perche il marrone chiama il tabacco.</div><div class="ol"><span class="ln">①</span>Montgomery Misto Lana Navy · Gutteridge</div><div class="ol"><span class="ln">②</span>Jeans Blu Scuro · Levi's</div><div class="ol"><span class="ln">③</span>ML Blu Polvere · H&amp;M</div><div class="ol"><span class="ln">④</span>Cardigan Navy · OVS</div><div class="extras"><span class="xt sh">Timberland Chukka Marrone</span><span class="xt pf">WOMO Black Tobacco</span></div></div></div>
+
+  <div class="outfit-card"><div class="oh cas" style="background:#1A2A40"><div class="oh-title">The Slow Evening</div><div class="oh-tag">Canali AW26</div></div><div class="ob"><div class="ob-stil">Il greige caldo come secondo strato inaspettato sul Montgomery navy. La Valsport taupe risponde al greige in basso. WOMO perche questo e il look da aperitivo invernale che diventa cena.</div><div class="ol"><span class="ln">①</span>Montgomery Misto Lana Navy · Gutteridge</div><div class="ol"><span class="ln">②</span>Jeans Blu Scuro · Levi's</div><div class="ol"><span class="ln">③</span>ML Navy 2 · H&amp;M</div><div class="ol"><span class="ln">④</span>Felpa Greige/Sabbia · Gutteridge</div><div class="extras"><span class="xt sh">Valsport Tournament Taupe</span><span class="xt pf">WOMO Black Tobacco</span></div></div></div>
+</div>
+
+<!-- WOOLRICH CASUAL -->
+<div class="ai-cas-group" data-giacca="woolrich">
+  <div style="background:#1A2030;border:1px solid #2A3548;border-radius:8px;padding:8px 12px;margin:8px 0;font-family:'Cormorant Garamond',serif;font-size:.9rem;color:#C8D4E8;letter-spacing:.1em;">Woolrich Parka Gore-Tex Navy</div>
+
+  <div class="outfit-card"><div class="oh cas" style="background:#1A2A40"><div class="oh-title">Urban Nomad</div><div class="oh-tag">Loro Piana AW26</div></div><div class="ob"><div class="ob-stil">Il Woolrich tecnico con doppio grigio sotto. ML grigio e girocollo grigio chiaro creano un ton sur ton smorzato che si apre verso il viso. Look da sabato mattina urbano.</div><div class="ol"><span class="ln">①</span>Woolrich Parka Gore-Tex Navy</div><div class="ol"><span class="ln">②</span>Jeans Blu Scuro · Levi's</div><div class="ol"><span class="ln">③</span>ML Grigio · H&amp;M</div><div class="ol"><span class="ln">④</span>Girocollo Grigio Chiaro · H&amp;M</div><div class="extras"><span class="xt sh">Valsport Tournament Taupe</span><span class="xt pf">Acqua di Gio</span></div></div></div>
+
+  <div class="outfit-card"><div class="oh cas" style="background:#1A2A40"><div class="oh-title">Dark Matter</div><div class="oh-tag">Armani AW26</div></div><div class="ob"><div class="ob-stil">Tutto freddo e profondo. Navy/blu scuro/navy/blu notte — una progressione di buio. WOMO Black Tobacco perche e il look piu notturno del guardaroba. Il dark monolith.</div><div class="ol"><span class="ln">①</span>Woolrich Parka Gore-Tex Navy</div><div class="ol"><span class="ln">②</span>Jeans Blu Scuro · Levi's</div><div class="ol"><span class="ln">③</span>ML Navy 1 · H&amp;M</div><div class="ol"><span class="ln">④</span>Girocollo Blu Notte · H&amp;M</div><div class="extras"><span class="xt sh">Geox Baryden Navy</span><span class="xt pf">WOMO Black Tobacco</span></div></div></div>
+
+  <div class="outfit-card"><div class="oh cas" style="background:#1A2A40"><div class="oh-title">Tech Casual</div><div class="oh-tag">Zegna AW26</div></div><div class="ob"><div class="ob-stil">Il blu polvere polveroso come base che alleggerisce il look tecnico del Woolrich. Il cardigan navy aperto lascia vedere il blu polvere sotto. Il marrone della Timberland scalda dal basso.</div><div class="ol"><span class="ln">①</span>Woolrich Parka Gore-Tex Navy</div><div class="ol"><span class="ln">②</span>Jeans Blu Scuro · Levi's</div><div class="ol"><span class="ln">③</span>ML Blu Polvere · H&amp;M</div><div class="ol"><span class="ln">④</span>Cardigan Navy · OVS</div><div class="extras"><span class="xt sh">Timberland Chukka Marrone</span><span class="xt pf">Acqua di Gio</span></div></div></div>
+</div>
+
+<div class="rule-box"><h3>Codice Casual A/I</h3><div class="ri"><div class="rd"></div><div><strong>Le ML entrano come primo strato visibile</strong> — non si nascondono sotto il capospalla.</div></div><div class="ri"><div class="rd"></div><div><strong>WOMO Black Tobacco per le serate</strong> — Acqua di Gio per il casual diurno.</div></div><div class="ri"><div class="rd"></div><div><strong>Il jeans blu scuro e la base unica</strong> — non si cambia, cambia tutto il resto.</div></div></div>
+```
+
+  </div>
+
+  <!-- CORTOCIRCUITO -->
+
+  <div class="outfit-panel" id="ai-corto">
+
+```
+<div style="background:#1A1520;border:1px solid #2A2030;border-radius:8px;padding:10px 14px;margin:0 0 14px;font-size:.62rem;color:#C8A8C8;line-height:1.6;">
+  Look costruiti con la logica Nigo/Pharrell — non sono errori, sono scelte consapevoli. Ogni cortocircuito ha una ragione precisa e intelligente.
+</div>
+
+<div class="outfit-card"><div class="oh uff" style="background:#1A1530"><div class="oh-title">The Archive Conversation</div><div class="oh-tag">Cortocircuito · Nigo</div></div><div class="ob"><div class="ob-stil">Montgomery + Gucci GG Canvas. Due biografie che si incontrano — il capospalla piu formale con la sneaker vintage piu iconica. Nessuno se lo aspetta, tutti lo capiscono.</div><div class="ol"><span class="ln">①</span>Montgomery Misto Lana Navy · Gutteridge</div><div class="ol"><span class="ln">②</span>Jeans Blu Scuro · Levi's</div><div class="ol"><span class="ln">③</span>ML Grigio · H&amp;M</div><div class="ol"><span class="ln">④</span>Girocollo Grigio Chiaro · H&amp;M</div><div class="extras"><span class="xt sh">Gucci GG Canvas</span><span class="xt pf">WOMO Black Tobacco</span></div></div></div>
+
+<div class="outfit-card"><div class="oh uff" style="background:#1A1530"><div class="oh-title">Bookends</div><div class="oh-tag">Cortocircuito · Pharrell</div></div><div class="ob"><div class="ob-stil">Tutto navy dal collo ai piedi tranne il cap nubuck in testa e la Valsport taupe ai piedi. Due parentesi calde che contengono un monolite freddo. La rima cromatica e la firma.</div><div class="ol"><span class="ln">①</span>Woolrich Parka Gore-Tex Navy</div><div class="ol"><span class="ln">②</span>Jeans Blu Scuro · Levi's</div><div class="ol"><span class="ln">③</span>ML Navy 1 · H&amp;M</div><div class="ol"><span class="ln">④</span>Girocollo Blu Notte · H&amp;M</div><div class="extras"><span class="xt sh">Valsport Tournament Taupe</span><span class="xt">Cap Nubuck · RL</span><span class="xt pf">Acqua di Gio</span></div></div></div>
+
+<div class="outfit-card"><div class="oh uff" style="background:#1A1530"><div class="oh-title">The Brown Frame</div><div class="oh-tag">Cortocircuito · Nigo</div></div><div class="ob"><div class="ob-stil">Due marroni agli estremi — bomber e Timberland — con grigio e navy al centro. Il blu scuro del jeans media tra i due marroni. Il marrone incornicia il freddo dall'alto e dal basso.</div><div class="ol"><span class="ln">①</span>Bomber Pelle Marrone · Conbipel</div><div class="ol"><span class="ln">②</span>Jeans Blu Scuro · Levi's</div><div class="ol"><span class="ln">③</span>ML Grigio · H&amp;M</div><div class="ol"><span class="ln">④</span>Cardigan Navy · OVS</div><div class="extras"><span class="xt sh">Timberland Chukka Marrone</span><span class="xt pf">WOMO Black Tobacco</span></div></div></div>
+
+<div class="outfit-card"><div class="oh uff" style="background:#1A1530"><div class="oh-title">The Tuck That Changes Everything</div><div class="oh-tag">Cortocircuito · Pharrell · Zegna AW26</div></div><div class="ob"><div class="ob-stil">Il girocollo grigio chiaro infilato nel chino flanella. La camicia Oxford spunta dal collo. Un gesto, non un capo — cambia la silhouette, la postura, il registro. Tutto il resto rimane uguale.</div><div class="ol"><span class="ln">①</span>Barbour Ashby Wax Navy</div><div class="ol"><span class="ln">②</span>Chino Flanella Grigio Medio · Tela Blu</div><div class="ol"><span class="ln">③</span>Camicia Oxford Chiaro · Camicissima</div><div class="ol"><span class="ln">④</span>Girocollo Grigio Chiaro · H&amp;M (infilato nel chino)</div><div class="extras"><span class="xt sh">Geox Baryden Navy</span><span class="xt pf">Prada L'Homme</span></div></div></div>
+
+<div class="outfit-card"><div class="oh uff" style="background:#1A1530"><div class="oh-title">The Invisible Detail</div><div class="oh-tag">Cortocircuito · Pharrell</div></div><div class="ob"><div class="ob-stil">WOMO Black Tobacco di giorno su un look neutro e smorzato. Non si vede ma si sente. La dissonanza consapevole — il profumo serale che nessuno si aspetta alle 11 di mattina.</div><div class="ol"><span class="ln">①</span>Barbour Ashby Wax Navy</div><div class="ol"><span class="ln">②</span>Jeans Blu Scuro · Levi's</div><div class="ol"><span class="ln">③</span>ML Blu Polvere · H&amp;M</div><div class="ol"><span class="ln">④</span>Felpa Greige/Sabbia · Gutteridge</div><div class="extras"><span class="xt sh">Valsport Tournament Taupe</span><span class="xt pf">WOMO Black Tobacco</span></div></div></div>
+
+<div class="rule-box"><h3>Codice Cortocircuito</h3><div class="ri"><div class="rd"></div><div><strong>Non e un errore</strong> — e una scelta consapevole con una logica precisa.</div></div><div class="ri"><div class="rd"></div><div><strong>Un solo elemento fuori registro</strong> per look — non di piu. Il cortocircuito funziona solo se e isolato.</div></div><div class="ri"><div class="rd"></div><div><strong>La rima cromatica</strong> — anche nel cortocircuito, testa e piedi si rispondono.</div></div></div>
+```
+
+  </div>
+
+</div>
+
 <!-- FAB -->
 
 <button class="fab hidden" id="fab" onclick="openModal()">+</button>
@@ -730,6 +874,31 @@ function showToast(msg) {
 document.getElementById('modal').addEventListener('click', function(e) { if (e.target === this) closeModal(); });
 
 renderAcquisti();
+
+// OUTFIT A/I TABS
+function setTipoAI(t, btn) {
+  document.querySelectorAll('#ai-ufficio,#ai-casual,#ai-corto').forEach(function(p) { p.classList.remove('active'); });
+  document.querySelectorAll('#ai-t-ufficio,#ai-t-casual,#ai-t-corto').forEach(function(b) { b.classList.remove('active'); });
+  document.getElementById('ai-' + t).classList.add('active');
+  btn.classList.add('active');
+}
+
+function filtroGiaccaAI(g, btn) {
+  document.querySelectorAll('#ai-uf-all,#ai-uf-barbour,#ai-uf-montgomery,#ai-uf-woolrich').forEach(function(b) { b.classList.remove('active'); });
+  btn.classList.add('active');
+  document.querySelectorAll('.ai-uf-group').forEach(function(gr) {
+    gr.style.display = (g === 'all' || gr.dataset.giacca === g) ? 'block' : 'none';
+  });
+}
+
+function filtroGiaccaAICas(g, btn) {
+  document.querySelectorAll('#ai-cas-all,#ai-cas-barbour,#ai-cas-montgomery,#ai-cas-woolrich').forEach(function(b) { b.classList.remove('active'); });
+  btn.classList.add('active');
+  document.querySelectorAll('.ai-cas-group').forEach(function(gr) {
+    gr.style.display = (g === 'all' || gr.dataset.giacca === g) ? 'block' : 'none';
+  });
+}
+
 </script>
 
 </body>
