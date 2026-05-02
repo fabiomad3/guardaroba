@@ -113,6 +113,17 @@ nav::-webkit-scrollbar { display: none; }
 .btn-confirm-del { background: #C05030; color: #FAF7F3; }
 .toast { position: fixed; bottom: 90px; left: 50%; transform: translateX(-50%) translateY(20px); background: var(--accent); color: #3A1A10; padding: 10px 20px; border-radius: 20px; font-size: .65rem; font-weight: 600; letter-spacing: .08em; opacity: 0; transition: all .3s; z-index: 500; white-space: nowrap; }
 .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+.dict-section { margin-bottom: 24px; }
+.dict-section-title { font-family: ‘Cormorant Garamond’, serif; font-size: .8rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #1A2A40; border-bottom: 1px solid #B8A070; padding-bottom: 6px; margin-bottom: 12px; }
+.dict-rule { display: flex; gap: 12px; margin-bottom: 10px; align-items: flex-start; }
+.dict-num { font-family: ‘Cormorant Garamond’, serif; font-size: .75rem; font-weight: 700; color: #B8A070; min-width: 24px; margin-top: 1px; }
+.dict-rule div { font-size: .68rem; color: #3A3028; line-height: 1.6; }
+.dict-rule strong { color: #2A1A0A; font-weight: 600; }
+.dict-law { display: flex; gap: 14px; margin-bottom: 10px; align-items: flex-start; background: #F8F4EC; border-radius: 6px; padding: 8px 12px; }
+.dict-law-num { font-family: ‘Cormorant Garamond’, serif; font-size: .85rem; font-weight: 700; color: #B8A070; min-width: 28px; font-style: italic; }
+.dict-law div { font-size: .68rem; color: #2A1A0A; line-height: 1.6; }
+
 </style>
 </head>
 <body>
@@ -124,10 +135,12 @@ nav::-webkit-scrollbar { display: none; }
   <button class="nav-btn active" onclick="showSec('guardaroba',this)">Cucinelli</button>
   <button class="nav-btn" onclick="showSec('guardaroba-ai',this)">Armani</button>
   <button class="nav-btn" onclick="showSec('outfit',this)">Outfit P/E</button>
-  <button class="nav-btn" onclick="showSec('outfit-ai',this)">Outfit A/I</button>
+  <button class="nav-btn" onclick="showSec('outfit-autunno',this)">Outfit A</button>
+  <button class="nav-btn" onclick="showSec('outfit-ai',this)">Outfit I</button>
   <button class="nav-btn" onclick="showSec('acquisti',this)">Acquisti</button>
   <button class="nav-btn" onclick="showSec('palette',this)">Palette</button>
-  <button class="nav-btn" onclick="showSec('daprovare',this)">Da Provare</button>
+  <button class="nav-btn" onclick="showSec('daprovare',this)">Wish</button>
+  <button class="nav-btn" onclick="showSec('dictact',this)">Dictact</button>
 </nav>
 
 <!-- GUARDAROBA -->
@@ -432,6 +445,8 @@ nav::-webkit-scrollbar { display: none; }
 
 <div class="outfit-card"><div class="oh uff"><div class="oh-title">Ivory & Tan</div><div class="oh-tag">Elevated Casual</div></div><div class="ob"><div class="ob-stil">Ralph Lauren Purple Label SS26 — ton sur ton tan/avorio/beige. Trench, chino panna, maglione panna. Le righe sottili come unica texture che interrompe il monocromatismo caldo. Il cap nubuck chiude il cerchio.</div><div class="ol"><span class="ln">①</span>Trench Beige · Massimo Dutti</div><div class="ol"><span class="ln">②</span>Chino Bianco/Panna · OVS</div><div class="ol"><span class="ln">③</span>Camicia Righe Az/Bi Sottili · Camicissima</div><div class="ol"><span class="ln">④</span>Maglione Panna · OVS</div><div class="extras"><span class="xt sh">Valsport Tournament Taupe</span><span class="xt">Cap Nubuck · RL</span><span class="xt pf">Acqua di Gio</span></div></div></div>
 
+<div class="outfit-card"><div class="oh uff"><div class="oh-title">The Canali Lesson</div><div class="oh-tag">Elevated Casual</div></div><div class="ob"><div class="ob-stil">Canali Fall 2026 — la camicia Oxford azzurra spunta dal maglione panna come stratificazione visibile e intenzionale. Marrone sopra e Paciotti marrone sotto, panna e azzurro al centro. Bookends cromatici con calore agli estremi.</div><div class="ol"><span class="ln">①</span>Bomber Pelle Marrone · Conbipel</div><div class="ol"><span class="ln">②</span>Chino Bianco/Panna · OVS</div><div class="ol"><span class="ln">③</span>Camicia Azzurro Oxford Chiaro · Camicissima</div><div class="ol"><span class="ln">④</span>Maglione Panna · OVS</div><div class="extras"><span class="xt sh">Loafer Paciotti</span><span class="xt pf">Prada L'Homme</span></div></div></div>
+
 <div class="rule-box"><h3>Codice Elevated Casual</h3><div class="ri"><div class="rd"></div><div><strong>La camicia spunta dalla felpa</strong> — la stratificazione e visibile e intenzionale. Non si nasconde nulla.</div></div><div class="ri"><div class="rd"></div><div><strong>Le scarpe alzano il registro</strong> — Paciotti sempre, mai sneaker. E il profumo e Prada L'Homme.</div></div><div class="ri"><div class="rd"></div><div><strong>Il confine e il punto</strong> — non cercare di capire se e ufficio o casual. E entrambi. Questa e la mossa Nigo.</div></div></div>
 ```
 
@@ -543,15 +558,150 @@ nav::-webkit-scrollbar { display: none; }
   <div class="item-card"><div class="item-color" style="background:#C8C0B0"></div><div class="item-info"><div class="item-name">Intra-Matic Automatico</div><div class="item-brand">Hamilton</div><div class="item-stil">Design anni '60, eleganza discreta — alternativa al Tissot con più carattere</div></div><span class="badge b-pend">Lungo termine</span></div>
 </div>
 
+<!-- OUTFIT AUTUNNO -->
+
+<div id="outfit-autunno" class="section">
+  <div class="section-label">Outfit · Autunno · Cucinelli + LV + Armani</div>
+
+  <div style="background:#2A1E10;border:1px solid #3A2E20;border-radius:8px;padding:8px 14px;margin:0 0 14px;font-size:.62rem;color:#D8C8A8;line-height:1.6;">
+    Capispalla Armani fuori. Cucinelli dentro — panna, rosa antico, greige. Pantaloni chiari. Linguaggio LV/Pharrell/Nigo. Il jeans blu scuro e la flanella sono inverno — non entrano qui.
+  </div>
+
+  <div class="tabs" style="margin-bottom:14px;">
+    <button class="tab active" id="aut-t-ufficio" onclick="setTipoAut('ufficio',this)">Ufficio</button>
+    <button class="tab" id="aut-t-casual" onclick="setTipoAut('casual',this)">Casual</button>
+  </div>
+
+  <!-- UFFICIO AUTUNNO -->
+
+  <div class="outfit-panel active" id="aut-ufficio">
+
+```
+<div class="tabs" style="margin-bottom:14px;">
+  <button class="tab active" id="aut-uf-all" onclick="filtroAutUfficio('all',this)">Tutti</button>
+  <button class="tab" id="aut-uf-bomber" onclick="filtroAutUfficio('bomber',this)">Bomber</button>
+  <button class="tab" id="aut-uf-ashby" onclick="filtroAutUfficio('ashby',this)">Barbour Ashby</button>
+  <button class="tab" id="aut-uf-montgomery" onclick="filtroAutUfficio('montgomery',this)">Montgomery</button>
+  <button class="tab" id="aut-uf-liddesdale" onclick="filtroAutUfficio('liddesdale',this)">Liddesdale</button>
+</div>
+
+<!-- BOMBER UFFICIO -->
+<div class="aut-uf-group" data-giacca="bomber">
+  <div style="background:#2A1E10;border:1px solid #3A2E20;border-radius:8px;padding:8px 12px;margin:8px 0;font-family:'Cormorant Garamond',serif;font-size:.9rem;color:#D8C8A8;letter-spacing:.1em;">Bomber Pelle Marrone · Conbipel</div>
+
+  <div class="outfit-card"><div class="oh uff" style="background:#3A2810"><div class="oh-title">The Canali Lesson · Ufficio</div><div class="oh-tag">Canali FW26</div></div><div class="ob"><div class="ob-stil">Camicia Oxford azzurra che spunta dal maglione panna. Marrone fuori, calore dentro. I Paciotti marrone scuro fanno la rima con il bomber. Bookends cromatici.</div><div class="ol"><span class="ln">①</span>Bomber Pelle Marrone · Conbipel</div><div class="ol"><span class="ln">②</span>Chino Bianco/Panna · OVS</div><div class="ol"><span class="ln">③</span>Camicia Azzurro Oxford Chiaro · Camicissima</div><div class="ol"><span class="ln">④</span>Maglione Panna · OVS</div><div class="extras"><span class="xt sh">Loafer Paciotti</span><span class="xt pf">Prada L'Homme</span></div></div></div>
+
+  <div class="outfit-card"><div class="oh uff" style="background:#3A2810"><div class="oh-title">Panna & Leather</div><div class="oh-tag">Cucinelli in Autunno</div></div><div class="ob"><div class="ob-stil">Rosa antico vicino al viso, panna come secondo strato, grigio chiaro come base fredda. Il bomber marrone come chiusura calda. Il look Cucinelli P/E portato in autunno.</div><div class="ol"><span class="ln">①</span>Bomber Pelle Marrone · Conbipel</div><div class="ol"><span class="ln">②</span>Chino Grigio Chiaro · Levi's</div><div class="ol"><span class="ln">③</span>Camicia Rosa Antico · Camicissima</div><div class="ol"><span class="ln">④</span>Maglione Panna · OVS</div><div class="extras"><span class="xt sh">Valsport Tournament Taupe</span><span class="xt pf">Prada L'Homme</span></div></div></div>
+
+  <div class="outfit-card"><div class="oh uff" style="background:#3A2810"><div class="oh-title">The Warm Chapter</div><div class="oh-tag">LV FW26 · Pharrell</div></div><div class="ob"><div class="ob-stil">Girocollo grigio chiaro su camicia bianca, panna sotto, marrone fuori. La logica Louis Vuitton — grigio strutturato come secondo strato, bianco e panna fluidi sotto, capospalla scuro fuori.</div><div class="ol"><span class="ln">①</span>Bomber Pelle Marrone · Conbipel</div><div class="ol"><span class="ln">②</span>Chino Bianco/Panna · OVS</div><div class="ol"><span class="ln">③</span>Camicia Bianca · Camicissima</div><div class="ol"><span class="ln">④</span>Girocollo Grigio Chiaro · H&amp;M</div><div class="extras"><span class="xt sh">Loafer Paciotti</span><span class="xt pf">Prada L'Homme</span></div></div></div>
+</div>
+
+<!-- BARBOUR ASHBY UFFICIO -->
+<div class="aut-uf-group" data-giacca="ashby">
+  <div style="background:#2A1E10;border:1px solid #3A2E20;border-radius:8px;padding:8px 12px;margin:8px 0;font-family:'Cormorant Garamond',serif;font-size:.9rem;color:#D8C8A8;letter-spacing:.1em;">Barbour Ashby Wax Navy</div>
+
+  <div class="outfit-card"><div class="oh uff" style="background:#3A2810"><div class="oh-title">The Pharrell Equation · Autunno</div><div class="oh-tag">LV FW26 · Pharrell</div></div><div class="ob"><div class="ob-stil">Barbour cerato navy fuori, grigio chiaro e bianco dentro, panna sotto. Lo schema cromatico Louis Vuitton con capospalla british. Il bianco del chino porta leggerezza autunnale.</div><div class="ol"><span class="ln">①</span>Barbour Ashby Wax Navy</div><div class="ol"><span class="ln">②</span>Chino Bianco/Panna · OVS</div><div class="ol"><span class="ln">③</span>Camicia Bianca · Camicissima</div><div class="ol"><span class="ln">④</span>Girocollo Grigio Chiaro · H&amp;M</div><div class="extras"><span class="xt sh">Loafer Paciotti</span><span class="xt pf">Prada L'Homme</span></div></div></div>
+
+  <div class="outfit-card"><div class="oh uff" style="background:#3A2810"><div class="oh-title">Wax & Rosa</div><div class="oh-tag">Cucinelli in Autunno</div></div><div class="ob"><div class="ob-stil">Rosa antico che spunta dal maglione panna sotto il Barbour navy. Il contrasto caldo/freddo piu netto del guardaroba. Navy fuori, panna e rosa dentro, grigio come base.</div><div class="ol"><span class="ln">①</span>Barbour Ashby Wax Navy</div><div class="ol"><span class="ln">②</span>Chino Grigio Chiaro · Levi's</div><div class="ol"><span class="ln">③</span>Camicia Rosa Antico · Camicissima</div><div class="ol"><span class="ln">④</span>Maglione Panna · OVS</div><div class="extras"><span class="xt sh">Valsport Tournament Taupe</span><span class="xt pf">Prada L'Homme</span></div></div></div>
+
+  <div class="outfit-card"><div class="oh uff" style="background:#3A2810"><div class="oh-title">Oxford Autumn</div><div class="oh-tag">Canali FW26</div></div><div class="ob"><div class="ob-stil">Il greige Gutteridge come secondo strato inaspettato sotto il Barbour navy. L'Oxford azzurro porta freschezza vicino al viso. Il chino bianco/panna porta leggerezza autunnale.</div><div class="ol"><span class="ln">①</span>Barbour Ashby Wax Navy</div><div class="ol"><span class="ln">②</span>Chino Bianco/Panna · OVS</div><div class="ol"><span class="ln">③</span>Camicia Azzurro Oxford Chiaro · Camicissima</div><div class="ol"><span class="ln">④</span>Felpa Greige/Sabbia · Gutteridge</div><div class="extras"><span class="xt sh">Valsport Tournament Taupe</span><span class="xt pf">Prada L'Homme</span></div></div></div>
+</div>
+
+<!-- MONTGOMERY UFFICIO -->
+<div class="aut-uf-group" data-giacca="montgomery">
+  <div style="background:#2A1E10;border:1px solid #3A2E20;border-radius:8px;padding:8px 12px;margin:8px 0;font-family:'Cormorant Garamond',serif;font-size:.9rem;color:#D8C8A8;letter-spacing:.1em;">Montgomery Misto Lana Navy · Gutteridge</div>
+
+  <div class="outfit-card"><div class="oh uff" style="background:#3A2810"><div class="oh-title">Grey Matters · Autunno</div><div class="oh-tag">LV FW26 · Pharrell</div></div><div class="ob"><div class="ob-stil">Montgomery sartoriale navy fuori, maglione panna come secondo strato, camicia bianca che spunta, grigio chiaro come base. Il look piu vicino alla foto LV — struttura sopra, leggerezza sotto.</div><div class="ol"><span class="ln">①</span>Montgomery Misto Lana Navy · Gutteridge</div><div class="ol"><span class="ln">②</span>Chino Grigio Chiaro · Levi's</div><div class="ol"><span class="ln">③</span>Camicia Bianca · Camicissima</div><div class="ol"><span class="ln">④</span>Maglione Panna · OVS</div><div class="extras"><span class="xt sh">Loafer Paciotti</span><span class="xt pf">Prada L'Homme</span></div></div></div>
+
+  <div class="outfit-card"><div class="oh uff" style="background:#3A2810"><div class="oh-title">The Rosa Chapter</div><div class="oh-tag">Cucinelli in Autunno</div></div><div class="ob"><div class="ob-stil">La camicia rosa antico e il maglione panna portano tutto il calore P/E dentro un capospalla autunnale Armani. Il chino bianco/panna continua la leggerezza. Il ponte perfetto tra le stagioni.</div><div class="ol"><span class="ln">①</span>Montgomery Misto Lana Navy · Gutteridge</div><div class="ol"><span class="ln">②</span>Chino Bianco/Panna · OVS</div><div class="ol"><span class="ln">③</span>Camicia Rosa Antico · Camicissima</div><div class="ol"><span class="ln">④</span>Maglione Panna · OVS</div><div class="extras"><span class="xt sh">Loafer Paciotti</span><span class="xt pf">Prada L'Homme</span></div></div></div>
+
+  <div class="outfit-card"><div class="oh uff" style="background:#3A2810"><div class="oh-title">Greige & Wool</div><div class="oh-tag">Canali FW26</div></div><div class="ob"><div class="ob-stil">Il greige come secondo strato sotto il Montgomery. L'Oxford azzurro che spunta porta freschezza. Gutteridge dentro e fuori — la stessa casa costruisce il look da sola.</div><div class="ol"><span class="ln">①</span>Montgomery Misto Lana Navy · Gutteridge</div><div class="ol"><span class="ln">②</span>Chino Grigio Chiaro · Levi's</div><div class="ol"><span class="ln">③</span>Camicia Azzurro Oxford Chiaro · Camicissima</div><div class="ol"><span class="ln">④</span>Felpa Greige/Sabbia · Gutteridge</div><div class="extras"><span class="xt sh">Valsport Tournament Taupe</span><span class="xt pf">Prada L'Homme</span></div></div></div>
+</div>
+
+<!-- LIDDESDALE UFFICIO -->
+<div class="aut-uf-group" data-giacca="liddesdale">
+  <div style="background:#2A1E10;border:1px solid #3A2E20;border-radius:8px;padding:8px 12px;margin:8px 0;font-family:'Cormorant Garamond',serif;font-size:.9rem;color:#D8C8A8;letter-spacing:.1em;">Barbour Liddesdale Navy</div>
+
+  <div class="outfit-card"><div class="oh uff" style="background:#3A2810"><div class="oh-title">The Bridge</div><div class="oh-tag">Nigo · Transizione</div></div><div class="ob"><div class="ob-stil">Il Liddesdale porta i look Cucinelli nell'autunno senza cambiare nulla dentro. Il look P/E piu avanzato verso l'autunno — il capo di transizione per eccellenza. "The seamless shift".</div><div class="ol"><span class="ln">①</span>Barbour Liddesdale Navy</div><div class="ol"><span class="ln">②</span>Chino Bianco/Panna · OVS</div><div class="ol"><span class="ln">③</span>Camicia Rosa Antico · Camicissima</div><div class="ol"><span class="ln">④</span>Maglione Panna · OVS</div><div class="extras"><span class="xt sh">Loafer Paciotti</span><span class="xt pf">Prada L'Homme</span></div></div></div>
+
+  <div class="outfit-card"><div class="oh uff" style="background:#3A2810"><div class="oh-title">Liddesdale Grey</div><div class="oh-tag">LV FW26 · Minimalismo</div></div><div class="ob"><div class="ob-stil">Girocollo grigio chiaro su camicia bianca, grigio chiaro come base. Tutto smorzato e silenzioso. Il Barbour come unico elemento di colore. Il look piu minimalista dell'autunno.</div><div class="ol"><span class="ln">①</span>Barbour Liddesdale Navy</div><div class="ol"><span class="ln">②</span>Chino Grigio Chiaro · Levi's</div><div class="ol"><span class="ln">③</span>Camicia Bianca · Camicissima</div><div class="ol"><span class="ln">④</span>Girocollo Grigio Chiaro · H&amp;M</div><div class="extras"><span class="xt sh">Valsport Tournament Taupe</span><span class="xt pf">Prada L'Homme</span></div></div></div>
+</div>
+
+<div class="rule-box"><h3>Codice Ufficio Autunno</h3><div class="ri"><div class="rd"></div><div><strong>Capispalla Armani fuori</strong> — Cucinelli dentro. Il freddo contiene il caldo.</div></div><div class="ri"><div class="rd"></div><div><strong>Pantaloni chiari sempre</strong> — bianco/panna o grigio chiaro. Mai navy o flanella — quello e inverno.</div></div><div class="ri"><div class="rd"></div><div><strong>La camicia spunta dal maglione</strong> — stratificazione visibile e intenzionale come LV FW26.</div></div></div>
+```
+
+  </div>
+
+  <!-- CASUAL AUTUNNO -->
+
+  <div class="outfit-panel" id="aut-casual">
+
+```
+<div class="tabs" style="margin-bottom:14px;">
+  <button class="tab active" id="aut-cas-all" onclick="filtroAutCasuale('all',this)">Tutti</button>
+  <button class="tab" id="aut-cas-bomber" onclick="filtroAutCasuale('bomber',this)">Bomber</button>
+  <button class="tab" id="aut-cas-ashby" onclick="filtroAutCasuale('ashby',this)">Barbour Ashby</button>
+  <button class="tab" id="aut-cas-montgomery" onclick="filtroAutCasuale('montgomery',this)">Montgomery</button>
+  <button class="tab" id="aut-cas-liddesdale" onclick="filtroAutCasuale('liddesdale',this)">Liddesdale</button>
+</div>
+
+<!-- BOMBER CASUAL -->
+<div class="aut-cas-group" data-giacca="bomber">
+  <div style="background:#2A1E10;border:1px solid #3A2E20;border-radius:8px;padding:8px 12px;margin:8px 0;font-family:'Cormorant Garamond',serif;font-size:.9rem;color:#D8C8A8;letter-spacing:.1em;">Bomber Pelle Marrone · Conbipel</div>
+
+  <div class="outfit-card"><div class="oh cas" style="background:#3A2810"><div class="oh-title">Leather Autumn</div><div class="oh-tag">Cucinelli in Autunno</div></div><div class="ob"><div class="ob-stil">Il bomber con jeans slavato e rosa antico. Travelwear Sauvage che diventa autunnale. Il marrone e il taupe si rispondono. Il cipria e il rosa antico portano calore Cucinelli.</div><div class="ol"><span class="ln">①</span>Bomber Pelle Marrone · Conbipel</div><div class="ol"><span class="ln">②</span>Jeans Azzurro Slavato · H&amp;M</div><div class="ol"><span class="ln">③</span>T-Shirt Rosa Cipria · Uniqlo (oversize)</div><div class="ol"><span class="ln">④</span>Felpa Rosa Antico · Uniqlo</div><div class="extras"><span class="xt sh">Valsport Tournament Taupe</span><span class="xt pf">Acqua di Gio</span></div></div></div>
+
+  <div class="outfit-card"><div class="oh cas" style="background:#3A2810"><div class="oh-title">Brown & Grey</div><div class="oh-tag">Bottega Veneta FW26</div></div><div class="ob"><div class="ob-stil">Materiale protagonista — tutto tace in neutri freddi smorzati. Il maglione panna e l'unico elemento caldo. Il marrone fa la rima con il taupe. Prada L'Homme per il registro piu serio.</div><div class="ol"><span class="ln">①</span>Bomber Pelle Marrone · Conbipel</div><div class="ol"><span class="ln">②</span>Jeans Grigio · Levi's</div><div class="ol"><span class="ln">③</span>T-Shirt Grigio Chiaro · Dsquared2</div><div class="ol"><span class="ln">④</span>Maglione Panna · OVS</div><div class="extras"><span class="xt sh">Valsport Tournament Taupe</span><span class="xt pf">Prada L'Homme</span></div></div></div>
+
+  <div class="outfit-card"><div class="oh cas" style="background:#3A2810"><div class="oh-title">The Cognac Autumn</div><div class="oh-tag">Nigo · Rima Cromatica</div></div><div class="ob"><div class="ob-stil">Polo panna sotto felpa rosa antico sotto bomber marrone. Tre neutri caldi sovrapposti con jeans grigio come base fredda. Il cap nubuck risponde al bomber in basso. Bookends caldi.</div><div class="ol"><span class="ln">①</span>Bomber Pelle Marrone · Conbipel</div><div class="ol"><span class="ln">②</span>Jeans Grigio · Levi's</div><div class="ol"><span class="ln">③</span>Polo Panna · OVS Piombo</div><div class="ol"><span class="ln">④</span>Felpa Rosa Antico · Uniqlo</div><div class="extras"><span class="xt sh">Valsport Tournament Taupe</span><span class="xt">Cap Nubuck · RL</span><span class="xt pf">Acqua di Gio</span></div></div></div>
+</div>
+
+<!-- BARBOUR ASHBY CASUAL -->
+<div class="aut-cas-group" data-giacca="ashby">
+  <div style="background:#2A1E10;border:1px solid #3A2E20;border-radius:8px;padding:8px 12px;margin:8px 0;font-family:'Cormorant Garamond',serif;font-size:.9rem;color:#D8C8A8;letter-spacing:.1em;">Barbour Ashby Wax Navy</div>
+
+  <div class="outfit-card"><div class="oh cas" style="background:#3A2810"><div class="oh-title">Wax Autumn</div><div class="oh-tag">Cucinelli in Autunno</div></div><div class="ob"><div class="ob-stil">Il Barbour cerato con jeans slavato e bianco sporco. Elegant Nonchalance portata in autunno. Il bianco e il bianco sporco portano leggerezza sotto il navy cerato.</div><div class="ol"><span class="ln">①</span>Barbour Ashby Wax Navy</div><div class="ol"><span class="ln">②</span>Jeans Azzurro Slavato · H&amp;M</div><div class="ol"><span class="ln">③</span>T-Shirt Bianca · Uniqlo (oversize)</div><div class="ol"><span class="ln">④</span>Felpa Bianco Sporco · Uniqlo</div><div class="extras"><span class="xt sh">Valsport Tournament Taupe</span><span class="xt pf">Acqua di Gio</span></div></div></div>
+
+  <div class="outfit-card"><div class="oh cas" style="background:#3A2810"><div class="oh-title">Wax & Rosa</div><div class="oh-tag">Cucinelli in Autunno</div></div><div class="ob"><div class="ob-stil">Rosa cipria e rosa antico portano tutto il calore P/E sotto il Barbour cerato navy. Il jeans grigio come base fredda. La rima cromatica — rosa dentro, navy fuori.</div><div class="ol"><span class="ln">①</span>Barbour Ashby Wax Navy</div><div class="ol"><span class="ln">②</span>Jeans Grigio · Levi's</div><div class="ol"><span class="ln">③</span>T-Shirt Rosa Cipria · Uniqlo (oversize)</div><div class="ol"><span class="ln">④</span>Felpa Rosa Antico · Uniqlo</div><div class="extras"><span class="xt sh">Valsport Tournament Taupe</span><span class="xt pf">Acqua di Gio</span></div></div></div>
+</div>
+
+<!-- MONTGOMERY CASUAL -->
+<div class="aut-cas-group" data-giacca="montgomery">
+  <div style="background:#2A1E10;border:1px solid #3A2E20;border-radius:8px;padding:8px 12px;margin:8px 0;font-family:'Cormorant Garamond',serif;font-size:.9rem;color:#D8C8A8;letter-spacing:.1em;">Montgomery Misto Lana Navy · Gutteridge</div>
+
+  <div class="outfit-card"><div class="oh cas" style="background:#3A2810"><div class="oh-title">Wool & Denim</div><div class="oh-tag">Nigo · Cortocircuito</div></div><div class="ob"><div class="ob-stil">Il Montgomery sartoriale con jeans slavato — contrasto di registro massimo. Il maglione panna e la t-shirt bianca tengono tutto nel registro giusto. I Paciotti alzano verso l'Elevated Casual. "The sartorial surprise".</div><div class="ol"><span class="ln">①</span>Montgomery Misto Lana Navy · Gutteridge</div><div class="ol"><span class="ln">②</span>Jeans Azzurro Slavato · H&amp;M</div><div class="ol"><span class="ln">③</span>T-Shirt Bianca · Uniqlo (oversize)</div><div class="ol"><span class="ln">④</span>Maglione Panna · OVS</div><div class="extras"><span class="xt sh">Loafer Paciotti</span><span class="xt pf">Prada L'Homme</span></div></div></div>
+
+  <div class="outfit-card"><div class="oh cas" style="background:#3A2810"><div class="oh-title">Montgomery Casual</div><div class="oh-tag">Cucinelli in Autunno</div></div><div class="ob"><div class="ob-stil">Montgomery navy con polo panna e felpa rosa antico. Il calore Cucinelli dentro la struttura Armani. Il jeans grigio come base che non compete con nulla.</div><div class="ol"><span class="ln">①</span>Montgomery Misto Lana Navy · Gutteridge</div><div class="ol"><span class="ln">②</span>Jeans Grigio · Levi's</div><div class="ol"><span class="ln">③</span>Polo Panna · OVS Piombo</div><div class="ol"><span class="ln">④</span>Felpa Rosa Antico · Uniqlo</div><div class="extras"><span class="xt sh">Valsport Tournament Taupe</span><span class="xt pf">Acqua di Gio</span></div></div></div>
+</div>
+
+<!-- LIDDESDALE CASUAL -->
+<div class="aut-cas-group" data-giacca="liddesdale">
+  <div style="background:#2A1E10;border:1px solid #3A2E20;border-radius:8px;padding:8px 12px;margin:8px 0;font-family:'Cormorant Garamond',serif;font-size:.9rem;color:#D8C8A8;letter-spacing:.1em;">Barbour Liddesdale Navy</div>
+
+  <div class="outfit-card"><div class="oh cas" style="background:#3A2810"><div class="oh-title">Indian Summer</div><div class="oh-tag">Nigo · L'Ultimo Respiro</div></div><div class="ob"><div class="ob-stil">Il Liddesdale con Gucci GG Canvas e cap nubuck. Ars Imitatur Naturam che diventa autunnale. Il cipria e il rosa antico portano il calore estivo nell'autunno. "The last summer look".</div><div class="ol"><span class="ln">①</span>Barbour Liddesdale Navy</div><div class="ol"><span class="ln">②</span>Jeans Azzurro Slavato · H&amp;M</div><div class="ol"><span class="ln">③</span>T-Shirt Rosa Cipria · Uniqlo (oversize)</div><div class="ol"><span class="ln">④</span>Felpa Rosa Antico · Uniqlo</div><div class="extras"><span class="xt sh">Gucci GG Canvas</span><span class="xt">Cap Nubuck · RL</span><span class="xt pf">Acqua di Gio</span></div></div></div>
+
+  <div class="outfit-card"><div class="oh cas" style="background:#3A2810"><div class="oh-title">Liddesdale Casual</div><div class="oh-tag">Quietude · Nigo</div></div><div class="ob"><div class="ob-stil">Tutto smorzato e silenzioso. Grigio chiaro/bianco sporco/grigio jeans/navy Barbour. Il look piu quieto dell'autunno — nessun punto luce, nessun accento. Il lusso del non volersi far notare.</div><div class="ol"><span class="ln">①</span>Barbour Liddesdale Navy</div><div class="ol"><span class="ln">②</span>Jeans Grigio · Levi's</div><div class="ol"><span class="ln">③</span>T-Shirt Grigio Chiaro · Dsquared2</div><div class="ol"><span class="ln">④</span>Felpa Bianco Sporco · Uniqlo</div><div class="extras"><span class="xt sh">Valsport Tournament Taupe</span><span class="xt pf">Acqua di Gio</span></div></div></div>
+</div>
+
+<div class="rule-box"><h3>Codice Casual Autunno</h3><div class="ri"><div class="rd"></div><div><strong>Jeans slavato o grigio</strong> — mai blu scuro, quello e inverno.</div></div><div class="ri"><div class="rd"></div><div><strong>Cucinelli dentro</strong> — felpa rosa antico, maglione panna, polo panna. Il calore P/E che resiste.</div></div><div class="ri"><div class="rd"></div><div><strong>Acqua di Gio di giorno</strong> — Prada L'Homme quando si raffredda o il look si alza di registro.</div></div></div>
+```
+
+  </div>
+
+</div>
+
 <!-- OUTFIT A/I -->
 
 <div id="outfit-ai" class="section">
-  <div class="section-label">Outfit · Armani A/I</div>
+  <div class="section-label">Outfit · Inverno · Armani Puro</div>
 
   <div class="tabs" style="margin-bottom:14px;">
     <button class="tab active" id="ai-t-ufficio" onclick="setTipoAI('ufficio',this)">Ufficio</button>
     <button class="tab" id="ai-t-casual" onclick="setTipoAI('casual',this)">Casual</button>
     <button class="tab" id="ai-t-corto" onclick="setTipoAI('corto',this)">Cortocircuito</button>
+  </div>
+  <div style="background:#1A2030;border:1px solid #2A3548;border-radius:8px;padding:8px 14px;margin:0 0 14px;font-size:.62rem;color:#C8D4E8;line-height:1.6;">
+    Woolrich Parka · Palette fredda · Armani puro · Chino navy e deep navy · Jeans blu scuro · Flanella grigio medio.
   </div>
 
   <!-- UFFICIO A/I -->
@@ -682,6 +832,117 @@ nav::-webkit-scrollbar { display: none; }
 <div class="rule-box"><h3>Codice Cortocircuito</h3><div class="ri"><div class="rd"></div><div><strong>Non e un errore</strong> — e una scelta consapevole con una logica precisa.</div></div><div class="ri"><div class="rd"></div><div><strong>Un solo elemento fuori registro</strong> per look — non di piu. Il cortocircuito funziona solo se e isolato.</div></div><div class="ri"><div class="rd"></div><div><strong>La rima cromatica</strong> — anche nel cortocircuito, testa e piedi si rispondono.</div></div></div>
 ```
 
+  </div>
+
+</div>
+
+<!-- DICTACT -->
+
+<div id="dictact" class="section">
+  <div class="section-label">Il Dictact</div>
+
+  <div style="text-align:center;padding:16px 0 24px;border-bottom:1px solid #3A3020;margin-bottom:24px;">
+    <div style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:400;color:#D8C8A8;letter-spacing:.15em;">CON LA MENTE DI PHARRELL E NIGO</div>
+    <div style="font-family:'Cormorant Garamond',serif;font-size:.75rem;color:#9A8C7A;letter-spacing:.1em;margin-top:4px;">APPLICATA ALL'ARMOCROMIA ESTATE SOFT</div>
+  </div>
+
+  <!-- I. ARMOCROMIA -->
+
+  <div class="dict-section">
+    <div class="dict-section-title">I · L'Armocromia — La Legge Fondamentale</div>
+    <div class="dict-rule"><span class="dict-num">01</span><div><strong>Estate Soft prima di tutto.</strong> Ogni capo, ogni colore, ogni accento deve essere smorzato, mai saturo, mai brillante. Se un colore urla, non entra. Se riflette la luce, non entra. Se ti spegne il viso, non entra.</div></div>
+    <div class="dict-rule"><span class="dict-num">02</span><div><strong>I neutri caldi sono la base.</strong> Panna, ecru, beige, sabbia, rosa antico, greige, cammello — sono i tuoi colori. Non sono neutri generici, sono neutri che ti appartengono. Costruisci sempre a partire da qui.</div></div>
+    <div class="dict-rule"><span class="dict-num">03</span><div><strong>I neutri freddi come struttura.</strong> Grigio chiaro, grigio medio, blu polvere, navy smorzato — entrano come struttura, non come protagonisti. Un neutro freddo non urla mai nel tuo guardaroba.</div></div>
+    <div class="dict-rule"><span class="dict-num">04</span><div><strong>Un solo accento per look.</strong> Una nota cromatica che si distingue dalla base — il rosa antico, il verde oliva smorzato, il cognac. Mai due accenti contemporaneamente. L'accento unico e la firma, non il rumore.</div></div>
+    <div class="dict-rule"><span class="dict-num">05</span><div><strong>I colori da evitare sempre.</strong> Nero puro, bianco brillante, rosso saturo, blu royal, giallo, verde prato. Sono colori che spengono l'armocromia Estate Soft. Non esistono nel guardaroba.</div></div>
+  </div>
+
+  <!-- II. STAGIONALE -->
+
+  <div class="dict-section">
+    <div class="dict-section-title">II · Il Sistema Stagionale</div>
+    <div class="dict-rule"><span class="dict-num">06</span><div><strong>P/E — Cucinelli Puro.</strong> Da marzo a settembre. Blazer ecru, trench beige, Barbour Liddesdale. Palette calda. Pantaloni chiari. Jeans slavato o grigio per il casual. Il codice e la naturalezza elevata.</div></div>
+    <div class="dict-rule"><span class="dict-num">07</span><div><strong>Autunno — Cucinelli + LV + Armani come capospalla.</strong> Da ottobre a novembre. Bomber, Barbour Ashby, Montgomery, Liddesdale. Ma dentro — sempre Cucinelli. Pantaloni chiari ancora. Il jeans blu scuro e la flanella sono inverno. Freddo fuori, caldo dentro.</div></div>
+    <div class="dict-rule"><span class="dict-num">08</span><div><strong>Inverno — Armani Puro.</strong> Da dicembre a febbraio. Woolrich Parka. Palette fredda — flanella grigio medio, chino navy, jeans blu scuro. Layer interni Armani. Il momento piu costruito e piu lontano da Cucinelli.</div></div>
+    <div class="dict-rule"><span class="dict-num">09</span><div><strong>Il Barbour Liddesdale e il capo di transizione.</strong> Sta in P/E e in Autunno. Non appartiene all'inverno. E il ponte tra le stagioni — il capospalla che non cambia ma cambia tutto quello che ci sta sotto.</div></div>
+  </div>
+
+  <!-- III. LAYERING -->
+
+  <div class="dict-section">
+    <div class="dict-section-title">III · Il Sistema Layering</div>
+    <div class="dict-rule"><span class="dict-num">10</span><div><strong>L'ordine e sacro.</strong> Sempre: Capospalla (①) — Pantalone (②) — Camicia/T-Shirt (③) — Secondo Strato (④) — Scarpe + Profumo. Non si inverte, non si salta.</div></div>
+    <div class="dict-rule"><span class="dict-num">11</span><div><strong>Ogni strato deve essere visibile.</strong> La camicia che spunta dal maglione. Il maglione che spunta dalla giacca. Se non si vede, non serve. Questo e il linguaggio LV FW26 che adottiamo.</div></div>
+    <div class="dict-rule"><span class="dict-num">12</span><div><strong>Tre layer valgono piu di quattro.</strong> Quando un look e perfetto con tre layer, il quarto non va aggiunto. La sottrazione e sempre la mossa piu difficile — ed e sempre quella giusta.</div></div>
+    <div class="dict-rule"><span class="dict-num">13</span><div><strong>La felpa annodata in vita e un accessorio.</strong> Non e un layer — e un gesto. Cambia la silhouette senza aggiungere peso visivo. La mossa Cucinelli FW26 nel nostro guardaroba.</div></div>
+  </div>
+
+  <!-- IV. NIGO/PHARRELL -->
+
+  <div class="dict-section">
+    <div class="dict-section-title">IV · La Logica Nigo/Pharrell</div>
+    <div class="dict-rule"><span class="dict-num">14</span><div><strong>La rima cromatica tra testa e piedi.</strong> Cap nubuck beige e Valsport taupe. Bomber marrone e Timberland chukka marrone. Gucci GG Canvas beige e cap nubuck. Testa e piedi si rispondono sempre. E una firma, non una coincidenza.</div></div>
+    <div class="dict-rule"><span class="dict-num">15</span><div><strong>Un solo elemento fuori registro per look.</strong> Il cortocircuito funziona solo se e isolato. Il Montgomery con le Gucci GG Canvas — tutto il resto e neutro. Mai due cortocircuiti contemporaneamente.</div></div>
+    <div class="dict-rule"><span class="dict-num">16</span><div><strong>Il profumo sbagliato nel contesto giusto.</strong> WOMO Black Tobacco di giorno su un look neutro. Prada L'Homme su un look casual con Gucci vintage. La dissonanza invisibile — non si vede ma si sente.</div></div>
+    <div class="dict-rule"><span class="dict-num">17</span><div><strong>La scarpa sbagliata al posto giusto.</strong> Il Loafer Paciotti con gli shorts — Elegant Nonchalance. Le Gucci GG Canvas con il blazer ecru — GG Grey. Non e un errore di stile, e una scelta di stile. La differenza sta nella consapevolezza.</div></div>
+    <div class="dict-rule"><span class="dict-num">18</span><div><strong>Il nome del look e la sua identita.</strong> Ogni look ha un nome. Se non sai spiegare il look in una frase, il look non e ancora pronto.</div></div>
+  </div>
+
+  <!-- V. MAISON -->
+
+  <div class="dict-section">
+    <div class="dict-section-title">V · Le Maison di Riferimento</div>
+    <div class="dict-rule"><span class="dict-num">19</span><div><strong>Cucinelli</strong> — i materiali e i colori caldi. La fonte della palette calda. La naturalezza elevata come registro. Non si copia — si interpreta.</div></div>
+    <div class="dict-rule"><span class="dict-num">20</span><div><strong>Armani</strong> — la struttura e la palette fredda. La precisione sartoriale come linguaggio. L'inverno come momento di massima costruzione.</div></div>
+    <div class="dict-rule"><span class="dict-num">21</span><div><strong>LV/Pharrell/Nigo</strong> — il modo di pensare i look. Non sono brand — sono una filosofia. Il cortocircuito, la rima cromatica, il nome del look.</div></div>
+    <div class="dict-rule"><span class="dict-num">22</span><div><strong>Le cinque maison da monitorare.</strong> Louis Vuitton per il cortocircuito. Loro Piana per il lusso discreto. Zegna per il tailoring rilassato. Canali per la sartorialita napoletana. Bottega Veneta per il materiale protagonista.</div></div>
+  </div>
+
+  <!-- VI. OPERATIVE -->
+
+  <div class="dict-section">
+    <div class="dict-section-title">VI · Le Regole Operative</div>
+    <div class="dict-rule"><span class="dict-num">23</span><div><strong>Ufficio — solo chino.</strong> Nei look ufficio i pantaloni sono sempre chino. Mai jeans, mai shorts. Il confine non si attraversa.</div></div>
+    <div class="dict-rule"><span class="dict-num">24</span><div><strong>Casual P/E — solo jeans e shorts.</strong> Mai chino nel casual. La separazione e netta e non si negozia.</div></div>
+    <div class="dict-rule"><span class="dict-num">25</span><div><strong>Autunno casual — jeans slavato o grigio, mai blu scuro.</strong> Il jeans blu scuro e l'inverno. In autunno il jeans resta chiaro. E la continuita cromatica con la P/E che resiste.</div></div>
+    <div class="dict-rule"><span class="dict-num">26</span><div><strong>Il profumo segue il registro del look.</strong> Acqua di Gio — casual P/E. Amalfi Sunray — outdoor. Prada L'Homme — ufficio + serate. WOMO Black Tobacco — serate invernali profonde.</div></div>
+    <div class="dict-rule"><span class="dict-num">27</span><div><strong>Le scarpe definiscono il registro.</strong> Valsport — base universale. Paciotti — alzano il registro. Timberland Chukka — autunno casual. Boat Shoes — outdoor estivo. Gucci GG Canvas — protagonista assoluto, solo con look neutri.</div></div>
+  </div>
+
+  <!-- VII. ESSENTIAL -->
+
+  <div class="dict-section">
+    <div class="dict-section-title">VII · I Cinque Essential</div>
+    <div style="font-family:'Cormorant Garamond',serif;font-size:.75rem;color:#9A8C7A;letter-spacing:.06em;margin:0 0 12px 0;font-style:italic;">Se questi cinque capi sono in ordine, il guardaroba funziona sempre.</div>
+    <div class="dict-rule"><span class="dict-num">01</span><div><strong>Camicia Rosa Antico</strong> — l'identita. Il colore Cucinelli per eccellenza. Il punto luce perfetto per l'armocromia Estate Soft.</div></div>
+    <div class="dict-rule"><span class="dict-num">02</span><div><strong>Maglione Panna OVS</strong> — il sistema. Il secondo strato piu usato. Il capo che unisce tutto il guardaroba caldo.</div></div>
+    <div class="dict-rule"><span class="dict-num">03</span><div><strong>Blazer Lino Ecru H&amp;M</strong> — la struttura. Il capospalla che definisce il registro Cucinelli.</div></div>
+    <div class="dict-rule"><span class="dict-num">04</span><div><strong>Valsport Tournament Taupe</strong> — la base. La scarpa che non sbaglia mai.</div></div>
+    <div class="dict-rule"><span class="dict-num">05</span><div><strong>Trench Beige Massimo Dutti</strong> — la versatilita. Cross stagionale. Ufficio, casual, serale, Elevated Casual.</div></div>
+  </div>
+
+  <!-- VIII. DICTACT FINALE -->
+
+  <div class="dict-section">
+    <div class="dict-section-title">VIII · Il Dictact Finale — Le Dodici Leggi</div>
+    <div style="font-family:'Cormorant Garamond',serif;font-size:.75rem;color:#9A8C7A;letter-spacing:.06em;margin:0 0 12px 0;font-style:italic;">Queste sono le dodici domande che ogni look deve superare prima di uscire di casa.</div>
+    <div class="dict-law"><span class="dict-law-num">I</span><div>Il colore principale e smorzato? Se e saturo o brillante, non entra.</div></div>
+    <div class="dict-law"><span class="dict-law-num">II</span><div>Ogni strato e visibile e leggibile? Se si nasconde, non serve.</div></div>
+    <div class="dict-law"><span class="dict-law-num">III</span><div>C'e una rima cromatica tra testa e piedi? Cap e scarpe si rispondono.</div></div>
+    <div class="dict-law"><span class="dict-law-num">IV</span><div>Il pantalone e coerente con il contesto? Chino per l'ufficio, jeans e shorts per il casual.</div></div>
+    <div class="dict-law"><span class="dict-law-num">V</span><div>La scarpa alza o abbassa il registro nella direzione giusta?</div></div>
+    <div class="dict-law"><span class="dict-law-num">VI</span><div>Il profumo corrisponde al momento e al look?</div></div>
+    <div class="dict-law"><span class="dict-law-num">VII</span><div>C'e al massimo un cortocircuito per look? Non di piu.</div></div>
+    <div class="dict-law"><span class="dict-law-num">VIII</span><div>Se tolgo un layer il look migliora? Allora toglilo.</div></div>
+    <div class="dict-law"><span class="dict-law-num">IX</span><div>Il look ha un nome? Se non riesci a nominarlo, non e ancora pronto.</div></div>
+    <div class="dict-law"><span class="dict-law-num">X</span><div>L'ispirazione e riconoscibile ma non copiata? Il riferimento e nella logica, non nei capi.</div></div>
+    <div class="dict-law"><span class="dict-law-num">XI</span><div>Il look appartiene alla stagione giusta? P/E, Autunno o Inverno — non si mescola.</div></div>
+    <div class="dict-law"><span class="dict-law-num">XII</span><div>Ti fa sentire te stesso o ti fa sentire vestito? La differenza e tutto.</div></div>
+  </div>
+
+  <div style="text-align:center;padding:24px 0 8px;border-top:1px solid #3A3020;margin-top:24px;">
+    <div style="font-family:'Cormorant Garamond',serif;font-size:.75rem;color:#B8A070;letter-spacing:.1em;">Cucinelli P/E · Autunno Cucinelli + LV + Armani · Inverno Armani</div>
+    <div style="font-family:'Cormorant Garamond',serif;font-size:.65rem;color:#9A8C7A;letter-spacing:.08em;margin-top:4px;">Con la mente di Pharrell e Nigo. Con i colori dell'Estate Soft.</div>
   </div>
 
 </div>
@@ -874,6 +1135,31 @@ function showToast(msg) {
 document.getElementById('modal').addEventListener('click', function(e) { if (e.target === this) closeModal(); });
 
 renderAcquisti();
+
+// OUTFIT AUTUNNO TABS
+function setTipoAut(t, btn) {
+  document.querySelectorAll('#aut-ufficio,#aut-casual').forEach(function(p) { p.classList.remove('active'); });
+  document.querySelectorAll('#aut-t-ufficio,#aut-t-casual').forEach(function(b) { b.classList.remove('active'); });
+  document.getElementById('aut-' + t).classList.add('active');
+  btn.classList.add('active');
+}
+
+function filtroAutUfficio(g, btn) {
+  document.querySelectorAll('#aut-uf-all,#aut-uf-bomber,#aut-uf-ashby,#aut-uf-montgomery,#aut-uf-liddesdale').forEach(function(b) { b.classList.remove('active'); });
+  btn.classList.add('active');
+  document.querySelectorAll('.aut-uf-group').forEach(function(gr) {
+    gr.style.display = (g === 'all' || gr.dataset.giacca === g) ? 'block' : 'none';
+  });
+}
+
+function filtroAutCasuale(g, btn) {
+  document.querySelectorAll('#aut-cas-all,#aut-cas-bomber,#aut-cas-ashby,#aut-cas-montgomery,#aut-cas-liddesdale').forEach(function(b) { b.classList.remove('active'); });
+  btn.classList.add('active');
+  document.querySelectorAll('.aut-cas-group').forEach(function(gr) {
+    gr.style.display = (g === 'all' || gr.dataset.giacca === g) ? 'block' : 'none';
+  });
+}
+
 
 // OUTFIT A/I TABS
 function setTipoAI(t, btn) {
