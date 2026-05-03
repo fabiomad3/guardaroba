@@ -134,6 +134,15 @@ nav::-webkit-scrollbar { display: none; }
 .pal-brand { font-size: .4rem; color: #B8A8C0; font-style: italic; }
 .pal-stagione { }
 
+.mat-card { background: #FAF7F2; border-radius: 8px; border-left: 3px solid #B8A070; padding: 12px 14px; margin-bottom: 10px; }
+.mat-header { display: flex; gap: 10px; align-items: flex-start; margin-bottom: 6px; }
+.mat-num { font-family: ‘Cormorant Garamond’, serif; font-size: 1rem; font-weight: 700; color: #B8A070; min-width: 24px; line-height: 1.2; }
+.mat-name { font-size: .72rem; font-weight: 700; color: #2A1A0A; letter-spacing: .03em; }
+.mat-brand { font-size: .5rem; color: #9A8C7A; font-style: italic; margin-top: 1px; }
+.mat-body { font-size: .62rem; color: #5A4A38; line-height: 1.65; margin-bottom: 6px; }
+.mat-capi { font-size: .52rem; color: #B8A070; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; }
+.mat-stagione { }
+
 </style>
 </head>
 <body>
@@ -150,6 +159,7 @@ nav::-webkit-scrollbar { display: none; }
   <button class="nav-btn" onclick="showSec('acquisti',this)">Acquisti</button>
   <button class="nav-btn" onclick="showSec('palette',this)">Palette</button>
   <button class="nav-btn" onclick="showSec('daprovare',this)">Wish</button>
+  <button class="nav-btn" onclick="showSec('materiali',this)">Materiali</button>
   <button class="nav-btn" onclick="showSec('dictact',this)">Dictact</button>
 </nav>
 
@@ -221,6 +231,8 @@ nav::-webkit-scrollbar { display: none; }
     <div class="item-card"><div class="item-color" style="background:#B0A090"></div><div class="item-info"><div class="item-name">Sneaker Tennis Taupe</div><div class="item-brand">Valsport Tournament</div><div class="item-stil">Cucinelli · Armani</div></div><span class="badge b-ok">Cross</span></div>
     <div class="item-card"><div class="item-color" style="background:#302018"></div><div class="item-info"><div class="item-name">Loafer Morsetto Marrone Scuro</div><div class="item-brand">Cesare Paciotti</div><div class="item-stil">Cucinelli — ufficio/serale</div></div><span class="badge b-ok">Cross</span></div>
     <div class="item-card"><div class="item-color" style="background:#C8B890"></div><div class="item-info"><div class="item-name">Sneaker GG Canvas Beige/Marrone</div><div class="item-brand">Gucci</div><div class="item-stil">Vintage · solo look casual neutro · scarpa protagonista</div></div><span class="badge b-warn">Vintage · con criterio</span></div>
+    <div class="item-card"><div class="item-color" style="background:#706860"></div><div class="item-info"><div class="item-name">Loafer Nabuk Grigio Tortora</div><div class="item-brand">Gutteridge · Dal 1878</div><div class="item-stil">Cucinelli · Armani — cross stagionale · suede opaco polveroso</div></div><span class="badge b-ok">Cross</span></div>
+    <div class="item-card"><div class="item-color" style="background:#585840"></div><div class="item-info"><div class="item-name">Espadrillas Canvas Grigio/Verde Slavato</div><div class="item-brand">Ralph Lauren</div><div class="item-stil">Cucinelli — casual estivo puro · spiaggia · weekend · aperitivo informale</div></div><span class="badge b-pe">P/E</span></div>
     <div class="item-card"><div class="item-color" style="background:#806050"></div><div class="item-info"><div class="item-name">Boat Shoes Marrone</div><div class="item-brand">Timberland</div><div class="item-stil">Cucinelli — casual outdoor</div></div><span class="badge b-pe">P/E</span></div>
   </div>
 
@@ -307,6 +319,7 @@ nav::-webkit-scrollbar { display: none; }
     <div class="item-card"><div class="item-color" style="background:#1A2A40"></div><div class="item-info"><div class="item-name">Baryden 2fit ABX Navy</div><div class="item-brand">Geox</div><div class="item-stil">Armani — ufficio A/I</div></div><span class="badge b-ai">A/I</span></div>
     <div class="item-card"><div class="item-color" style="background:#B0A090"></div><div class="item-info"><div class="item-name">Sneaker Tennis Taupe</div><div class="item-brand">Valsport Tournament</div><div class="item-stil">Armani · Cucinelli</div></div><span class="badge b-ok">Cross</span></div>
     <div class="item-card"><div class="item-color" style="background:#385870"></div><div class="item-info"><div class="item-name">Sneaker Blu</div><div class="item-brand">WOZ Robbie</div><div class="item-stil">Armani casual</div></div><span class="badge b-pe">P/E</span></div>
+    <div class="item-card"><div class="item-color" style="background:#706860"></div><div class="item-info"><div class="item-name">Loafer Nabuk Grigio Tortora</div><div class="item-brand">Gutteridge · Dal 1878</div><div class="item-stil">Armani · Cucinelli — cross stagionale · suede opaco polveroso</div></div><span class="badge b-ok">Cross</span></div>
     <div class="item-card"><div class="item-color" style="background:#1A2A40"></div><div class="item-info"><div class="item-name">Sneaker Navy</div><div class="item-brand">Camper</div><div class="item-stil">Sport only</div></div><span class="badge b-warn">Sport only</span></div>
     <div class="item-card"><div class="item-color" style="background:#4A2E1A"></div><div class="item-info"><div class="item-name">Chukka Boot Marrone Scuro</div><div class="item-brand">Timberland · ReBOTL</div><div class="item-stil">Armani — casual A/I · outdoor urbano</div></div><span class="badge b-ai">A/I</span></div>
   </div>
@@ -941,6 +954,150 @@ nav::-webkit-scrollbar { display: none; }
 
 </div>
 
+<!-- MATERIALI -->
+
+<div id="materiali" class="section">
+  <div class="section-label">Materiali · Il Materiale Prima del Marchio</div>
+
+  <div style="font-family:'Cormorant Garamond',serif;font-size:.75rem;font-style:italic;text-align:center;color:#B8A070;letter-spacing:.05em;margin:0 0 8px;">"Prima di comprare chiedi la composizione. Almeno 70% di fibra naturale — altrimenti rimetti il capo sul gancio."</div>
+
+  <div class="tabs" style="margin-bottom:16px;">
+    <button class="tab active" id="mat-t-pe" onclick="setMatStagione('pe',this)">P/E</button>
+    <button class="tab" id="mat-t-ai" onclick="setMatStagione('ai',this)">A/I</button>
+  </div>
+
+  <!-- P/E -->
+
+  <div id="mat-pe" class="mat-stagione">
+
+```
+<div class="mat-card">
+  <div class="mat-header"><span class="mat-num">01</span><div><div class="mat-name">Lino</div><div class="mat-brand">Cucinelli · RL Purple Label · Loro Piana · Zegna</div></div></div>
+  <div class="mat-body">Il materiale P/E per eccellenza. Trama aperta, respira, cade dritto. Per blazer, pantaloni e camicie. Deve essere pesante — non il lino economico che si stropiccia, ma il lino con corpo e struttura che cade dritto e mantiene la forma.</div>
+  <div class="mat-capi">Blazer · Pantaloni · Camicie</div>
+</div>
+
+<div class="mat-card">
+  <div class="mat-header"><span class="mat-num">02</span><div><div class="mat-name">Cotone Canvas</div><div class="mat-brand">Pini Parma · Angelico · Massimo Dutti</div></div></div>
+  <div class="mat-body">Cotone a trama fitta e compatta. Quello che distingue un chino di qualita da uno economico e il peso e la compattezza del canvas. Per overshirt, giacche leggere e pantaloni chino di qualita.</div>
+  <div class="mat-capi">Chino · Overshirt · Giacche leggere</div>
+</div>
+
+<div class="mat-card">
+  <div class="mat-header"><span class="mat-num">03</span><div><div class="mat-name">Cotone Resca</div><div class="mat-brand">Angelico · Pini Parma · Brett Johnson</div></div></div>
+  <div class="mat-body">Intreccio diagonale leggero e strutturato. Texture visibile senza essere pesante. Per shacket, overshirt e giacche di mezza stagione. Angelico ne fa una versione accessibile, Pini Parma una versione nobile.</div>
+  <div class="mat-capi">Shacket · Overshirt · Giacche mezza stagione</div>
+</div>
+
+<div class="mat-card">
+  <div class="mat-header"><span class="mat-num">04</span><div><div class="mat-name">Cotone Oxford</div><div class="mat-brand">Camicissima · Thomas Mason</div></div></div>
+  <div class="mat-body">Trama a quadretti microscopici che da corpo e opacita. Il cotone Oxford pesante e quello di Camicissima — gia nel guardaroba. Quello piu leggero e per la primavera pura. La qualita si riconosce dal peso e dalla mano.</div>
+  <div class="mat-capi">Camicie · gia nel guardaroba</div>
+</div>
+
+<div class="mat-card">
+  <div class="mat-header"><span class="mat-num">05</span><div><div class="mat-name">Seta/Lino Blend</div><div class="mat-brand">Brett Johnson · Loro Piana · Zegna</div></div></div>
+  <div class="mat-body">Alternativa nobile al cotone Oxford per le camicie piu raffinate. Morbido, leggermente lucido ma mai brillante, cade diversamente dal cotone. Il prossimo step dopo le Camicissima.</div>
+  <div class="mat-capi">Camicie raffinate · prossima stagione</div>
+</div>
+
+<div class="mat-card">
+  <div class="mat-header"><span class="mat-num">06</span><div><div class="mat-name">Cotone Jersey Supima</div><div class="mat-brand">Uniqlo · Loro Piana · Zegna</div></div></div>
+  <div class="mat-body">Cotone americano a fibra lunga — morbido, compatto, non si deforma. La differenza rispetto al cotone standard si sente immediatamente. Per le t-shirt premium che reggono nel tempo.</div>
+  <div class="mat-capi">T-Shirt premium</div>
+</div>
+
+<div class="mat-card">
+  <div class="mat-header"><span class="mat-num">07</span><div><div class="mat-name">Cashmere Ultraleggero</div><div class="mat-brand">Cucinelli · Loro Piana · Uniqlo Premium</div></div></div>
+  <div class="mat-body">Cucinelli e Loro Piana portano il cashmere anche in P/E — girocolli leggerissimi. Non e il cashmere invernale pesante — e un filo talmente sottile che si porta d'estate. Il materiale piu nobile della stagione. Assente nel guardaroba — innesto futuro.</div>
+  <div class="mat-capi">Girocollo leggero · innesto futuro</div>
+</div>
+
+<div class="mat-card">
+  <div class="mat-header"><span class="mat-num">08</span><div><div class="mat-name">Pelle Plonge</div><div class="mat-brand">Brett Johnson · Ralph Lauren · Conbipel</div></div></div>
+  <div class="mat-body">Pelle morbidissima e fluida. Non e rigida, cade come un tessuto. Brett Johnson e Ralph Lauren la portano come bomber e giacche casual P/E. Il bomber Conbipel si avvicina a questo territorio — gia nel guardaroba.</div>
+  <div class="mat-capi">Bomber · Giacche casual · gia nel guardaroba</div>
+</div>
+```
+
+  </div>
+
+  <!-- A/I -->
+
+  <div id="mat-ai" class="mat-stagione" style="display:none">
+
+```
+<div class="mat-card" style="border-left-color:#587890">
+  <div class="mat-header"><span class="mat-num" style="color:#587890">01</span><div><div class="mat-name">Cashmere</div><div class="mat-brand">Cucinelli · Zegna · Canali · Uniqlo Premium</div></div></div>
+  <div class="mat-body">Il re dei materiali A/I. La qualita si misura in micron — sotto i 16 micron e fine, sotto i 14 e eccellente. Morbido, leggero, caldo. Innesto priorita 1 — assente nel guardaroba. Un girocollo in cashmere blend cambia il registro di tutti i look autunnali.</div>
+  <div class="mat-capi">Girocollo · Maglione · Cappotto · innesto priorita 1</div>
+</div>
+
+<div class="mat-card" style="border-left-color:#587890">
+  <div class="mat-header"><span class="mat-num" style="color:#587890">02</span><div><div class="mat-name">Lana Merino</div><div class="mat-brand">Cucinelli · Zegna · Uniqlo · H&M · Tela Blu</div></div></div>
+  <div class="mat-body">La lana piu fine e meno pruriginosa. Si porta direttamente sulla pelle senza fastidio. Il Merino fine di Uniqlo e gia nel guardaroba nelle ML e nei girocolli H&M. Il Merino extra fine e il passo successivo.</div>
+  <div class="mat-capi">Girocolli · ML · Dolcevita · gia nel guardaroba</div>
+</div>
+
+<div class="mat-card" style="border-left-color:#587890">
+  <div class="mat-header"><span class="mat-num" style="color:#587890">03</span><div><div class="mat-name">Tweed e Donegal</div><div class="mat-brand">Cucinelli AW26 · Barbour · Harris Tweed</div></div></div>
+  <div class="mat-body">Il tessuto simbolo Cucinelli AW26. Trama tridimensionale irregolare, ogni pezzo e unico. Il Donegal ha i nep colorati visibili nella trama. Per giacche, overshirt e capispalla autunnali. Non si compra nuovo — si trova come se venisse da un guardaroba collezionato nel tempo.</div>
+  <div class="mat-capi">Overshirt · Giacche · Capispalla autunnali · innesto priorita 3</div>
+</div>
+
+<div class="mat-card" style="border-left-color:#587890">
+  <div class="mat-header"><span class="mat-num" style="color:#587890">04</span><div><div class="mat-name">Flanella</div><div class="mat-brand">Tela Blu · Canali · Massimo Dutti · Pini Parma</div></div></div>
+  <div class="mat-body">Lana spazzolata su entrambi i lati — morbida, opaca, pesante. Il peso giusto e tra 280 e 350 grammi al metro. Hai gia la flanella Tela Blu grigio medio — la flanella grigio chiaro e l'innesto che manca per piu luminosita nei look ufficio.</div>
+  <div class="mat-capi">Pantaloni ufficio · gia grigio medio · manca grigio chiaro</div>
+</div>
+
+<div class="mat-card" style="border-left-color:#587890">
+  <div class="mat-header"><span class="mat-num" style="color:#587890">05</span><div><div class="mat-name">Velluto a Coste</div><div class="mat-brand">Cucinelli AW26 · Massimo Dutti · Gutteridge</div></div></div>
+  <div class="mat-body">Cotone con pelo tagliato a coste verticali. Opaco, tridimensionale, nella scala bianco/marrone. Le coste sottili sono piu eleganti, le coste larghe piu casual. Cucinelli AW26 lo porta nei pantaloni autunnali — greige o cammello chiaro. L'innesto piu Nigo del guardaroba.</div>
+  <div class="mat-capi">Pantaloni autunnali · innesto priorita 3</div>
+</div>
+
+<div class="mat-card" style="border-left-color:#587890">
+  <div class="mat-header"><span class="mat-num" style="color:#587890">06</span><div><div class="mat-name">Lana Vergine Pesante</div><div class="mat-brand">Gutteridge · Angelico · Canali · Loro Piana</div></div></div>
+  <div class="mat-body">Per i cappotti. Peso minimo 600 grammi al metro per un cappotto che duri nel tempo. Il Montgomery Gutteridge e gia in lana misto — un cappotto in lana vergine pesante cammello e l'innesto priorita 1 assoluto per A/I. La foto Ralph Lauren FW26 era questo.</div>
+  <div class="mat-capi">Cappotto cammello · innesto priorita 1 assoluto</div>
+</div>
+
+<div class="mat-card" style="border-left-color:#587890">
+  <div class="mat-header"><span class="mat-num" style="color:#587890">07</span><div><div class="mat-name">Shearling</div><div class="mat-brand">Cucinelli AW26 · Loro Piana</div></div></div>
+  <div class="mat-body">Pelle con pelo interno naturale. Cucinelli AW26 lo porta come giacche aviator e dettagli sui capispalla. Caldo, tattile, lussuoso. Il materiale piu nobile della stagione invernale dopo il cashmere. Da tenere nel radar per il futuro.</div>
+  <div class="mat-capi">Giacche aviator · Capispalla · radar futuro</div>
+</div>
+
+<div class="mat-card" style="border-left-color:#587890">
+  <div class="mat-header"><span class="mat-num" style="color:#587890">08</span><div><div class="mat-name">Camoscio/Suede</div><div class="mat-brand">Cucinelli · Zegna · Gutteridge</div></div></div>
+  <div class="mat-body">Pelle scamosciata opaca e polverosa. Il Gutteridge tortora appena acquistato e suede — gia nel guardaroba nelle scarpe. In abbigliamento entra come gilet o giacca in alcuni look Cucinelli. Opaco, mai brillante, invecchia magnificamente.</div>
+  <div class="mat-capi">Scarpe · gia nel guardaroba · gilet futuro</div>
+</div>
+
+<div class="mat-card" style="border-left-color:#587890">
+  <div class="mat-header"><span class="mat-num" style="color:#587890">09</span><div><div class="mat-name">Velluto Tecnico</div><div class="mat-brand">Armani AW26 · Zegna</div></div></div>
+  <div class="mat-body">Alternativa moderna al velluto classico. Superficie piu compatta e pelo piu corto. Per giacche e capispalla urbani. Registro piu contemporaneo del velluto tradizionale — Armani AW26 lo porta come materiale chiave della collezione.</div>
+  <div class="mat-capi">Giacche · Capispalla urbani · radar futuro</div>
+</div>
+
+<div class="mat-card" style="border-left-color:#587890">
+  <div class="mat-header"><span class="mat-num" style="color:#587890">10</span><div><div class="mat-name">Cotone Cerato</div><div class="mat-brand">Barbour</div></div></div>
+  <div class="mat-body">Gia nel guardaroba — Barbour Ashby. Il materiale british per eccellenza. Impermeabile, invecchia bene, ogni anno diventa piu bello. La cera si rinnova ogni due anni per mantenerlo perfetto. Nessun innesto necessario.</div>
+  <div class="mat-capi">Barbour Ashby · gia nel guardaroba</div>
+</div>
+
+<div class="mat-card" style="border-left-color:#587890">
+  <div class="mat-header"><span class="mat-num" style="color:#587890">11</span><div><div class="mat-name">Gore-Tex e Tecnici Nobili</div><div class="mat-brand">Woolrich · Pertex · Ventile</div></div></div>
+  <div class="mat-body">Il Woolrich Gore-Tex e gia nel guardaroba. La nuova generazione — Pertex o Ventile — sono piu sottili, piu silenziosi, piu eleganti del Gore-Tex classico. Da tenere nel radar per futuri capispalla quando il Woolrich sara da sostituire.</div>
+  <div class="mat-capi">Woolrich · gia nel guardaroba · Pertex/Ventile radar futuro</div>
+</div>
+```
+
+  </div>
+
+</div>
+
 <!-- DICTACT -->
 
 <div id="dictact" class="section">
@@ -1232,6 +1389,14 @@ function showToast(msg) {
 document.getElementById('modal').addEventListener('click', function(e) { if (e.target === this) closeModal(); });
 
 renderAcquisti();
+
+function setMatStagione(s, btn) {
+  document.querySelectorAll('.mat-stagione').forEach(function(p) { p.style.display = 'none'; });
+  document.querySelectorAll('#mat-t-pe,#mat-t-ai').forEach(function(b) { b.classList.remove('active'); });
+  document.getElementById('mat-' + s).style.display = 'block';
+  btn.classList.add('active');
+}
+
 
 function setPalStagione(s, btn) {
   document.querySelectorAll('.pal-stagione').forEach(function(p) { p.style.display = 'none'; });
