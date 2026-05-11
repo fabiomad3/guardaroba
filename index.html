@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="it">
 <head>
 <meta charset="UTF-8">
@@ -16,32 +15,32 @@
 body{background:var(--bg);font-family:'Montserrat',sans-serif;min-height:100vh;padding-bottom:80px}
 
 /* NAV */
-.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(–bg);border-bottom:1px solid var(–border);display:flex;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--bg);border-bottom:1px solid var(--border);display:flex;overflow-x:auto;-webkit-overflow-scrolling:touch}
 .nav::-webkit-scrollbar{display:none}
-.nav-btn{flex-shrink:0;padding:14px 16px;background:none;border:none;font-family:‘Montserrat’,sans-serif;font-size:.55rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(–light);cursor:pointer;border-bottom:2px solid transparent;transition:all .2s}
-.nav-btn.active{color:var(–gold);border-bottom-color:var(–gold)}
+.nav-btn{flex-shrink:0;padding:14px 16px;background:none;border:none;font-family:'Montserrat',sans-serif;font-size:.55rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--light);cursor:pointer;border-bottom:2px solid transparent;transition:all .2s}
+.nav-btn.active{color:var(--gold);border-bottom-color:var(--gold)}
 
 /* MAIN */
 .main{padding:64px 16px 20px}
 .section{display:none;max-width:480px;margin:0 auto}
 .section.active{display:block}
-.section-label{font-family:‘Cormorant Garamond’,serif;font-size:.65rem;letter-spacing:.25em;text-transform:uppercase;color:var(–gold);padding:16px 0 10px;border-bottom:1px solid var(–border);margin-bottom:16px}
+.section-label{font-family:'Cormorant Garamond',serif;font-size:.65rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);padding:16px 0 10px;border-bottom:1px solid var(--border);margin-bottom:16px}
 
 /* TABS */
 .tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
-.tab{padding:6px 12px;background:none;border:1px solid var(–border);border-radius:20px;font-family:‘Montserrat’,sans-serif;font-size:.5rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(–light);cursor:pointer;transition:all .2s}
-.tab.active{background:var(–gold);border-color:var(–gold);color:#fff}
+.tab{padding:6px 12px;background:none;border:1px solid var(--border);border-radius:20px;font-family:'Montserrat',sans-serif;font-size:.5rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--light);cursor:pointer;transition:all .2s}
+.tab.active{background:var(--gold);border-color:var(--gold);color:#fff}
 
 /* CAT LABEL */
-.cat-label{font-size:.5rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(–gold);margin:16px 0 8px;padding-bottom:5px;border-bottom:1px solid var(–border)}
+.cat-label{font-size:.5rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin:16px 0 8px;padding-bottom:5px;border-bottom:1px solid var(--border)}
 
 /* ITEM CARD */
-.item-card{display:flex;align-items:center;gap:12px;background:#fff;border-radius:10px;padding:12px;margin-bottom:8px;box-shadow:0 1px 6px rgba(0,0,0,.05);border:1px solid var(–border)}
+.item-card{display:flex;align-items:center;gap:12px;background:#fff;border-radius:10px;padding:12px;margin-bottom:8px;box-shadow:0 1px 6px rgba(0,0,0,.05);border:1px solid var(--border)}
 .item-color{width:44px;height:44px;border-radius:8px;flex-shrink:0;box-shadow:0 1px 4px rgba(0,0,0,.1)}
 .item-info{flex:1;min-width:0}
-.item-name{font-size:.68rem;font-weight:600;color:var(–dark);margin-bottom:2px;line-height:1.3}
-.item-brand{font-size:.52rem;color:var(–mid);margin-bottom:2px}
-.item-stil{font-size:.48rem;color:var(–light);line-height:1.5;font-style:italic}
+.item-name{font-size:.68rem;font-weight:600;color:var(--dark);margin-bottom:2px;line-height:1.3}
+.item-brand{font-size:.52rem;color:var(--mid);margin-bottom:2px}
+.item-stil{font-size:.48rem;color:var(--light);line-height:1.5;font-style:italic}
 .badge{font-size:.38rem;font-weight:700;letter-spacing:.08em;padding:3px 8px;border-radius:10px;white-space:nowrap;flex-shrink:0}
 .b-pe{background:#EAD8B8;color:#8A6030}
 .b-ai{background:#D0D8E8;color:#304060}
@@ -50,37 +49,36 @@ body{background:var(--bg);font-family:'Montserrat',sans-serif;min-height:100vh;p
 
 /* PALETTE */
 .pal-section{margin-bottom:18px}
-.pal-title{font-size:.52rem;letter-spacing:.15em;text-transform:uppercase;color:var(–gold);margin-bottom:10px;padding-bottom:5px;border-bottom:1px solid var(–border)}
+.pal-title{font-size:.52rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;padding-bottom:5px;border-bottom:1px solid var(--border)}
 .pal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
 .pal-color{height:44px;border-radius:5px;margin-bottom:5px;box-shadow:0 1px 6px rgba(0,0,0,.08)}
-.pal-name{font-size:.48rem;font-weight:600;color:var(–dark);line-height:1.3;margin-bottom:1px}
-.pal-hex{font-size:.4rem;color:var(–light);letter-spacing:.04em;margin-bottom:1px}
+.pal-name{font-size:.48rem;font-weight:600;color:var(--dark);line-height:1.3;margin-bottom:1px}
+.pal-hex{font-size:.4rem;color:var(--light);letter-spacing:.04em;margin-bottom:1px}
 .pal-brand{font-size:.38rem;color:#B8A8C0;font-style:italic}
-.pal-note{background:var(–surface);border-left:2px solid var(–gold);padding:8px 12px;border-radius:0 4px 4px 0;margin-top:10px}
-.pal-note p{font-size:.58rem;color:var(–mid);line-height:1.6;font-style:italic;font-family:‘Cormorant Garamond’,serif}
+.pal-note{background:var(--surface);border-left:2px solid var(--gold);padding:8px 12px;border-radius:0 4px 4px 0;margin-top:10px}
+.pal-note p{font-size:.58rem;color:var(--mid);line-height:1.6;font-style:italic;font-family:'Cormorant Garamond',serif}
 .avoid-x{position:relative}
-.avoid-x::after{content:‘✕’;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:.8rem;font-weight:700}
+.avoid-x::after{content:'✕';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:.8rem;font-weight:700}
 .avoid-x.light::after{color:rgba(0,0,0,.25)}
 .avoid-x.dark::after{color:rgba(255,255,255,.6)}
 .pal-stagione{}
 
 /* CUCINELLI NOTE */
-.info-box{background:var(–surface);border-radius:8px;padding:10px 14px;margin-bottom:14px;font-size:.6rem;color:var(–mid);line-height:1.6;font-family:‘Cormorant Garamond’,serif;font-style:italic}
+.info-box{background:var(--surface);border-radius:8px;padding:10px 14px;margin-bottom:14px;font-size:.6rem;color:var(--mid);line-height:1.6;font-family:'Cormorant Garamond',serif;font-style:italic}
 </style>
-
 </head>
 <body>
 
 <nav class="nav">
   <button class="nav-btn active" onclick="showSec('cucinelli',this)">Cucinelli</button>
   <button class="nav-btn" onclick="showSec('armani',this)">Armani</button>
+  <button class="nav-btn" onclick="showSec('outfit',this)">Outfit</button>
   <button class="nav-btn" onclick="showSec('palette',this)">Palette</button>
 </nav>
 
 <div class="main">
 
 <!-- ═══════════════════════════════════════════ CUCINELLI ═══ -->
-
 <div id="cucinelli" class="section active">
   <div class="section-label">Guardaroba · Cucinelli · P/E</div>
   <div class="info-box">P/E puro Cucinelli — marzo/ottobre. Scala bianco/marrone. Rosa antico come unico accento. Freddo fuori, caldo dentro.</div>
@@ -127,6 +125,8 @@ body{background:var(--bg);font-family:'Montserrat',sans-serif;min-height:100vh;p
   <div data-cuc="tshirt">
     <div class="cat-label">T-Shirt & Polo</div>
     <div class="item-card"><div class="item-color" style="background:#D8B0A0"></div><div class="item-info"><div class="item-name">T-Shirt Rosa Cipria · oversize</div><div class="item-brand">Uniqlo</div><div class="item-stil">Accento caldo · look casual estivo · con shorts bianchi o jeans slavato</div></div><span class="badge b-pe">P/E</span></div>
+    <div class="item-card"><div class="item-color" style="background:#D8C8A8"></div><div class="item-info"><div class="item-name">T-Shirt Beige</div><div class="item-brand">OVS · Cotton Made in Africa · OEKO-TEX</div><div class="item-stil">Scala principale — ton sur ton con field jacket greige · The Desert Brief</div></div><span class="badge b-pe">P/E</span></div>
+    <div class="item-card"><div class="item-color" style="background:#7A8870"></div><div class="item-info"><div class="item-name">T-Shirt Verde Oliva Smorzato</div><div class="item-brand">OVS · Cotton Made in Africa · OEKO-TEX</div><div class="item-stil">Accento terroso in armocromia — con field jacket e chino grigio · The Sicilian Room</div></div><span class="badge b-pe">P/E</span></div>
     <div class="item-card"><div class="item-color" style="background:#F5F0E8"></div><div class="item-info"><div class="item-name">T-Shirt Bianca · oversize</div><div class="item-brand">Uniqlo</div><div class="item-stil">Base universale casual · primo strato visibile in tutti i look con layering</div></div><span class="badge b-ok">Cross</span></div>
     <div class="item-card"><div class="item-color" style="background:#B8B4B0"></div><div class="item-info"><div class="item-name">T-Shirt Grigio Chiaro</div><div class="item-brand">Dsquared2</div><div class="item-stil">Neutro freddo smorzato · look casual con bomber e jeans grigio</div></div><span class="badge b-ok">Cross</span></div>
     <div class="item-card"><div class="item-color" style="background:#F0E8D8"></div><div class="item-info"><div class="item-name">Polo Panna</div><div class="item-brand">OVS Piombo</div><div class="item-stil">Registro intermedio · look ufficio informal · look casual Autunno con bomber</div></div><span class="badge b-ok">Cross</span></div>
@@ -169,7 +169,6 @@ body{background:var(--bg);font-family:'Montserrat',sans-serif;min-height:100vh;p
 </div>
 
 <!-- ═══════════════════════════════════════════ ARMANI ═══ -->
-
 <div id="armani" class="section">
   <div class="section-label">Guardaroba · Armani · A/I</div>
   <div class="info-box">Autunno — Cucinelli + Armani. Inverno — Armani puro. Scala blu/grigi profondi. Marrone solo in scarpe e accessori.</div>
@@ -267,8 +266,111 @@ body{background:var(--bg);font-family:'Montserrat',sans-serif;min-height:100vh;p
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════════ PALETTE ═══ -->
+<!-- ═══════════════════════════════════════════ OUTFIT ═══ -->
+<div id="outfit" class="section">
+  <div class="section-label">Outfit · Velasca Inspiration · P/E</div>
+  <div class="info-box">Look ispirati al lookbook Velasca P/E 2026 — tradotti nel sistema con i capi del guardaroba. Spirito Nigo/Pharrell: la sfilata non si copia, si interpreta.</div>
 
+  <!-- LOOK 1 -->
+  <div style="margin-bottom:24px;">
+    <div style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;color:#1A1208;letter-spacing:.05em;margin-bottom:4px;">The Suede Equation</div>
+    <div style="font-size:.52rem;color:#B8A070;letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px;">Velasca SS26 · Bomber · Bookends Marrone</div>
+    <div style="background:#FAF7F2;border-radius:10px;border:1px solid #E8E0D0;padding:14px;">
+      <div style="font-size:.58rem;color:#6A5C4A;line-height:1.7;font-family:'Cormorant Garamond',serif;font-style:italic;margin-bottom:12px;">Marrone scuro fuori, navy dentro, panna come base. I bookends suede — bomber e scarpe si rispondono in alto e in basso. Il navy è il neutro freddo che impedisce al look di diventare monocromatico. Nigo chiamerebbe questo "the material conversation".</div>
+      <div style="display:flex;flex-direction:column;gap:6px;">
+        <div style="display:flex;align-items:center;gap:10px;font-size:.62rem;color:#1A1208;">
+          <div style="width:10px;height:10px;border-radius:50%;background:#402818;flex-shrink:0"></div>
+          <span>① Bomber Pelle Marrone · <span style="color:#9A8C7A">Conbipel</span></span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:.62rem;color:#1A1208;">
+          <div style="width:10px;height:10px;border-radius:50%;background:#F0E8D8;border:1px solid #E0D8C8;flex-shrink:0"></div>
+          <span>② Chino Bianco/Panna · <span style="color:#9A8C7A">OVS</span></span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:.62rem;color:#1A1208;">
+          <div style="width:10px;height:10px;border-radius:50%;background:#1A2A40;flex-shrink:0"></div>
+          <span>③ Polo Navy · <span style="color:#9A8C7A">OVS Piombo</span></span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:.62rem;color:#9A8C7A;font-style:italic;">
+          <div style="width:10px;height:10px;border-radius:50%;background:#706860;flex-shrink:0"></div>
+          <span>Loafer Nabuk Grigio Tortora · Gutteridge</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:.62rem;color:#9A8C7A;font-style:italic;">
+          <div style="width:10px;height:10px;border-radius:50%;background:#6A4830;flex-shrink:0"></div>
+          <span>Cintura Reversibile Marrone · Gutteridge</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:.62rem;color:#9A8C7A;font-style:italic;">
+          <div style="width:10px;height:10px;border-radius:50%;background:#88B8C8;flex-shrink:0"></div>
+          <span>Acqua di Gio · Giorgio Armani</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LOOK 2 -->
+  <div style="margin-bottom:24px;">
+    <div style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;color:#1A1208;letter-spacing:.05em;margin-bottom:4px;">Il Molo di Settembre</div>
+    <div style="font-size:.52rem;color:#B8A070;letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px;">Velasca SS26 · Jeans Slavato · Suede Senza Calze</div>
+    <div style="background:#FAF7F2;border-radius:10px;border:1px solid #E8E0D0;padding:14px;">
+      <div style="font-size:.58rem;color:#6A5C4A;line-height:1.7;font-family:'Cormorant Garamond',serif;font-style:italic;margin-bottom:12px;">Il suede scuro e opaco contro il denim chiaro e polveroso. Due materiali che dialogano per contrasto di tono ma stessa opacità. Niente calze — è il dettaglio che fa tutto. Pharrell chiamerebbe questo "the barefoot luxury" — il lusso di chi non ha bisogno di spiegare nulla.</div>
+      <div style="display:flex;flex-direction:column;gap:6px;">
+        <div style="display:flex;align-items:center;gap:10px;font-size:.62rem;color:#1A1208;">
+          <div style="width:10px;height:10px;border-radius:50%;background:#8098B0;flex-shrink:0"></div>
+          <span>① Jeans Azzurro Slavato · <span style="color:#9A8C7A">H&M</span></span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:.62rem;color:#1A1208;">
+          <div style="width:10px;height:10px;border-radius:50%;background:#F0E8D8;border:1px solid #E0D8C8;flex-shrink:0"></div>
+          <span>② Polo Panna · <span style="color:#9A8C7A">OVS Piombo</span></span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:.62rem;color:#9A8C7A;font-style:italic;">
+          <div style="width:10px;height:10px;border-radius:50%;background:#706860;flex-shrink:0"></div>
+          <span>Loafer Nabuk Grigio Tortora · Gutteridge · senza calze</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:.62rem;color:#9A8C7A;font-style:italic;">
+          <div style="width:10px;height:10px;border-radius:50%;background:#88B8C8;flex-shrink:0"></div>
+          <span>Acqua di Gio · Giorgio Armani</span>
+        </div>
+      </div>
+      <div style="margin-top:10px;padding-top:10px;border-top:1px solid #E8E0D0;font-size:.52rem;color:#B8A070;font-style:italic;font-family:'Cormorant Garamond',serif;">Il loafer senza calze è il gesto unico — invisibile come capo, percepibile come energia. Regola VI della Mentalità.</div>
+    </div>
+  </div>
+
+
+  <!-- LOOK 3 -->
+  <div style="margin-bottom:24px;">
+    <div style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;color:#1A1208;letter-spacing:.05em;margin-bottom:4px;">The Sicilian Room</div>
+    <div style="font-size:.52rem;color:#B8A070;letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px;">Velasca SS26 · Field Jacket · Verde Oliva</div>
+    <div style="background:#FAF7F2;border-radius:10px;border:1px solid #E8E0D0;padding:14px;">
+      <div style="font-size:.58rem;color:#6A5C4A;line-height:1.7;font-family:'Cormorant Garamond',serif;font-style:italic;margin-bottom:12px;">Tre neutri caldi polverosi sovrapposti — greige della jacket, verde oliva smorzato, grigio chiaro come base. La logica Cucinelli Ars Imitatur Naturam: la natura non usa colori saturi. Il verde oliva e l'unico accento — tutto il resto tace.</div>
+      <div style="display:flex;flex-direction:column;gap:6px;">
+        <div style="display:flex;align-items:center;gap:10px;font-size:.62rem;color:#1A1208;"><div style="width:10px;height:10px;border-radius:50%;background:#C8C0A8;flex-shrink:0"></div><span>① Field Jacket Lino Greige · <span style="color:#9A8C7A">Gutteridge</span></span></div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:.62rem;color:#1A1208;"><div style="width:10px;height:10px;border-radius:50%;background:#B8B4B0;flex-shrink:0"></div><span>② Chino Grigio Chiaro · <span style="color:#9A8C7A">Levi's</span></span></div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:.62rem;color:#1A1208;"><div style="width:10px;height:10px;border-radius:50%;background:#7A8870;flex-shrink:0"></div><span>③ T-Shirt Verde Oliva Smorzato · <span style="color:#9A8C7A">OVS CMA</span></span></div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:.62rem;color:#9A8C7A;font-style:italic;"><div style="width:10px;height:10px;border-radius:50%;background:#706860;flex-shrink:0"></div><span>Loafer Nabuk Grigio Tortora · Gutteridge</span></div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:.62rem;color:#9A8C7A;font-style:italic;"><div style="width:10px;height:10px;border-radius:50%;background:#88B8C8;flex-shrink:0"></div><span>Acqua di Gio · Giorgio Armani</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LOOK 4 -->
+  <div style="margin-bottom:24px;">
+    <div style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;color:#1A1208;letter-spacing:.05em;margin-bottom:4px;">The Desert Brief</div>
+    <div style="font-size:.52rem;color:#B8A070;letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px;">Gutteridge SS26 · Field Jacket · Shorts · Tre Capi</div>
+    <div style="background:#FAF7F2;border-radius:10px;border:1px solid #E8E0D0;padding:14px;">
+      <div style="font-size:.58rem;color:#6A5C4A;line-height:1.7;font-family:'Cormorant Garamond',serif;font-style:italic;margin-bottom:12px;">Greige, beige, bianco sporco — tre gradazioni della scala calda che scendono dall'alto verso il basso. Tre capi, niente di superfluo. La regola VII della Mentalita in estate piena: togli prima di aggiungere. I Timberland chiudono con il marrone scuro come unico accento.</div>
+      <div style="display:flex;flex-direction:column;gap:6px;">
+        <div style="display:flex;align-items:center;gap:10px;font-size:.62rem;color:#1A1208;"><div style="width:10px;height:10px;border-radius:50%;background:#C8C0A8;flex-shrink:0"></div><span>① Field Jacket Lino Greige · <span style="color:#9A8C7A">Gutteridge</span></span></div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:.62rem;color:#1A1208;"><div style="width:10px;height:10px;border-radius:50%;background:#F5F0E8;border:1px solid #E0D8C8;flex-shrink:0"></div><span>② Shorts Felpa Bianchi · <span style="color:#9A8C7A">OVS</span></span></div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:.62rem;color:#1A1208;"><div style="width:10px;height:10px;border-radius:50%;background:#D8C8A8;flex-shrink:0"></div><span>③ T-Shirt Beige · <span style="color:#9A8C7A">OVS CMA</span></span></div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:.62rem;color:#9A8C7A;font-style:italic;"><div style="width:10px;height:10px;border-radius:50%;background:#806050;flex-shrink:0"></div><span>Timberland Boat Shoes Marrone</span></div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:.62rem;color:#9A8C7A;font-style:italic;"><div style="width:10px;height:10px;border-radius:50%;background:#88B8C8;flex-shrink:0"></div><span>Acqua di Gio · Giorgio Armani</span></div>
+      </div>
+      <div style="margin-top:10px;padding-top:10px;border-top:1px solid #E8E0D0;font-size:.52rem;color:#B8A070;font-style:italic;font-family:'Cormorant Garamond',serif;">Cotton Made in Africa — il materiale prima del marchio. Fibra naturale certificata OEKO-TEX. Questo e il lusso invisibile.</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════════════════════════════════════ PALETTE ═══ -->
 <div id="palette" class="section">
   <div class="section-label">Palette · Estate Soft</div>
   <div style="font-family:'Cormorant Garamond',serif;font-size:.75rem;font-style:italic;text-align:center;color:var(--gold);letter-spacing:.05em;margin:0 0 8px;">"Se un colore urla, non entra. Se riflette la luce, non entra."</div>
@@ -412,6 +514,5 @@ function setPal(s, btn) {
   document.getElementById('pal-stagione-inv').style.display = s==='inv' ? 'block' : 'none';
 }
 </script>
-
 </body>
 </html>
