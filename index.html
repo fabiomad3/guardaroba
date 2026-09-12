@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="it">
 <head>
 <meta charset="UTF-8">
@@ -9,39 +8,39 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg:#FAF8F4;--surface:#F5F0E8;--border:#E8E0D0;
+  --bg:#EDE1CC;--surface:#F5F0E8;--border:#DCC9A8;
   --gold:#B8A070;--dark:#1A1208;--mid:#6A5C4A;--light:#9A8C7A;
   --navy:#1A2A40;--blue:#587890;
 }
 body{background:var(--bg);font-family:'Montserrat',sans-serif;min-height:100vh;padding-bottom:80px}
 
 /* NAV */
-.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(–bg);border-bottom:1px solid var(–border);display:flex;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--bg);border-bottom:1px solid var(--border);display:flex;overflow-x:auto;-webkit-overflow-scrolling:touch}
 .nav::-webkit-scrollbar{display:none}
-.nav-btn{flex-shrink:0;padding:14px 16px;background:none;border:none;font-family:‘Montserrat’,sans-serif;font-size:.55rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(–light);cursor:pointer;border-bottom:2px solid transparent;transition:all .2s}
-.nav-btn.active{color:var(–gold);border-bottom-color:var(–gold)}
+.nav-btn{flex-shrink:0;padding:14px 16px;background:none;border:none;font-family:'Montserrat',sans-serif;font-size:.55rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--light);cursor:pointer;border-bottom:2px solid transparent;transition:all .2s}
+.nav-btn.active{color:var(--gold);border-bottom-color:var(--gold)}
 
 /* MAIN */
 .main{padding:64px 16px 20px}
 .section{display:none;max-width:480px;margin:0 auto}
 .section.active{display:block}
-.section-label{font-family:‘Cormorant Garamond’,serif;font-size:.65rem;letter-spacing:.25em;text-transform:uppercase;color:var(–gold);padding:16px 0 10px;border-bottom:1px solid var(–border);margin-bottom:16px}
+.section-label{font-family:'Cormorant Garamond',serif;font-size:.65rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);padding:16px 0 10px;border-bottom:1px solid var(--border);margin-bottom:16px}
 
 /* TABS */
 .tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
-.tab{padding:6px 12px;background:none;border:1px solid var(–border);border-radius:20px;font-family:‘Montserrat’,sans-serif;font-size:.5rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(–light);cursor:pointer;transition:all .2s}
-.tab.active{background:var(–gold);border-color:var(–gold);color:#fff}
+.tab{padding:6px 12px;background:none;border:1px solid var(--border);border-radius:20px;font-family:'Montserrat',sans-serif;font-size:.5rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--light);cursor:pointer;transition:all .2s}
+.tab.active{background:var(--gold);border-color:var(--gold);color:#fff}
 
 /* CAT LABEL */
-.cat-label{font-size:.5rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(–gold);margin:16px 0 8px;padding-bottom:5px;border-bottom:1px solid var(–border)}
+.cat-label{font-size:.5rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin:16px 0 8px;padding-bottom:5px;border-bottom:1px solid var(--border)}
 
 /* ITEM CARD */
-.item-card{display:flex;align-items:center;gap:12px;background:#fff;border-radius:10px;padding:12px;margin-bottom:8px;box-shadow:0 1px 6px rgba(0,0,0,.05);border:1px solid var(–border)}
+.item-card{display:flex;align-items:center;gap:12px;background:#fff;border-radius:10px;padding:12px;margin-bottom:8px;box-shadow:0 1px 6px rgba(0,0,0,.05);border:1px solid var(--border)}
 .item-color{width:44px;height:44px;border-radius:8px;flex-shrink:0;box-shadow:0 1px 4px rgba(0,0,0,.1)}
 .item-info{flex:1;min-width:0}
-.item-name{font-size:.68rem;font-weight:600;color:var(–dark);margin-bottom:2px;line-height:1.3}
-.item-brand{font-size:.52rem;color:var(–mid);margin-bottom:2px}
-.item-stil{font-size:.48rem;color:var(–light);line-height:1.5;font-style:italic}
+.item-name{font-size:.68rem;font-weight:600;color:var(--dark);margin-bottom:2px;line-height:1.3}
+.item-brand{font-size:.52rem;color:var(--mid);margin-bottom:2px}
+.item-stil{font-size:.48rem;color:var(--light);line-height:1.5;font-style:italic}
 .badge{font-size:.38rem;font-weight:700;letter-spacing:.08em;padding:3px 8px;border-radius:10px;white-space:nowrap;flex-shrink:0}
 .b-pe{background:#EAD8B8;color:#8A6030}
 .b-ai{background:#D0D8E8;color:#304060}
@@ -50,92 +49,121 @@ body{background:var(--bg);font-family:'Montserrat',sans-serif;min-height:100vh;p
 
 /* PALETTE */
 .pal-section{margin-bottom:18px}
-.pal-title{font-size:.52rem;letter-spacing:.15em;text-transform:uppercase;color:var(–gold);margin-bottom:10px;padding-bottom:5px;border-bottom:1px solid var(–border)}
+.pal-title{font-size:.52rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;padding-bottom:5px;border-bottom:1px solid var(--border)}
 .pal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
 .pal-color{height:44px;border-radius:5px;margin-bottom:5px;box-shadow:0 1px 6px rgba(0,0,0,.08)}
-.pal-name{font-size:.48rem;font-weight:600;color:var(–dark);line-height:1.3;margin-bottom:1px}
-.pal-hex{font-size:.4rem;color:var(–light);letter-spacing:.04em;margin-bottom:1px}
+.pal-name{font-size:.48rem;font-weight:600;color:var(--dark);line-height:1.3;margin-bottom:1px}
+.pal-hex{font-size:.4rem;color:var(--light);letter-spacing:.04em;margin-bottom:1px}
 .pal-brand{font-size:.38rem;color:#B8A8C0;font-style:italic}
-.pal-note{background:var(–surface);border-left:2px solid var(–gold);padding:8px 12px;border-radius:0 4px 4px 0;margin-top:10px}
-.pal-note p{font-size:.58rem;color:var(–mid);line-height:1.6;font-style:italic;font-family:‘Cormorant Garamond’,serif}
+.pal-note{background:var(--surface);border-left:2px solid var(--gold);padding:8px 12px;border-radius:0 4px 4px 0;margin-top:10px}
+.pal-note p{font-size:.58rem;color:var(--mid);line-height:1.6;font-style:italic;font-family:'Cormorant Garamond',serif}
 .avoid-x{position:relative}
-.avoid-x::after{content:‘✕’;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:.8rem;font-weight:700}
+.avoid-x::after{content:'✕';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:.8rem;font-weight:700}
 .avoid-x.light::after{color:rgba(0,0,0,.25)}
 .avoid-x.dark::after{color:rgba(255,255,255,.6)}
 .pal-stagione{}
 
 /* CUCINELLI NOTE */
-.info-box{background:var(–surface);border-radius:8px;padding:10px 14px;margin-bottom:14px;font-size:.6rem;color:var(–mid);line-height:1.6;font-family:‘Cormorant Garamond’,serif;font-style:italic}
+.info-box{background:var(--surface);border-radius:8px;padding:10px 14px;margin-bottom:14px;font-size:.6rem;color:var(--mid);line-height:1.6;font-family:'Cormorant Garamond',serif;font-style:italic}
 </style>
-
 </head>
 <body>
 
 <nav class="nav">
-  <button class="nav-btn active" onclick="showSec('cucinelli',this)">Cucinelli</button>
-  <button class="nav-btn" onclick="showSec('armani',this)">Armani</button>
-  <button class="nav-btn" onclick="showSec('outfit',this)">Outfit</button>
+  <button class="nav-btn active" onclick="showSec('guardaroba',this)">Guardaroba</button>
   <button class="nav-btn" onclick="showSec('palette',this)">Palette</button>
+  <button class="nav-btn" onclick="showSec('materiali',this)">Materiali</button>
+  <button class="nav-btn" onclick="showSec('dictact',this)">Dictact</button>
 </nav>
 
 <div class="main">
 
-<!-- ═══════════════════════════════════════════ CUCINELLI ═══ -->
-
-<div id="cucinelli" class="section active">
-  <div class="section-label">Guardaroba · Cucinelli · P/E</div>
-  <div class="info-box">P/E puro Cucinelli — marzo/ottobre. Scala bianco/marrone. Rosa antico come unico accento. Freddo fuori, caldo dentro.</div>
+<!-- ═══════════════════════════════════════════════ GUARDAROBA ═══ -->
+<div id="guardaroba" class="section active">
+  <div class="section-label">Guardaroba · Sistema Unificato</div>
+  <div class="info-box">Tutti i capi in un'unica vista. Badge P/E, A/I, Autunno o Cross indicano la stagionalita' di ciascun pezzo.</div>
 
   <div class="tabs">
-    <button class="tab active" id="cuc-all" onclick="filtraCuc('all',this)">Tutti</button>
-    <button class="tab" id="cuc-outerwear" onclick="filtraCuc('outerwear',this)">Outerwear</button>
-    <button class="tab" id="cuc-camicie" onclick="filtraCuc('camicie',this)">Camicie</button>
-    <button class="tab" id="cuc-maglieria" onclick="filtraCuc('maglieria',this)">Maglieria</button>
-    <button class="tab" id="cuc-tshirt" onclick="filtraCuc('tshirt',this)">T-Shirt & Polo</button>
-    <button class="tab" id="cuc-pantaloni" onclick="filtraCuc('pantaloni',this)">Pantaloni</button>
-    <button class="tab" id="cuc-scarpe" onclick="filtraCuc('scarpe',this)">Scarpe</button>
-    <button class="tab" id="cuc-accessori" onclick="filtraCuc('accessori',this)">Accessori</button>
-    <button class="tab" id="cuc-profumi" onclick="filtraCuc('profumi',this)">Profumi</button>
+    <button class="tab active" id="gr-all" onclick="filtraGr('all',this)">Tutti</button>
+    <button class="tab" id="gr-abiti" onclick="filtraGr('abiti',this)">Abiti</button>
+    <button class="tab" id="gr-outerwear" onclick="filtraGr('outerwear',this)">Outerwear</button>
+    <button class="tab" id="gr-camicie" onclick="filtraGr('camicie',this)">Camicie</button>
+    <button class="tab" id="gr-maglieria" onclick="filtraGr('maglieria',this)">Maglieria</button>
+    <button class="tab" id="gr-tshirt" onclick="filtraGr('tshirt',this)">T-Shirt & Polo</button>
+    <button class="tab" id="gr-pantaloni" onclick="filtraGr('pantaloni',this)">Pantaloni</button>
+    <button class="tab" id="gr-scarpe" onclick="filtraGr('scarpe',this)">Scarpe</button>
+    <button class="tab" id="gr-accessori" onclick="filtraGr('accessori',this)">Accessori</button>
+    <button class="tab" id="gr-profumi" onclick="filtraGr('profumi',this)">Profumi</button>
   </div>
 
-  <div data-cuc="outerwear">
+  <div data-gr="abiti">
+    <div class="cat-label">Abiti</div>
+    <div class="item-card"><div class="item-color" style="background:#C8C8C0"></div><div class="item-info"><div class="item-name">Abito Grigio Perla</div><div class="item-brand">Gutteridge · Vitale Barberis Canonico 1663</div><div class="item-stil">100% Lana Vitale Barberis Canonico 1663 · Monopetto · Un bottone · Revers a lancia · Cross P/E e Autunno · Con Loafer Gutteridge Tortora · Prada L'Homme</div></div><span class="badge b-ok">Cross</span></div>
+    <div class="item-card"><div class="item-color" style="background:#1A2436"></div><div class="item-info"><div class="item-name">Abito Blu Navy</div><div class="item-brand">Tailored by Dolce & Gabbana · Martini</div><div class="item-stil">Completo giacca+pantalone, lana, revers a lancia, taschino a filo, doppia martingala posteriore · sartoriale su misura</div></div><span class="badge b-ai">A/I</span></div>
+  </div>
+
+  <div data-gr="outerwear">
     <div class="cat-label">Outerwear</div>
-    <div class="item-card"><div class="item-color" style="background:#C8C0A8"></div><div class="item-info"><div class="item-name">Field Jacket Lino Greige</div><div class="item-brand">Gutteridge · 100% Lino</div><div class="item-stil">Workwear elevated · safari chic · aprile-ottobre · 4 tasche pattina</div></div><span class="badge b-pe">P/E · Aut</span></div>
+    <div class="item-card"><div class="item-color" style="background:#C8C0A8"></div><div class="item-info"><div class="item-name">Field Jacket Lino Greige</div><div class="item-brand">Gutteridge · 100% Lino</div><div class="item-stil">100% Lino · Zip doppio cursore · 4 tasche soffietto · coulisse interna · Workwear elevated · aprile-ottobre</div></div><span class="badge b-pe">P/E · Aut</span></div>
     <div class="item-card"><div class="item-color" style="background:#F0E8D0"></div><div class="item-info"><div class="item-name">Blazer Lino Ecru/Sabbia</div><div class="item-brand">H&M</div><div class="item-stil">Cucinelli SS26 — look ufficio e Elevated Casual · registro formale smorzato</div></div><span class="badge b-pe">P/E</span></div>
     <div class="item-card"><div class="item-color" style="background:#D8C8A8"></div><div class="item-info"><div class="item-name">Trench Beige</div><div class="item-brand">Massimo Dutti</div><div class="item-stil">Cross stagionale · ufficio · Elevated Casual · serale</div></div><span class="badge b-ok">Cross</span></div>
-    <div class="item-card"><div class="item-color" style="background:#1A3050"></div><div class="item-info"><div class="item-name">Barbour Liddesdale Quilted Navy</div><div class="item-brand">Barbour</div><div class="item-stil">Ponte P/E e Autunno · capospalla di transizione per eccellenza</div></div><span class="badge b-ok">P/E · Aut</span></div>
+    <div class="item-card"><div class="item-color" style="background:#1A3050"></div><div class="item-info"><div class="item-name">Barbour Liddesdale Quilted Navy</div><div class="item-brand">Barbour</div><div class="item-stil">Esterno: 100% Nylon · Imbottitura: Poliestere · Fodera: Poliestere · Quilted · British heritage · Nota: composizione sintetica</div></div><span class="badge b-ok">P/E · Aut</span></div>
     <div class="item-card"><div class="item-color" style="background:#402818"></div><div class="item-info"><div class="item-name">Bomber Pelle Marrone</div><div class="item-brand">Conbipel</div><div class="item-stil">Pelle plonge · casual elevato · look Autunno con jeans slavato · cross stagionale</div></div><span class="badge b-ok">Cross</span></div>
+    
+    
+    <div class="item-card"><div class="item-color" style="background:#1A2A40"></div><div class="item-info"><div class="item-name">Barbour Ashby Wax Navy</div><div class="item-brand">Barbour</div><div class="item-stil">Esterno: 100% Cotone cerato Sylkoil 6oz · Fodera: Cotone/Poliestere · Impermeabile · British heritage · Autunno ufficio e casual</div></div><span class="badge b-aut">Autunno</span></div>
+    <div class="item-card"><div class="item-color" style="background:#1A2A40"></div><div class="item-info"><div class="item-name">Montgomery Misto Lana Navy</div><div class="item-brand">Gutteridge</div><div class="item-stil">Lana misto · Collo sciallato · Toggle in legno · Sartoriale · Autunno ufficio e serale</div></div><span class="badge b-aut">Autunno</span></div>
+    <div class="item-card"><div class="item-color" style="background:#1A2A40"></div><div class="item-info"><div class="item-name">Parka Gore-Tex Navy</div><div class="item-brand">Woolrich</div><div class="item-stil">Esterno: 60% Cotone 40% Poliammide Ramar Cloth · Imbottitura: 80% Piumino anatra 20% Piuma · Impermeabile -20°C · Inverno</div></div><span class="badge b-ai">Inverno</span></div>
   </div>
 
-  <div data-cuc="camicie">
+  <div data-gr="camicie">
     <div class="cat-label">Camicie</div>
+    <div class="item-card"><div class="item-color" style="background:#A0C0E0"></div><div class="item-info"><div class="item-name">Camicia Lino Righe Az/Bi Larghissime · Washed</div><div class="item-brand">Agho · 100% Lino Washed</div><div class="item-stil">100% Lino Washed · Pre-lavato in produzione · Righe Az/Bi larghissime · Estate italiana · balneare · aperta come layer o chiusa per aperitivo</div></div><span class="badge b-pe">P/E</span></div>
     <div class="item-card"><div class="item-color" style="background:#A0B8D0"></div><div class="item-info"><div class="item-name">Camicia Jeans Western Azzurro Slavatissimo</div><div class="item-brand">Levi's · Standard Western Classica</div><div class="item-stil">Come overshirt aperta · double denim · layering destrutturato · spirito Dsquared2</div></div><span class="badge b-pe">P/E</span></div>
     <div class="item-card"><div class="item-color" style="background:#C8A898"></div><div class="item-info"><div class="item-name">Camicia Rosa Antico</div><div class="item-brand">Camicissima</div><div class="item-stil">L'identita Cucinelli — accento caldo unico · 6 look tra ufficio casual e serale</div></div><span class="badge b-ok">Cross</span></div>
     <div class="item-card"><div class="item-color" style="background:#F5F0E8"></div><div class="item-info"><div class="item-name">Camicia Bianca</div><div class="item-brand">Camicissima</div><div class="item-stil">Base universale · ufficio · Elevated Casual · abito</div></div><span class="badge b-ok">Cross</span></div>
     <div class="item-card"><div class="item-color" style="background:#F5F0E8"></div><div class="item-info"><div class="item-name">Camicia Bianca con Gemelli</div><div class="item-brand">Boggi Milano</div><div class="item-stil">Registro formale · serale · con abito VBC</div></div><span class="badge b-ok">Cross</span></div>
     <div class="item-card"><div class="item-color" style="background:#D0E0F0"></div><div class="item-info"><div class="item-name">Camicia Righe Azzurro/Bianco Sottili</div><div class="item-brand">Camicissima</div><div class="item-stil">Look ufficio con blazer ecru · Elevated Casual · look The Bookends</div></div><span class="badge b-ok">Cross</span></div>
+    
+    <div class="item-card"><div class="item-color" style="background:#A0B8D0"></div><div class="item-info"><div class="item-name">Camicia Oxford Azzurro Chiaro</div><div class="item-brand">Camicissima</div><div class="item-stil">Base Armani ufficio · spunta dal maglione · look stratificato LV FW26</div></div><span class="badge b-ok">Cross</span></div>
+    <div class="item-card"><div class="item-color" style="background:#6888A8"></div><div class="item-info"><div class="item-name">Camicia Oxford Azzurro Scuro</div><div class="item-brand">Camicissima</div><div class="item-stil">Registro piu formale · ufficio A/I · con abito VBC grigio perla</div></div><span class="badge b-ai">A/I</span></div>
+    
+    <div class="item-card"><div class="item-color" style="background:#E8F0F8"></div><div class="item-info"><div class="item-name">Camicia Righe Bianco/Azzurro Medie</div><div class="item-brand">Camicissima</div><div class="item-stil">Righe piu evidenti · look ufficio con Barbour Ashby</div></div><span class="badge b-ai">A/I</span></div>
+    <div class="item-card"><div class="item-color" style="background:#1A2A40"></div><div class="item-info"><div class="item-name">Camicia Fantasia Micro Motivo Navy</div><div class="item-brand">Camicissima</div><div class="item-stil">Look formale Inverno · con abito o pantalone flanella grigio</div></div><span class="badge b-ai">Inverno</span></div>
   </div>
 
-  <div data-cuc="maglieria">
+  <div data-gr="maglieria">
     <div class="cat-label">Maglieria</div>
     <div class="item-card"><div class="item-color" style="background:#F0E8D8"></div><div class="item-info"><div class="item-name">Maglione Panna</div><div class="item-brand">OVS</div><div class="item-stil">Il sistema — secondo strato Cucinelli piu usato · 8 look · unisce tutto il guardaroba caldo</div></div><span class="badge b-ok">Cross</span></div>
     <div class="item-card"><div class="item-color" style="background:#F2EEE8"></div><div class="item-info"><div class="item-name">Felpa Girocollo Bianco Sporco</div><div class="item-brand">Uniqlo</div><div class="item-stil">Casual P/E · look neutri assoluti · layering estivo</div></div><span class="badge b-pe">P/E</span></div>
     <div class="item-card"><div class="item-color" style="background:#C8A898"></div><div class="item-info"><div class="item-name">Felpa Girocollo Rosa Antico</div><div class="item-brand">Uniqlo</div><div class="item-stil">Accento caldo · look casual P/E e Autunno · felpa annodata in vita come gesto</div></div><span class="badge b-ok">P/E · Aut</span></div>
     <div class="item-card"><div class="item-color" style="background:#2A3A50"></div><div class="item-info"><div class="item-name">Gilet Navy</div><div class="item-brand">OVS</div><div class="item-stil">Secondo strato ufficio · look con chino chiaro e camicia bianca</div></div><span class="badge b-ok">Cross</span></div>
     <div class="item-card"><div class="item-color" style="background:#B8B4B0"></div><div class="item-info"><div class="item-name">Girocollo Lana Grigio Chiaro</div><div class="item-brand">H&M</div><div class="item-stil">LV FW26 — grigio strutturato come secondo strato · look The Pharrell Equation</div></div><span class="badge b-ok">Cross</span></div>
+    
+    <div class="item-card"><div class="item-color" style="background:#1A2A40"></div><div class="item-info"><div class="item-name">Cardigan Navy</div><div class="item-brand">OVS</div><div class="item-stil">Secondo strato formale · look ufficio Inverno · con camicia Oxford chiaro</div></div><span class="badge b-ai">A/I</span></div>
+    
+    <div class="item-card"><div class="item-color" style="background:#2A3A50"></div><div class="item-info"><div class="item-name">Girocollo Lana Merino Navy</div><div class="item-brand">Tela Blu</div><div class="item-stil">100% Lana Merino · Produzione italiana Tela Blu · Look ufficio Inverno · primo strato visibile</div></div><span class="badge b-ai">A/I</span></div>
+    <div class="item-card"><div class="item-color" style="background:#12182A"></div><div class="item-info"><div class="item-name">Girocollo Lana Blu Notte</div><div class="item-brand">H&M</div><div class="item-stil">Inverno profondo · look piu scuro e costruito · con jeans blu scuro</div></div><span class="badge b-ai">Inverno</span></div>
+    
+    <div class="item-card"><div class="item-color" style="background:#C8C0A8"></div><div class="item-info"><div class="item-name">Felpa Girocollo Greige/Sabbia</div><div class="item-brand">Gutteridge</div><div class="item-stil">Calore Cucinelli dentro Autunno Armani · look Oxford Autumn e Greige & Wool</div></div><span class="badge b-aut">Autunno</span></div>
+    <div class="item-card"><div class="item-color" style="background:#6B3A3A"></div><div class="item-info"><div class="item-name">Girocollo Cotone Seta Cashmere Bordeaux</div><div class="item-brand">Gutteridge</div><div class="item-stil">Accento caldo palette A/I · sopra camicia colletto a vista · Ufficio e weekend elegante</div></div><span class="badge b-ai">A/I</span></div>
+    <div class="item-card"><div class="item-color" style="background:#B0ADA6"></div><div class="item-info"><div class="item-name">Girocollo Cotone Seta Cashmere Grigio Chiaro Melange</div><div class="item-brand">Gutteridge</div><div class="item-stil">Base neutra calda mezza stagione · sopra camicia colletto a vista · cerniera Autunno/Inverno</div></div><span class="badge b-ai">A/I</span></div>
+    <div class="item-card"><div class="item-color" style="background:#D8C4A0"></div><div class="item-info"><div class="item-name">Girocollo Cotone Seta Cashmere Sabbia</div><div class="item-brand">Gutteridge</div><div class="item-stil">Neutro caldo puro · dialoga con Chukka Boot, Loafer Nabuk, Cintura Marrone/Suede · base sotto giacca Sabbia o Cappotto Fango</div></div><span class="badge b-ai">A/I</span></div>
+    <div class="item-card"><div class="item-color" style="background:#8A7A5C"></div><div class="item-info"><div class="item-name">Polo Maglia Cotone Cashmere Fango</div><div class="item-brand">Gutteridge</div><div class="item-stil">Colletto proprio, passe-partout stagionale · con Chino Grigio Chiaro o Deep Navy · elevando con discrezione formale e casual</div></div><span class="badge b-ai">A/I</span></div>
   </div>
 
-  <div data-cuc="tshirt">
+  <div data-gr="tshirt">
     <div class="cat-label">T-Shirt & Polo</div>
-    <div class="item-card"><div class="item-color" style="background:#D8B0A0"></div><div class="item-info"><div class="item-name">T-Shirt Rosa Cipria · oversize</div><div class="item-brand">Uniqlo</div><div class="item-stil">Accento caldo · look casual estivo · con shorts bianchi o jeans slavato</div></div><span class="badge b-pe">P/E</span></div>
-    <div class="item-card"><div class="item-color" style="background:#D8C8A8"></div><div class="item-info"><div class="item-name">T-Shirt Beige</div><div class="item-brand">OVS · Cotton Made in Africa · OEKO-TEX</div><div class="item-stil">Scala principale — ton sur ton con field jacket greige · The Desert Brief</div></div><span class="badge b-pe">P/E</span></div>
-    <div class="item-card"><div class="item-color" style="background:#7A8870"></div><div class="item-info"><div class="item-name">T-Shirt Verde Oliva Smorzato</div><div class="item-brand">OVS · Cotton Made in Africa · OEKO-TEX</div><div class="item-stil">Accento terroso in armocromia — con field jacket e chino grigio · The Sicilian Room</div></div><span class="badge b-pe">P/E</span></div>
-    <div class="item-card"><div class="item-color" style="background:#F5F0E8"></div><div class="item-info"><div class="item-name">T-Shirt Bianca · oversize</div><div class="item-brand">Uniqlo</div><div class="item-stil">Base universale casual · primo strato visibile in tutti i look con layering</div></div><span class="badge b-ok">Cross</span></div>
+    <div class="item-card"><div class="item-color" style="background:#D8C8A8"></div><div class="item-info"><div class="item-name">T-Shirt Beige</div><div class="item-brand">OVS · Cotton Made in Africa · OEKO-TEX</div><div class="item-stil">100% Cotone · Cotton Made in Africa · OEKO-TEX Standard 100 · Scala principale · ton sur ton con field jacket greige · The Desert Brief</div></div><span class="badge b-pe">P/E</span></div>
+    <div class="item-card"><div class="item-color" style="background:#7A8870"></div><div class="item-info"><div class="item-name">T-Shirt Verde Oliva Smorzato</div><div class="item-brand">OVS · Cotton Made in Africa · OEKO-TEX</div><div class="item-stil">100% Cotone · Cotton Made in Africa · OEKO-TEX Standard 100 · Accento terroso in armocromia · con field jacket e chino grigio · The Sicilian Room</div></div><span class="badge b-pe">P/E</span></div>
     <div class="item-card"><div class="item-color" style="background:#B8B4B0"></div><div class="item-info"><div class="item-name">T-Shirt Grigio Chiaro</div><div class="item-brand">Dsquared2</div><div class="item-stil">Neutro freddo smorzato · look casual con bomber e jeans grigio</div></div><span class="badge b-ok">Cross</span></div>
     <div class="item-card"><div class="item-color" style="background:#F0E8D8"></div><div class="item-info"><div class="item-name">Polo Panna</div><div class="item-brand">OVS Piombo</div><div class="item-stil">Registro intermedio · look ufficio informal · look casual Autunno con bomber</div></div><span class="badge b-ok">Cross</span></div>
+    
+    <div class="item-card"><div class="item-color" style="background:#686868"></div><div class="item-info"><div class="item-name">T-Shirt Grigio Ardesia · oversize</div><div class="item-brand">H&M</div><div class="item-stil">Casual Autunno/Inverno · sotto capospalla navy</div></div><span class="badge b-ai">A/I</span></div>
+    <div class="item-card"><div class="item-color" style="background:#1A2A40"></div><div class="item-info"><div class="item-name">Polo Navy</div><div class="item-brand">H&M</div><div class="item-stil">Casual Autunno · registro intermedio · con jeans grigio e Barbour Ashby</div></div><span class="badge b-aut">Autunno</span></div>
   </div>
 
-  <div data-cuc="pantaloni">
+  <div data-gr="pantaloni">
     <div class="cat-label">Pantaloni</div>
     <div class="item-card"><div class="item-color" style="background:#D8C8A8"></div><div class="item-info"><div class="item-name">Chino Beige/Sabbia</div><div class="item-brand">Camicissima</div><div class="item-stil">Solo ufficio · base calda · con blazer ecru o trench beige</div></div><span class="badge b-pe">P/E</span></div>
     <div class="item-card"><div class="item-color" style="background:#F0E8D8"></div><div class="item-info"><div class="item-name">Chino Bianco/Panna</div><div class="item-brand">OVS</div><div class="item-stil">Solo ufficio · LV FW26 logic — bianco fluido sotto capospalla scuro</div></div><span class="badge b-ok">P/E · Aut</span></div>
@@ -143,262 +171,53 @@ body{background:var(--bg);font-family:'Montserrat',sans-serif;min-height:100vh;p
     <div class="item-card"><div class="item-color" style="background:#8098B0"></div><div class="item-info"><div class="item-name">Jeans Azzurro Slavato</div><div class="item-brand">H&M</div><div class="item-stil">Solo casual P/E · double denim con camicia jeans · look Dsquared2</div></div><span class="badge b-pe">P/E</span></div>
     <div class="item-card"><div class="item-color" style="background:#587890"></div><div class="item-info"><div class="item-name">Jeans Medium Wash · 502 Taper Hold on Me</div><div class="item-brand">Levi's · 502 Taper</div><div class="item-stil">Azzurro medio polveroso — il jeans del lookbook Tela Blu · ponte tra slavato e blu scuro · The Blue Door · P/E e Autunno</div></div><span class="badge b-ok">P/E · Aut</span></div>
     <div class="item-card"><div class="item-color" style="background:#787870"></div><div class="item-info"><div class="item-name">Jeans Grigio</div><div class="item-brand">Levi's</div><div class="item-stil">Solo casual · neutro freddo · base perfetta per bomber marrone</div></div><span class="badge b-ok">Cross</span></div>
-    <div class="item-card"><div class="item-color" style="background:#F5F0E8"></div><div class="item-info"><div class="item-name">Shorts Felpa Bianchi</div><div class="item-brand">OVS</div><div class="item-stil">Estate pura · casual informale · con loafer Paciotti come cortocircuito</div></div><span class="badge b-pe">P/E</span></div>
     <div class="item-card"><div class="item-color" style="background:#D8C8A8"></div><div class="item-info"><div class="item-name">Shorts Cargo Beige</div><div class="item-brand">OVS</div><div class="item-stil">Casual outdoor · safari chic · con field jacket greige</div></div><span class="badge b-pe">P/E</span></div>
+    <div class="item-card"><div class="item-color" style="background:#F0E8D8;box-shadow:inset 0 0 0 1px rgba(0,0,0,.06)"></div><div class="item-info"><div class="item-name">Costume Boxer 100% Lino · Naturale/Lino</div><div class="item-brand">Iuman · Intimissimi · 100% Lino</div><div class="item-stil">100% Lino · Asciugatura naturale · No sintetico · Estate pura · spiaggia · barca · con camicia Agho o maglione panna annodato</div></div><span class="badge b-pe">P/E</span></div>
+    <div class="item-card"><div class="item-color" style="background:#2A4878"></div><div class="item-info"><div class="item-name">Costume Boxer 100% Lino · Blu Oceano</div><div class="item-brand">Iuman · Intimissimi · 100% Lino</div><div class="item-stil">100% Lino · Asciugatura naturale · No sintetico · Estate pura · scala fredda smorzata · con polo grigio chiaro o t-shirt bianca</div></div><span class="badge b-pe">P/E</span></div>
+    <div class="item-card"><div class="item-color" style="background:#F0E8D8;box-shadow:inset 0 0 0 1px rgba(0,0,0,.06)"></div><div class="item-info"><div class="item-name">Pantaloni Corti Lino/Cotone · Naturale</div><div class="item-brand">Iuman · Intimissimi · Lino/Cotone</div><div class="item-stil">Lino/Cotone blend · Fibra naturale · Colore naturale grezzo · Paese · aperitivo · colazione · con camicia Agho o polo grigio chiaro</div></div><span class="badge b-pe">P/E</span></div>
+    <div class="item-card"><div class="item-color" style="background:#A0C0E0"></div><div class="item-info"><div class="item-name">Pantaloni Corti Lino/Cotone · Azzurro</div><div class="item-brand">Iuman · Intimissimi · Lino/Cotone</div><div class="item-stil">Lino/Cotone blend · Fibra naturale · Azzurro chiaro slavato · Scala fredda smorzata · con camicia Agho o t-shirt bianca · Sera a Positano</div></div><span class="badge b-pe">P/E</span></div>
+    
+    <div class="item-card"><div class="item-color" style="background:#1A2038"></div><div class="item-info"><div class="item-name">Chino Deep Navy</div><div class="item-brand">Camicissima</div><div class="item-stil">Navy profondo · ufficio Inverno · con Woolrich e camicia Oxford chiaro</div></div><span class="badge b-ai">Inverno</span></div>
+    <div class="item-card"><div class="item-color" style="background:#2A4060"></div><div class="item-info"><div class="item-name">Chino Navy</div><div class="item-brand">Camicissima</div><div class="item-stil">Navy smorzato · ufficio A/I · versatile nella scala fredda</div></div><span class="badge b-ai">A/I</span></div>
+    <div class="item-card"><div class="item-color" style="background:#909090"></div><div class="item-info"><div class="item-name">Pantalone Flanella Grigio Medio</div><div class="item-brand">Tela Blu</div><div class="item-stil">100% Lana · Flanella spazzolata · Produzione italiana · Ufficio formale Inverno · con abito separato o giacca</div></div><span class="badge b-ai">Inverno</span></div>
+    <div class="item-card"><div class="item-color" style="background:#203050"></div><div class="item-info"><div class="item-name">Jeans Blu Scuro</div><div class="item-brand">Levi's</div><div class="item-stil">Solo Inverno — mai Autunno · casual freddo con ML e capospalla navy</div></div><span class="badge b-ai">Inverno</span></div>
   </div>
 
-  <div data-cuc="scarpe">
+  <div data-gr="scarpe">
     <div class="cat-label">Scarpe</div>
-    <div class="item-card"><div class="item-color" style="background:#B0A090"></div><div class="item-info"><div class="item-name">Sneaker Tennis Taupe · Valsport Tournament</div><div class="item-brand">Valsport 1920</div><div class="item-stil">Base neutra universale — entra in quasi tutti i look casual e meta ufficio</div></div><span class="badge b-ok">Cross</span></div>
     <div class="item-card"><div class="item-color" style="background:#402818"></div><div class="item-info"><div class="item-name">Loafer Morsetto Marrone Scuro</div><div class="item-brand">Paciotti</div><div class="item-stil">Alza il registro verso Elevated Casual · con shorts bianchi cortocircuito Elegant Nonchalance</div></div><span class="badge b-ok">Cross</span></div>
-    <div class="item-card"><div class="item-color" style="background:#706860"></div><div class="item-info"><div class="item-name">Loafer Nabuk Grigio Tortora</div><div class="item-brand">Gutteridge · Dal 1878</div><div class="item-stil">Cross stagionale · suede opaco polveroso · con chino grigio e bianco/panna e beige</div></div><span class="badge b-ok">Cross</span></div>
+    <div class="item-card"><div class="item-color" style="background:#706860"></div><div class="item-info"><div class="item-name">Loafer Nabuk Grigio Tortora</div><div class="item-brand">Gutteridge · Dal 1878</div><div class="item-stil">Nabuk · Suede opaco polveroso · Suola cuoio non foderato · Punta leggermente allungata · Cross stagionale</div></div><span class="badge b-ok">Cross</span></div>
     <div class="item-card"><div class="item-color" style="background:#8A7060"></div><div class="item-info"><div class="item-name">Sneaker GG Canvas Beige/Marrone</div><div class="item-brand">Gucci Vintage</div><div class="item-stil">Protagonista assoluto — solo con look neutri assoluti · mai ufficio</div></div><span class="badge b-pe">P/E</span></div>
-    <div class="item-card"><div class="item-color" style="background:#F0E8D8"></div><div class="item-info"><div class="item-name">Sneaker Lotto Leggenda Custom Beige/Panna</div><div class="item-brand">Lotto · customizzata con Uniposca</div><div class="item-stil">Parco · scuola bambini · casual informale — spirito Nigo: trasformata da bianco/nero/azzurro</div></div><span class="badge b-pe">P/E</span></div>
     <div class="item-card"><div class="item-color" style="background:#585840"></div><div class="item-info"><div class="item-name">Espadrillas Canvas Grigio/Verde Slavato</div><div class="item-brand">Ralph Lauren</div><div class="item-stil">Estate pura · spiaggia · weekend · aperitivo informale</div></div><span class="badge b-pe">P/E</span></div>
-    <div class="item-card"><div class="item-color" style="background:#806050"></div><div class="item-info"><div class="item-name">Boat Shoes Marrone</div><div class="item-brand">Timberland</div><div class="item-stil">Casual outdoor · barca · weekend sul lago</div></div><span class="badge b-pe">P/E</span></div>
+    <div class="item-card"><div class="item-color" style="background:#806050"></div><div class="item-info"><div class="item-name">Boat Shoes Marrone</div><div class="item-brand">Timberland</div><div class="item-stil">Tomaia: Pelle pieno fiore · Suola: gomma non deformante · Trattamento idrorepellente · Casual outdoor · barca · weekend sul lago</div></div><span class="badge b-pe">P/E</span></div>
+    
+    <div class="item-card"><div class="item-color" style="background:#1A2A40"></div><div class="item-info"><div class="item-name">Geox Baryden Navy</div><div class="item-brand">Geox</div><div class="item-stil">Membrana Geox brevettata · Impermeabile e traspirante · Tomaia: Pelle/materiali tecnici · Pioggia Milano · look navy su navy</div></div><span class="badge b-ai">A/I</span></div>
+    <div class="item-card"><div class="item-color" style="background:#402818"></div><div class="item-info"><div class="item-name">Chukka Boot Marrone Scuro</div><div class="item-brand">Timberland</div><div class="item-stil">Tomaia: Nabuk · Suola: gomma · Trattamento idrorepellente · Accento caldo nella scala fredda · Autunno casual outdoor</div></div><span class="badge b-aut">Autunno</span></div>
   </div>
 
-  <div data-cuc="accessori">
+  <div data-gr="accessori">
     <div class="cat-label">Accessori</div>
     <div class="item-card"><div class="item-color" style="background:#C8B890"></div><div class="item-info"><div class="item-name">Cap Cotton Chino Nubuck</div><div class="item-brand">Polo Ralph Lauren</div><div class="item-stil">Rima cromatica con Valsport taupe — bookends beige testa/piedi</div></div><span class="badge b-pe">P/E</span></div>
     <div class="item-card"><div class="item-color" style="background:#6A4830"></div><div class="item-info"><div class="item-name">Cintura Reversibile Pelle/Suede Marrone</div><div class="item-brand">Gutteridge</div><div class="item-stil">Pelle lato formale · suede lato casual · scala calda bianco/marrone</div></div><span class="badge b-ok">P/E · Aut</span></div>
-  </div>
-
-  <div data-cuc="profumi">
-    <div class="cat-label">Profumi</div>
-    <div class="item-card"><div class="item-color" style="background:#88B8C8"></div><div class="item-info"><div class="item-name">Acqua di Gio</div><div class="item-brand">Giorgio Armani</div><div class="item-stil">Agrumi marini · gelsomino · muschio · casual P/E diurno · aperitivo</div></div><span class="badge b-ok">Cross</span></div>
-    <div class="item-card"><div class="item-color" style="background:#C8C070"></div><div class="item-info"><div class="item-name">Amalfi Sunray</div><div class="item-brand">Zara</div><div class="item-stil">Agrumi · bergamotto · legno chiaro · outdoor P/E · weekend · Timberland boat shoes</div></div><span class="badge b-pe">P/E</span></div>
-    <div class="item-card"><div class="item-color" style="background:#D8C8A8"></div><div class="item-info"><div class="item-name">Prada L'Homme</div><div class="item-brand">Prada</div><div class="item-stil">Iris · ambra · legno · ufficio tutto l'anno · serate eleganti · abito VBC</div></div><span class="badge b-ok">Cross</span></div>
-  </div>
-</div>
-
-<!-- ═══════════════════════════════════════════ ARMANI ═══ -->
-
-<div id="armani" class="section">
-  <div class="section-label">Guardaroba · Armani · A/I</div>
-  <div class="info-box">Autunno — Cucinelli + Armani. Inverno — Armani puro. Scala blu/grigi profondi. Marrone solo in scarpe e accessori.</div>
-
-  <div class="tabs">
-    <button class="tab active" id="arm-all" onclick="filtraArm('all',this)">Tutti</button>
-    <button class="tab" id="arm-abiti" onclick="filtraArm('abiti',this)">Abiti</button>
-    <button class="tab" id="arm-outerwear" onclick="filtraArm('outerwear',this)">Outerwear</button>
-    <button class="tab" id="arm-camicie" onclick="filtraArm('camicie',this)">Camicie</button>
-    <button class="tab" id="arm-maglieria" onclick="filtraArm('maglieria',this)">Maglieria</button>
-    <button class="tab" id="arm-tshirt" onclick="filtraArm('tshirt',this)">T-Shirt & Polo</button>
-    <button class="tab" id="arm-pantaloni" onclick="filtraArm('pantaloni',this)">Pantaloni</button>
-    <button class="tab" id="arm-scarpe" onclick="filtraArm('scarpe',this)">Scarpe</button>
-    <button class="tab" id="arm-accessori" onclick="filtraArm('accessori',this)">Accessori</button>
-    <button class="tab" id="arm-profumi" onclick="filtraArm('profumi',this)">Profumi</button>
-  </div>
-
-  <div data-arm="abiti">
-    <div class="cat-label">Abiti</div>
-    <div class="item-card"><div class="item-color" style="background:#C8C8C0"></div><div class="item-info"><div class="item-name">Abito Grigio Perla</div><div class="item-brand">Gutteridge · Vitale Barberis Canonico 1663</div><div class="item-stil">100% Lana VBC · Monopetto · Un bottone · Revers a lancia · Con Loafer Gutteridge Tortora · T-shirt bianca o Camicia Oxford · Prada L'Homme</div></div><span class="badge b-ok">Cross</span></div>
-  </div>
-
-  <div data-arm="outerwear">
-    <div class="cat-label">Outerwear</div>
-    <div class="item-card"><div class="item-color" style="background:#402818"></div><div class="item-info"><div class="item-name">Bomber Pelle Marrone</div><div class="item-brand">Conbipel</div><div class="item-stil">Cross stagionale — vedi Cucinelli · capospalla Autunno casual per eccellenza</div></div><span class="badge b-ok">Cross</span></div>
-    <div class="item-card"><div class="item-color" style="background:#1A2A40"></div><div class="item-info"><div class="item-name">Barbour Ashby Wax Navy</div><div class="item-brand">Barbour</div><div class="item-stil">Cotone cerato british · impermeabile · Autunno ufficio e casual · invecchia magnificamente</div></div><span class="badge b-aut">Autunno</span></div>
-    <div class="item-card"><div class="item-color" style="background:#1A2A40"></div><div class="item-info"><div class="item-name">Montgomery Misto Lana Navy</div><div class="item-brand">Gutteridge</div><div class="item-stil">Sartoriale · lana misto · Autunno ufficio e serale · cortocircuito con Gucci GG Canvas</div></div><span class="badge b-aut">Autunno</span></div>
-    <div class="item-card"><div class="item-color" style="background:#1A2A40"></div><div class="item-info"><div class="item-name">Parka Gore-Tex Navy</div><div class="item-brand">Woolrich</div><div class="item-stil">Impermeabile tecnico · Inverno · capospalla funzionale per eccellenza</div></div><span class="badge b-ai">Inverno</span></div>
-  </div>
-
-  <div data-arm="camicie">
-    <div class="cat-label">Camicie</div>
-    <div class="item-card"><div class="item-color" style="background:#A0B8D0"></div><div class="item-info"><div class="item-name">Camicia Oxford Azzurro Chiaro</div><div class="item-brand">Camicissima</div><div class="item-stil">Base Armani ufficio · spunta dal maglione · look stratificato LV FW26</div></div><span class="badge b-ok">Cross</span></div>
-    <div class="item-card"><div class="item-color" style="background:#6888A8"></div><div class="item-info"><div class="item-name">Camicia Oxford Azzurro Scuro</div><div class="item-brand">Camicissima</div><div class="item-stil">Registro piu formale · ufficio A/I · con abito VBC grigio perla</div></div><span class="badge b-ai">A/I</span></div>
-    <div class="item-card"><div class="item-color" style="background:#D0E0F0"></div><div class="item-info"><div class="item-name">Camicia Righe Azzurro/Bianco Sottili</div><div class="item-brand">Camicissima</div><div class="item-stil">Look ufficio Autunno · con Montgomery navy · classico senza tempo</div></div><span class="badge b-ai">A/I</span></div>
-    <div class="item-card"><div class="item-color" style="background:#E8F0F8"></div><div class="item-info"><div class="item-name">Camicia Righe Bianco/Azzurro Medie</div><div class="item-brand">Camicissima</div><div class="item-stil">Righe piu evidenti · look ufficio con Barbour Ashby</div></div><span class="badge b-ai">A/I</span></div>
-    <div class="item-card"><div class="item-color" style="background:#8090A0"></div><div class="item-info"><div class="item-name">Camicia Micro Quadri Grigio-Blu</div><div class="item-brand">Camicissima</div><div class="item-stil">Texture discreta · look ufficio Inverno · registro piu personale</div></div><span class="badge b-ai">A/I</span></div>
-    <div class="item-card"><div class="item-color" style="background:#1A2A40"></div><div class="item-info"><div class="item-name">Camicia Fantasia Micro Motivo Navy</div><div class="item-brand">Camicissima</div><div class="item-stil">Look formale Inverno · con abito o pantalone flanella grigio</div></div><span class="badge b-ai">Inverno</span></div>
-  </div>
-
-  <div data-arm="maglieria">
-    <div class="cat-label">Maglieria</div>
-    <div class="item-card"><div class="item-color" style="background:#1A2A40"></div><div class="item-info"><div class="item-name">Cardigan Navy</div><div class="item-brand">OVS</div><div class="item-stil">Secondo strato formale · look ufficio Inverno · con camicia Oxford chiaro</div></div><span class="badge b-ai">A/I</span></div>
-    <div class="item-card"><div class="item-color" style="background:#1A2A40"></div><div class="item-info"><div class="item-name">Gilet Navy</div><div class="item-brand">OVS</div><div class="item-stil">Layer intermedio · ufficio · cross stagionale con camicia bianca</div></div><span class="badge b-ok">Cross</span></div>
-    <div class="item-card"><div class="item-color" style="background:#2A3A50"></div><div class="item-info"><div class="item-name">Girocollo Lana Merino Navy</div><div class="item-brand">Tela Blu</div><div class="item-stil">Qualita merino · look ufficio Inverno · come primo strato visibile</div></div><span class="badge b-ai">A/I</span></div>
-    <div class="item-card"><div class="item-color" style="background:#12182A"></div><div class="item-info"><div class="item-name">Girocollo Lana Blu Notte</div><div class="item-brand">H&M</div><div class="item-stil">Inverno profondo · look piu scuro e costruito · con jeans blu scuro</div></div><span class="badge b-ai">Inverno</span></div>
-    <div class="item-card"><div class="item-color" style="background:#B8B4B0"></div><div class="item-info"><div class="item-name">Girocollo Lana Grigio Chiaro</div><div class="item-brand">H&M</div><div class="item-stil">Cross stagionale — vedi Cucinelli · The Pharrell Equation look</div></div><span class="badge b-ok">Cross</span></div>
-    <div class="item-card"><div class="item-color" style="background:#C8C0A8"></div><div class="item-info"><div class="item-name">Felpa Girocollo Greige/Sabbia</div><div class="item-brand">Gutteridge</div><div class="item-stil">Calore Cucinelli dentro Autunno Armani · look Oxford Autumn e Greige & Wool</div></div><span class="badge b-aut">Autunno</span></div>
-    <div class="item-card"><div class="item-color" style="background:#1A2A40"></div><div class="item-info"><div class="item-name">Maglia Manica Lunga Navy 1</div><div class="item-brand">H&M</div><div class="item-stil">Primo strato Inverno · base fredda · sotto camicia aperta o girocollo</div></div><span class="badge b-ai">Inverno</span></div>
-    <div class="item-card"><div class="item-color" style="background:#1A2A40"></div><div class="item-info"><div class="item-name">Maglia Manica Lunga Navy 2</div><div class="item-brand">H&M</div><div class="item-stil">Primo strato Inverno · variante · sistema layering freddo</div></div><span class="badge b-ai">Inverno</span></div>
-    <div class="item-card"><div class="item-color" style="background:#587890"></div><div class="item-info"><div class="item-name">Maglia Manica Lunga Blu Polvere</div><div class="item-brand">H&M</div><div class="item-stil">Accento freddo smorzato · look Zegna FW26 grigio e blu polvere stratificati</div></div><span class="badge b-ai">Inverno</span></div>
-    <div class="item-card"><div class="item-color" style="background:#909090"></div><div class="item-info"><div class="item-name">Maglia Manica Lunga Grigio</div><div class="item-brand">H&M</div><div class="item-stil">Neutro mediatore · layer termico · con look navy e blu scuro</div></div><span class="badge b-ai">Inverno</span></div>
-  </div>
-
-  <div data-arm="tshirt">
-    <div class="cat-label">T-Shirt & Polo</div>
-    <div class="item-card"><div class="item-color" style="background:#686868"></div><div class="item-info"><div class="item-name">T-Shirt Grigio Ardesia · oversize</div><div class="item-brand">H&M</div><div class="item-stil">Casual Autunno/Inverno · sotto capospalla navy</div></div><span class="badge b-ai">A/I</span></div>
-    <div class="item-card"><div class="item-color" style="background:#1A2A40"></div><div class="item-info"><div class="item-name">Polo Navy</div><div class="item-brand">H&M</div><div class="item-stil">Casual Autunno · registro intermedio · con jeans grigio e Barbour Ashby</div></div><span class="badge b-aut">Autunno</span></div>
-  </div>
-
-  <div data-arm="pantaloni">
-    <div class="cat-label">Pantaloni</div>
-    <div class="item-card"><div class="item-color" style="background:#587890"></div><div class="item-info"><div class="item-name">Chino Blu Polvere</div><div class="item-brand">Camicissima</div><div class="item-stil">Scala fredda smorzata · ufficio Autunno · con Barbour Ashby e camicia bianca</div></div><span class="badge b-aut">Autunno</span></div>
-    <div class="item-card"><div class="item-color" style="background:#1A2038"></div><div class="item-info"><div class="item-name">Chino Deep Navy</div><div class="item-brand">Camicissima</div><div class="item-stil">Navy profondo · ufficio Inverno · con Woolrich e camicia Oxford chiaro</div></div><span class="badge b-ai">Inverno</span></div>
-    <div class="item-card"><div class="item-color" style="background:#2A4060"></div><div class="item-info"><div class="item-name">Chino Navy</div><div class="item-brand">Camicissima</div><div class="item-stil">Navy smorzato · ufficio A/I · versatile nella scala fredda</div></div><span class="badge b-ai">A/I</span></div>
-    <div class="item-card"><div class="item-color" style="background:#909090"></div><div class="item-info"><div class="item-name">Pantalone Flanella Grigio Medio</div><div class="item-brand">Tela Blu</div><div class="item-stil">Lana spazzolata · ufficio formale Inverno · con abito separato o giacca</div></div><span class="badge b-ai">Inverno</span></div>
-    <div class="item-card"><div class="item-color" style="background:#203050"></div><div class="item-info"><div class="item-name">Jeans Blu Scuro</div><div class="item-brand">Levi's</div><div class="item-stil">Solo Inverno — mai Autunno · casual freddo con ML e capospalla navy</div></div><span class="badge b-ai">Inverno</span></div>
-    <div class="item-card"><div class="item-color" style="background:#1A2A40"></div><div class="item-info"><div class="item-name">Shorts Felpa Navy</div><div class="item-brand">H&M</div><div class="item-stil">Casa · sport · uso domestico</div></div><span class="badge b-ai">A/I</span></div>
-  </div>
-
-  <div data-arm="scarpe">
-    <div class="cat-label">Scarpe</div>
-    <div class="item-card"><div class="item-color" style="background:#1A2A40"></div><div class="item-info"><div class="item-name">Geox Baryden Navy</div><div class="item-brand">Geox</div><div class="item-stil">Impermeabile · pioggia · look navy su navy · con chino beige come contrasto caldo</div></div><span class="badge b-ai">A/I</span></div>
-    <div class="item-card"><div class="item-color" style="background:#B0A090"></div><div class="item-info"><div class="item-name">Sneaker Tennis Taupe · Valsport</div><div class="item-brand">Valsport 1920</div><div class="item-stil">Cross stagionale — vedi Cucinelli</div></div><span class="badge b-ok">Cross</span></div>
-    <div class="item-card"><div class="item-color" style="background:#706860"></div><div class="item-info"><div class="item-name">Loafer Nabuk Grigio Tortora</div><div class="item-brand">Gutteridge · Dal 1878</div><div class="item-stil">Cross stagionale — vedi Cucinelli · con abito VBC grigio perla perfetto</div></div><span class="badge b-ok">Cross</span></div>
-    <div class="item-card"><div class="item-color" style="background:#1A2A40"></div><div class="item-info"><div class="item-name">Sneaker Blu</div><div class="item-brand">Camper</div><div class="item-stil">Casual Inverno · con jeans blu scuro e ML navy</div></div><span class="badge b-ai">Inverno</span></div>
-    <div class="item-card"><div class="item-color" style="background:#1A2A40"></div><div class="item-info"><div class="item-name">Sneaker Navy</div><div class="item-brand">Camper</div><div class="item-stil">Casual A/I · registro urbano · scala fredda</div></div><span class="badge b-ai">A/I</span></div>
-    <div class="item-card"><div class="item-color" style="background:#402818"></div><div class="item-info"><div class="item-name">Chukka Boot Marrone Scuro</div><div class="item-brand">Timberland</div><div class="item-stil">Nabuk · accento caldo nella scala fredda · Autunno casual outdoor</div></div><span class="badge b-aut">Autunno</span></div>
-  </div>
-
-  <div data-arm="accessori">
-    <div class="cat-label">Accessori</div>
+    
     <div class="item-card"><div class="item-color" style="background:#18243A"></div><div class="item-info"><div class="item-name">Cintura Reversibile Pelle/Suede Navy</div><div class="item-brand">Gutteridge</div><div class="item-stil">Scala fredda Inverno · pelle navy lato formale · suede navy lato casual</div></div><span class="badge b-ai">Inverno</span></div>
     <div class="item-card"><div class="item-color" style="background:#1A2A40"></div><div class="item-info"><div class="item-name">Cap Navy Yankees</div><div class="item-brand">New Era · 59Fifty</div><div class="item-stil">Cortocircuito consapevole · look casual Autunno con Montgomery o Barbour</div></div><span class="badge b-aut">Autunno</span></div>
     <div class="item-card"><div class="item-color" style="background:#1A2A40"></div><div class="item-info"><div class="item-name">Cap Navy</div><div class="item-brand">Barbour</div><div class="item-stil">British heritage · outdoor · look Barbour Ashby matching</div></div><span class="badge b-ai">A/I</span></div>
     <div class="item-card"><div class="item-color" style="background:#4060A0"></div><div class="item-info"><div class="item-name">Sciarpa Lana Vergine Navy/Azzurro</div><div class="item-brand">Spada Roma</div><div class="item-stil">Lana vergine · Inverno · con Woolrich e look navy profondi</div></div><span class="badge b-ai">Inverno</span></div>
   </div>
 
-  <div data-arm="profumi">
+  <div data-gr="profumi">
     <div class="cat-label">Profumi</div>
-    <div class="item-card"><div class="item-color" style="background:#D8C8A8"></div><div class="item-info"><div class="item-name">Prada L'Homme</div><div class="item-brand">Prada</div><div class="item-stil">Iris · ambra · legno · ufficio tutto l'anno · serate · abito VBC</div></div><span class="badge b-ok">Cross</span></div>
-    <div class="item-card"><div class="item-color" style="background:#88B8C8"></div><div class="item-info"><div class="item-name">Acqua di Gio</div><div class="item-brand">Giorgio Armani</div><div class="item-stil">Cross stagionale · casual diurno · look informali</div></div><span class="badge b-ok">Cross</span></div>
+    <div class="item-card"><div class="item-color" style="background:#88B8C8"></div><div class="item-info"><div class="item-name">Acqua di Gio</div><div class="item-brand">Giorgio Armani</div><div class="item-stil">Agrumi marini · gelsomino · muschio · cross stagionale · casual diurno · look informali</div></div><span class="badge b-ok">Cross</span></div>
+    <div class="item-card"><div class="item-color" style="background:#C8C070"></div><div class="item-info"><div class="item-name">Amalfi Sunray</div><div class="item-brand">Zara</div><div class="item-stil">Agrumi · bergamotto · legno chiaro · outdoor P/E · weekend · Timberland boat shoes</div></div><span class="badge b-pe">P/E</span></div>
+    <div class="item-card"><div class="item-color" style="background:#D8C8A8"></div><div class="item-info"><div class="item-name">Prada L'Homme</div><div class="item-brand">Prada</div><div class="item-stil">Iris · ambra · legno · ufficio tutto l'anno · serate eleganti · abito VBC</div></div><span class="badge b-ok">Cross</span></div>
     <div class="item-card"><div class="item-color" style="background:#2A1A10"></div><div class="item-info"><div class="item-name">WOMO Black Tobacco</div><div class="item-brand">WOMO</div><div class="item-stil">Tabacco · legno scuro · muschio · serate invernali profonde · il gesto unico invisibile</div></div><span class="badge b-ai">Inverno</span></div>
     <div class="item-card"><div class="item-color" style="background:#F0F8FF"></div><div class="item-info"><div class="item-name">Fierce</div><div class="item-brand">Abercrombie & Fitch</div><div class="item-stil">Sport · palestra · uso outdoor esclusivo</div></div><span class="badge b-ai">Sport</span></div>
-  </div>
-</div>
-
-<!-- ═══════════════════════════════════════════ OUTFIT ═══ -->
-
-<div id="outfit" class="section">
-  <div class="section-label">Outfit · Velasca Inspiration · P/E</div>
-  <div class="info-box">Look ispirati al lookbook Velasca P/E 2026 — tradotti nel sistema con i capi del guardaroba. Spirito Nigo/Pharrell: la sfilata non si copia, si interpreta.</div>
-
-  <!-- LOOK 1 -->
-
-  <div style="margin-bottom:24px;">
-    <div style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;color:#1A1208;letter-spacing:.05em;margin-bottom:4px;">The Suede Equation</div>
-    <div style="font-size:.52rem;color:#B8A070;letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px;">Velasca SS26 · Bomber · Bookends Marrone</div>
-    <div style="background:#FAF7F2;border-radius:10px;border:1px solid #E8E0D0;padding:14px;">
-      <div style="font-size:.58rem;color:#6A5C4A;line-height:1.7;font-family:'Cormorant Garamond',serif;font-style:italic;margin-bottom:12px;">Marrone scuro fuori, navy dentro, panna come base. I bookends suede — bomber e scarpe si rispondono in alto e in basso. Il navy è il neutro freddo che impedisce al look di diventare monocromatico. Nigo chiamerebbe questo "the material conversation".</div>
-      <div style="display:flex;flex-direction:column;gap:6px;">
-        <div style="display:flex;align-items:center;gap:10px;font-size:.62rem;color:#1A1208;">
-          <div style="width:10px;height:10px;border-radius:50%;background:#402818;flex-shrink:0"></div>
-          <span>① Bomber Pelle Marrone · <span style="color:#9A8C7A">Conbipel</span></span>
-        </div>
-        <div style="display:flex;align-items:center;gap:10px;font-size:.62rem;color:#1A1208;">
-          <div style="width:10px;height:10px;border-radius:50%;background:#F0E8D8;border:1px solid #E0D8C8;flex-shrink:0"></div>
-          <span>② Chino Bianco/Panna · <span style="color:#9A8C7A">OVS</span></span>
-        </div>
-        <div style="display:flex;align-items:center;gap:10px;font-size:.62rem;color:#1A1208;">
-          <div style="width:10px;height:10px;border-radius:50%;background:#1A2A40;flex-shrink:0"></div>
-          <span>③ Polo Navy · <span style="color:#9A8C7A">OVS Piombo</span></span>
-        </div>
-        <div style="display:flex;align-items:center;gap:10px;font-size:.62rem;color:#9A8C7A;font-style:italic;">
-          <div style="width:10px;height:10px;border-radius:50%;background:#706860;flex-shrink:0"></div>
-          <span>Loafer Nabuk Grigio Tortora · Gutteridge</span>
-        </div>
-        <div style="display:flex;align-items:center;gap:10px;font-size:.62rem;color:#9A8C7A;font-style:italic;">
-          <div style="width:10px;height:10px;border-radius:50%;background:#6A4830;flex-shrink:0"></div>
-          <span>Cintura Reversibile Marrone · Gutteridge</span>
-        </div>
-        <div style="display:flex;align-items:center;gap:10px;font-size:.62rem;color:#9A8C7A;font-style:italic;">
-          <div style="width:10px;height:10px;border-radius:50%;background:#88B8C8;flex-shrink:0"></div>
-          <span>Acqua di Gio · Giorgio Armani</span>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- LOOK 2 -->
-
-  <div style="margin-bottom:24px;">
-    <div style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;color:#1A1208;letter-spacing:.05em;margin-bottom:4px;">Il Molo di Settembre</div>
-    <div style="font-size:.52rem;color:#B8A070;letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px;">Velasca SS26 · Jeans Slavato · Suede Senza Calze</div>
-    <div style="background:#FAF7F2;border-radius:10px;border:1px solid #E8E0D0;padding:14px;">
-      <div style="font-size:.58rem;color:#6A5C4A;line-height:1.7;font-family:'Cormorant Garamond',serif;font-style:italic;margin-bottom:12px;">Il suede scuro e opaco contro il denim chiaro e polveroso. Due materiali che dialogano per contrasto di tono ma stessa opacità. Niente calze — è il dettaglio che fa tutto. Pharrell chiamerebbe questo "the barefoot luxury" — il lusso di chi non ha bisogno di spiegare nulla.</div>
-      <div style="display:flex;flex-direction:column;gap:6px;">
-        <div style="display:flex;align-items:center;gap:10px;font-size:.62rem;color:#1A1208;">
-          <div style="width:10px;height:10px;border-radius:50%;background:#8098B0;flex-shrink:0"></div>
-          <span>① Jeans Azzurro Slavato · <span style="color:#9A8C7A">H&M</span></span>
-        </div>
-        <div style="display:flex;align-items:center;gap:10px;font-size:.62rem;color:#1A1208;">
-          <div style="width:10px;height:10px;border-radius:50%;background:#F0E8D8;border:1px solid #E0D8C8;flex-shrink:0"></div>
-          <span>② Polo Panna · <span style="color:#9A8C7A">OVS Piombo</span></span>
-        </div>
-        <div style="display:flex;align-items:center;gap:10px;font-size:.62rem;color:#9A8C7A;font-style:italic;">
-          <div style="width:10px;height:10px;border-radius:50%;background:#706860;flex-shrink:0"></div>
-          <span>Loafer Nabuk Grigio Tortora · Gutteridge · senza calze</span>
-        </div>
-        <div style="display:flex;align-items:center;gap:10px;font-size:.62rem;color:#9A8C7A;font-style:italic;">
-          <div style="width:10px;height:10px;border-radius:50%;background:#88B8C8;flex-shrink:0"></div>
-          <span>Acqua di Gio · Giorgio Armani</span>
-        </div>
-      </div>
-      <div style="margin-top:10px;padding-top:10px;border-top:1px solid #E8E0D0;font-size:.52rem;color:#B8A070;font-style:italic;font-family:'Cormorant Garamond',serif;">Il loafer senza calze è il gesto unico — invisibile come capo, percepibile come energia. Regola VI della Mentalità.</div>
-    </div>
-  </div>
-
-  <!-- LOOK 3 -->
-
-  <div style="margin-bottom:24px;">
-    <div style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;color:#1A1208;letter-spacing:.05em;margin-bottom:4px;">The Sicilian Room</div>
-    <div style="font-size:.52rem;color:#B8A070;letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px;">Velasca SS26 · Field Jacket · Verde Oliva</div>
-    <div style="background:#FAF7F2;border-radius:10px;border:1px solid #E8E0D0;padding:14px;">
-      <div style="font-size:.58rem;color:#6A5C4A;line-height:1.7;font-family:'Cormorant Garamond',serif;font-style:italic;margin-bottom:12px;">Tre neutri caldi polverosi sovrapposti — greige della jacket, verde oliva smorzato, grigio chiaro come base. La logica Cucinelli Ars Imitatur Naturam: la natura non usa colori saturi. Il verde oliva e l'unico accento — tutto il resto tace.</div>
-      <div style="display:flex;flex-direction:column;gap:6px;">
-        <div style="display:flex;align-items:center;gap:10px;font-size:.62rem;color:#1A1208;"><div style="width:10px;height:10px;border-radius:50%;background:#C8C0A8;flex-shrink:0"></div><span>① Field Jacket Lino Greige · <span style="color:#9A8C7A">Gutteridge</span></span></div>
-        <div style="display:flex;align-items:center;gap:10px;font-size:.62rem;color:#1A1208;"><div style="width:10px;height:10px;border-radius:50%;background:#B8B4B0;flex-shrink:0"></div><span>② Chino Grigio Chiaro · <span style="color:#9A8C7A">Levi's</span></span></div>
-        <div style="display:flex;align-items:center;gap:10px;font-size:.62rem;color:#1A1208;"><div style="width:10px;height:10px;border-radius:50%;background:#7A8870;flex-shrink:0"></div><span>③ T-Shirt Verde Oliva Smorzato · <span style="color:#9A8C7A">OVS CMA</span></span></div>
-        <div style="display:flex;align-items:center;gap:10px;font-size:.62rem;color:#9A8C7A;font-style:italic;"><div style="width:10px;height:10px;border-radius:50%;background:#706860;flex-shrink:0"></div><span>Loafer Nabuk Grigio Tortora · Gutteridge</span></div>
-        <div style="display:flex;align-items:center;gap:10px;font-size:.62rem;color:#9A8C7A;font-style:italic;"><div style="width:10px;height:10px;border-radius:50%;background:#88B8C8;flex-shrink:0"></div><span>Acqua di Gio · Giorgio Armani</span></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- LOOK 4 -->
-
-  <div style="margin-bottom:24px;">
-    <div style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;color:#1A1208;letter-spacing:.05em;margin-bottom:4px;">The Desert Brief</div>
-    <div style="font-size:.52rem;color:#B8A070;letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px;">Gutteridge SS26 · Field Jacket · Shorts · Tre Capi</div>
-    <div style="background:#FAF7F2;border-radius:10px;border:1px solid #E8E0D0;padding:14px;">
-      <div style="font-size:.58rem;color:#6A5C4A;line-height:1.7;font-family:'Cormorant Garamond',serif;font-style:italic;margin-bottom:12px;">Greige, beige, bianco sporco — tre gradazioni della scala calda che scendono dall'alto verso il basso. Tre capi, niente di superfluo. La regola VII della Mentalita in estate piena: togli prima di aggiungere. I Timberland chiudono con il marrone scuro come unico accento.</div>
-      <div style="display:flex;flex-direction:column;gap:6px;">
-        <div style="display:flex;align-items:center;gap:10px;font-size:.62rem;color:#1A1208;"><div style="width:10px;height:10px;border-radius:50%;background:#C8C0A8;flex-shrink:0"></div><span>① Field Jacket Lino Greige · <span style="color:#9A8C7A">Gutteridge</span></span></div>
-        <div style="display:flex;align-items:center;gap:10px;font-size:.62rem;color:#1A1208;"><div style="width:10px;height:10px;border-radius:50%;background:#F5F0E8;border:1px solid #E0D8C8;flex-shrink:0"></div><span>② Shorts Felpa Bianchi · <span style="color:#9A8C7A">OVS</span></span></div>
-        <div style="display:flex;align-items:center;gap:10px;font-size:.62rem;color:#1A1208;"><div style="width:10px;height:10px;border-radius:50%;background:#D8C8A8;flex-shrink:0"></div><span>③ T-Shirt Beige · <span style="color:#9A8C7A">OVS CMA</span></span></div>
-        <div style="display:flex;align-items:center;gap:10px;font-size:.62rem;color:#9A8C7A;font-style:italic;"><div style="width:10px;height:10px;border-radius:50%;background:#806050;flex-shrink:0"></div><span>Timberland Boat Shoes Marrone</span></div>
-        <div style="display:flex;align-items:center;gap:10px;font-size:.62rem;color:#9A8C7A;font-style:italic;"><div style="width:10px;height:10px;border-radius:50%;background:#88B8C8;flex-shrink:0"></div><span>Acqua di Gio · Giorgio Armani</span></div>
-      </div>
-      <div style="margin-top:10px;padding-top:10px;border-top:1px solid #E8E0D0;font-size:.52rem;color:#B8A070;font-style:italic;font-family:'Cormorant Garamond',serif;">Cotton Made in Africa — il materiale prima del marchio. Fibra naturale certificata OEKO-TEX. Questo e il lusso invisibile.</div>
-    </div>
-  </div>
-
-  <!-- LOOK 5 - THE BLUE DOOR -->
-
-  <div style="margin-bottom:24px;">
-    <div style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;color:#1A1208;letter-spacing:.05em;margin-bottom:4px;">The Blue Door</div>
-    <div style="font-size:.52rem;color:#B8A070;letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px;">Tela Blu Lookbook · Jeans Medium Wash · Boat Shoes</div>
-    <div style="background:#FAF7F2;border-radius:10px;border:1px solid #E8E0D0;padding:14px;">
-      <div style="font-size:.58rem;color:#6A5C4A;line-height:1.7;font-family:'Cormorant Garamond',serif;font-style:italic;margin-bottom:12px;">Navy, azzurro medio, marrone scuro. Tre toni della scala fredda con un accento caldo nella scarpa. La semplicita come dichiarazione — tre capi, nessun layer, nessun dettaglio superfluo. Il portone di legno scuro del lookbook Tela Blu come sfondo ideale. Nigo chiamerebbe questo "the invisible statement".</div>
-      <div style="display:flex;flex-direction:column;gap:6px;">
-        <div style="display:flex;align-items:center;gap:10px;font-size:.62rem;color:#1A1208;"><div style="width:10px;height:10px;border-radius:50%;background:#587890;flex-shrink:0"></div><span>① Jeans Medium Wash · <span style="color:#9A8C7A">Levi's 502 Taper Hold on Me</span></span></div>
-        <div style="display:flex;align-items:center;gap:10px;font-size:.62rem;color:#1A1208;"><div style="width:10px;height:10px;border-radius:50%;background:#1A2A40;flex-shrink:0"></div><span>② Polo Navy · <span style="color:#9A8C7A">OVS Piombo</span></span></div>
-        <div style="display:flex;align-items:center;gap:10px;font-size:.62rem;color:#9A8C7A;font-style:italic;"><div style="width:10px;height:10px;border-radius:50%;background:#806050;flex-shrink:0"></div><span>Timberland Boat Shoes Marrone</span></div>
-        <div style="display:flex;align-items:center;gap:10px;font-size:.62rem;color:#9A8C7A;font-style:italic;"><div style="width:10px;height:10px;border-radius:50%;background:#6A4830;flex-shrink:0"></div><span>Cintura Reversibile Marrone · Gutteridge</span></div>
-        <div style="display:flex;align-items:center;gap:10px;font-size:.62rem;color:#9A8C7A;font-style:italic;"><div style="width:10px;height:10px;border-radius:50%;background:#88B8C8;flex-shrink:0"></div><span>Acqua di Gio · Giorgio Armani</span></div>
-      </div>
-      <div style="margin-top:10px;padding-top:10px;border-top:1px solid #E8E0D0;font-size:.52rem;color:#B8A070;font-style:italic;font-family:'Cormorant Garamond',serif;">Il risvolto del jeans rivela la scarpa — il gesto unico che non costa nulla. Regola VI della Mentalita.</div>
-    </div>
   </div>
 
 </div>
 
 <!-- ═══════════════════════════════════════════ PALETTE ═══ -->
-
 <div id="palette" class="section">
   <div class="section-label">Palette · Estate Soft</div>
   <div style="font-family:'Cormorant Garamond',serif;font-size:.75rem;font-style:italic;text-align:center;color:var(--gold);letter-spacing:.05em;margin:0 0 8px;">"Se un colore urla, non entra. Se riflette la luce, non entra."</div>
@@ -509,6 +328,218 @@ body{background:var(--bg);font-family:'Montserrat',sans-serif;min-height:100vh;p
   </div>
 </div>
 
+<!-- ═══════════════════════════════════════════ DICTACT ═══ -->
+<div id="materiali" class="section">
+  <div class="section-label">Materiali · Grammature per Stagione</div>
+  <div class="info-box">Riferimento tecnico ai tessuti ammessi dal Dictact (Regole 6-12), con grammature e specifiche reali per ciascuna delle quattro stagioni.</div>
+
+  <div style="margin-bottom:22px;">
+    <div style="font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:600;color:var(--gold);letter-spacing:.08em;margin-bottom:10px;">Primavera</div>
+    <table style="width:100%;border-collapse:collapse;font-size:.58rem;">
+      <tr><th style="text-align:left;padding:5px 8px;color:var(--light);font-size:.52rem;text-transform:uppercase;letter-spacing:.05em;border-bottom:1px solid var(--gold);">Tessuto</th><th style="text-align:left;padding:5px 8px;color:var(--light);font-size:.52rem;text-transform:uppercase;letter-spacing:.05em;border-bottom:1px solid var(--gold);">Grammatura / Specifica</th></tr>
+      <tr><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--dark);font-weight:500;">Lana (fresco lana leggero)</td><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--mid);">200-230 g/mtl</td></tr>
+      <tr><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--dark);font-weight:500;">Lino leggero</td><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--mid);">120-170 g/mq</td></tr>
+      <tr><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--dark);font-weight:500;">Cotone Voile/Batista</td><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--mid);">60-90 g/mq</td></tr>
+      <tr><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--dark);font-weight:500;">Cotone Popeline</td><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--mid);">100-120 g/mq</td></tr>
+      <tr><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--dark);font-weight:500;">Denim Chambray</td><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--mid);">100-170 g/mq</td></tr>
+      <tr><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--dark);font-weight:500;">Cashmere/Merino 1-ply</td><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--mid);">Extrafine</td></tr>
+      <tr><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--dark);font-weight:500;">Canvas leggero</td><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--mid);">200-280 g/mq</td></tr>
+    </table>
+  </div>
+
+  <div style="margin-bottom:22px;">
+    <div style="font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:600;color:var(--gold);letter-spacing:.08em;margin-bottom:10px;">Estate</div>
+    <table style="width:100%;border-collapse:collapse;font-size:.58rem;">
+      <tr><th style="text-align:left;padding:5px 8px;color:var(--light);font-size:.52rem;text-transform:uppercase;letter-spacing:.05em;border-bottom:1px solid var(--gold);">Tessuto</th><th style="text-align:left;padding:5px 8px;color:var(--light);font-size:.52rem;text-transform:uppercase;letter-spacing:.05em;border-bottom:1px solid var(--gold);">Grammatura / Specifica</th></tr>
+      <tr><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--dark);font-weight:500;">Lana (fresco lana estivo)</td><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--mid);">fino a 240 g/mtl</td></tr>
+      <tr><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--dark);font-weight:500;">Lino medio</td><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--mid);">170-220 g/mq</td></tr>
+      <tr><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--dark);font-weight:500;">Cotone Voile/Batista</td><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--mid);">60-90 g/mq</td></tr>
+      <tr><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--dark);font-weight:500;">Cotone Popeline</td><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--mid);">100-120 g/mq</td></tr>
+      <tr><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--dark);font-weight:500;">Denim Chambray</td><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--mid);">100-170 g/mq</td></tr>
+      <tr><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--dark);font-weight:500;">Cashmere/Merino 1-ply</td><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--mid);">Extrafine</td></tr>
+    </table>
+  </div>
+
+  <div style="margin-bottom:22px;">
+    <div style="font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:600;color:var(--gold);letter-spacing:.08em;margin-bottom:10px;">Autunno</div>
+    <table style="width:100%;border-collapse:collapse;font-size:.58rem;">
+      <tr><th style="text-align:left;padding:5px 8px;color:var(--light);font-size:.52rem;text-transform:uppercase;letter-spacing:.05em;border-bottom:1px solid var(--gold);">Tessuto</th><th style="text-align:left;padding:5px 8px;color:var(--light);font-size:.52rem;text-transform:uppercase;letter-spacing:.05em;border-bottom:1px solid var(--gold);">Grammatura / Specifica</th></tr>
+      <tr><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--dark);font-weight:500;">Lana quattro stagioni</td><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--mid);">250-280 g/mtl</td></tr>
+      <tr><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--dark);font-weight:500;">Flanella leggera</td><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--mid);">240-280 g/mtl</td></tr>
+      <tr><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--dark);font-weight:500;">Tweed/Donegal leggero</td><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--mid);">300-350 g/mtl</td></tr>
+      <tr><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--dark);font-weight:500;">Lino pesante (blazer)</td><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--mid);">220-280 g/mq</td></tr>
+      <tr><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--dark);font-weight:500;">Cotone Twill</td><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--mid);">130-160 g/mq</td></tr>
+      <tr><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--dark);font-weight:500;">Cotone Oxford</td><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--mid);">160-200 g/mq</td></tr>
+      <tr><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--dark);font-weight:500;">Denim medio</td><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--mid);">170-280 g/mq</td></tr>
+      <tr><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--dark);font-weight:500;">Cashmere/Merino 2-ply</td><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--mid);">Standard</td></tr>
+      <tr><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--dark);font-weight:500;">Velluto pinwale (stretto)</td><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--mid);">16-21 wale</td></tr>
+      <tr><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--dark);font-weight:500;">Canvas pesante</td><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--mid);">280-400 g/mq</td></tr>
+      <tr><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--dark);font-weight:500;">Wax cotton</td><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--mid);">250-350 g/mq</td></tr>
+    </table>
+  </div>
+
+  <div style="margin-bottom:22px;">
+    <div style="font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:600;color:var(--gold);letter-spacing:.08em;margin-bottom:10px;">Inverno</div>
+    <table style="width:100%;border-collapse:collapse;font-size:.58rem;">
+      <tr><th style="text-align:left;padding:5px 8px;color:var(--light);font-size:.52rem;text-transform:uppercase;letter-spacing:.05em;border-bottom:1px solid var(--gold);">Tessuto</th><th style="text-align:left;padding:5px 8px;color:var(--light);font-size:.52rem;text-transform:uppercase;letter-spacing:.05em;border-bottom:1px solid var(--gold);">Grammatura / Specifica</th></tr>
+      <tr><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--dark);font-weight:500;">Lana pesante</td><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--mid);">280-350 g/mtl</td></tr>
+      <tr><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--dark);font-weight:500;">Flanella (cardata/pettinata)</td><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--mid);">320-380+ g/mtl</td></tr>
+      <tr><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--dark);font-weight:500;">Tweed/Donegal pieno</td><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--mid);">350-450+ g/mtl</td></tr>
+      <tr><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--dark);font-weight:500;">Cotone Oxford/Flanella cotone</td><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--mid);">180-220 g/mq</td></tr>
+      <tr><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--dark);font-weight:500;">Denim pesante/raw</td><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--mid);">280-400+ g/mq</td></tr>
+      <tr><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--dark);font-weight:500;">Cashmere/Merino 3-4 ply / Baby Cashmere</td><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--mid);">Massimo calore</td></tr>
+      <tr><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--dark);font-weight:500;">Velluto medio-largo (wide wale)</td><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--mid);">6-12 wale</td></tr>
+      <tr><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--dark);font-weight:500;">Canvas pesante</td><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--mid);">280-400 g/mq</td></tr>
+      <tr><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--dark);font-weight:500;">Wax cotton</td><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--mid);">250-350 g/mq</td></tr>
+    </table>
+  </div>
+
+  <div style="font-size:.55rem;color:var(--light);font-style:italic;text-align:center;padding-top:10px;border-top:1px solid var(--border);">Regola 7 del Dictact — guarda sempre l'etichetta di composizione prima del colore. Nessuna versione estiva per tweed, flanella o wax cotton.</div>
+</div>
+
+<!-- ═══════════════════════════════════════════ DICTACT ═══ -->
+<div id="dictact" class="section">
+  <div class="section-label">Dictact · Le Leggi del Sistema</div>
+  <div style="font-family:'Cormorant Garamond',serif;font-size:.75rem;font-style:italic;text-align:center;color:var(--gold);letter-spacing:.05em;margin:0 0 16px;">"Il vero lusso è quello che si sente senza vedere da dove viene." · Brunello Cucinelli</div>
+
+  <!-- I - ARMOCROMIA -->
+  <div style="margin-bottom:20px;border-bottom:1px solid var(--border);padding-bottom:16px;">
+    <div style="font-family:'Cormorant Garamond',serif;font-size:.9rem;font-weight:600;color:var(--gold);letter-spacing:.1em;margin-bottom:10px;">I · L'Armocromia — La Legge Fondamentale</div>
+    <div style="font-size:.58rem;color:var(--mid);line-height:1.8;">
+      <div style="margin-bottom:6px;"><strong style="color:var(--dark);">Regola 1.</strong> Le scale sono la base — tutto il resto sono accenti. Scala bianco/marrone in P/E e Autunno. In Inverno, marrone/cioccolato/tabacco/cammello come base primaria — il navy è retrocesso ad accento secondario, mai più base dominante (revisione post-armocromia).</div>
+      <div style="margin-bottom:6px;"><strong style="color:var(--dark);">Regola 2.</strong> Gli accenti devono essere in armocromia Estate Soft — smorzati, mai saturi. Rosa cipria, rosa antico, verde oliva smorzato, verde salvia. Un solo accento per look.</div>
+      <div style="margin-bottom:6px;"><strong style="color:var(--dark);">Regola 3.</strong> I colori da evitare sempre — nero puro, bianco brillante, rosso saturo, giallo/ocra saturo, verde prato, blu royal, arancio, turchese.</div>
+      <div style="margin-bottom:6px;"><strong style="color:var(--dark);">Regola 4.</strong> Se un colore urla, non entra. Se riflette la luce artificialmente, non entra.</div>
+      <div style="margin-bottom:6px;"><strong style="color:var(--dark);">Regola 5.</strong> [Superata] Il marrone e il cognac non sono più confinati a scarpe e accessori — sono base d'Inverno a pieno titolo (vedi Regola 1).</div>
+      <div style="margin-bottom:6px;"><strong style="color:var(--dark);">Regola 5 bis.</strong> Regola del contrasto — un colore ricco e scuro (bordeaux, verde bosco) va sempre su una base chiara, mai su una base altrettanto scura: il contrasto lo fa respirare, l'assenza di contrasto lo affoga.</div>
+      <div><strong style="color:var(--dark);">Regola 5 ter.</strong> Regola del caldo maggioritario — se un look contiene un pezzo freddo (navy, azzurro), tutto il resto deve essere caldo o neutro puro (bianco). Mai un secondo elemento freddo secondario nello stesso look.</div>
+    </div>
+  </div>
+
+  <!-- II - TESSUTI E FILATI -->
+  <div style="margin-bottom:20px;border-bottom:1px solid var(--border);padding-bottom:16px;">
+    <div style="font-family:'Cormorant Garamond',serif;font-size:.9rem;font-weight:600;color:var(--gold);letter-spacing:.1em;margin-bottom:10px;">II · I Tessuti e i Filati — La Legge del Materiale</div>
+    <div style="font-size:.58rem;color:var(--mid);line-height:1.8;">
+      <div style="margin-bottom:6px;"><strong style="color:var(--dark);">Regola 6.</strong> Fibra naturale minimo 70% — sempre. Lino, cotone, lana, cashmere, seta, merino. Sotto quella soglia il capo non entra nel guardaroba.</div>
+      <div style="margin-bottom:6px;"><strong style="color:var(--dark);">Regola 7.</strong> Guarda l'etichetta prima del colore. Se l'etichetta non passa, rimetti il capo sul gancio indipendentemente dal colore.</div>
+      <div style="margin-bottom:6px;"><strong style="color:var(--dark);">Regola 8.</strong> P/E — Lino puro · Lino washed · Seta/lino blend · Cotone americano · Cotton Made in Africa · Cotone canvas · Cotone seersucker. Il lino è il cashmere dell'estate.</div>
+      <div style="margin-bottom:6px;"><strong style="color:var(--dark);">Regola 9.</strong> A/I — Lana vergine · Cashmere · Baby cashmere · Merino fine · Tweed · Donegal · Flanella · Velluto a coste · Shearling · Pelle plongé morbida.</div>
+      <div style="margin-bottom:6px;"><strong style="color:var(--dark);">Regola 10.</strong> Il tessuto opaco è sempre preferibile al tessuto lucido. L'opacità è discrezione. La lucentezza artificiale urla.</div>
+      <div style="margin-bottom:6px;"><strong style="color:var(--dark);">Regola 11.</strong> Il vissuto intenzionale vale più del nuovo perfetto. Il lino che si stropiccia, la pelle che invecchia, il denim distressed autentico — raccontano una storia che il sintetico non può raccontare.</div>
+      <div><strong style="color:var(--dark);">Regola 12.</strong> L'unica eccezione al sintetico — il costume da bagno. Anche lì preferire lino puro o cotone stretch. Se sintetico, solo con certificazione OEKO-TEX Standard 100.</div>
+    </div>
+  </div>
+
+  <!-- III - SISTEMA STAGIONALE -->
+  <div style="margin-bottom:20px;border-bottom:1px solid var(--border);padding-bottom:16px;">
+    <div style="font-family:'Cormorant Garamond',serif;font-size:.9rem;font-weight:600;color:var(--gold);letter-spacing:.1em;margin-bottom:10px;">III · Il Sistema Stagionale</div>
+    <div style="font-size:.58rem;color:var(--mid);line-height:1.8;">
+      <div style="margin-bottom:6px;"><strong style="color:var(--dark);">Regola 13.</strong> P/E — scala bianco/marrone, lino e cotone, look aperti e leggeri. Marzo-ottobre.</div>
+      <div style="margin-bottom:6px;"><strong style="color:var(--dark);">Regola 14.</strong> Autunno — mezza stagione, strato singolo o doppio leggero. Base calda smorzata (marrone, sabbia, bordeaux, grigio melange), navy tollerato solo su capi strutturali già posseduti.</div>
+      <div style="margin-bottom:6px;"><strong style="color:var(--dark);">Regola 15.</strong> Inverno — base marrone/cioccolato/tabacco/cammello, stratificazione piena (camicia+maglia+capospalla). Navy solo come accento secondario su capo strutturale, mai come scala dominante.</div>
+      <div><strong style="color:var(--dark);">Regola 16.</strong> Il capo cross stagionale è il più prezioso del guardaroba — entra in tutto l'anno senza forzature. Riconoscilo e trattalo con cura.</div>
+    </div>
+  </div>
+
+  <!-- IV - LAYERING -->
+  <div style="margin-bottom:20px;border-bottom:1px solid var(--border);padding-bottom:16px;">
+    <div style="font-family:'Cormorant Garamond',serif;font-size:.9rem;font-weight:600;color:var(--gold);letter-spacing:.1em;margin-bottom:10px;">IV · Il Sistema Layering</div>
+    <div style="font-size:.58rem;color:var(--mid);line-height:1.8;">
+      <div style="margin-bottom:6px;"><strong style="color:var(--dark);">Regola 17.</strong> Ogni layer deve avere la sua identità visiva — si deve vedere da dove inizia e dove finisce. Se due layer si confondono, uno dei due è superfluo.</div>
+      <div style="margin-bottom:6px;"><strong style="color:var(--dark);">Regola 18.</strong> Il colletto della camicia che spunta dal maglione o dalla giacca è il gesto della stagione — confermato da Bottega FW26, Zegna FW26, Tela Blu. Non è un'opzione, è una firma.</div>
+      <div><strong style="color:var(--dark);">Regola 19.</strong> D'estate il sistema si semplifica — meno layer, più materiale. Una t-shirt in lino di qualità è più elegante di una giacca sbagliata.</div>
+    </div>
+  </div>
+
+  <!-- V - LOGICA NIGO/PHARRELL -->
+  <div style="margin-bottom:20px;border-bottom:1px solid var(--border);padding-bottom:16px;">
+    <div style="font-family:'Cormorant Garamond',serif;font-size:.9rem;font-weight:600;color:var(--gold);letter-spacing:.1em;margin-bottom:10px;">V · La Logica Nigo/Pharrell</div>
+    <div style="font-size:.58rem;color:var(--mid);line-height:1.8;">
+      <div style="margin-bottom:6px;"><strong style="color:var(--dark);">Regola 20.</strong> La rima cromatica testa/piedi è la firma del look. Prima di uscire guarda testa e piedi — si rispondono?</div>
+      <div style="margin-bottom:6px;"><strong style="color:var(--dark);">Regola 21.</strong> Parti da un elemento e costruisci la conversazione. Non dalla giacca — dalla scarpa, dall'accessorio, dal capo che vuoi indossare quel giorno.</div>
+      <div style="margin-bottom:6px;"><strong style="color:var(--dark);">Regola 22.</strong> Il cortocircuito è una scelta, non un errore. Formale/casual, caldo/freddo, sartoriale/sportivo — la tensione tra registri è il linguaggio del look.</div>
+      <div><strong style="color:var(--dark);">Regola 23.</strong> Togli prima di aggiungere. Quando pensi che il look sia completo — togli qualcosa. La versione con meno è quasi sempre quella giusta.</div>
+    </div>
+  </div>
+
+  <!-- VI - MAISON E LOOKBOOK -->
+  <div style="margin-bottom:20px;border-bottom:1px solid var(--border);padding-bottom:16px;">
+    <div style="font-family:'Cormorant Garamond',serif;font-size:.9rem;font-weight:600;color:var(--gold);letter-spacing:.1em;margin-bottom:10px;">VI · Le Maison e i Lookbook di Riferimento</div>
+    <div style="font-size:.58rem;color:var(--mid);line-height:1.8;">
+      <div style="margin-bottom:6px;"><strong style="color:var(--dark);">I 5 Pilastri — sfilate da monitorare ogni stagione —</strong> Brunello Cucinelli · Zegna · Loro Piana · Bottega Veneta · Louis Vuitton (Pharrell)</div>
+      <div style="margin-bottom:6px;"><strong style="color:var(--dark);">Negozi tattici — dove cercare i capi, non fonti stilistiche —</strong> Gutteridge · Pini Parma · Suitsupply · Octobre Éditions · Velasca · Iuman</div>
+      <div style="margin-bottom:6px;"><strong style="color:var(--dark);">Regola 24.</strong> La sfilata non si copia — si traduce. Il look della passerella diventa look del guardaroba attraverso il filtro dell'armocromia e dei capi disponibili.</div>
+      <div><strong style="color:var(--dark);">Regola 25.</strong> Il lookbook si interpreta — non si replica. La foto è il punto di partenza, il sistema è il punto di arrivo.</div>
+    </div>
+  </div>
+
+  <!-- VII - ACQUISTI -->
+  <div style="margin-bottom:20px;border-bottom:1px solid var(--border);padding-bottom:16px;">
+    <div style="font-family:'Cormorant Garamond',serif;font-size:.9rem;font-weight:600;color:var(--gold);letter-spacing:.1em;margin-bottom:10px;">VII · La Legge degli Acquisti</div>
+    <div style="font-size:.58rem;color:var(--mid);line-height:1.8;">
+      <div style="margin-bottom:6px;"><strong style="color:var(--dark);">Regola 26.</strong> Il test prima di ogni acquisto — ① Sta nella scala cromatica della stagione? ② Fibra naturale minimo 70%? ③ Opaco o lucentezza naturale controllata? ④ Se accento, è in armocromia Estate Soft? Se no a uno solo — rimetti sul gancio.</div>
+      <div style="margin-bottom:6px;"><strong style="color:var(--dark);">Regola 27.</strong> Trasforma prima di comprare. Un Uniposca, dei lacci diversi, una felpa annodata in vita — la trasformazione aggiunge la tua firma al capo.</div>
+      <div style="margin-bottom:6px;"><strong style="color:var(--dark);">Regola 28.</strong> La storia prima del marchio. Il capo vissuto con una biografia vale più del capo nuovo senza storia.</div>
+      <div><strong style="color:var(--dark);">Regola 29.</strong> Aspetta il capo giusto. Il guardaroba cresce per sottrazione e precisione, non per accumulo.</div>
+    </div>
+  </div>
+
+  <!-- IX - REGISTRO HERITAGE -->
+  <div style="margin-bottom:20px;border-bottom:1px solid var(--border);padding-bottom:16px;">
+    <div style="font-family:'Cormorant Garamond',serif;font-size:.9rem;font-weight:600;color:var(--gold);letter-spacing:.1em;margin-bottom:10px;">IX · Il Registro Heritage</div>
+    <div style="font-size:.58rem;color:var(--mid);line-height:1.8;">
+      <div style="margin-bottom:6px;">L'heritage nel sistema non è nostalgia o costume — è artigianalità funzionale invecchiata bene. La differenza tra heritage vero e "travestito da heritage" è che il primo nasce da un uso reale (lavoro, caccia, vela, montagna), il secondo lo simula con lavaggi e strappi finti.</div>
+      <div style="margin-bottom:6px;"><strong style="color:var(--dark);">Regola H1.</strong> Materiali ammessi — cotone cerato (wax cotton), tweed/Donegal, canvas grezzo, pelle pieno fiore vissuta naturalmente, lana cardata pesante (cable knit).</div>
+      <div style="margin-bottom:6px;"><strong style="color:var(--dark);">Regola H2.</strong> Il distressed/vintage-washed artificiale è escluso. L'heritage autentico si vede dalla costruzione (tasche a toppa, bottoni corno, cuciture a vista), non da un effetto invecchiato applicato in fabbrica.</div>
+      <div style="margin-bottom:6px;"><strong style="color:var(--dark);">Regola H3.</strong> Un solo pezzo heritage dominante per outfit — mai due insieme. Se indossi il Barbour, la scarpa resta pulita; se indossi le boat shoes, il resto resta sartoriale.</div>
+      <div><strong style="color:var(--dark);">Regola H4.</strong> Nessun colore nuovo — l'heritage usa la palette esistente (verde britannico/oliva, navy come accento, tabacco, avena). Pattern British sartoriale (Principe di Galles, pied-de-poule, tweed check) ammesso come texture, non come colore aggiuntivo.</div>
+    </div>
+  </div>
+
+  <!-- VIII - LE DODICI LEGGI FINALI -->
+  <div style="margin-bottom:20px;border-bottom:1px solid var(--border);padding-bottom:16px;">
+    <div style="font-family:'Cormorant Garamond',serif;font-size:.9rem;font-weight:600;color:var(--gold);letter-spacing:.1em;margin-bottom:10px;">VIII · Le Dodici Leggi — Il Test Finale</div>
+    <div style="font-size:.58rem;color:var(--mid);line-height:1.8;">
+      <div style="margin-bottom:4px;"><strong style="color:var(--dark);">I.</strong> Il colore è nella scala della stagione?</div>
+      <div style="margin-bottom:4px;"><strong style="color:var(--dark);">II.</strong> Se è un accento, è in armocromia Estate Soft e smorzato?</div>
+      <div style="margin-bottom:4px;"><strong style="color:var(--dark);">III.</strong> Il tessuto è fibra naturale minimo 70%?</div>
+      <div style="margin-bottom:4px;"><strong style="color:var(--dark);">IV.</strong> Il tessuto è opaco o ha una lucentezza naturale controllata?</div>
+      <div style="margin-bottom:4px;"><strong style="color:var(--dark);">V.</strong> La rima cromatica testa/piedi funziona?</div>
+      <div style="margin-bottom:4px;"><strong style="color:var(--dark);">VI.</strong> C'è un gesto unico che cambia tutto senza aggiungere capi?</div>
+      <div style="margin-bottom:4px;"><strong style="color:var(--dark);">VII.</strong> Hai tolto qualcosa prima di considerare il look completo?</div>
+      <div style="margin-bottom:4px;"><strong style="color:var(--dark);">VIII.</strong> Il vincolo di oggi è diventato un'opportunità?</div>
+      <div style="margin-bottom:4px;"><strong style="color:var(--dark);">IX.</strong> Ogni layer ha la sua identità visiva?</div>
+      <div style="margin-bottom:4px;"><strong style="color:var(--dark);">X.</strong> Il look racconta una storia o segue una regola?</div>
+      <div style="margin-bottom:4px;"><strong style="color:var(--dark);">XI.</strong> Ti fa sentire te stesso o ti fa sentire vestito?</div>
+      <div style="margin-bottom:4px;"><strong style="color:var(--dark);">XII.</strong> Lo senti senza vedere da dove viene?</div>
+    </div>
+  </div>
+
+  <!-- LA MENTALITA -->
+  <div style="margin-bottom:20px;border-bottom:1px solid var(--border);padding-bottom:16px;">
+    <div style="font-family:'Cormorant Garamond',serif;font-size:.9rem;font-weight:600;color:var(--gold);letter-spacing:.1em;margin-bottom:6px;">La Mentalità · Il Dictact dello Spirito</div>
+    <div style="font-family:'Cormorant Garamond',serif;font-size:.7rem;font-style:italic;color:var(--light);margin-bottom:10px;">Con la mente di Pharrell e Nigo</div>
+    <div style="font-size:.58rem;color:var(--mid);line-height:1.8;">
+      <div style="margin-bottom:4px;"><strong style="color:var(--dark);">I.</strong> La storia prima del marchio.</div>
+      <div style="margin-bottom:4px;"><strong style="color:var(--dark);">II.</strong> Il cortocircuito è una scelta, non un errore.</div>
+      <div style="margin-bottom:4px;"><strong style="color:var(--dark);">III.</strong> Parti da un elemento, costruisci la conversazione.</div>
+      <div style="margin-bottom:4px;"><strong style="color:var(--dark);">IV.</strong> La rima cromatica è la firma.</div>
+      <div style="margin-bottom:4px;"><strong style="color:var(--dark);">V.</strong> Trasforma prima di comprare.</div>
+      <div style="margin-bottom:4px;"><strong style="color:var(--dark);">VI.</strong> Il gesto unico cambia tutto.</div>
+      <div style="margin-bottom:4px;"><strong style="color:var(--dark);">VII.</strong> Togli prima di aggiungere.</div>
+      <div style="margin-bottom:4px;"><strong style="color:var(--dark);">VIII.</strong> Il vincolo è un'opportunità.</div>
+      <div style="margin-bottom:4px;"><strong style="color:var(--dark);">IX.</strong> Sperimenta senza paura.</div>
+      <div style="margin-bottom:4px;"><strong style="color:var(--dark);">X.</strong> Lo stile è quello che la gente percepisce senza vedere.</div>
+    </div>
+  </div>
+
+  <div style="text-align:center;padding:16px 0 8px;border-top:1px solid var(--border);margin-top:8px;">
+    <div style="font-family:'Cormorant Garamond',serif;font-size:.65rem;color:var(--gold);letter-spacing:.1em;">Cucinelli P/E · Autunno Cucinelli + Armani · Inverno Armani</div>
+    <div style="font-family:'Cormorant Garamond',serif;font-size:.58rem;color:var(--light);letter-spacing:.06em;margin-top:4px;font-style:italic;">"Il vero lusso è quello che si sente senza vedere da dove viene." · Brunello Cucinelli</div>
+  </div>
+
+</div>
+
 </div><!-- /main -->
 
 <script>
@@ -519,19 +550,11 @@ function showSec(id, btn) {
   btn.classList.add('active');
 }
 
-function filtraCuc(cat, btn) {
-  document.querySelectorAll('#cuc-all,#cuc-outerwear,#cuc-camicie,#cuc-maglieria,#cuc-tshirt,#cuc-pantaloni,#cuc-scarpe,#cuc-accessori,#cuc-profumi').forEach(function(b){b.classList.remove('active')});
+function filtraGr(cat, btn) {
+  document.querySelectorAll('#gr-all,#gr-abiti,#gr-outerwear,#gr-camicie,#gr-maglieria,#gr-tshirt,#gr-pantaloni,#gr-scarpe,#gr-accessori,#gr-profumi').forEach(function(b){b.classList.remove('active')});
   btn.classList.add('active');
-  document.querySelectorAll('#cucinelli [data-cuc]').forEach(function(g){
-    g.style.display = (cat==='all' || g.dataset.cuc===cat) ? 'block' : 'none';
-  });
-}
-
-function filtraArm(cat, btn) {
-  document.querySelectorAll('#arm-all,#arm-abiti,#arm-outerwear,#arm-camicie,#arm-maglieria,#arm-tshirt,#arm-pantaloni,#arm-scarpe,#arm-accessori,#arm-profumi').forEach(function(b){b.classList.remove('active')});
-  btn.classList.add('active');
-  document.querySelectorAll('#armani [data-arm]').forEach(function(g){
-    g.style.display = (cat==='all' || g.dataset.arm===cat) ? 'block' : 'none';
+  document.querySelectorAll('#guardaroba [data-gr]').forEach(function(g){
+    g.style.display = (cat==='all' || g.dataset.gr===cat) ? 'block' : 'none';
   });
 }
 
@@ -542,6 +565,5 @@ function setPal(s, btn) {
   document.getElementById('pal-stagione-inv').style.display = s==='inv' ? 'block' : 'none';
 }
 </script>
-
 </body>
 </html>
