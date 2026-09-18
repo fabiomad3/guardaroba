@@ -94,6 +94,7 @@ body{background:var(--bg);font-family:'Montserrat',sans-serif;min-height:100vh;p
     <button class="tab" id="gr-pantaloni" onclick="filtraGr('pantaloni',this)">Pantaloni</button>
     <button class="tab" id="gr-scarpe" onclick="filtraGr('scarpe',this)">Scarpe</button>
     <button class="tab" id="gr-accessori" onclick="filtraGr('accessori',this)">Accessori</button>
+    <button class="tab" id="gr-cravatte" onclick="filtraGr('cravatte',this)">Cravatte</button>
     <button class="tab" id="gr-profumi" onclick="filtraGr('profumi',this)">Profumi</button>
   </div>
 
@@ -148,7 +149,6 @@ body{background:var(--bg);font-family:'Montserrat',sans-serif;min-height:100vh;p
     
     <div class="item-card"><div class="item-color" style="background:#C8C0A8"></div><div class="item-info"><div class="item-name">Felpa Girocollo Greige/Sabbia</div><div class="item-brand">Gutteridge</div><div class="item-stil">Calore Cucinelli dentro Autunno Armani · look Oxford Autumn e Greige & Wool</div></div><span class="badge b-aut">Autunno</span></div>
     <div class="item-card"><div class="item-color" style="background:#6B3A3A"></div><div class="item-info"><div class="item-name">Girocollo Cotone Seta Cashmere Bordeaux</div><div class="item-brand">Gutteridge</div><div class="item-stil">Accento caldo palette A/I · sopra camicia colletto a vista · Ufficio e weekend elegante</div></div><span class="badge b-ai">A/I</span></div>
-    <div class="item-card"><div class="item-color" style="background:#B0ADA6"></div><div class="item-info"><div class="item-name">Girocollo Cotone Seta Cashmere Grigio Chiaro Melange</div><div class="item-brand">Gutteridge</div><div class="item-stil">Base neutra calda mezza stagione · sopra camicia colletto a vista · cerniera Autunno/Inverno</div></div><span class="badge b-ai">A/I</span></div>
     <div class="item-card"><div class="item-color" style="background:#D8C4A0"></div><div class="item-info"><div class="item-name">Girocollo Cotone Seta Cashmere Sabbia</div><div class="item-brand">Gutteridge</div><div class="item-stil">Neutro caldo puro · dialoga con Chukka Boot, Loafer Nabuk, Cintura Marrone/Suede · base sotto giacca Sabbia o Cappotto Fango</div></div><span class="badge b-ai">A/I</span></div>
     <div class="item-card"><div class="item-color" style="background:#4A3428"></div><div class="item-info"><div class="item-name">Girocollo Lana Marrone</div><div class="item-brand">H&M</div><div class="item-stil">Base primaria calda Inverno · lana pesante · con Camicia Oxford o Bianca colletto a vista · Chukka Boot o Loafer Nabuk</div></div><span class="badge b-ai">Inverno</span></div>
   </div>
@@ -207,7 +207,23 @@ body{background:var(--bg);font-family:'Montserrat',sans-serif;min-height:100vh;p
     <div class="item-card"><div class="item-color" style="background:#4060A0"></div><div class="item-info"><div class="item-name">Sciarpa Lana Vergine Navy/Azzurro</div><div class="item-brand">Spada Roma</div><div class="item-stil">Lana vergine · Inverno · con Woolrich e look navy profondi</div></div><span class="badge b-ai">Inverno</span></div>
     <div class="item-card"><div class="item-color" style="background:#1A2438"></div><div class="item-info"><div class="item-name">Flat Cap Lana Navy</div><div class="item-brand">Heritage</div><div class="item-stil">Silhouette Heritage · con look base calda marrone/sabbia già in navy</div></div><span class="badge b-ai">A/I</span></div>
     <div class="item-card"><div class="item-color" style="background:#3A4530"></div><div class="item-info"><div class="item-name">Flat Cap Lana Verde Oliva</div><div class="item-brand">Heritage</div><div class="item-stil">Verde smorzato Estate Soft · secondo accento freddo su base marrone dominante</div></div><span class="badge b-ai">A/I</span></div>
-    <div class="item-card"><div class="item-color" style="background:#2A3548"></div><div class="item-info"><div class="item-name">Sciarpa Paisley Navy/Tabacco/Polvere</div><div class="item-brand">Heritage</div><div class="item-stil">Motivo a medaglioni floreali, lana frangiata · unico motivo curvilineo ammesso dal Registro Heritage</div></div><span class="badge b-ai">A/I</span></div>
+
+  </div>
+
+  <div data-gr="cravatte">
+    <div class="cat-label">Cravatte</div>
+    <div class="item-card"><div class="item-color" style="background:#1A2438"></div><div class="item-info"><div class="item-name">Cravatta a Maglia Navy</div><div class="item-brand">—</div><div class="item-stil">Texture a maglia, tinta unita · Jolly dichiarato — Ufficio e Heritage</div></div><span class="badge b-ok">Cross</span></div>
+    <div class="item-card"><div class="item-color" style="background:#1E2A40"></div><div class="item-info"><div class="item-name">Cravatta Navy Micro-Texture</div><div class="item-brand">Cucita a Mano</div><div class="item-stil">Motivo tessuto finissimo · Ufficio</div></div><span class="badge b-ai">Ufficio</span></div>
+    <div class="item-card"><div class="item-color" style="background:#2A2E3A"></div><div class="item-info"><div class="item-name">Cravatta Tartan Navy/Rosso/Bianco</div><div class="item-brand">—</div><div class="item-stil">Motivo tartan/plaid · Heritage</div></div><span class="badge b-ai">Heritage</span></div>
+    <div class="item-card"><div class="item-color" style="background:#1C2840"></div><div class="item-info"><div class="item-name">Cravatta Navy a Pois Quadrati Bianchi</div><div class="item-brand">—</div><div class="item-stil">Pattern ordinato e fine su fondo scuro · Ufficio</div></div><span class="badge b-ai">Ufficio</span></div>
+    <div class="item-card"><div class="item-color" style="background:#A8C0DC"></div><div class="item-info"><div class="item-name">Cravatta Azzurro Chiaro Tinta Unita</div><div class="item-brand">—</div><div class="item-stil">Delicata, pulita · Ufficio</div></div><span class="badge b-ai">Ufficio</span></div>
+    <div class="item-card"><div class="item-color" style="background:#20283A"></div><div class="item-info"><div class="item-name">Cravatta Navy Paisley</div><div class="item-brand">—</div><div class="item-stil">Motivo paisley/fiori piccoli · unico motivo curvilineo ammesso · Heritage</div></div><span class="badge b-ai">Heritage</span></div>
+    <div class="item-card"><div class="item-color" style="background:#E8B8C0"></div><div class="item-info"><div class="item-name">Cravatta Rosa Tinta Unita</div><div class="item-brand">—</div><div class="item-stil">Tradizione Jermyn Street/città · Ufficio</div></div><span class="badge b-ai">Ufficio</span></div>
+    <div class="item-card"><div class="item-color" style="background:#C8C8C4"></div><div class="item-info"><div class="item-name">Cravatta Grigio Chiaro Micro-Texture</div><div class="item-brand">—</div><div class="item-stil">Geometria fine, neutra · Ufficio, la più vicina a un uso jolly</div></div><span class="badge b-ai">Ufficio</span></div>
+    <div class="item-card"><div class="item-color" style="background:#5A2030"></div><div class="item-info"><div class="item-name">Cravatta Bordeaux a Pois Navy</div><div class="item-brand">—</div><div class="item-stil">Pattern a pois fine su fondo pieno · Ufficio</div></div><span class="badge b-ai">Ufficio</span></div>
+    <div class="item-card"><div class="item-color" style="background:#C87840"></div><div class="item-info"><div class="item-name">Cravatta Ruggine a Spirali Paisley</div><div class="item-brand">—</div><div class="item-stil">Motivo curvilineo + colore ruggine/terracotta · doppia conferma Heritage</div></div><span class="badge b-ai">Heritage</span></div>
+    <div class="item-card"><div class="item-color" style="background:#B04840"></div><div class="item-info"><div class="item-name">Cravatta Rosso/Bianco Motivo Geometrico</div><div class="item-brand">—</div><div class="item-stil">Contrasto deciso, disegno marcato · Heritage, da giacca tweed</div></div><span class="badge b-ai">Heritage</span></div>
+    <div class="item-card"><div class="item-color" style="background:#4A2A38"></div><div class="item-info"><div class="item-name">Cravatta Melanzana Motivo Foulard</div><div class="item-brand">—</div><div class="item-stil">Micro-motivo ordinato · Ufficio</div></div><span class="badge b-ai">Ufficio</span></div>
   </div>
 
   <div data-gr="profumi">
@@ -405,12 +421,12 @@ body{background:var(--bg);font-family:'Montserrat',sans-serif;min-height:100vh;p
 
     <div style="margin-bottom:16px;">
       <div style="font-weight:600;color:var(--dark);font-size:.62rem;margin-bottom:4px;">2 — The Shooting Party</div>
-      <div style="font-size:.58rem;color:var(--mid);line-height:1.6;">Camicia Fantasia Micro Motivo Navy + Barbour Ashby Wax Navy + Chino Deep Navy + Chukka Boot Marrone Scuro + Sciarpa Lana Vergine <em>(registro tutto freddo, eccezione consapevole alla Regola 5 ter, giustificata dal contesto Heritage puro)</em></div>
+      <div style="font-size:.58rem;color:var(--mid);line-height:1.6;">Camicia Fantasia Micro Motivo Navy + Cravatta Tartan Navy/Rosso/Bianco + Barbour Ashby Wax Navy + Chino Deep Navy + Chukka Boot Marrone Scuro + Sciarpa Lana Vergine <em>(registro tutto freddo, eccezione consapevole alla Regola 5 ter; la cravatta tartan è autentica nel contesto shooting party, quando il chino sostituisce il jeans)</em></div>
     </div>
 
     <div style="margin-bottom:16px;">
       <div style="font-weight:600;color:var(--dark);font-size:.62rem;margin-bottom:4px;">3 — The Estate Gate</div>
-      <div style="font-size:.58rem;color:var(--mid);line-height:1.6;">Camicia Bianca (colletto a vista) + Girocollo Cotone Seta Cashmere Sabbia sopra + Barbour Ashby Wax Navy + Chino Beige/Sabbia + Loafer Nabuk Grigio Tortora</div>
+      <div style="font-size:.58rem;color:var(--mid);line-height:1.6;">Camicia Bianca (colletto a vista) + Cravatta Ruggine a Spirali Paisley + Girocollo Cotone Seta Cashmere Sabbia sopra, cravatta a vista + Barbour Ashby Wax Navy + Chino Beige/Sabbia + Loafer Nabuk Grigio Tortora</div>
     </div>
 
     <div style="margin-bottom:16px;">
@@ -446,6 +462,16 @@ body{background:var(--bg);font-family:'Montserrat',sans-serif;min-height:100vh;p
     <div style="margin-bottom:16px;">
       <div style="font-weight:600;color:var(--dark);font-size:.62rem;margin-bottom:4px;">3 — The Denim Ease</div>
       <div style="font-size:.58rem;color:var(--mid);line-height:1.6;">T-Shirt Grigio Ardesia Oversize sotto + Girocollo Bordeaux sopra + Barbour Liddesdale Quilted Navy + Jeans Blu Scuro + Loafer Nabuk <em>(il taglio generoso del Liddesdale regge comodo sopra la maglia spessa senza tirare, cosa che l'Ashby più slim non farebbe)</em></div>
+    </div>
+  </div>
+
+  <div style="margin-bottom:20px;background:var(--surface);border-radius:10px;border:1px solid var(--border);padding:14px;">
+    <div style="font-family:'Cormorant Garamond',serif;font-size:.85rem;font-weight:600;color:var(--gold);letter-spacing:.06em;margin-bottom:8px;">Regola H5 — Capi Specifici vs Jolly Dichiarati</div>
+    <div style="font-size:.6rem;color:var(--mid);line-height:1.7;">
+      <div style="margin-bottom:6px;">Non ogni capo appartiene a un solo mondo.</div>
+      <div style="margin-bottom:6px;"><strong style="color:var(--dark);">Specifici</strong> (identità = il mondo da cui vengono, restano vincolati): Barbour Ashby, Barbour Liddesdale, tweed/Donegal pesante, jeans, Boat Shoes (Heritage) · Abito Grigio Perla, Abito Blu Navy, Montgomery (Ufficio).</div>
+      <div style="margin-bottom:6px;"><strong style="color:var(--dark);">Jolly dichiarati</strong> (funzionali/neutri, attraversano entrambi i mondi senza scelta caso per caso): Loafer Nabuk, Chukka Boot, Geox Baryden, chino lisci (Beige/Panna/Grigio/Navy), cintura liscia, girocolli leggeri cotone-seta-cashmere, camicie a tinta unita semplici.</div>
+      <div><strong style="color:var(--dark);">Test pratico:</strong> se il capo stona da solo fuori contesto, è Specifico; se è l'outfit a dover reggere la coerenza, è Jolly.</div>
     </div>
   </div>
 
@@ -608,7 +634,7 @@ function showSec(id, btn) {
 }
 
 function filtraGr(cat, btn) {
-  document.querySelectorAll('#gr-all,#gr-abiti,#gr-outerwear,#gr-camicie,#gr-maglieria,#gr-tshirt,#gr-pantaloni,#gr-scarpe,#gr-accessori,#gr-profumi').forEach(function(b){b.classList.remove('active')});
+  document.querySelectorAll('#gr-all,#gr-abiti,#gr-outerwear,#gr-camicie,#gr-maglieria,#gr-tshirt,#gr-pantaloni,#gr-scarpe,#gr-accessori,#gr-cravatte,#gr-profumi').forEach(function(b){b.classList.remove('active')});
   btn.classList.add('active');
   document.querySelectorAll('#guardaroba [data-gr]').forEach(function(g){
     g.style.display = (cat==='all' || g.dataset.gr===cat) ? 'block' : 'none';
