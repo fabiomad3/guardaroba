@@ -8,7 +8,7 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg:#EDE1CC;--surface:#F5F0E8;--border:#DCC9A8;
+  --bg:#FFFFFF;--surface:#F5F0E8;--border:#DCC9A8;
   --gold:#B8A070;--dark:#1A1208;--mid:#6A5C4A;--light:#9A8C7A;
   --navy:#1A2A40;--blue:#587890;
 }
@@ -92,6 +92,20 @@ body{background:var(--bg);font-family:'Montserrat',sans-serif;min-height:100vh;p
 .lb-src{font-size:.42rem;letter-spacing:.12em;text-transform:uppercase;color:var(--light)}
 .lb-group{display:flex;align-items:center;justify-content:space-between;margin:20px 0 8px;padding-bottom:5px;border-bottom:1px solid var(--border)}
 .lb-gtitle{font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600}
+
+@page{size:A4;margin:10mm}
+@media print{
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  html,body{background:#fff!important}
+  body{padding:0!important}
+  .nav{display:none!important}
+  #lookbook.active{max-width:none;margin:0;padding:0}
+  #lookbook .tabs{display:none!important}
+  #lookbook [data-grpbody]{column-count:2;column-gap:5mm}
+  #lookbook .lb-card{break-inside:avoid;page-break-inside:avoid;margin-bottom:4mm;box-shadow:none}
+  #lookbook .lb-group{break-after:avoid;margin-top:4mm}
+  #lookbook .lb-gap-row{break-inside:avoid}
+}
 </style>
 </head>
 <body>
