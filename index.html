@@ -98,6 +98,28 @@ body{background:var(--bg);font-family:'Montserrat',sans-serif;min-height:100vh;p
 .lb-group{display:flex;align-items:center;justify-content:space-between;margin:20px 0 8px;padding-bottom:5px;border-bottom:1px solid var(--border)}
 .lb-gtitle{font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600}
 
+/* TEMA A CONTRASTO — solo colori della palette Soft Summer (schermo; la stampa resta bianca) */
+@media screen{
+  :root{--bg:#EDE4D0;--surface:#F5F0E8;--border:#C8BEB0;--gold:#587890;--navy:#1A2A40}
+  html,body{background:#EDE4D0}
+  .nav{background:#1A2A40;border-bottom:2px solid #587890}
+  .nav-btn{color:#C8BEB0}
+  .nav-btn.active{color:#F5F0E8;border-bottom-color:#EDE4D0}
+  .section-label{color:#1A2A40;border-bottom:2px solid #1A2A40}
+  .cat-label,.pal-title{color:#1A2A40;border-bottom:1px solid #1A2A40}
+  .lb-gtitle{color:#1A2A40}
+  .lb-group{border-bottom:1px solid #1A2A40}
+  .info-box{background:#1A2A40;color:#EDE4D0}
+  .info-box strong{color:#F5F0E8}
+  .tab{border-color:#1A2A40;color:#1A2A40}
+  .tab.active{background:#1A2A40;border-color:#1A2A40;color:#F5F0E8}
+  .item-card,.lb-card{background:#F5F0E8;border:1px solid #1A2A40;box-shadow:none}
+  .lb-chip{background:#EDE4D0;border-color:#C8BEB0}
+  .lb-add{background:#F5F0E8;border-color:#587890}
+  .lb-ph{background:#EDE4D0}
+  .pal-note{background:#F5F0E8;border-left-color:#1A2A40}
+  .lb-n{color:#1A2A40}
+}
 @page{size:A4;margin:10mm}
 @media print{
   *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
