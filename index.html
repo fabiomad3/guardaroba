@@ -115,12 +115,12 @@ body{background:var(--bg);font-family:'Montserrat',sans-serif;min-height:100vh;p
 
 <nav class="nav">
   <button class="nav-btn active" onclick="showSec('lookbook',this)">Lookbook</button>
+  <button class="nav-btn" onclick="showSec('guardaroba',this)">Guardaroba</button>
+  <button class="nav-btn" onclick="showSec('dictact',this)">Dictact</button>
   <button class="nav-btn" onclick="showSec('palette',this)">Palette</button>
   <button class="nav-btn" onclick="showSec('materiali',this)">Materiali</button>
   <button class="nav-btn" onclick="showSec('heritage',this)">Heritage</button>
-  <button class="nav-btn" onclick="showSec('guardaroba',this)">Guardaroba</button>
-  <button class="nav-btn" onclick="showSec('saldi',this)">Saldi</button>
-  <button class="nav-btn" onclick="showSec('dictact',this)">Dictact</button>
+  <button class="nav-btn" onclick="showSec('tobe',this)">To-be list</button>
 </nav>
 
 <div class="main">
@@ -128,7 +128,7 @@ body{background:var(--bg);font-family:'Montserrat',sans-serif;min-height:100vh;p
 <!-- ═══════════════════════════════════════════════ GUARDAROBA ═══ -->
 <div id="guardaroba" class="section">
   <div class="section-label">Guardaroba · Sistema Unificato</div>
-  <div class="info-box">Tutti i capi in un'unica vista. Badge P/E, A/I, Autunno o Cross indicano la stagionalita' di ciascun pezzo. <strong>Nota:</strong> i pallini colore sono indicativi/di comodo, non misurati da foto o pagine prodotto reali — non usarli da soli per un verdetto Regola 0. Verdetto affidabile solo con fonte reale (foto del capo, link prodotto, pagina ufficiale).</div>
+  <div class="info-box">Tutti i capi in un'unica vista. Badge P/E, A/I, Autunno o Cross indicano la stagionalita' di ciascun pezzo. <strong>Nota:</strong> i pallini colore sono indicativi/di comodo, non misurati da foto o pagine prodotto reali — non usarli da soli per un verdetto Regola A. Verdetto affidabile solo con fonte reale (foto del capo, link prodotto, pagina ufficiale).</div>
 
   <div class="tabs">
     <button class="tab active" id="gr-all" onclick="filtraGr('all',this)">Tutti</button>
@@ -415,7 +415,7 @@ body{background:var(--bg);font-family:'Montserrat',sans-serif;min-height:100vh;p
     </table>
   </div>
 
-  <div style="font-size:.55rem;color:var(--light);font-style:italic;text-align:center;padding-top:10px;border-top:1px solid var(--border);">Regole 4 e Q del Dictact — guarda sempre l'etichetta di composizione e l'origine prima del colore. Nessuna versione estiva per tweed, flanella o wax cotton.</div>
+  <div style="font-size:.55rem;color:var(--light);font-style:italic;text-align:center;padding-top:10px;border-top:1px solid var(--border);">Regole 4 e C del Dictact — guarda sempre l'etichetta di composizione e l'origine prima del colore. Nessuna versione estiva per tweed, flanella o wax cotton.</div>
 </div>
 
 <!-- ═══════════════════════════════════════════ HERITAGE ═══ -->
@@ -528,7 +528,7 @@ body{background:var(--bg);font-family:'Montserrat',sans-serif;min-height:100vh;p
 <!-- ═══════════════════════════════════════════ LOOKBOOK ═══ -->
 <div id="lookbook" class="section active">
   <div class="section-label">Lookbook · Cucinelli e Canali A/I 2026-27</div>
-  <div class="info-box">29 look Cucinelli e 17 look Canali (16 di sfilata e 1 dal sito) tradotti con i capi del tuo guardaroba (esclusi gli abiti interi, giacca e pantaloni coordinati, e i look in cui l'abito navy o grigio è indossato da solo), in tre gruppi: tutto tuo, con sostituzioni, mancano capi. <strong>Fonti:</strong> descrizioni e colori da NowFashion (didascalie delle foto di passerella) e Robb Report, non dai lookbook ufficiali. I capi con il bordo tratteggiato e il segno + sono layer che ho aggiunto io dal tuo guardaroba. Ogni look è in elenco, dall'alto in basso: outerwear, maglione, camicia o t-shirt, pantalone, scarpe, profumo, accessorio. Profumo e accessorio sono miei abbinamenti, non da sfilata (profumo: Prada L'Homme con cravatta o con giacca e camicia; WOMO Black Tobacco con pelle, Barbour o camicia di jeans; Acqua di Gio per il resto; Amalfi Sunray e Fierce non usati perché estivi; accessorio: sciarpa con capospalla pesante, altrimenti cintura). Le foto sono collegate da NowFashion (non copiate nel file): se non si caricano, tocca il riquadro. Il look 30 Canali ha la foto incorporata. Tinte e pallini sono indicativi (Regola 0 bis). Capi già posseduti: la Regola Q non si applica a ritroso. Barbour (Heritage) usato nei look Canali 18 e 20 per tua scelta.</div>
+  <div class="info-box">29 look Cucinelli e 17 look Canali (16 di sfilata e 1 dal sito) tradotti con i capi del tuo guardaroba (esclusi gli abiti interi, giacca e pantaloni coordinati, e i look in cui l'abito navy o grigio è indossato da solo), in tre gruppi: tutto tuo, con sostituzioni, mancano capi. <strong>Fonti:</strong> descrizioni e colori da NowFashion (didascalie delle foto di passerella) e Robb Report, non dai lookbook ufficiali. I capi con il bordo tratteggiato e il segno + sono layer che ho aggiunto io dal tuo guardaroba. Ogni look è in elenco, dall'alto in basso: outerwear, maglione, camicia o t-shirt, pantalone, scarpe, profumo, accessorio. Profumo e accessorio sono miei abbinamenti, non da sfilata (profumo: Prada L'Homme con cravatta o con giacca e camicia; WOMO Black Tobacco con pelle, Barbour o camicia di jeans; Acqua di Gio per il resto; Amalfi Sunray e Fierce non usati perché estivi; accessorio: sciarpa con capospalla pesante, altrimenti cintura). Le foto sono collegate da NowFashion (non copiate nel file): se non si caricano, tocca il riquadro. Il look 30 Canali ha la foto incorporata. Tinte e pallini sono indicativi (Regola B). Capi già posseduti: la Regola C non si applica a ritroso. Barbour (Heritage) usato nei look Canali 18 e 20 per tua scelta.</div>
 
   <div class="tabs">
     <button class="tab active" id="lb-all" onclick="filtraLb('all',this)">Tutti (46)</button>
@@ -596,86 +596,59 @@ body{background:var(--bg);font-family:'Montserrat',sans-serif;min-height:100vh;p
 
   <div class="cat-label" style="margin-top:18px">Cosa ti manca, per rilevanza</div>
   <div class="lb-gap-row"><div><strong>Dolcevita (navy, grigio, panna)</strong><br>Cucinelli 01, 02, 17, 26, 31, 33, 38 · Canali 17, 21</div><div><strong>9</strong></div></div><div class="lb-gap-row"><div><strong>Cappotto di lana monopetto (grigio, fango, beige)</strong><br>Canali 01, 05</div><div><strong>2</strong></div></div><div class="lb-gap-row"><div><strong>Giacca doppiopetto (navy o grigio)</strong><br>Cucinelli 10, 19, 25, 26, 28, 29, 34, 39 · Canali 15, 17, 20</div><div><strong>11</strong></div></div><div class="lb-gap-row"><div><strong>Capospalla con shearling o suede in tono freddo</strong><br>Cucinelli 03, 04, 07, 09, 10, 18, 28 · Canali 04, 09, 15</div><div><strong>10</strong></div></div><div class="lb-gap-row"><div><strong>Velluto (pantaloni a coste, blazer)</strong><br>Cucinelli 09, 10, 25, 28 · Canali 10, 30</div><div><strong>6</strong></div></div><div class="lb-gap-row"><div><strong>Pantaloni larghi o cargo (grigio, off-white)</strong><br>Cucinelli 02, 15, 22, 31, 36, 39</div><div><strong>6</strong></div></div><div class="lb-gap-row"><div><strong>Maglia con zip o cardigan a scialle</strong><br>Canali 01, 09, 13, 19</div><div><strong>4</strong></div></div><div class="lb-gap-row"><div><strong>Capi bordeaux (cardigan a trecce, velluto)</strong><br>Cucinelli 28, 29, 30</div><div><strong>3</strong></div></div><div class="lb-gap-row"><div><strong>Accessori: cravatta a righe, borsa o zaino di pelle, sneaker bianche</strong><br>Cravatta: Cucinelli 03 · Borsa: Canali 09, 10, Cucinelli 29 · Sneaker: Canali 05, 09</div><div><strong>1 + 3 + 2</strong></div></div>
-  <div class="info-box" style="margin-top:14px">Colori fuori dalla tua palette: nero (Cucinelli 14 · Canali 06, 07), oliva (Cucinelli 12, 31 · Canali 10, 13), tan e cammello (Cucinelli 16, 26, 31, 33 · Canali 01, 06, 18), ruggine (Cucinelli 04 · Canali 30). Dove compaiono ho proposto un'alternativa. Questo è un elenco di vuoti, non una lista della spesa: ogni acquisto passa da challenge, opzioni e criteri, nei tuoi negozi e con la Regola Q.</div>
+  <div class="info-box" style="margin-top:14px">Colori fuori dalla tua palette: nero (Cucinelli 14 · Canali 06, 07), oliva (Cucinelli 12, 31 · Canali 10, 13), tan e cammello (Cucinelli 16, 26, 31, 33 · Canali 01, 06, 18), ruggine (Cucinelli 04 · Canali 30). Dove compaiono ho proposto un'alternativa. Questo è un elenco di vuoti, non una lista della spesa: ogni acquisto passa da challenge, opzioni e criteri, nei tuoi negozi e con la Regola C.</div>
 
   <div class="pal-section">
     <div class="pal-title">Palette Cucinelli compatibile con Soft Summer</div>
     <div class="pal-grid">
       <div><div class="pal-color" style="background:#EDE6D3;box-shadow:inset 0 0 0 1px rgba(0,0,0,.06)"></div><div class="pal-name">Bone white / Panama ivory</div></div><div><div class="pal-color" style="background:#E3D5BC;box-shadow:inset 0 0 0 1px rgba(0,0,0,.06)"></div><div class="pal-name">Cream / champagne</div></div><div><div class="pal-color" style="background:#8B8178;box-shadow:inset 0 0 0 1px rgba(0,0,0,.06)"></div><div class="pal-name">Grey-brown</div></div><div><div class="pal-color" style="background:#9A9684;box-shadow:inset 0 0 0 1px rgba(0,0,0,.06)"></div><div class="pal-name">Khaki-grey</div></div><div><div class="pal-color" style="background:#6F7378;box-shadow:inset 0 0 0 1px rgba(0,0,0,.06)"></div><div class="pal-name">Slate gray</div></div><div><div class="pal-color" style="background:#45474A;box-shadow:inset 0 0 0 1px rgba(0,0,0,.06)"></div><div class="pal-name">Deep charcoal</div></div><div><div class="pal-color" style="background:#5A4538;box-shadow:inset 0 0 0 1px rgba(0,0,0,.06)"></div><div class="pal-name">Dark brown / cacao</div></div><div><div class="pal-color" style="background:#6B2E3A;box-shadow:inset 0 0 0 1px rgba(0,0,0,.06)"></div><div class="pal-name">Burgundy</div></div><div><div class="pal-color" style="background:#6E88A0;box-shadow:inset 0 0 0 1px rgba(0,0,0,.06)"></div><div class="pal-name">Muted blue</div></div><div><div class="pal-color" style="background:#A9BFD2;box-shadow:inset 0 0 0 1px rgba(0,0,0,.06)"></div><div class="pal-name">Light blue</div></div><div><div class="pal-color" style="background:#1B2740;box-shadow:inset 0 0 0 1px rgba(0,0,0,.06)"></div><div class="pal-name">Midnight navy</div></div>
     </div>
-    <div class="pal-note"><p>Esclusi perché caldi o pieni (Regola 0): cigar brown, chestnut, tan, camel, caramel, rust, olive e military green, nero puro. Il beige e il dark brown/cacao vanno verificati dal vivo.</p></div>
+    <div class="pal-note"><p>Esclusi perché caldi o pieni (Regola A): cigar brown, chestnut, tan, camel, caramel, rust, olive e military green, nero puro. Il beige e il dark brown/cacao vanno verificati dal vivo.</p></div>
   </div>
 
   <div class="pal-section">
     <div class="pal-title">Palette Canali compatibile con Soft Summer</div>
     <div class="pal-grid"><div><div class="pal-color" style="background:#F5F0E8;box-shadow:inset 0 0 0 1px rgba(0,0,0,.06)"></div><div class="pal-name">White</div></div><div><div class="pal-color" style="background:#D8CDB8;box-shadow:inset 0 0 0 1px rgba(0,0,0,.06)"></div><div class="pal-name">Beige</div></div><div><div class="pal-color" style="background:#8B8178;box-shadow:inset 0 0 0 1px rgba(0,0,0,.06)"></div><div class="pal-name">Taupe</div></div><div><div class="pal-color" style="background:#45474A;box-shadow:inset 0 0 0 1px rgba(0,0,0,.06)"></div><div class="pal-name">Charcoal</div></div><div><div class="pal-color" style="background:#1B2740;box-shadow:inset 0 0 0 1px rgba(0,0,0,.06)"></div><div class="pal-name">Navy</div></div><div><div class="pal-color" style="background:#6B2E3A;box-shadow:inset 0 0 0 1px rgba(0,0,0,.06)"></div><div class="pal-name">Burgundy</div></div><div><div class="pal-color" style="background:#A890A0;box-shadow:inset 0 0 0 1px rgba(0,0,0,.06)"></div><div class="pal-name">Soft mauve</div></div><div><div class="pal-color" style="background:#2F5558;box-shadow:inset 0 0 0 1px rgba(0,0,0,.06)"></div><div class="pal-name">Dark teal</div></div></div>
-    <div class="pal-note"><p>Esclusi perché caldi o pieni (Regola 0): camel, tan, olive, nero puro. Espresso e marrone scuro vanno verificati dal vivo.</p></div>
+    <div class="pal-note"><p>Esclusi perché caldi o pieni (Regola A): camel, tan, olive, nero puro. Espresso e marrone scuro vanno verificati dal vivo.</p></div>
   </div>
 </div>
 
-<div id="saldi" class="section">
-  <div class="section-label">Saldi · Caccia Mirata</div>
-  <div class="info-box">Budget sotto 300€ · Caccia mista online + negozi fisici Milano · Solo nei 14 negozi del Dictact (Standard + Heritage). Un pezzo buono batte tre mediocri.</div>
-
-  <div style="margin-bottom:20px;">
-    <div style="font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:600;color:var(--gold);letter-spacing:.08em;margin-bottom:10px;">Capi Target — i vuoti reali</div>
-    <div style="font-size:.56rem;color:var(--light);font-style:italic;margin-bottom:8px;">Con 300€ totali si sceglie 1-2 pezzi da qui, non tutti e sei — i prezzi sommati superano il budget. Priorità in ordine.</div>
-    <div style="font-size:.6rem;color:var(--mid);line-height:1.9;">
-      <div>☐ 1. Secondo Gilet Gutteridge, colore Asfalto — ~59€ <em style="color:var(--light)">(priorità alta, già verificato)</em></div>
-      <div>☐ 2. Guanti in pelle marrone freddo — 40-80€</div>
-      <div>☐ 3. Camicia in cord/velluto a coste — 60-100€</div>
-      <div>☐ 4. Cardigan a collo a scialle (Heritage) — 80-150€</div>
-      <div>☐ 5. Pantalone in velluto, colore tabacco (non bianco) — 50-90€</div>
-      <div>☐ 6. Pochette/borsello pelle liscia, senza logo — 50-100€</div>
-    </div>
-  </div>
-
-  <div style="margin-bottom:20px;">
-    <div style="font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:600;color:var(--gold);letter-spacing:.08em;margin-bottom:10px;">Strategia di Caccia</div>
+<div id="tobe" class="section">
+  <div class="section-label">To-be list · Cosa serve davvero</div>
+  <div class="info-box">Solo i capi che mancano per costruire i look del Lookbook, in ordine di rilevanza. Il numero a destra è quanti look si sbloccano. Questo è un elenco di vuoti, non una lista della spesa: ogni acquisto passa dalle regole qui sotto e dai negozi del Dictact.</div>
+  <div class="cat-label" style="margin-top:6px">Da comprare</div>
+  <div class="lb-gap-row"><div><strong>☐ 1. Dolcevita (navy, grigio, panna)</strong><br>Cucinelli 01, 02, 17, 26, 31, 33, 38 · Canali 17, 21<br><em style="color:var(--light)">Oggi coperto solo dal girocollo.</em></div><div><strong>9</strong></div></div>
+  <div class="lb-gap-row"><div><strong>☐ 2. Cappotto di lana monopetto (grigio, fango, beige)</strong><br>Canali 01, 05<br><em style="color:var(--light)">In valutazione: Eleventy grigio chiaro da Fratelli Ragusa, 150 € (Made in Italy, 100% lana foulé, taglio corto, reso da leggere). Eccezione una tantum fuori dai negozi del Dictact, massimo 500 €.</em></div><div><strong>2</strong></div></div>
+  <div class="lb-gap-row"><div><strong>☐ 3. Giacca doppiopetto (navy o grigio)</strong><br>Cucinelli 10, 19, 25, 26, 28, 29, 34, 39 · Canali 15, 17, 20</div><div><strong>11</strong></div></div>
+  <div class="lb-gap-row"><div><strong>☐ 4. Capospalla con shearling o suede in tono freddo</strong><br>Cucinelli 03, 04, 07, 09, 10, 18, 28 · Canali 04, 09, 15</div><div><strong>10</strong></div></div>
+  <div class="lb-gap-row"><div><strong>☐ 5. Velluto (pantaloni a coste, blazer)</strong><br>Cucinelli 09, 10, 25, 28 · Canali 10, 30</div><div><strong>6</strong></div></div>
+  <div class="lb-gap-row"><div><strong>☐ 6. Pantaloni larghi o cargo (grigio, off-white)</strong><br>Cucinelli 02, 15, 22, 31, 36, 39</div><div><strong>6</strong></div></div>
+  <div class="lb-gap-row"><div><strong>☐ 7. Maglia con zip o cardigan a scialle</strong><br>Canali 01, 09, 13, 19</div><div><strong>4</strong></div></div>
+  <div class="lb-gap-row"><div><strong>☐ 8. Capi bordeaux (cardigan a trecce, velluto)</strong><br>Cucinelli 28, 29, 30</div><div><strong>3</strong></div></div>
+  <div class="lb-gap-row"><div><strong>☐ 9. Accessori: cravatta a righe, borsa o zaino di pelle, sneaker bianche</strong><br>Cravatta: Cucinelli 03 · Borsa: Canali 09, 10, Cucinelli 29 · Sneaker: Canali 05, 09</div><div><strong>1 + 3 + 2</strong></div></div>
+  
+  <div style="margin:20px 0;background:var(--surface);border-radius:10px;border:1px solid var(--gold);padding:14px;">
+    <div style="font-family:'Cormorant Garamond',serif;font-size:.9rem;font-weight:600;color:var(--gold);letter-spacing:.06em;margin-bottom:8px;">Prima di ogni acquisto — Regola E</div>
     <div style="font-size:.6rem;color:var(--mid);line-height:1.8;">
-      <div style="margin-bottom:6px;">Gutteridge/Pini Parma — controllare sia "Outlet" (stagioni passate, prezzo fisso) sia "Saldi" (collezione corrente scontata).</div>
-      <div style="margin-bottom:6px;">Falconeri — saldi cashmere aggressivi (-50%), ma le taglie centrali spariscono in fretta: muoversi nei primi giorni.</div>
-      <div style="margin-bottom:6px;">Farlows/Cordings — i saldi inglesi lasciano spesso solo taglie estreme per prime.</div>
-      <div>Negozi fisici Milano (Gutteridge, Pini Parma) — verificare la Regola 0 alla luce naturale prima di comprare, impossibile farlo online.</div>
+      <div style="margin-bottom:6px;">1. Riempie una voce di questa lista, o è solo "carino"?</div>
+      <div style="margin-bottom:6px;">2. Passa la Regola A (colore smorzato), con fonte reale (Regola B)?</div>
+      <div style="margin-bottom:6px;">3. Passa la Regola C: origine dichiarata (Made in Italy per Ufficio, Made in UK per Heritage) e qualità verificabile?</div>
+      <div style="margin-bottom:6px;">4. Fibra naturale almeno 70% (Regola 4), opaco?</div>
+      <div>5. Lo indosserei la settimana prossima, non "prima o poi"?</div>
     </div>
   </div>
-
-  <div style="margin-bottom:20px;">
-    <div style="font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:600;color:var(--gold);letter-spacing:.08em;margin-bottom:10px;">Reparti da Evitare</div>
-    <div style="font-size:.6rem;color:var(--mid);line-height:1.8;">
-      <div style="margin-bottom:6px;">"New In" durante i saldi — quasi mai scontato davvero.</div>
-      <div style="margin-bottom:6px;">Capi a logo/stampa vistosa scontati oltre il 70% — spesso invenduti per il design, non un affare.</div>
-      <div style="margin-bottom:6px;">Taglie estreme scontate al massimo mentre le centrali no — segnale che la propria taglia si vende bene a prezzo pieno.</div>
-      <div>Acrilico/poliestere senza Composizione dichiarata — se manca il dato, saltare.</div>
-    </div>
-  </div>
-
-  <div style="margin-bottom:20px;background:var(--surface);border-radius:10px;border:1px solid var(--gold);padding:14px;">
-    <div style="font-family:'Cormorant Garamond',serif;font-size:.9rem;font-weight:600;color:var(--gold);letter-spacing:.06em;margin-bottom:8px;">Checklist del Carrello — 5 domande prima di ogni acquisto</div>
-    <div style="font-size:.6rem;color:var(--mid);line-height:1.8;">
-      <div style="margin-bottom:6px;">1. Riempie uno dei Capi Target sopra, o è solo "carino"?</div>
-      <div style="margin-bottom:6px;">2. Passa la Regola 0 (colore smorzato), verificato alla luce naturale?</div>
-      <div style="margin-bottom:6px;">3. Il prezzo scontato è giustificato dalla Composizione dichiarata?</div>
-      <div style="margin-bottom:6px;">4. Lo indosserei la settimana prossima, non "prima o poi"?</div>
-      <div>5. Passa la Regola Q: origine dichiarata in scheda (Made in Italy per Ufficio, Made in UK per Heritage) e qualità verificabile?</div>
-    </div>
-  </div>
-
-  <div style="font-size:.55rem;color:var(--light);font-style:italic;text-align:center;padding-top:10px;border-top:1px solid var(--border);">Sessione saldi separata dal resto — un capo trovato fuori sconto in futuro non segue questa traccia budget.</div>
 </div>
-
 <!-- ═══════════════════════════════════════════ DICTACT ═══ -->
 <div id="dictact" class="section">
   <div class="section-label">Dictact · Le Leggi del Sistema</div>
   <div style="font-family:'Cormorant Garamond',serif;font-size:.75rem;font-style:italic;text-align:center;color:var(--gold);letter-spacing:.05em;margin:0 0 16px;">"Il vero lusso è quello che si sente senza vedere da dove viene." · Brunello Cucinelli</div>
+  <div class="info-box" style="margin-top:10px">Come leggere le regole. <strong>Lettere (A–E)</strong>: le regole fondamentali e obbligatorie, nell'ordine in cui compaiono. <strong>Numeri (1–20)</strong>: le regole di stile. <strong>H1–H5</strong>: il Registro Heritage. A colore, B fonti reali, C origine e qualità, D negozi, E test d'acquisto.</div>
 
   <!-- I - ARMOCROMIA -->
   <div style="margin-bottom:20px;border-bottom:1px solid var(--border);padding-bottom:16px;">
     <div style="font-family:'Cormorant Garamond',serif;font-size:.9rem;font-weight:600;color:var(--gold);letter-spacing:.1em;margin-bottom:10px;">I · L'Armocromia — La Legge Fondamentale</div>
     <div style="font-size:.58rem;color:var(--mid);line-height:1.8;">
-      <div style="margin-bottom:6px;background:var(--surface);border-radius:8px;padding:10px;border:1px solid var(--gold);"><strong style="color:var(--dark);">Regola 0 bis — Solo Fonti Reali (obbligatoria, sempre).</strong> Il verdetto sul colore vale solo con foto reale (luce naturale), pagina prodotto o swatch del brand. Senza fonte, il verdetto è "da verificare". I pallini colore dell'app sono indicativi.</div>
-      <div style="margin-bottom:6px;background:var(--surface);border-radius:8px;padding:10px;border:1px solid var(--gold);"><strong style="color:var(--dark);">Regola Q — Origine e Qualità (obbligatoria, per ogni nuovo acquisto, prima di colore e stile).</strong> <strong>Origine:</strong> Ufficio/Standard = Made in Italy, Heritage = Made in UK, verificata dalla scheda o dall'etichetta, mai dal brand ("designed in" non è "made in"). Se non è dichiarata, il verdetto è "da verificare". <strong>Qualità:</strong> composizione secondo la Regola 4 e lanificio nominato quando disponibile. Pelle, shearling e calzature: pelle pieno fiore o plongé morbida, suola cucita. Costruzione reale: bottoni in corno, fodera, cuciture, spalla non imbottita in eccesso. Vale per gli acquisti futuri, non per i capi già in guardaroba.</div>
-      <div style="margin-bottom:6px;background:var(--surface);border-radius:8px;padding:10px;border:1px solid var(--gold);"><strong style="color:var(--dark);">Regola 0 — Il Test del Colore Smorzato (obbligatoria, sempre, TUTTA la palette).</strong> Fonte canonica: tavola swatch ufficiale "Soft Summer" (11 righe × 8 caselle) — ogni colore va confrontato con quella tavola prima dell'acquisto, non calcolato a memoria. Principio corretto: non è "freddo vs caldo" in assoluto — è <strong>desaturato/smorzato con grigio dentro vs puro/acceso</strong>. La tavola include righe legittime di corallo, salmone e tan-terracotta smorzati (righe 9-10): un colore caldo è ammesso solo se smorzato; cammello, cognac, oro e arancio acceso restano esclusi perché pieni o dorati, non perché caldi. Marrone/verde restano comunque da preferire in versione fredda (taupe, salvia) quando possibile.
+      <div style="margin-bottom:6px;background:var(--surface);border-radius:8px;padding:10px;border:1px solid var(--gold);"><strong style="color:var(--dark);">Regola A — Il Test del Colore Smorzato (obbligatoria, sempre, TUTTA la palette).</strong> Fonte canonica: tavola swatch ufficiale "Soft Summer" (11 righe × 8 caselle) — ogni colore va confrontato con quella tavola prima dell'acquisto, non calcolato a memoria. Principio corretto: non è "freddo vs caldo" in assoluto — è <strong>desaturato/smorzato con grigio dentro vs puro/acceso</strong>. La tavola include righe legittime di corallo, salmone e tan-terracotta smorzati (righe 9-10): un colore caldo è ammesso solo se smorzato; cammello, cognac, oro e arancio acceso restano esclusi perché pieni o dorati, non perché caldi. Marrone/verde restano comunque da preferire in versione fredda (taupe, salvia) quando possibile.
       <div style="margin-top:6px;"><strong style="color:var(--dark);">Marrone</strong> — freddo (taupe, mushroom, cocoa) promosso; caldo (cammello, cognac, cuoio dorato, ruggine) scartato.</div>
       <div><strong style="color:var(--dark);">Verde</strong> — freddo (salvia, sage grigio-blu) promosso; caldo (oliva, khaki, verde militare dorato) scartato.</div>
       <div><strong style="color:var(--dark);">Rosso/Bordeaux</strong> — freddo (wine, plum, ruby) promosso; caldo (oxblood, maroon, rosso mattone) scartato.</div>
@@ -689,8 +662,10 @@ body{background:var(--bg);font-family:'Montserrat',sans-serif;min-height:100vh;p
       <div style="margin-top:6px;">Attenzione ai nomi-trigger quasi sempre caldi: "cammello", "oliva", "cognac", "ruggine", "oxblood", "senape", "cuoio dorato" — preferire sempre "taupe/cocoa", "salvia", "wine/vino", "carbone". In negozio: confronta il capo con un grigio neutro freddo — se il grigio "illumina" e il colore "appesantisce/ingiallisce" il confronto, è troppo caldo. Nessuna eccezione senza questa verifica.</div>
       <div style="margin-top:6px;"><strong style="color:var(--dark);">Mai:</strong> nero puro, bianco ottico, rosso saturo, giallo/ocra pieno, verde prato, blu royal, arancio acceso, turchese.</div>
       </div>
+      <div style="margin-bottom:6px;background:var(--surface);border-radius:8px;padding:10px;border:1px solid var(--gold);"><strong style="color:var(--dark);">Regola B — Solo Fonti Reali (obbligatoria, sempre).</strong> Il verdetto sul colore vale solo con foto reale (luce naturale), pagina prodotto o swatch del brand. Senza fonte, il verdetto è "da verificare". I pallini colore dell'app sono indicativi.</div>
+      <div style="margin-bottom:6px;background:var(--surface);border-radius:8px;padding:10px;border:1px solid var(--gold);"><strong style="color:var(--dark);">Regola C — Origine e Qualità (obbligatoria, per ogni nuovo acquisto, prima di colore e stile).</strong> <strong>Origine:</strong> Ufficio/Standard = Made in Italy, Heritage = Made in UK, verificata dalla scheda o dall'etichetta, mai dal brand ("designed in" non è "made in"). Se non è dichiarata, il verdetto è "da verificare". <strong>Qualità:</strong> composizione secondo la Regola 4 e lanificio nominato quando disponibile. Pelle, shearling e calzature: pelle pieno fiore o plongé morbida, suola cucita. Costruzione reale: bottoni in corno, fodera, cuciture, spalla non imbottita in eccesso. Vale per gli acquisti futuri, non per i capi già in guardaroba.</div>
       <div style="margin-bottom:6px;"><strong style="color:var(--dark);">Regola 1.</strong> Le scale sono la base, il resto sono accenti. Base ammessa: bianco latte/avorio/panna, marrone freddo (taupe, cocoa), grigio. Il navy è la base per Ufficio e un accento in Heritage. Un solo accento per look.</div>
-      <div style="margin-bottom:6px;"><strong style="color:var(--dark);">Regola 2.</strong> Gli accenti passano la Regola 0 e restano smorzati: rosa cipria, rosa antico, verde salvia, dusty blue.</div>
+      <div style="margin-bottom:6px;"><strong style="color:var(--dark);">Regola 2.</strong> Gli accenti passano la Regola A e restano smorzati: rosa cipria, rosa antico, verde salvia, dusty blue.</div>
       <div style="margin-bottom:6px;"><strong style="color:var(--dark);">Regola 3.</strong> Regola del contrasto — un colore ricco e scuro (bordeaux, prugna) va sempre su una base chiara, mai su una base altrettanto scura: il contrasto lo fa respirare, l'assenza di contrasto lo affoga.</div>
     </div>
   </div>
@@ -699,7 +674,7 @@ body{background:var(--bg);font-family:'Montserrat',sans-serif;min-height:100vh;p
   <div style="margin-bottom:20px;border-bottom:1px solid var(--border);padding-bottom:16px;">
     <div style="font-family:'Cormorant Garamond',serif;font-size:.9rem;font-weight:600;color:var(--gold);letter-spacing:.1em;margin-bottom:10px;">II · I Tessuti e i Filati — La Legge del Materiale</div>
     <div style="font-size:.58rem;color:var(--mid);line-height:1.8;">
-      <div style="margin-bottom:6px;"><strong style="color:var(--dark);">Regola 4.</strong> Fibra naturale minimo 70% (lino, cotone, lana, cashmere, seta, merino) per i nuovi acquisti di abbigliamento. Esclusi pelle, calzature e accessori, che seguono la Regola Q. Le calze possono avere fino al 25% di elastan.</div>
+      <div style="margin-bottom:6px;"><strong style="color:var(--dark);">Regola 4.</strong> Fibra naturale minimo 70% (lino, cotone, lana, cashmere, seta, merino) per i nuovi acquisti di abbigliamento. Esclusi pelle, calzature e accessori, che seguono la Regola C. Le calze possono avere fino al 25% di elastan.</div>
       <div style="margin-bottom:6px;"><strong style="color:var(--dark);">Regola 5.</strong> P/E — tessuti secondo la tabella della sezione Materiali (lino, cotone, lana fresca, seta/lino). Il lino è il cashmere dell'estate.</div>
       <div style="margin-bottom:6px;"><strong style="color:var(--dark);">Regola 6.</strong> A/I — tessuti secondo la tabella della sezione Materiali (lana vergine, cashmere, merino, tweed/Donegal, flanella, velluto).</div>
       <div style="margin-bottom:6px;"><strong style="color:var(--dark);">Regola 7.</strong> Meglio l'opaco del lucido. Ammessa solo la lucentezza naturale controllata (seta, pelle pieno fiore); mai la lucentezza artificiale (sintetici, finiture verniciate).</div>
@@ -746,7 +721,7 @@ body{background:var(--bg);font-family:'Montserrat',sans-serif;min-height:100vh;p
       <div style="margin-bottom:6px;"><strong style="color:var(--dark);">Pilastri Registro Heritage — fonti British autentiche —</strong> Cordings of Piccadilly · Farlows</div>
       <div style="margin-bottom:6px;"><strong style="color:var(--dark);">Negozi Standard — dove cercare i capi Ufficio/generali, non fonti stilistiche —</strong> Gutteridge · Pini Parma · Suitsupply · Octobre Éditions · Velasca · Iuman · Luca Faloni · Artknit Studios · Falconeri · Tela Blu</div>
       <div style="margin-bottom:6px;"><strong style="color:var(--dark);">Negozi Heritage — brand puramente inglesi, dove cercare i capi Registro Heritage —</strong> Barbour · Cordings of Piccadilly · Farlows · London Sock Company · Holland Cooper</div>
-      <div style="margin-bottom:6px;background:var(--surface);border-radius:8px;padding:10px;border:1px solid var(--gold);"><strong style="color:var(--dark);">Regola dei Negozi Esclusivi (obbligatoria, sempre).</strong> Ogni ricerca di un capo nuovo — su richiesta esplicita o come innesto suggerito — va fatta SOLO tra i negozi elencati sopra: i 10 Standard per Ufficio/generale, i 5 Heritage per capi del Registro Heritage. Nessun brand esterno (es. Massimo Dutti, Hockerty, Boggi, Fay, Rimowa, Balenciaga) va più proposto o cercato di default. Se il capo cercato non esiste in nessuno dei negozi elencati, dirlo esplicitamente invece di uscire dalla lista.</div>
+      <div style="margin-bottom:6px;background:var(--surface);border-radius:8px;padding:10px;border:1px solid var(--gold);"><strong style="color:var(--dark);">Regola D — Negozi Esclusivi (obbligatoria, sempre).</strong> Ogni ricerca di un capo nuovo — su richiesta esplicita o come innesto suggerito — va fatta SOLO tra i negozi elencati sopra: i 10 Standard per Ufficio/generale, i 5 Heritage per capi del Registro Heritage. Nessun brand esterno (es. Massimo Dutti, Hockerty, Boggi, Fay, Rimowa, Balenciaga) va più proposto o cercato di default. Se il capo cercato non esiste in nessuno dei negozi elencati, dirlo esplicitamente invece di uscire dalla lista.</div>
       <div style="margin-bottom:6px;"><strong style="color:var(--dark);">Regola 18.</strong> Sfilate e lookbook non si copiano, si traducono: il look diventa un look del guardaroba attraverso il filtro dell'armocromia e dei capi disponibili. La foto è il punto di partenza, il sistema è il punto di arrivo.</div>
     </div>
   </div>
@@ -755,9 +730,9 @@ body{background:var(--bg);font-family:'Montserrat',sans-serif;min-height:100vh;p
   <div style="margin-bottom:20px;border-bottom:1px solid var(--border);padding-bottom:16px;">
     <div style="font-family:'Cormorant Garamond',serif;font-size:.9rem;font-weight:600;color:var(--gold);letter-spacing:.1em;margin-bottom:10px;">VII · La Legge degli Acquisti</div>
     <div style="font-size:.58rem;color:var(--mid);line-height:1.8;">
-      <div style="margin-bottom:6px;"><strong style="color:var(--dark);">Regola 19.</strong> Il test prima di ogni acquisto: ① Regola Q (origine e qualità)? ② Regola 0 (colore smorzato, fonte reale)? ③ Fibra naturale minimo 70%? ④ Opaco o lucentezza naturale controllata? ⑤ Se accento, è smorzato e in armocromia? Se no a uno solo, rimetti sul gancio.</div>
-      <div style="margin-bottom:6px;"><strong style="color:var(--dark);">Regola 20.</strong> Trasforma prima di comprare. Un Uniposca, dei lacci diversi, una felpa annodata in vita — la trasformazione aggiunge la tua firma al capo.</div>
-      <div><strong style="color:var(--dark);">Regola 21.</strong> Aspetta il capo giusto. Il guardaroba cresce per sottrazione e precisione, non per accumulo.</div>
+      <div style="margin-bottom:6px;background:var(--surface);border-radius:8px;padding:10px;border:1px solid var(--gold);"><strong style="color:var(--dark);">Regola E — Il test prima di ogni acquisto (obbligatoria, sempre).</strong> ① Regola C (origine e qualità)? ② Regola A (colore smorzato, fonte reale)? ③ Fibra naturale minimo 70%? ④ Opaco o lucentezza naturale controllata? ⑤ Se accento, è smorzato e in armocromia? Se no a uno solo, rimetti sul gancio.</div>
+      <div style="margin-bottom:6px;"><strong style="color:var(--dark);">Regola 19.</strong> Trasforma prima di comprare. Un Uniposca, dei lacci diversi, una felpa annodata in vita — la trasformazione aggiunge la tua firma al capo.</div>
+      <div><strong style="color:var(--dark);">Regola 20.</strong> Aspetta il capo giusto. Il guardaroba cresce per sottrazione e precisione, non per accumulo.</div>
     </div>
   </div>
 
@@ -769,7 +744,7 @@ body{background:var(--bg);font-family:'Montserrat',sans-serif;min-height:100vh;p
       <div style="margin-bottom:6px;"><strong style="color:var(--dark);">Regola H1.</strong> Materiali ammessi — cotone cerato (wax cotton), tweed/Donegal, canvas grezzo, pelle pieno fiore vissuta naturalmente, lana cardata pesante (cable knit).</div>
       <div style="margin-bottom:6px;"><strong style="color:var(--dark);">Regola H2.</strong> Il distressed/vintage-washed artificiale è escluso. L'heritage autentico si vede dalla costruzione (tasche a toppa, bottoni corno, cuciture a vista), non da un effetto invecchiato applicato in fabbrica.</div>
       <div style="margin-bottom:6px;"><strong style="color:var(--dark);">Regola H3.</strong> Un solo pezzo heritage dominante per outfit — mai due insieme. Se indossi il Barbour, la scarpa resta pulita; se indossi le boat shoes, il resto resta sartoriale.</div>
-      <div><strong style="color:var(--dark);">Regola H4.</strong> Nessun colore nuovo: l'heritage usa la palette esistente (verde salvia, navy come accento, taupe/cocoa, avena). Il verde britannico solo se passa la Regola 0. Pattern British sartoriale (Principe di Galles, pied-de-poule, tweed check) ammesso come texture, non come colore aggiuntivo.</div>
+      <div><strong style="color:var(--dark);">Regola H4.</strong> Nessun colore nuovo: l'heritage usa la palette esistente (verde salvia, navy come accento, taupe/cocoa, avena). Il verde britannico solo se passa la Regola A. Pattern British sartoriale (Principe di Galles, pied-de-poule, tweed check) ammesso come texture, non come colore aggiuntivo.</div>
       <div style="margin-top:6px;"><strong style="color:var(--dark);">Regola H5 — Capi Specifici vs Jolly Dichiarati.</strong> Non ogni capo appartiene a un solo mondo. <strong>Specifici</strong> (identità = il mondo da cui vengono, restano vincolati): Barbour Ashby, Barbour Liddesdale, tweed/Donegal pesante, jeans, Boat Shoes (Heritage) · Abito Grigio Perla, Abito Blu Navy, Montgomery (Ufficio). <strong>Jolly dichiarati</strong> (funzionali/neutri, attraversano entrambi i mondi senza scelta caso per caso): Loafer Nabuk, Chukka Boot, Geox Baryden, chino lisci (Beige/Panna/Grigio/Navy), cintura liscia, girocolli leggeri cotone-seta-cashmere, camicie a tinta unita semplici. Test pratico: se il capo stona da solo fuori contesto, è Specifico; se è l'outfit a dover reggere la coerenza, è Jolly.</div>
     </div>
   </div>
