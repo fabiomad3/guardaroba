@@ -122,6 +122,13 @@ body{background:var(--bg);font-family:'Montserrat',sans-serif;min-height:100vh;p
   .lb-n{color:#1A2A40}
 }
 @page{size:A4;margin:10mm}
+@media screen and (min-width:760px){
+#lookbook.active,#lookbookpe.active,#casual.active,#barbour.active{max-width:980px}
+#lookbook [data-grpbody],#lookbookpe [data-grpbody]{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;align-items:start}
+#casual.active,#barbour.active{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;align-items:start}
+#casual.active>:not(.lb-card),#barbour.active>:not(.lb-card){grid-column:1/-1}
+#lookbook .lb-card,#lookbookpe .lb-card,#casual .lb-card,#barbour .lb-card{margin-bottom:0}
+}
 @media print{
   *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
   html,body{background:#fff!important}
