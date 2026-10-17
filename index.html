@@ -147,13 +147,12 @@ body{background:var(--bg);font-family:'Montserrat',sans-serif;min-height:100vh;p
 
 <nav class="nav">
   <button class="nav-btn active" onclick="showSec('lookbook',this)">Lookbook A-I</button> <button class="nav-btn" onclick="showSec('lookbookpe',this)">Lookbook P-E</button>
-  <button class="nav-btn" onclick="showSec('casual',this)">Casual</button>
-  <button class="nav-btn" onclick="showSec('barbour',this)">Barbour</button>
+  <button class="nav-btn" onclick="showSec('casual',this)">Lookbook CSL</button>
+  <button class="nav-btn" onclick="showSec('barbour',this)">Lookbook HRT</button>
   <button class="nav-btn" onclick="showSec('guardaroba',this)">Guardaroba</button>
   <button class="nav-btn" onclick="showSec('dictact',this)">Dictact</button>
   <button class="nav-btn" onclick="showSec('palette',this)">Palette</button>
   <button class="nav-btn" onclick="showSec('materiali',this)">Materiali</button>
-  <button class="nav-btn" onclick="showSec('heritage',this)">Heritage</button>
   <button class="nav-btn" onclick="showSec('tobe',this)">To-be list</button>
 </nav>
 
@@ -162,7 +161,7 @@ body{background:var(--bg);font-family:'Montserrat',sans-serif;min-height:100vh;p
 <!-- ═══════════════════════════════════════════════ GUARDAROBA ═══ -->
 <div id="guardaroba" class="section">
   <div class="section-label">Guardaroba · Sistema Unificato</div>
-  <div class="info-box">Tutti i capi in un'unica vista. Badge P/E, A/I, Autunno o Cross indicano la stagionalita' di ciascun pezzo. <strong>Nota:</strong> i pallini colore sono indicativi/di comodo, non misurati da foto o pagine prodotto reali — non usarli da soli per un verdetto Regola A. Verdetto affidabile solo con fonte reale (foto del capo, link prodotto, pagina ufficiale). <strong>Look:</strong> i codici del Lookbook A-I in cui il capo compare (CU = Cucinelli, CN = Canali), compresi i capi che ho aggiunto io come layer.</div>
+  <div class="info-box">Tutti i capi in un'unica vista. Badge P/E, A/I, Autunno o Cross indicano la stagionalita' di ciascun pezzo. <strong>Nota:</strong> i pallini colore sono indicativi/di comodo, non misurati da foto o pagine prodotto reali — non usarli da soli per un verdetto Regola A. Verdetto affidabile solo con fonte reale (foto del capo, link prodotto, pagina ufficiale). <strong>Look:</strong> i codici del Lookbook A-I in cui il capo compare (CU e CN = Lookbook A-I; PE CU e PE CN = Lookbook P-E; CS = Lookbook CSL; BB = Lookbook HRT), compresi i capi che ho aggiunto io come layer.</div>
 
   <div class="tabs">
     <button class="tab active" id="gr-all" onclick="filtraGr('all',this)">Tutti</button>
@@ -453,111 +452,7 @@ body{background:var(--bg);font-family:'Montserrat',sans-serif;min-height:100vh;p
   <div style="font-size:.55rem;color:var(--light);font-style:italic;text-align:center;padding-top:10px;border-top:1px solid var(--border);">Regole 4 e C del Dictact — guarda sempre l'etichetta di composizione e l'origine prima del colore. Nessuna versione estiva per tweed, flanella o wax cotton.</div>
 </div>
 
-<!-- ═══════════════════════════════════════════ HERITAGE ═══ -->
-<div id="heritage" class="section">
-  <div class="section-label">Heritage · British Style Guide</div>
-  <div class="info-box">Riferimento concettuale al Registro Heritage del Dictact (Regole H1–H5). Colori, trame e principi presi dalla tradizione country inglese. L'Heritage non ha una palette propria: eredita quella del Sistema (Regola A, H4).</div>
 
-  <div style="margin-bottom:20px;">
-    <div style="font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:600;color:var(--gold);letter-spacing:.08em;margin-bottom:10px;">Cosa incarna</div>
-    <div style="font-size:.6rem;color:var(--mid);line-height:1.8;">
-      <div style="margin-bottom:6px;"><strong style="color:var(--dark);">Autorità silenziosa</strong> — mai ostentata. Lo status è dato per scontato, non dimostrato con logo o lucentezza.</div>
-      <div style="margin-bottom:6px;"><strong style="color:var(--dark);">Trasmissione, non novità</strong> — un capo si tramanda, invecchia bene, sviluppa patina. Opposto del ciclo fast-fashion.</div>
-      <div><strong style="color:var(--dark);">Funzione travestita da eleganza</strong> — ogni capo nasce per una necessità reale (pioggia, freddo, movimento); il risultato è comunque raffinato.</div>
-    </div>
-  </div>
-
-  <div style="margin-bottom:20px;">
-    <div style="font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:600;color:var(--gold);letter-spacing:.08em;margin-bottom:10px;">Colori — dal paesaggio, mai sintetici</div>
-    <table style="width:100%;border-collapse:collapse;font-size:.58rem;">
-      <tr><th style="text-align:left;padding:5px 8px;color:var(--light);font-size:.52rem;text-transform:uppercase;letter-spacing:.05em;border-bottom:1px solid var(--gold);">Colore</th><th style="text-align:left;padding:5px 8px;color:var(--light);font-size:.52rem;text-transform:uppercase;letter-spacing:.05em;border-bottom:1px solid var(--gold);">Origine / Ruolo</th></tr>
-      <tr><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--dark);font-weight:500;">Verde salvia</td><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--mid);">Vegetazione — Barbour, gilet da tiro</td></tr>
-      <tr><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--dark);font-weight:500;">Marrone freddo</td><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--mid);">Terra, corteccia — taupe, cocoa, mushroom, cioccolato smorzato</td></tr>
-      <tr><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--dark);font-weight:500;">Terracotta smorzata</td><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--mid);">Foglie autunnali — solo righe 9-10 della tavola Soft Summer</td></tr>
-      <tr><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--dark);font-weight:500;">Grigio/antracite</td><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--mid);">Pietra, cielo coperto</td></tr>
-      <tr><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--dark);font-weight:500;">Navy</td><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--mid);">Sempre in coppia col marrone, mai dominante da solo</td></tr>
-    </table>
-  </div>
-
-  <div style="margin-bottom:20px;">
-    <div style="font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:600;color:var(--gold);letter-spacing:.08em;margin-bottom:10px;">Trame — l'identità del genere</div>
-    <table style="width:100%;border-collapse:collapse;font-size:.58rem;">
-      <tr><th style="text-align:left;padding:5px 8px;color:var(--light);font-size:.52rem;text-transform:uppercase;letter-spacing:.05em;border-bottom:1px solid var(--gold);">Trama</th><th style="text-align:left;padding:5px 8px;color:var(--light);font-size:.52rem;text-transform:uppercase;letter-spacing:.05em;border-bottom:1px solid var(--gold);">Descrizione / Uso</th></tr>
-      <tr><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--dark);font-weight:500;">Tweed (Herringbone/Donegal)</td><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--mid);">La trama per eccellenza — spina di pesce o nodi di colore nel filato</td></tr>
-      <tr><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--dark);font-weight:500;">Principe di Galles / Pied-de-poule</td><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--mid);">Motivi a quadretti sartoriali — giacche e pantaloni da tiro</td></tr>
-      <tr><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--dark);font-weight:500;">Tattersall</td><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--mid);">Quadretti sottili su camicie, due colori su fondo chiaro</td></tr>
-      <tr><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--dark);font-weight:500;">Cord (velluto a coste)</td><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--mid);">Camicie e pantaloni, righe verticali morbide</td></tr>
-      <tr><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--dark);font-weight:500;">Argyle</td><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--mid);">Losanghe su calze e maglieria — il dettaglio eccentrico ammesso</td></tr>
-      <tr><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--dark);font-weight:500;">Paisley</td><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--mid);">Sciarpe e foulard in seta — unico motivo curvilineo tollerato</td></tr>
-    </table>
-  </div>
-
-  <div style="margin-bottom:20px;">
-    <div style="font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:600;color:var(--gold);letter-spacing:.08em;margin-bottom:10px;">Outfit · Barbour Ashby Wax Navy</div>
-
-    <div style="margin-bottom:16px;">
-      <div style="font-weight:600;color:var(--dark);font-size:.62rem;margin-bottom:4px;">1 — The Country Weekend</div>
-      <div style="font-size:.58rem;color:var(--mid);line-height:1.6;">Camicia Oxford Azzurro Chiaro (colletto a vista) + Girocollo Lana Marrone sopra + Barbour Ashby Wax Navy + Jeans Blu Scuro + Chukka Boot Marrone Scuro + Cap Navy Barbour</div>
-    </div>
-
-    <div style="margin-bottom:16px;">
-      <div style="font-weight:600;color:var(--dark);font-size:.62rem;margin-bottom:4px;">2 — The Shooting Party</div>
-      <div style="font-size:.58rem;color:var(--mid);line-height:1.6;">Camicia Fantasia Micro Motivo Navy + Cravatta Tartan Navy/Rosso/Bianco + Barbour Ashby Wax Navy + Chino Deep Navy + Chukka Boot Marrone Scuro + Sciarpa Lana Vergine <em>(registro tutto freddo; la cravatta tartan è autentica nel contesto shooting party, quando il chino sostituisce il jeans)</em></div>
-    </div>
-
-    <div style="margin-bottom:16px;">
-      <div style="font-weight:600;color:var(--dark);font-size:.62rem;margin-bottom:4px;">3 — The Estate Gate</div>
-      <div style="font-size:.58rem;color:var(--mid);line-height:1.6;">Camicia Bianca (colletto a vista) + Cravatta Bordeaux a Pois Navy + Girocollo Cotone Seta Cashmere Sabbia sopra, cravatta a vista + Barbour Ashby Wax Navy + Chino Beige/Sabbia + Loafer Nabuk Grigio Tortora</div>
-    </div>
-
-    <div style="margin-bottom:16px;">
-      <div style="font-weight:600;color:var(--dark);font-size:.62rem;margin-bottom:4px;">4 — The Denim Bridge</div>
-      <div style="font-size:.58rem;color:var(--mid);line-height:1.6;">Camicia Jeans Western Azzurro Slavatissimo (colletto a vista) + Girocollo Bordeaux sopra + Barbour Ashby Wax Navy + Jeans Blu Scuro + Chukka Boot Marrone Scuro + Cap Navy Barbour <em>(doppio denim controllato dal bordeaux di mezzo, unico accento caldo)</em></div>
-    </div>
-
-    <div style="margin-bottom:16px;">
-      <div style="font-weight:600;color:var(--dark);font-size:.62rem;margin-bottom:4px;">5 — The Manor Off-Duty</div>
-      <div style="font-size:.58rem;color:var(--mid);line-height:1.6;">Camicia Oxford Azzurro Chiaro + Cardigan Navy sopra, aperto + Barbour Ashby Wax Navy alle spalle + Chino Grigio Chiaro + Loafer Nabuk <em>(ispirato al Cordings Cardigan di Eddie Horniman)</em></div>
-    </div>
-
-    <div style="margin-bottom:16px;">
-      <div style="font-weight:600;color:var(--dark);font-size:.62rem;margin-bottom:4px;">6 — The Flannel Estate</div>
-      <div style="font-size:.58rem;color:var(--mid);line-height:1.6;">Camicia Bianca (colletto a vista) + Girocollo Grigio Chiaro Melange sopra + Barbour Ashby Wax Navy + Pantalone Flanella Grigio Medio + Chukka Boot Marrone Scuro + Sciarpa Lana Vergine</div>
-    </div>
-  </div>
-
-  <div style="margin-bottom:20px;">
-    <div style="font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:600;color:var(--gold);letter-spacing:.08em;margin-bottom:10px;">Outfit · Barbour Liddesdale</div>
-    <div style="font-size:.56rem;color:var(--light);font-style:italic;margin-bottom:12px;">Il Liddesdale non comanda il look come l'Ashby — serve il look: come soluzione leggera stand-alone, come strato nascosto, o come guscio comodo sopra maglie spesse.</div>
-
-    <div style="margin-bottom:16px;">
-      <div style="font-weight:600;color:var(--dark);font-size:.62rem;margin-bottom:4px;">1 — The Mild Transition</div>
-      <div style="font-size:.58rem;color:var(--mid);line-height:1.6;">Camicia Oxford Azzurro Chiaro (colletto a vista) + Girocollo Grigio Chiaro Melange sopra + Barbour Liddesdale Quilted Navy + Chino Beige/Sabbia + Loafer Nabuk Grigio Tortora <em>(mezza stagione, Liddesdale da solo — l'Ashby qui sarebbe eccessivo)</em></div>
-    </div>
-
-    <div style="margin-bottom:16px;">
-      <div style="font-weight:600;color:var(--dark);font-size:.62rem;margin-bottom:4px;">2 — The Layer Under</div>
-      <div style="font-size:.58rem;color:var(--mid);line-height:1.6;">Camicia Jeans Western Azzurro Slavatissimo (colletto a vista) + Girocollo Lana Marrone sopra + Barbour Liddesdale Quilted Navy + Barbour Ashby Wax Navy sopra ancora + Jeans Blu Scuro + Chukka Boot Marrone Scuro <em>(doppio Barbour, wax su trapuntato su denim — la stratificazione più autentica del brand, confermata dal vivo)</em></div>
-    </div>
-
-    <div style="margin-bottom:16px;">
-      <div style="font-weight:600;color:var(--dark);font-size:.62rem;margin-bottom:4px;">3 — The Denim Ease</div>
-      <div style="font-size:.58rem;color:var(--mid);line-height:1.6;">T-Shirt Grigio Ardesia Oversize sotto + Girocollo Bordeaux sopra + Barbour Liddesdale Quilted Navy + Jeans Blu Scuro + Loafer Nabuk <em>(il taglio generoso del Liddesdale regge comodo sopra la maglia spessa senza tirare, cosa che l'Ashby più slim non farebbe)</em></div>
-    </div>
-  </div>
-
-  <div style="margin-bottom:20px;background:var(--surface);border-radius:10px;border:1px solid var(--border);padding:14px;">
-    <div style="font-family:'Cormorant Garamond',serif;font-size:.85rem;font-weight:600;color:var(--gold);letter-spacing:.06em;margin-bottom:8px;">Regola H5 — Capi Specifici vs Jolly Dichiarati</div>
-    <div style="font-size:.6rem;color:var(--mid);line-height:1.7;">
-      <div style="margin-bottom:6px;">Non ogni capo appartiene a un solo mondo.</div>
-      <div style="margin-bottom:6px;"><strong style="color:var(--dark);">Specifici</strong> (identità = il mondo da cui vengono, restano vincolati): Barbour Ashby, Barbour Liddesdale, tweed/Donegal pesante, jeans, Boat Shoes (Heritage) · Abito Grigio Perla, Abito Blu Navy, Montgomery (Ufficio).</div>
-      <div style="margin-bottom:6px;"><strong style="color:var(--dark);">Jolly dichiarati</strong> (funzionali/neutri, attraversano entrambi i mondi senza scelta caso per caso): Loafer Nabuk, Chukka Boot, Geox Baryden, chino lisci (Beige/Panna/Grigio/Navy), cintura liscia, girocolli leggeri cotone-seta-cashmere, camicie a tinta unita semplici.</div>
-      <div><strong style="color:var(--dark);">Test pratico:</strong> se il capo stona da solo fuori contesto, è Specifico; se è l'outfit a dover reggere la coerenza, è Jolly.</div>
-    </div>
-  </div>
-
-  <div style="font-size:.55rem;color:var(--light);font-style:italic;text-align:center;padding-top:10px;border-top:1px solid var(--border);">Principio di combinazione — mai più di due texture "forti" insieme (Regola H3). Sezione da espandere con capi acquistati e outfit dedicati.</div>
-</div>
 
 <!-- ═══════════════════════════════════════════ LOOKBOOK ═══ -->
 <div id="lookbook" class="section active">
@@ -721,7 +616,7 @@ body{background:var(--bg);font-family:'Montserrat',sans-serif;min-height:100vh;p
 </div>
 
 <div id="casual" class="section">
-  <div class="section-label">Casual · 10 look</div>
+  <div class="section-label">Lookbook CSL · 10 look casual</div>
   <div class="info-box">10 look per il tempo libero (jeans e felpa, scuola dei bambini, weekend), fatti solo con capi che hai già: outerwear, felpa, T-shirt, jeans, scarpe. Sono abbinamenti miei, senza foto di passerella. Priorità ai capi non usati nei look Cucinelli e Canali e al Barbour (Heritage): un solo pezzo Heritage dominante per look (H3). Profumo e accessorio sono miei abbinamenti (bordo tratteggiato). La T-shirt va sotto la felpa. Codici CS 01–10.</div>
     <div class="lb-card" data-st="ok" data-mn="cs"><div class="lb-head"><div class="lb-nwrap"><div class="lb-n">01</div><span class="lb-src">Casual</span></div><span class="badge b-lbok">Tutto tuo</span></div><div class="lb-row"><div class="lb-col"><div class="lb-list"><div class="lb-li"><span class="lb-cat">Outerwear</span><span class="lb-chip"><span class="lb-dot" style="background:#1A2A40"></span>Barbour Ashby Wax Navy</span></div><div class="lb-li"><span class="lb-cat">Felpa</span><span class="lb-chip"><span class="lb-dot" style="background:#F2EEE8"></span>Felpa Girocollo Bianco Sporco</span></div><div class="lb-li"><span class="lb-cat">T-shirt</span><span class="lb-chip"><span class="lb-dot" style="background:#B8B4B0"></span>T-Shirt Grigio Chiaro</span></div><div class="lb-li"><span class="lb-cat">Jeans</span><span class="lb-chip"><span class="lb-dot" style="background:#203050"></span>Jeans Blu Scuro</span></div><div class="lb-li"><span class="lb-cat">Scarpe</span><span class="lb-chip"><span class="lb-dot" style="background:#402818"></span>Chukka Boot Marrone Scuro</span></div><div class="lb-li"><span class="lb-cat">Profumo</span><span class="lb-chip lb-add"><span class="lb-dot" style="background:#2A1A10"></span>+ WOMO Black Tobacco</span></div><div class="lb-li"><span class="lb-cat">Accessorio</span><span class="lb-chip lb-add"><span class="lb-dot" style="background:#1A2A40"></span>+ Cap Navy</span></div></div><div class="lb-note">Heritage dominante: Barbour Ashby. Cap Barbour in tema.</div></div></div></div>
     <div class="lb-card" data-st="ok" data-mn="cs"><div class="lb-head"><div class="lb-nwrap"><div class="lb-n">02</div><span class="lb-src">Casual</span></div><span class="badge b-lbok">Tutto tuo</span></div><div class="lb-row"><div class="lb-col"><div class="lb-list"><div class="lb-li"><span class="lb-cat">Outerwear</span><span class="lb-chip"><span class="lb-dot" style="background:#1A3050"></span>Barbour Liddesdale Quilted Navy</span></div><div class="lb-li"><span class="lb-cat">Felpa</span><span class="lb-chip"><span class="lb-dot" style="background:#C8C0A8"></span>Felpa Girocollo Greige/Sabbia</span></div><div class="lb-li"><span class="lb-cat">T-shirt</span><span class="lb-chip"><span class="lb-dot" style="background:#7A8870"></span>T-Shirt Verde Salvia Smorzato</span></div><div class="lb-li"><span class="lb-cat">Jeans</span><span class="lb-chip"><span class="lb-dot" style="background:#8098B0"></span>Jeans Azzurro Slavato</span></div><div class="lb-li"><span class="lb-cat">Scarpe</span><span class="lb-chip"><span class="lb-dot" style="background:#8A7060"></span>Sneaker GG Canvas Beige/Marrone</span></div><div class="lb-li"><span class="lb-cat">Profumo</span><span class="lb-chip lb-add"><span class="lb-dot" style="background:#2A1A10"></span>+ WOMO Black Tobacco</span></div><div class="lb-li"><span class="lb-cat">Accessorio</span><span class="lb-chip lb-add"><span class="lb-dot" style="background:#C8B890"></span>+ Cap Cotton Chino Nubuck</span></div></div><div class="lb-note">Heritage dominante: Barbour trapuntato. Sneaker e cap neutri.</div></div></div></div>
@@ -737,8 +632,8 @@ body{background:var(--bg);font-family:'Montserrat',sans-serif;min-height:100vh;p
 
 <!-- ═══════════════════════════════════════════ BARBOUR ═══ -->
 <div id="barbour" class="section">
-  <div class="section-label">Barbour · 11 look Cucinelli e Canali con Barbour</div>
-  <div class="info-box">11 look del Lookbook A-I rifatti con il Barbour Ashby (cerato, più rustico, da pioggia) o il Liddesdale (trapuntato, più morbido), che sostituisce o si aggiunge al capospalla. Ogni scheda mostra la foto e la descrizione del look originale (CU = Cucinelli, CN = Canali) e il look rifatto, con un solo pezzo Heritage dominante (H3). I capi con il bordo tratteggiato e il segno + sono layer aggiunti da me. Profumo e accessorio sono miei abbinamenti. Le foto sono collegate da NowFashion: se non si caricano, tocca il riquadro. Codici BB 01–11.</div>
+  <div class="section-label">Lookbook HRT · 11 look Cucinelli e Canali con Barbour</div>
+  <div class="info-box">11 look del Lookbook A-I rifatti con il Barbour Ashby (cerato, più rustico, da pioggia) o il Liddesdale (trapuntato, più morbido), che sostituisce o si aggiunge al capospalla. Ogni scheda mostra la foto e la descrizione del look originale (CU = Cucinelli, CN = Canali) e il look rifatto, con un solo pezzo Heritage dominante (H3). I capi con il bordo tratteggiato e il segno + sono layer aggiunti da me. Profumo e accessorio sono miei abbinamenti. Le foto sono collegate da NowFashion: se non si caricano, tocca il riquadro. Codici BB 01–11. In fondo trovi la nota Heritage (British Style Guide), che prima era una scheda a parte.</div>
     <div class="lb-card" data-st="ok"><div class="lb-head"><div class="lb-nwrap"><div class="lb-n">01</div><span class="lb-src">da CN 03</span></div><span class="badge b-lbok">Tutto tuo</span></div><div class="lb-row"><a class="lb-ph" href="https://nowfashion.com/media/canali-menswear-fall-winter-2026-milan-fashion-week-runway-003" target="_blank" rel="noopener"><img loading="lazy" alt="Look 03 in passerella" src="https://media.nowfashion.com/Collections/Milan/2026-Menswear-Fall-Winter-Milan/Canali-PR/Canali-Menswear-Fall-Winter-2026-Milan-Fashion-Week-Runway-003.JPG?class=grid" onerror="this.parentNode.textContent='Foto non caricata. Tocca per aprirla su NowFashion'"></a><div class="lb-col"><div class="lb-run">Originale: Bomber di pelle marrone scuro, pantaloni di cotone beige a gamba dritta, mocassini marroni scuri.</div><div class="lb-list"><div class="lb-li"><span class="lb-cat">Outerwear</span><span class="lb-chip lb-add"><span class="lb-dot" style="background:#1A3050"></span>+ Barbour Liddesdale Quilted Navy</span></div><div class="lb-li"><span class="lb-cat">Polo / camicia</span><span class="lb-chip lb-add"><span class="lb-dot" style="background:#F0E8D8"></span>+ Polo Panna</span></div><div class="lb-li"><span class="lb-cat">Pantalone</span><span class="lb-chip"><span class="lb-dot" style="background:#D8C8A8"></span>Chino Beige/Sabbia</span></div><div class="lb-li"><span class="lb-cat">Scarpe</span><span class="lb-chip"><span class="lb-dot" style="background:#402818"></span>Loafer Morsetto Marrone Scuro</span></div><div class="lb-li"><span class="lb-cat">Profumo</span><span class="lb-chip lb-add"><span class="lb-dot" style="background:#2A1A10"></span>+ WOMO Black Tobacco</span></div><div class="lb-li"><span class="lb-cat">Accessorio</span><span class="lb-chip lb-add"><span class="lb-dot" style="background:#4060A0"></span>+ Sciarpa Lana Vergine Navy/Azzurro</span></div></div><div class="lb-note">Il Liddesdale prende il posto del bomber di pelle: più morbido, stesso peso visivo. Polo panna sotto, come nell'originale.</div></div></div></div>
     <div class="lb-card" data-st="ok"><div class="lb-head"><div class="lb-nwrap"><div class="lb-n">02</div><span class="lb-src">da CN 11</span></div><span class="badge b-lbok">Tutto tuo</span></div><div class="lb-row"><a class="lb-ph" href="https://nowfashion.com/media/canali-menswear-fall-winter-2026-milan-fashion-week-runway-011" target="_blank" rel="noopener"><img loading="lazy" alt="Look 11 in passerella" src="https://media.nowfashion.com/Collections/Milan/2026-Menswear-Fall-Winter-Milan/Canali-PR/Canali-Menswear-Fall-Winter-2026-Milan-Fashion-Week-Runway-011.JPG?class=grid" onerror="this.parentNode.textContent='Foto non caricata. Tocca per aprirla su NowFashion'"></a><div class="lb-col"><div class="lb-run">Originale: Bomber di pelle marrone, pantaloni di lana grigi a gamba dritta, mocassini scuri.</div><div class="lb-list"><div class="lb-li"><span class="lb-cat">Outerwear</span><span class="lb-chip lb-add"><span class="lb-dot" style="background:#1A2A40"></span>+ Barbour Ashby Wax Navy</span></div><div class="lb-li"><span class="lb-cat">Maglione</span><span class="lb-chip lb-add"><span class="lb-dot" style="background:#F0E8D8"></span>+ Maglione Panna</span></div><div class="lb-li"><span class="lb-cat">Pantalone</span><span class="lb-chip"><span class="lb-dot" style="background:#909090"></span>Pantalone Flanella Grigio Medio</span></div><div class="lb-li"><span class="lb-cat">Scarpe</span><span class="lb-chip"><span class="lb-dot" style="background:#402818"></span>Loafer Morsetto Marrone Scuro</span></div><div class="lb-li"><span class="lb-cat">Profumo</span><span class="lb-chip lb-add"><span class="lb-dot" style="background:#2A1A10"></span>+ WOMO Black Tobacco</span></div><div class="lb-li"><span class="lb-cat">Accessorio</span><span class="lb-chip lb-add"><span class="lb-dot" style="background:#4060A0"></span>+ Sciarpa Lana Vergine Navy/Azzurro</span></div></div><div class="lb-note">L'Ashby cerato sulla flanella grigia: più rustico del bomber, il maglione panna fa da stacco.</div></div></div></div>
     <div class="lb-card" data-st="sub"><div class="lb-head"><div class="lb-nwrap"><div class="lb-n">03</div><span class="lb-src">da CU 05</span></div><span class="badge b-lbsub">Con sostituzioni</span></div><div class="lb-row"><a class="lb-ph" href="https://nowfashion.com/media/brunello-cucinelli-menswear-fall-winter-2026-milan-fashion-week-runway-005" target="_blank" rel="noopener"><img loading="lazy" alt="Look 05 in passerella" src="https://media.nowfashion.com/Collections/Milan/2026-Menswear-Fall-Winter-Milan/Brunello%20Cucinelli-PR/Brunello%20Cucinelli-Menswear-Fall-Winter-2026-Milan-Fashion-Week-Runway-005.JPG?class=grid" onerror="this.parentNode.textContent='Foto non caricata. Tocca per aprirla su NowFashion'"></a><div class="lb-col"><div class="lb-run">Originale: Giacca in pelle marrone, camicia chiara, cravatta in maglia scura, pantaloni blu a pieghe.</div><div class="lb-list"><div class="lb-li"><span class="lb-cat">Outerwear</span><span class="lb-chip lb-add"><span class="lb-dot" style="background:#1A3050"></span>+ Barbour Liddesdale Quilted Navy</span></div><div class="lb-li"><span class="lb-cat">Camicia / T-shirt</span><span class="lb-chip"><span class="lb-dot" style="background:#A0B8D0"></span>Camicia Oxford Azzurro Chiaro</span></div><div class="lb-li"><span class="lb-cat">Pantalone</span><span class="lb-chip"><span class="lb-dot" style="background:#1A2038"></span>Chino Deep Navy</span></div><div class="lb-li"><span class="lb-cat">Scarpe</span><span class="lb-chip"><span class="lb-dot" style="background:#402818"></span>Loafer Morsetto Marrone Scuro</span></div><div class="lb-li"><span class="lb-cat">Profumo</span><span class="lb-chip lb-add"><span class="lb-dot" style="background:#D8C8A8"></span>+ Prada L'Homme</span></div><div class="lb-li"><span class="lb-cat">Accessorio</span><span class="lb-chip"><span class="lb-dot" style="background:#1A2438"></span>Cravatta a Maglia Navy</span></div></div><div class="lb-note">Liddesdale al posto della giacca di pelle. Giacca, chino e cravatta sono tutti navy: il contrasto lo fa la camicia azzurra, quindi tienila ben visibile.</div></div></div></div>
@@ -750,14 +645,125 @@ body{background:var(--bg);font-family:'Montserrat',sans-serif;min-height:100vh;p
     <div class="lb-card" data-st="gap"><div class="lb-head"><div class="lb-nwrap"><div class="lb-n">09</div><span class="lb-src">da CU 37</span></div><span class="badge b-lbgap">Mancano capi</span></div><div class="lb-row"><a class="lb-ph" href="https://nowfashion.com/media/brunello-cucinelli-menswear-fall-winter-2026-milan-fashion-week-runway-037" target="_blank" rel="noopener"><img loading="lazy" alt="Look 37 in passerella" src="https://media.nowfashion.com/Collections/Milan/2026-Menswear-Fall-Winter-Milan/Brunello%20Cucinelli-PR/Brunello%20Cucinelli-Menswear-Fall-Winter-2026-Milan-Fashion-Week-Runway-037.JPG?class=grid" onerror="this.parentNode.textContent='Foto non caricata. Tocca per aprirla su NowFashion'"></a><div class="lb-col"><div class="lb-run">Originale: Bomber navy, zip beige in maglia, pantaloni a quadri blu, stivali stringati in pelle marrone, cintura con fibbia western.</div><div class="lb-list"><div class="lb-li"><span class="lb-cat">Outerwear</span><span class="lb-chip lb-add"><span class="lb-dot" style="background:#1A3050"></span>+ Barbour Liddesdale Quilted Navy</span></div><div class="lb-li"><span class="lb-cat">Maglione</span><span class="lb-chip lb-add"><span class="lb-dot" style="background:#F0E8D8"></span>+ Maglione Panna</span></div><div class="lb-li"><span class="lb-cat">Pantalone</span><span class="lb-chip"><span class="lb-dot" style="background:#2A4060"></span>Chino Navy</span></div><div class="lb-li"><span class="lb-cat">Scarpe</span><span class="lb-chip"><span class="lb-dot" style="background:#402818"></span>Chukka Boot Marrone Scuro</span></div><div class="lb-li"><span class="lb-cat">Profumo</span><span class="lb-chip lb-add"><span class="lb-dot" style="background:#88B8C8"></span>+ Acqua di Gio</span></div><div class="lb-li"><span class="lb-cat">Accessorio</span><span class="lb-chip"><span class="lb-dot" style="background:#6A4830"></span>Cintura Reversibile Pelle/Suede Marrone</span></div></div><div class="lb-note">Il Liddesdale è la risposta più vicina al bomber navy. Maglione panna al posto della zip beige. Mancano i pantaloni a quadri blu.</div></div></div></div>
     <div class="lb-card" data-st="sub"><div class="lb-head"><div class="lb-nwrap"><div class="lb-n">10</div><span class="lb-src">da CN 21</span></div><span class="badge b-lbsub">Con sostituzioni</span></div><div class="lb-row"><a class="lb-ph" href="https://nowfashion.com/media/canali-menswear-fall-winter-2026-milan-fashion-week-runway-021" target="_blank" rel="noopener"><img loading="lazy" alt="Look 21 in passerella" src="https://media.nowfashion.com/Collections/Milan/2026-Menswear-Fall-Winter-Milan/Canali-PR/Canali-Menswear-Fall-Winter-2026-Milan-Fashion-Week-Runway-021.JPG?class=grid" onerror="this.parentNode.textContent='Foto non caricata. Tocca per aprirla su NowFashion'"></a><div class="lb-col"><div class="lb-run">Originale: Dolcevita di lana blu scuro a quadretti su camicia azzurra, pantaloni bianchi di cotone, mocassini scamosciati tan.</div><div class="lb-list"><div class="lb-li"><span class="lb-cat">Outerwear</span><span class="lb-chip lb-add"><span class="lb-dot" style="background:#1A2A40"></span>+ Barbour Ashby Wax Navy</span></div><div class="lb-li"><span class="lb-cat">Maglione</span><span class="lb-chip"><span class="lb-dot" style="background:#12182A"></span>Girocollo Lana Blu Notte</span></div><div class="lb-li"><span class="lb-cat">Camicia / T-shirt</span><span class="lb-chip"><span class="lb-dot" style="background:#A0B8D0"></span>Camicia Oxford Azzurro Chiaro</span></div><div class="lb-li"><span class="lb-cat">Pantalone</span><span class="lb-chip"><span class="lb-dot" style="background:#F0E8D8"></span>Chino Bianco/Panna</span></div><div class="lb-li"><span class="lb-cat">Scarpe</span><span class="lb-chip"><span class="lb-dot" style="background:#706860"></span>Loafer Nabuk Grigio Tortora</span></div><div class="lb-li"><span class="lb-cat">Profumo</span><span class="lb-chip lb-add"><span class="lb-dot" style="background:#88B8C8"></span>+ Acqua di Gio</span></div><div class="lb-li"><span class="lb-cat">Accessorio</span><span class="lb-chip lb-add"><span class="lb-dot" style="background:#6A4830"></span>+ Cintura Reversibile Pelle/Suede Marrone</span></div></div><div class="lb-note">Nell'originale non c'è capospalla: l'Ashby è un layer aggiunto da me. Manca il dolcevita a quadretti: girocollo blu notte con camicia sotto.</div></div></div></div>
     <div class="lb-card" data-st="sub"><div class="lb-head"><div class="lb-nwrap"><div class="lb-n">11</div><span class="lb-src">da CN 19</span></div><span class="badge b-lbsub">Con sostituzioni</span></div><div class="lb-row"><a class="lb-ph" href="https://nowfashion.com/media/canali-menswear-fall-winter-2026-milan-fashion-week-runway-019" target="_blank" rel="noopener"><img loading="lazy" alt="Look 19 in passerella" src="https://media.nowfashion.com/Collections/Milan/2026-Menswear-Fall-Winter-Milan/Canali-PR/Canali-Menswear-Fall-Winter-2026-Milan-Fashion-Week-Runway-019.JPG?class=grid" onerror="this.parentNode.textContent='Foto non caricata. Tocca per aprirla su NowFashion'"></a><div class="lb-col"><div class="lb-run">Originale: Maglione navy a trecce con collo a scialle, pantaloni bianchi a gamba dritta, giacca di denim legata in vita, sneaker scamosciate tan.</div><div class="lb-list"><div class="lb-li"><span class="lb-cat">Outerwear</span><span class="lb-chip lb-add"><span class="lb-dot" style="background:#1A3050"></span>+ Barbour Liddesdale Quilted Navy</span></div><div class="lb-li"><span class="lb-cat">Maglione</span><span class="lb-chip"><span class="lb-dot" style="background:#1A2A40"></span>Cardigan Navy</span></div><div class="lb-li"><span class="lb-cat">Camicia / T-shirt</span><span class="lb-chip lb-add"><span class="lb-dot" style="background:#F5F0E8"></span>+ Camicia Bianca</span></div><div class="lb-li"><span class="lb-cat">Pantalone</span><span class="lb-chip"><span class="lb-dot" style="background:#F0E8D8"></span>Chino Bianco/Panna</span></div><div class="lb-li"><span class="lb-cat">Scarpe</span><span class="lb-chip"><span class="lb-dot" style="background:#706860"></span>Loafer Nabuk Grigio Tortora</span></div><div class="lb-li"><span class="lb-cat">Profumo</span><span class="lb-chip lb-add"><span class="lb-dot" style="background:#2A1A10"></span>+ WOMO Black Tobacco</span></div><div class="lb-li"><span class="lb-cat">Accessorio</span><span class="lb-chip lb-add"><span class="lb-dot" style="background:#6A4830"></span>+ Cintura Reversibile Pelle/Suede Marrone</span></div></div><div class="lb-note">Nell'originale non c'è capospalla: il Liddesdale è un layer aggiunto. Liddesdale e cardigan sono entrambi navy: tieni il giubbotto aperto e la camicia bianca in vista. Senza la camicia western sulle spalle.</div></div></div></div>
+
+  <details style="margin-top:22px;border-top:1px solid var(--border);padding-top:10px"><summary class="cat-label" style="cursor:pointer">Nota · Heritage — British Style Guide</summary>
+  
+  <div class="info-box">Riferimento concettuale al Registro Heritage del Dictact (Regole H1–H5). Colori, trame e principi presi dalla tradizione country inglese. L'Heritage non ha una palette propria: eredita quella del Sistema (Regola A, H4).</div>
+
+  <div style="margin-bottom:20px;">
+    <div style="font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:600;color:var(--gold);letter-spacing:.08em;margin-bottom:10px;">Cosa incarna</div>
+    <div style="font-size:.6rem;color:var(--mid);line-height:1.8;">
+      <div style="margin-bottom:6px;"><strong style="color:var(--dark);">Autorità silenziosa</strong> — mai ostentata. Lo status è dato per scontato, non dimostrato con logo o lucentezza.</div>
+      <div style="margin-bottom:6px;"><strong style="color:var(--dark);">Trasmissione, non novità</strong> — un capo si tramanda, invecchia bene, sviluppa patina. Opposto del ciclo fast-fashion.</div>
+      <div><strong style="color:var(--dark);">Funzione travestita da eleganza</strong> — ogni capo nasce per una necessità reale (pioggia, freddo, movimento); il risultato è comunque raffinato.</div>
+    </div>
+  </div>
+
+  <div style="margin-bottom:20px;">
+    <div style="font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:600;color:var(--gold);letter-spacing:.08em;margin-bottom:10px;">Colori — dal paesaggio, mai sintetici</div>
+    <table style="width:100%;border-collapse:collapse;font-size:.58rem;">
+      <tr><th style="text-align:left;padding:5px 8px;color:var(--light);font-size:.52rem;text-transform:uppercase;letter-spacing:.05em;border-bottom:1px solid var(--gold);">Colore</th><th style="text-align:left;padding:5px 8px;color:var(--light);font-size:.52rem;text-transform:uppercase;letter-spacing:.05em;border-bottom:1px solid var(--gold);">Origine / Ruolo</th></tr>
+      <tr><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--dark);font-weight:500;">Verde salvia</td><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--mid);">Vegetazione — Barbour, gilet da tiro</td></tr>
+      <tr><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--dark);font-weight:500;">Marrone freddo</td><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--mid);">Terra, corteccia — taupe, cocoa, mushroom, cioccolato smorzato</td></tr>
+      <tr><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--dark);font-weight:500;">Terracotta smorzata</td><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--mid);">Foglie autunnali — solo righe 9-10 della tavola Soft Summer</td></tr>
+      <tr><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--dark);font-weight:500;">Grigio/antracite</td><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--mid);">Pietra, cielo coperto</td></tr>
+      <tr><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--dark);font-weight:500;">Navy</td><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--mid);">Sempre in coppia col marrone, mai dominante da solo</td></tr>
+    </table>
+  </div>
+
+  <div style="margin-bottom:20px;">
+    <div style="font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:600;color:var(--gold);letter-spacing:.08em;margin-bottom:10px;">Trame — l'identità del genere</div>
+    <table style="width:100%;border-collapse:collapse;font-size:.58rem;">
+      <tr><th style="text-align:left;padding:5px 8px;color:var(--light);font-size:.52rem;text-transform:uppercase;letter-spacing:.05em;border-bottom:1px solid var(--gold);">Trama</th><th style="text-align:left;padding:5px 8px;color:var(--light);font-size:.52rem;text-transform:uppercase;letter-spacing:.05em;border-bottom:1px solid var(--gold);">Descrizione / Uso</th></tr>
+      <tr><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--dark);font-weight:500;">Tweed (Herringbone/Donegal)</td><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--mid);">La trama per eccellenza — spina di pesce o nodi di colore nel filato</td></tr>
+      <tr><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--dark);font-weight:500;">Principe di Galles / Pied-de-poule</td><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--mid);">Motivi a quadretti sartoriali — giacche e pantaloni da tiro</td></tr>
+      <tr><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--dark);font-weight:500;">Tattersall</td><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--mid);">Quadretti sottili su camicie, due colori su fondo chiaro</td></tr>
+      <tr><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--dark);font-weight:500;">Cord (velluto a coste)</td><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--mid);">Camicie e pantaloni, righe verticali morbide</td></tr>
+      <tr><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--dark);font-weight:500;">Argyle</td><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--mid);">Losanghe su calze e maglieria — il dettaglio eccentrico ammesso</td></tr>
+      <tr><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--dark);font-weight:500;">Paisley</td><td style="padding:5px 8px;border-bottom:1px solid var(--border);color:var(--mid);">Sciarpe e foulard in seta — unico motivo curvilineo tollerato</td></tr>
+    </table>
+  </div>
+
+  <div style="margin-bottom:20px;">
+    <div style="font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:600;color:var(--gold);letter-spacing:.08em;margin-bottom:10px;">Outfit · Barbour Ashby Wax Navy</div>
+
+    <div style="margin-bottom:16px;">
+      <div style="font-weight:600;color:var(--dark);font-size:.62rem;margin-bottom:4px;">1 — The Country Weekend</div>
+      <div style="font-size:.58rem;color:var(--mid);line-height:1.6;">Camicia Oxford Azzurro Chiaro (colletto a vista) + Girocollo Lana Marrone sopra + Barbour Ashby Wax Navy + Jeans Blu Scuro + Chukka Boot Marrone Scuro + Cap Navy Barbour</div>
+    </div>
+
+    <div style="margin-bottom:16px;">
+      <div style="font-weight:600;color:var(--dark);font-size:.62rem;margin-bottom:4px;">2 — The Shooting Party</div>
+      <div style="font-size:.58rem;color:var(--mid);line-height:1.6;">Camicia Fantasia Micro Motivo Navy + Cravatta Tartan Navy/Rosso/Bianco + Barbour Ashby Wax Navy + Chino Deep Navy + Chukka Boot Marrone Scuro + Sciarpa Lana Vergine <em>(registro tutto freddo; la cravatta tartan è autentica nel contesto shooting party, quando il chino sostituisce il jeans)</em></div>
+    </div>
+
+    <div style="margin-bottom:16px;">
+      <div style="font-weight:600;color:var(--dark);font-size:.62rem;margin-bottom:4px;">3 — The Estate Gate</div>
+      <div style="font-size:.58rem;color:var(--mid);line-height:1.6;">Camicia Bianca (colletto a vista) + Cravatta Bordeaux a Pois Navy + Girocollo Cotone Seta Cashmere Sabbia sopra, cravatta a vista + Barbour Ashby Wax Navy + Chino Beige/Sabbia + Loafer Nabuk Grigio Tortora</div>
+    </div>
+
+    <div style="margin-bottom:16px;">
+      <div style="font-weight:600;color:var(--dark);font-size:.62rem;margin-bottom:4px;">4 — The Denim Bridge</div>
+      <div style="font-size:.58rem;color:var(--mid);line-height:1.6;">Camicia Jeans Western Azzurro Slavatissimo (colletto a vista) + Girocollo Bordeaux sopra + Barbour Ashby Wax Navy + Jeans Blu Scuro + Chukka Boot Marrone Scuro + Cap Navy Barbour <em>(doppio denim controllato dal bordeaux di mezzo, unico accento caldo)</em></div>
+    </div>
+
+    <div style="margin-bottom:16px;">
+      <div style="font-weight:600;color:var(--dark);font-size:.62rem;margin-bottom:4px;">5 — The Manor Off-Duty</div>
+      <div style="font-size:.58rem;color:var(--mid);line-height:1.6;">Camicia Oxford Azzurro Chiaro + Cardigan Navy sopra, aperto + Barbour Ashby Wax Navy alle spalle + Chino Grigio Chiaro + Loafer Nabuk <em>(ispirato al Cordings Cardigan di Eddie Horniman)</em></div>
+    </div>
+
+    <div style="margin-bottom:16px;">
+      <div style="font-weight:600;color:var(--dark);font-size:.62rem;margin-bottom:4px;">6 — The Flannel Estate</div>
+      <div style="font-size:.58rem;color:var(--mid);line-height:1.6;">Camicia Bianca (colletto a vista) + Girocollo Grigio Chiaro Melange sopra + Barbour Ashby Wax Navy + Pantalone Flanella Grigio Medio + Chukka Boot Marrone Scuro + Sciarpa Lana Vergine</div>
+    </div>
+  </div>
+
+  <div style="margin-bottom:20px;">
+    <div style="font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:600;color:var(--gold);letter-spacing:.08em;margin-bottom:10px;">Outfit · Barbour Liddesdale</div>
+    <div style="font-size:.56rem;color:var(--light);font-style:italic;margin-bottom:12px;">Il Liddesdale non comanda il look come l'Ashby — serve il look: come soluzione leggera stand-alone, come strato nascosto, o come guscio comodo sopra maglie spesse.</div>
+
+    <div style="margin-bottom:16px;">
+      <div style="font-weight:600;color:var(--dark);font-size:.62rem;margin-bottom:4px;">1 — The Mild Transition</div>
+      <div style="font-size:.58rem;color:var(--mid);line-height:1.6;">Camicia Oxford Azzurro Chiaro (colletto a vista) + Girocollo Grigio Chiaro Melange sopra + Barbour Liddesdale Quilted Navy + Chino Beige/Sabbia + Loafer Nabuk Grigio Tortora <em>(mezza stagione, Liddesdale da solo — l'Ashby qui sarebbe eccessivo)</em></div>
+    </div>
+
+    <div style="margin-bottom:16px;">
+      <div style="font-weight:600;color:var(--dark);font-size:.62rem;margin-bottom:4px;">2 — The Layer Under</div>
+      <div style="font-size:.58rem;color:var(--mid);line-height:1.6;">Camicia Jeans Western Azzurro Slavatissimo (colletto a vista) + Girocollo Lana Marrone sopra + Barbour Liddesdale Quilted Navy + Barbour Ashby Wax Navy sopra ancora + Jeans Blu Scuro + Chukka Boot Marrone Scuro <em>(doppio Barbour, wax su trapuntato su denim — la stratificazione più autentica del brand, confermata dal vivo)</em></div>
+    </div>
+
+    <div style="margin-bottom:16px;">
+      <div style="font-weight:600;color:var(--dark);font-size:.62rem;margin-bottom:4px;">3 — The Denim Ease</div>
+      <div style="font-size:.58rem;color:var(--mid);line-height:1.6;">T-Shirt Grigio Ardesia Oversize sotto + Girocollo Bordeaux sopra + Barbour Liddesdale Quilted Navy + Jeans Blu Scuro + Loafer Nabuk <em>(il taglio generoso del Liddesdale regge comodo sopra la maglia spessa senza tirare, cosa che l'Ashby più slim non farebbe)</em></div>
+    </div>
+  </div>
+
+  <div style="margin-bottom:20px;background:var(--surface);border-radius:10px;border:1px solid var(--border);padding:14px;">
+    <div style="font-family:'Cormorant Garamond',serif;font-size:.85rem;font-weight:600;color:var(--gold);letter-spacing:.06em;margin-bottom:8px;">Regola H5 — Capi Specifici vs Jolly Dichiarati</div>
+    <div style="font-size:.6rem;color:var(--mid);line-height:1.7;">
+      <div style="margin-bottom:6px;">Non ogni capo appartiene a un solo mondo.</div>
+      <div style="margin-bottom:6px;"><strong style="color:var(--dark);">Specifici</strong> (identità = il mondo da cui vengono, restano vincolati): Barbour Ashby, Barbour Liddesdale, tweed/Donegal pesante, jeans, Boat Shoes (Heritage) · Abito Grigio Perla, Abito Blu Navy, Montgomery (Ufficio).</div>
+      <div style="margin-bottom:6px;"><strong style="color:var(--dark);">Jolly dichiarati</strong> (funzionali/neutri, attraversano entrambi i mondi senza scelta caso per caso): Loafer Nabuk, Chukka Boot, Geox Baryden, chino lisci (Beige/Panna/Grigio/Navy), cintura liscia, girocolli leggeri cotone-seta-cashmere, camicie a tinta unita semplici.</div>
+      <div><strong style="color:var(--dark);">Test pratico:</strong> se il capo stona da solo fuori contesto, è Specifico; se è l'outfit a dover reggere la coerenza, è Jolly.</div>
+    </div>
+  </div>
+
+  <div style="font-size:.55rem;color:var(--light);font-style:italic;text-align:center;padding-top:10px;border-top:1px solid var(--border);">Principio di combinazione — mai più di due texture "forti" insieme (Regola H3). Sezione da espandere con capi acquistati e outfit dedicati.</div>
+
+  </details>
 </div>
 
 
 
 <div id="tobe" class="section">
   <div class="section-label">To-be list · Cosa serve davvero</div>
-  <div class="info-box">Solo i capi che mancano per costruire i look del Lookbook, in ordine di rilevanza. Il numero a destra è quanti look si sbloccano. Questo è un elenco di vuoti, non una lista della spesa: ogni acquisto passa dalle regole qui sotto e dai negozi del Dictact.</div>
-  <div class="cat-label" style="margin-top:6px">Da comprare</div>
+  <div class="info-box">Solo i capi che mancano per costruire i look dei lookbook A-I (autunno-inverno) e P-E 2027 (primavera-estate), in ordine di rilevanza. Usa i due pulsanti per cambiare stagione. Il numero a destra è quanti look si sbloccano. Questo è un elenco di vuoti, non una lista della spesa: ogni acquisto passa dalle regole qui sotto e dai negozi del Dictact.</div>
+  <div class="tabs" style="margin-top:6px">
+    <button class="tab active" id="tb-ai" onclick="showTobe('ai',this)">A-I</button>
+    <button class="tab" id="tb-pe" onclick="showTobe('pe',this)">P-E 2027</button>
+  </div>
+  <div id="tobe-ai">
+  <div class="cat-label" style="margin-top:6px">Da comprare per l'A-I (Lookbook A-I)</div>
   <div class="lb-gap-row"><div><strong>☐ 1. Dolcevita (navy, grigio, panna)</strong><br>Cucinelli 01, 02, 17, 26, 31, 33, 38 · Canali 17, 21<br><em style="color:var(--light)">Oggi coperto solo dal girocollo.</em></div><div><strong>9</strong></div></div>
   <div class="lb-gap-row"><div><strong>☐ 2. Cappotto di lana monopetto (grigio, fango, beige)</strong><br>Canali 01, 05<br><em style="color:var(--light)">In valutazione: Eleventy grigio chiaro da Fratelli Ragusa, 150 € (Made in Italy, 100% lana foulé, taglio corto, reso da leggere). Eccezione una tantum fuori dai negozi del Dictact, massimo 500 €.</em></div><div><strong>2</strong></div></div>
   <div class="lb-gap-row"><div><strong>☐ 3. Giacca doppiopetto (navy o grigio)</strong><br>Cucinelli 10, 19, 25, 26, 28, 29, 34, 39 · Canali 15, 17, 20</div><div><strong>11</strong></div></div>
@@ -768,6 +774,21 @@ body{background:var(--bg);font-family:'Montserrat',sans-serif;min-height:100vh;p
   <div class="lb-gap-row"><div><strong>☐ 8. Capi bordeaux (cardigan a trecce, pantaloni di velluto, cappotto doppiopetto)</strong><br>Cucinelli 28, 29, 30<br><em style="color:var(--light)">Il girocollo bordeaux Gutteridge ce l'hai già: copre solo il colore nel look 30, non il cardigan.</em></div><div><strong>3</strong></div></div>
   <div class="lb-gap-row"><div><strong>☐ 9. Accessori: cravatta a righe, borsa o zaino di pelle</strong><br>Cravatta: Cucinelli 03 · Borsa: Canali 09, 10, Cucinelli 29<br><em style="color:var(--light)">Sneaker bianche già nel guardaroba (Valsport).</em></div><div><strong>1 + 3</strong></div></div>
   
+    </div>
+  <div id="tobe-pe" style="display:none">
+  <div class="cat-label" style="margin-top:6px">Da comprare per la P-E 2027</div>
+  <div class="lb-gap-row"><div><strong>☐ 1. Giubbotto leggero in suede o bomber (taupe, greige, blu ardesia, navy)</strong><br>Cucinelli 1, 4, 6, 7, 24, 38 · Canali 1, 3, 8, 16, 18<br><em style="color:var(--light)">Oggi lo sostituiscono la field jacket in lino e il bomber in pelle plongé, che è più pesante. Il suede della sfilata è in marroni caldi e cammello: va preso in tono freddo (Regola A).</em></div><div><strong>11</strong></div></div>
+  <div class="lb-gap-row"><div><strong>☐ 2. Pantaloni cargo o pieghettati in cotone (grigio chiaro, taupe, bianco)</strong><br>Cucinelli 2, 13, 14, 18, 24, 25, 36 · Canali 1, 10, 14<br><em style="color:var(--light)">Oggi coperti dai chino. È la silhouette della collezione Cucinelli SS27.</em></div><div><strong>10</strong></div></div>
+  <div class="lb-gap-row"><div><strong>☐ 3. Cardigan o maglia sottile in cotone (panna, grigio chiaro, salvia)</strong><br>Cucinelli 5, 6, 40 · Canali 5, 9, 10, 14, 17<br><em style="color:var(--light)">Oggi coperti dal cardigan navy e dai girocolli in lana, troppo caldi per l'estate. La maglia a V di Canali (17) è tra queste.</em></div><div><strong>8</strong></div></div>
+  <div class="lb-gap-row"><div><strong>☐ 4. Giacca doppiopetto in lino (navy, grigio chiaro, beige)</strong><br>Cucinelli 11, 36 · Canali 9, 11, 15, 17, 24<br><em style="color:var(--light)">Oggi sostituita dall'abito navy o grigio in lana e dal blazer ecru. Fa coppia con la voce 3 della lista A-I, ma qui il tessuto è lino.</em></div><div><strong>7</strong></div></div>
+  <div class="lb-gap-row"><div><strong>☐ 5. Bucket hat in cotone (beige, panna)</strong><br>Canali 5, 9, 15, 20<br><em style="color:var(--light)">Oggi sostituito dal cap in cotone chino/nubuck.</em></div><div><strong>4</strong></div></div>
+  <div class="lb-gap-row"><div><strong>☐ 6. Giacca o overshirt in denim chiaro</strong><br>Cucinelli 27 · Canali 18, 19<br><em style="color:var(--light)">Oggi sostituita dalla camicia jeans western.</em></div><div><strong>3</strong></div></div>
+  <div class="lb-gap-row"><div><strong>☐ 7. Cravatta a righe (navy, azzurro)</strong><br>Cucinelli 18, 27, 29<br><em style="color:var(--light)">Oggi sostituita dalla Navy Micro-Texture.</em></div><div><strong>3</strong></div></div>
+  <div class="lb-gap-row"><div><strong>☐ 8. Shorts bianchi o panna (cotone o lino)</strong><br>Canali 16, 24<br><em style="color:var(--light)">Oggi sostituiti dal chino panna o dagli shorts cargo beige.</em></div><div><strong>2</strong></div></div>
+  <div class="lb-gap-row"><div><strong>☐ 9. Sandali o scarpe aperte in pelle; derby in suede (taupe, marrone scuro)</strong><br>Canali 24 · Cucinelli 34<br><em style="color:var(--light)">Nero escluso dalla Regola A: sandali e derby in marrone scuro o taupe.</em></div><div><strong>2</strong></div></div>
+  <div class="lb-gap-row"><div><strong>☐ 10. Altro: gilet panna, camicia di lino beige in tinta unita</strong><br>Cucinelli 23 (gilet) · Cucinelli 9 (camicia)<br><em style="color:var(--light)">Oggi sostituiti dal gilet navy e dalla camicia in lino a righe.</em></div><div><strong>1 + 1</strong></div></div>
+  <div class="info-box" style="margin-top:8px">I numeri sono i look del Lookbook P-E. I capi in lana che uso come sostituti (Principe di Galles, merino navy, abito grigio perla) non sono in questa lista: servono solo se il peso è davvero estivo, e va controllato sul capo. Ogni acquisto passa dalla Regola E e dai negozi del Dictact.</div>
+  </div>
   <div style="margin:20px 0;background:var(--surface);border-radius:10px;border:1px solid var(--gold);padding:14px;">
     <div style="font-family:'Cormorant Garamond',serif;font-size:.9rem;font-weight:600;color:var(--gold);letter-spacing:.06em;margin-bottom:8px;">Prima di ogni acquisto — Regola E</div>
     <div style="font-size:.6rem;color:var(--mid);line-height:1.8;">
@@ -860,8 +881,8 @@ body{background:var(--bg);font-family:'Montserrat',sans-serif;min-height:100vh;p
       <div style="margin-bottom:6px;"><strong style="color:var(--dark);">Maison di riferimento, tutte le stagioni —</strong> Brunello Cucinelli · Pini Parma · Canali</div>
       <div style="margin-bottom:6px;"><strong style="color:var(--dark);">I 2 Pilastri — sfilate da monitorare ogni stagione. Ordine di verifica: prima Cucinelli, poi Canali —</strong> Brunello Cucinelli · Canali</div>
       <div style="margin-bottom:6px;"><strong style="color:var(--dark);">Lookbook P-E — tab separato, 49 look Cucinelli e Canali Primavera-Estate 2027 con capi estivi (codici PE CU e PE CN) —</strong> stessa traduzione con la Regola A del Lookbook A-I</div>
-      <div style="margin-bottom:6px;"><strong style="color:var(--dark);">Casual — tab separato, 10 look con capi propri, senza maison di riferimento (codici CS) —</strong> jeans, felpa, T-shirt, Barbour</div>
-      <div style="margin-bottom:6px;"><strong style="color:var(--dark);">Barbour — tab separato, 11 look Cucinelli e Canali rifatti con Ashby o Liddesdale (codici BB) —</strong> un solo pezzo Heritage dominante per look (H3)</div>
+      <div style="margin-bottom:6px;"><strong style="color:var(--dark);">Lookbook CSL (Casual) — tab separato, 10 look con capi propri, senza maison di riferimento (codici CS) —</strong> jeans, felpa, T-shirt, Barbour</div>
+      <div style="margin-bottom:6px;"><strong style="color:var(--dark);">Lookbook HRT (Barbour) — tab separato, 11 look Cucinelli e Canali rifatti con Ashby o Liddesdale (codici BB) —</strong> un solo pezzo Heritage dominante per look (H3)</div>
       <div style="margin-bottom:6px;"><strong style="color:var(--dark);">Pilastri Registro Heritage — fonti British autentiche —</strong> Cordings of Piccadilly · Farlows</div>
       <div style="margin-bottom:6px;"><strong style="color:var(--dark);">Negozi Standard — dove cercare i capi Ufficio/generali, non fonti stilistiche —</strong> Gutteridge · Pini Parma · Suitsupply · Octobre Éditions · Velasca · Iuman · Luca Faloni · Artknit Studios · Falconeri · Tela Blu</div>
       <div style="margin-bottom:6px;"><strong style="color:var(--dark);">Negozi Heritage — brand puramente inglesi, dove cercare i capi Registro Heritage —</strong> Barbour · Cordings of Piccadilly · Farlows · London Sock Company · Holland Cooper</div>
@@ -936,6 +957,7 @@ function filtraGr(cat, btn) {
 }
 
 function filtraPe(mn, btn) { document.querySelectorAll('#pe-all,#pe-cu,#pe-cn').forEach(function(b){b.classList.remove('active')}); btn.classList.add('active'); document.querySelectorAll('#lookbookpe [data-mn]').forEach(function(c){ c.style.display = (mn==='all' || c.dataset.mn===mn) ? 'block' : 'none'; }); document.querySelectorAll('#lookbookpe [data-grp]').forEach(function(h){ var st = h.dataset.grp; var v = 0; document.querySelectorAll('#lookbookpe [data-grpbody="'+st+'"] [data-mn]').forEach(function(c){ if(c.style.display!=='none') v++; }); h.querySelector('.lb-gcount').textContent = v; h.style.display = v ? 'flex' : 'none'; }); }
+function showTobe(k, btn) { document.querySelectorAll('#tb-ai,#tb-pe').forEach(function(b){b.classList.remove('active')}); btn.classList.add('active'); document.getElementById('tobe-ai').style.display = k==='ai' ? 'block' : 'none'; document.getElementById('tobe-pe').style.display = k==='pe' ? 'block' : 'none'; }
 function filtraLb(mn, btn) {
   document.querySelectorAll('#lb-all,#lb-cu,#lb-cn').forEach(function(b){b.classList.remove('active')});
   btn.classList.add('active');
