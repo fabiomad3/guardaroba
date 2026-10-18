@@ -752,26 +752,8 @@ body{background:var(--bg);font-family:'Montserrat',sans-serif;min-height:100vh;p
 
 <div id="tobe" class="section">
   <div class="section-label">To-be list · Cosa serve davvero</div>
-  <div class="info-box">Solo i capi che mancano per costruire i look dei lookbook A-I (autunno-inverno) e P-E 2027 (primavera-estate), in ordine di rilevanza. Usa i due pulsanti per cambiare stagione. Il numero a destra è quanti look si sbloccano. Questo è un elenco di vuoti, non una lista della spesa: ogni acquisto passa dalle regole qui sotto e dai negozi del Dictact.</div>
-  <div class="tabs" style="margin-top:6px">
-    <button class="tab active" id="tb-ai" onclick="showTobe('ai',this)">A-I</button>
-    <button class="tab" id="tb-pe" onclick="showTobe('pe',this)">P-E 2027</button>
-  </div>
-  <div id="tobe-ai">
-  <div class="cat-label" style="margin-top:6px">Da comprare per l'A-I (Lookbook A-I)</div>
-  <div class="lb-gap-row"><div><strong>☐ 1. Dolcevita (grigio, panna)</strong><br>Cucinelli 01, 02, 17, 26, 31, 33<br><em style="color:var(--light)">Navy acquistato (Telablu): copre Cucinelli 38 e Canali 17, 21. Restano grigio e panna, oggi coperti dal girocollo grigio e dal Maglione Panna.</em></div><div><strong>6</strong></div></div>
-  <div class="lb-gap-row"><div><strong>☐ 2. Cappotto di lana monopetto (grigio, fango, beige)</strong><br>Canali 01, 05<br><em style="color:var(--light)">In valutazione: Eleventy grigio chiaro da Fratelli Ragusa, 150 € (Made in Italy, 100% lana foulé, taglio corto, reso da leggere). Eccezione una tantum fuori dai negozi del Dictact, massimo 500 €.</em></div><div><strong>2</strong></div></div>
-  <div class="lb-gap-row"><div><strong>☐ 3. Giacca doppiopetto (navy o grigio)</strong><br>Cucinelli 10, 19, 25, 26, 28, 29, 34, 39 · Canali 15, 17, 20</div><div><strong>11</strong></div></div>
-  <div class="lb-gap-row"><div><strong>☐ 4. Capospalla con shearling o suede in tono freddo</strong><br>Cucinelli 03, 04, 07, 09, 10, 18, 28 · Canali 04, 09, 15</div><div><strong>10</strong></div></div>
-  <div class="lb-gap-row"><div><strong>☐ 5. Velluto (pantaloni carbone/bordeaux, giacca a coste)</strong><br>Cucinelli 10, 28 · Canali 10, 30<br><em style="color:var(--light)">Pinces burro acquistati (Telablu): coprono i pantaloni di Cucinelli 09 e 25 e le pieghe di Cucinelli 38, Canali 13, 30.</em></div><div><strong>4</strong></div></div>
-  <div class="lb-gap-row"><div><strong>☐ 6. Pantaloni larghi o cargo (grigio, off-white)</strong><br>Cucinelli 02, 15, 22, 31, 36, 39</div><div><strong>6</strong></div></div>
-  <div class="lb-gap-row"><div><strong>☐ 7. Maglia con zip o cardigan a scialle</strong><br>Canali 01, 09, 13, 19</div><div><strong>4</strong></div></div>
-  <div class="lb-gap-row"><div><strong>☐ 8. Capi bordeaux (cardigan a trecce, pantaloni di velluto, cappotto doppiopetto)</strong><br>Cucinelli 28, 29, 30<br><em style="color:var(--light)">Il girocollo bordeaux Gutteridge ce l'hai già: copre solo il colore nel look 30, non il cardigan.</em></div><div><strong>3</strong></div></div>
-  <div class="lb-gap-row"><div><strong>☐ 9. Accessori: cravatta a righe, borsa o zaino di pelle</strong><br>Cravatta: Cucinelli 03 · Borsa: Canali 09, 10, Cucinelli 29<br><em style="color:var(--light)">Sneaker bianche già nel guardaroba (Valsport).</em></div><div><strong>1 + 3</strong></div></div>
-  
-  
-    </div>
-  <div id="tobe-pe" style="display:none">
+  <div class="info-box">Solo i capi che mancano per costruire i look del Lookbook P-E 2027 (primavera-estate), in ordine di rilevanza. Il numero a destra è quanti look si sbloccano. Questo è un elenco di vuoti, non una lista della spesa: ogni acquisto passa dalle regole qui sotto e dai negozi del Dictact. Il capitolo A-I è chiuso.</div>
+  <div id="tobe-pe">
   <div class="cat-label" style="margin-top:6px">Da comprare per la P-E 2027</div>
   <div class="lb-gap-row"><div><strong>☐ 1. Giubbotto leggero in suede o bomber (taupe, greige, blu ardesia, navy)</strong><br>Cucinelli 1, 4, 6, 7, 24, 38 · Canali 1, 3, 8, 16, 18<br><em style="color:var(--light)">Oggi lo sostituiscono la field jacket in lino e il bomber in pelle plongé, che è più pesante. Il suede della sfilata è in marroni caldi e cammello: va preso in tono freddo (Regola A).</em></div><div><strong>11</strong></div></div>
   <div class="lb-gap-row"><div><strong>☐ 2. Pantaloni cargo o pieghettati in cotone (grigio chiaro, taupe, bianco)</strong><br>Cucinelli 2, 13, 18, 24, 25, 36 · Canali 1, 10, 14<br><em style="color:var(--light)">Hai già un cargo Uniqlo, ma è cachi/tabacco: tono caldo, vicino al cammello escluso dalla Regola A. Copre solo Cucinelli 14 e Canali 12, dove l'originale è marrone o beige. Per i toni freddi serve un secondo cargo.</em></div><div><strong>9</strong></div></div>
@@ -968,7 +950,6 @@ function filtraPos(pos, btn) {
 }
 
 function filtraPe(mn, btn) { document.querySelectorAll('#pe-all,#pe-cu,#pe-cn').forEach(function(b){b.classList.remove('active')}); btn.classList.add('active'); document.querySelectorAll('#lookbookpe [data-mn]').forEach(function(c){ c.style.display = (mn==='all' || c.dataset.mn===mn) ? 'block' : 'none'; }); document.querySelectorAll('#lookbookpe [data-grp]').forEach(function(h){ var st = h.dataset.grp; var v = 0; document.querySelectorAll('#lookbookpe [data-grpbody="'+st+'"] [data-mn]').forEach(function(c){ if(c.style.display!=='none') v++; }); h.querySelector('.lb-gcount').textContent = v; h.style.display = v ? 'flex' : 'none'; }); }
-function showTobe(k, btn) { document.querySelectorAll('#tb-ai,#tb-pe').forEach(function(b){b.classList.remove('active')}); btn.classList.add('active'); document.getElementById('tobe-ai').style.display = k==='ai' ? 'block' : 'none'; document.getElementById('tobe-pe').style.display = k==='pe' ? 'block' : 'none'; }
 function filtraLb(mn, btn) {
   document.querySelectorAll('#lb-all,#lb-cu,#lb-cn').forEach(function(b){b.classList.remove('active')});
   btn.classList.add('active');
