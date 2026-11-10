@@ -158,6 +158,7 @@ body{background:var(--bg);font-family:'Montserrat',sans-serif;min-height:100vh;p
 @media print{.lbf{display:none!important}}
 .acq-card{border:1px solid var(--border);border-radius:8px;padding:12px 14px;margin-bottom:12px;background:rgba(255,255,255,.35)}.acq-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:8px}.acq-t{font-family:'Cormorant Garamond',serif;font-size:.95rem;font-weight:600;color:var(--dark);line-height:1.25}.acq-st{font-size:.48rem;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:10px;white-space:nowrap;font-weight:600}.acq-now{background:#1A2A40;color:#F5F0E8}.acq-bf{background:#5E2230;color:#F5F0E8}.acq-mar{background:#7A8B99;color:#fff}.acq-wait{background:transparent;color:var(--mid);border:1px solid var(--border)}.acq-g{display:grid;grid-template-columns:110px 1fr;gap:4px 10px;font-size:.55rem;line-height:1.5}.acq-g b{color:var(--light);font-weight:500;text-transform:uppercase;font-size:.48rem;letter-spacing:.05em;padding-top:1px}.acq-g span{color:var(--mid)}@media(max-width:520px){.acq-g{grid-template-columns:1fr}.acq-g b{padding-top:6px}}
 html{font-size:19px;-webkit-text-size-adjust:100%;text-size-adjust:100%}.section{max-width:900px}@media screen and (max-width:1024px){html{font-size:21px}}@media screen and (max-width:520px){html{font-size:21px}}
+.lbf{display:grid;grid-template-columns:1fr 1fr;gap:8px 12px}.lbf-row{display:flex;flex-direction:column;align-items:stretch;gap:3px}.lbf-row .lbf-l{min-width:0}.lbf-sel{-webkit-appearance:none;appearance:none;width:100%;padding:7px 28px 7px 10px;border:1px solid var(--border);border-radius:8px;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%231A2A40'/%3E%3C/svg%3E") no-repeat right 10px center;font-family:'Montserrat',sans-serif;font-size:.6rem;font-weight:600;color:#1A2A40;cursor:pointer}.lbf-sel.on{background-color:#1A2A40;color:#F5F0E8;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23F5F0E8'/%3E%3C/svg%3E")}@media print{.lbf{display:none!important}}
 </style>
 </head>
 <body>
@@ -179,7 +180,8 @@ html{font-size:19px;-webkit-text-size-adjust:100%;text-size-adjust:100%}.section
   <div class="section-label">Guardaroba · Sistema Unificato</div>
   <div class="info-box">Tutti i capi in un'unica vista. I pulsanti A/I e P/E mostrano i capi della stagione (partenza: A/I); i capi che valgono per entrambe compaiono in tutte e due. La stagione deriva dai look in cui il capo compare, con qualche correzione mia per i capi senza look (ad esempio il parka, A/I, o i costumi, P/E). <strong>Nota:</strong> i pallini colore sono indicativi/di comodo, non misurati da foto o pagine prodotto reali — non usarli da soli per un verdetto Regola A. Verdetto affidabile solo con fonte reale (foto del capo, link prodotto, pagina ufficiale). <strong>Look:</strong> i codici del Lookbook A-I in cui il capo compare (CU e CN = Lookbook A-I; PE CU e PE CN = Lookbook P-E), compresi i capi che ho aggiunto io come layer. In ogni sezione i capi sono in ordine di utilizzo. I capi usati in meno di 3 look sono raccolti nella sezione "Poco usati" in fondo, con la categoria di origine indicata su ogni scheda.</div>
 
-  <div class="tabs">
+  <div class="lbf" style="grid-template-columns:1fr;margin-bottom:10px"><div class="lbf-row"><span class="lbf-l">Categoria</span><select class="lbf-sel" aria-label="Categoria" onchange="filtraGr(this.value,document.getElementById('gr-'+this.value));this.classList.toggle('on',this.value!=='all')"><option value="all">Tutte le categorie</option><option value="abiti">Abiti</option><option value="outerwear">Outerwear</option><option value="camicie">Camicie</option><option value="maglieria">Maglieria</option><option value="tshirt">T-Shirt &amp; Polo</option><option value="pantaloni">Pantaloni</option><option value="scarpe">Scarpe</option><option value="accessori">Accessori</option><option value="cravatte">Cravatte</option><option value="profumi">Profumi</option><option value="calze">Calze</option><option value="pocousati">Poco usati</option></select></div></div>
+  <div class="tabs" style="display:none">
     <button class="tab active" id="gr-all" onclick="filtraGr('all',this)">Tutti</button>
     <button class="tab" id="gr-abiti" onclick="filtraGr('abiti',this)">Abiti</button>
     <button class="tab" id="gr-outerwear" onclick="filtraGr('outerwear',this)">Outerwear</button>
@@ -1099,6 +1101,25 @@ function filtraPe(mn,btn){
       if(!n){ b.disabled=true; b.style.opacity='.45'; b.style.cursor='default'; }
       b.insertAdjacentHTML('beforeend',' <span style="opacity:.6">'+n+'</span>');
     });
+  });
+})();
+(function(){
+  document.querySelectorAll('.lbf-row').forEach(function(row){
+    var btns=[].slice.call(row.querySelectorAll('.lbf-b')); if(!btns.length) return;
+    var sel=document.createElement('select'); sel.className='lbf-sel';
+    var lab=row.querySelector('.lbf-l'); if(lab) sel.setAttribute('aria-label',lab.textContent);
+    btns.forEach(function(b,i){
+      var hidden=b.style.display==='none';
+      b.style.display='none';
+      if(hidden) return;
+      var o=document.createElement('option'); o.value=i;
+      if(b.dataset.v==='all'){ o.textContent='Tutti'; }
+      else{ var c=b.querySelector('span[style*="opacity"]'); var n=c?c.textContent.trim():''; var t=b.textContent; if(c) t=t.slice(0,t.lastIndexOf(c.textContent)); o.textContent=t.trim()+(n?' ('+n+')':''); if(b.disabled) o.disabled=true; }
+      if(b.classList.contains('active')) o.selected=true;
+      sel.appendChild(o);
+    });
+    sel.onchange=function(){ btns[+this.value].click(); sel.classList.toggle('on', btns[+this.value].dataset.v!=='all'); };
+    row.appendChild(sel);
   });
 })();
 </script>
