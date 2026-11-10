@@ -158,7 +158,7 @@ body{background:var(--bg);font-family:'Montserrat',sans-serif;min-height:100vh;p
 @media print{.lbf{display:none!important}}
 .acq-card{border:1px solid var(--border);border-radius:8px;padding:12px 14px;margin-bottom:12px;background:rgba(255,255,255,.35)}.acq-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:8px}.acq-t{font-family:'Cormorant Garamond',serif;font-size:.95rem;font-weight:600;color:var(--dark);line-height:1.25}.acq-st{font-size:.48rem;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:10px;white-space:nowrap;font-weight:600}.acq-now{background:#1A2A40;color:#F5F0E8}.acq-bf{background:#5E2230;color:#F5F0E8}.acq-mar{background:#7A8B99;color:#fff}.acq-wait{background:transparent;color:var(--mid);border:1px solid var(--border)}.acq-g{display:grid;grid-template-columns:110px 1fr;gap:4px 10px;font-size:.55rem;line-height:1.5}.acq-g b{color:var(--light);font-weight:500;text-transform:uppercase;font-size:.48rem;letter-spacing:.05em;padding-top:1px}.acq-g span{color:var(--mid)}@media(max-width:520px){.acq-g{grid-template-columns:1fr}.acq-g b{padding-top:6px}}
 html{font-size:19px;-webkit-text-size-adjust:100%;text-size-adjust:100%}.section{max-width:900px}@media screen and (max-width:1024px){html{font-size:21px}}@media screen and (max-width:520px){html{font-size:21px}}
-.lbf{display:grid;grid-template-columns:1fr 1fr;gap:8px 12px}.lbf-row{display:flex;flex-direction:column;align-items:stretch;gap:3px}.lbf-row .lbf-l{min-width:0}.lbf-sel{-webkit-appearance:none;appearance:none;width:100%;padding:7px 28px 7px 10px;border:1px solid var(--border);border-radius:8px;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%231A2A40'/%3E%3C/svg%3E") no-repeat right 10px center;font-family:'Montserrat',sans-serif;font-size:.6rem;font-weight:600;color:#1A2A40;cursor:pointer}.lbf-sel.on{background-color:#1A2A40;color:#F5F0E8;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23F5F0E8'/%3E%3C/svg%3E")}@media print{.lbf{display:none!important}}
+.lbf{display:grid;grid-template-columns:1fr 1fr;gap:8px 12px}.lbf-row{display:flex;flex-direction:column;align-items:stretch;gap:3px}.lbf-row .lbf-l{min-width:0}.lbf-sel{-webkit-appearance:none;appearance:none;width:100%;padding:7px 28px 7px 10px;border:1px solid var(--border);border-radius:8px;background:var(--bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%231A2A40'/%3E%3C/svg%3E") no-repeat right 10px center;font-family:'Montserrat',sans-serif;font-size:.6rem;font-weight:600;color:#1A2A40;cursor:pointer}.lbf-sel.on{background-color:#1A2A40;color:#F5F0E8;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23F5F0E8'/%3E%3C/svg%3E")}@media print{.lbf{display:none!important}}
 </style>
 </head>
 <body>
@@ -169,7 +169,6 @@ html{font-size:19px;-webkit-text-size-adjust:100%;text-size-adjust:100%}.section
   <button class="nav-btn" onclick="showSec('dictact',this)">Dictact</button>
   <button class="nav-btn" onclick="showSec('palette',this)">Palette</button>
   <button class="nav-btn" onclick="showSec('materiali',this)">Materiali</button>
-  <button class="nav-btn" onclick="showSec('tobe',this)">To-be list</button>
   <button class="nav-btn" onclick="showSec('acquisti',this)">Acquisti</button>
 </nav>
 
@@ -799,33 +798,6 @@ html{font-size:19px;-webkit-text-size-adjust:100%;text-size-adjust:100%}.section
 </div>
 
 
-<div id="tobe" class="section">
-  <div class="section-label">To-be list · Cosa serve davvero</div>
-  <div class="info-box">Solo i capi che mancano per costruire i look del Lookbook P-E 2027 (primavera-estate), in ordine di rilevanza. Il numero a destra è quanti look si sbloccano. Questo è un elenco di vuoti, non una lista della spesa: ogni acquisto passa dalle regole qui sotto e dai negozi del Dictact. Il capitolo A-I è chiuso.</div>
-  <div id="tobe-pe">
-  <div class="cat-label" style="margin-top:6px">Da comprare per la P-E 2027</div>
-  <div class="lb-gap-row"><div><strong>☐ 1. Giubbotto leggero in suede o bomber (taupe, greige, blu ardesia, navy)</strong><br>Cucinelli 1, 4, 6, 7, 24, 38 · Canali 18<br><em style="color:var(--light)">Oggi lo sostituiscono la field jacket in lino e il bomber in pelle plongé, che è più pesante. Il suede della sfilata è in marroni caldi e cammello: va preso in tono freddo (Regola A).</em></div><div><strong>7</strong></div></div>
-  <div class="lb-gap-row"><div><strong>☐ 2. Pantaloni cargo o pieghettati in cotone (grigio chiaro, taupe, bianco)</strong><br>Cucinelli 2, 13, 18, 24, 25, 36<br><em style="color:var(--light)">Hai già un cargo Uniqlo, ma è cachi/tabacco: tono caldo, vicino al cammello escluso dalla Regola A. Copre solo Cucinelli 14, dove l'originale è marrone o beige. Per i toni freddi serve un secondo cargo.</em></div><div><strong>6</strong></div></div>
-  <div class="lb-gap-row"><div><strong>☐ 3. Cardigan o maglia sottile in cotone (grigio chiaro, salvia)</strong><br>Cucinelli 5, 6, 40<br><em style="color:var(--light)">Hai già il Maglione Panna OVS, in cotone sottile. Restano grigio chiaro e salvia, oggi coperti dal cardigan navy e dai girocolli in lana, troppo caldi per l'estate.</em></div><div><strong>3</strong></div></div>
-  <div class="lb-gap-row"><div><strong>☐ 4. Giacca doppiopetto in lino (navy, grigio chiaro, beige)</strong><br>Cucinelli 11, 36 · Canali 11<br><em style="color:var(--light)">Oggi sostituita dall'abito navy o grigio in lana e dal blazer ecru. Fa coppia con la voce 3 della lista A-I, ma qui il tessuto è lino.</em></div><div><strong>3</strong></div></div>
-  
-  <div class="lb-gap-row"><div><strong>☑ 6. Giacca o overshirt in denim chiaro</strong><br>Cucinelli 27 · Canali 18<br><em style="color:var(--light)">Fatto: Levi's Trucker in guardaroba. Copre i due look.</em></div><div><strong>0</strong></div></div>
-  <div class="lb-gap-row"><div><strong>☐ 7. Cravatta a righe (navy, azzurro)</strong><br>Cucinelli 18, 27, 29<br><em style="color:var(--light)">Oggi sostituita dalla Navy Micro-Texture.</em></div><div><strong>3</strong></div></div>
-  <div class="lb-gap-row"><div><strong>☐ 8. Sandali o scarpe aperte in pelle; derby in suede (taupe, marrone scuro)</strong><br>Cucinelli 34<br><em style="color:var(--light)">Nero escluso dalla Regola A: sandali e derby in marrone scuro o taupe.</em></div><div><strong>1</strong></div></div>
-  <div class="lb-gap-row"><div><strong>☐ 9. Altro: gilet panna, camicia di lino beige in tinta unita</strong><br>Cucinelli 23 (gilet) · Cucinelli 9 (camicia)<br><em style="color:var(--light)">Oggi sostituiti dal gilet navy e dalla camicia in lino a righe.</em></div><div><strong>1 + 1</strong></div></div>
-  <div class="info-box" style="margin-top:8px">I numeri sono i look del Lookbook P-E ancora da sbloccare. Già in guardaroba: cargo cachi e shorts panna (Uniqlo), maglione panna sottile (OVS). I capi in lana che uso come sostituti (merino navy, abito grigio perla) non sono in questa lista: servono solo se il peso è davvero estivo, e va controllato sul capo. Ogni acquisto passa dalle Regole E e F e dai negozi del Dictact.</div>
-  </div>
-  <div style="margin:20px 0;background:var(--surface);border-radius:10px;border:1px solid var(--gold);padding:14px;">
-    <div style="font-family:'Cormorant Garamond',serif;font-size:.9rem;font-weight:600;color:var(--gold);letter-spacing:.06em;margin-bottom:8px;">Prima di ogni acquisto — Regola F</div>
-    <div style="font-size:.6rem;color:var(--mid);line-height:1.8;">
-      <div style="margin-bottom:6px;">1. Riempie una voce di questa lista, o è solo "carino"?</div>
-      <div style="margin-bottom:6px;">2. Passa la Regola A (colore smorzato), con fonte reale (Regola B)?</div>
-      <div style="margin-bottom:6px;">3. Passa la Regola C: origine dichiarata (Italia e UK preferiti, Cina accettata) e qualità verificabile?</div>
-      <div style="margin-bottom:6px;">4. Fibra naturale almeno 70% (Regola 4), opaco?</div>
-      <div>5. Lo indosserei la settimana prossima, non "prima o poi"?</div>
-    </div>
-  </div>
-</div>
 <div id="acquisti" class="section">
   <div class="section-label">Acquisti · Cosa serve e cosa cercare</div>
   <div class="info-box">Riepilogo degli acquisti decisi, in ordine di priorità. Cucinelli è il pilastro per l'ufficio, la Firma decide come si porta. Per ogni capo: perché serve, i look che copre, il materiale e il colore da cercare, i mesi d'uso, il prezzo obiettivo e i negozi (prima Telablu, poi Gutteridge, poi gli altri del Dictact). Budget A-I: circa 380 € (Pray più Black Friday).</div>
